@@ -2,10 +2,10 @@
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
 
-// grails.config.locations = [ "classpath:${appName}-config.properties",
-//                             "classpath:${appName}-config.groovy",
-//                             "file:${userHome}/.grails/${appName}-config.properties",
-//                             "file:${userHome}/.grails/${appName}-config.groovy"]
+grails.config.locations = [ "classpath:${appName}-config.properties",
+                            "classpath:${appName}-config.groovy",
+                            "file:${userHome}/.grails/${appName}-config.properties",
+                            "file:${userHome}/.grails/${appName}-config.groovy"]
 
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
@@ -93,13 +93,18 @@ environments {
     }
 }
 
+
 // log4j configuration
 log4j = {
+    appenders {
+      console name: "stdout", threshold: org.apache.log4j.Level.ALL
+    }
+
     // Example of changing the log pattern for the default console appender:
     //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
+    // appenders {
+    //     console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+    // }
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
@@ -112,6 +117,16 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    debug  'grails.app.controllers',
+           'grails.app.service',
+           'grails.app.services',
+           'grails.app.domain',
+           'grails.app.tagLib',
+           'grails.app.filters',
+           'grails.app.conf',
+           'grails.app.jobs'
+
 }
 
 
@@ -127,5 +142,31 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/css/**':                     ['permitAll'],
 	'/**/images/**':                  ['permitAll'],
 	'/**/favicon.ico':                ['permitAll']
+]
+
+grails.plugin.springsecurity.ui.password.minLength = 6
+grails.plugin.springsecurity.ui.password.maxLength = 64
+grails.plugin.springsecurity.ui.password.validationRegex = '^.*$'
+
+//configure register
+grails.plugin.springsecurity.ui.register.emailFrom = "TLI<no-reply@tli.ianibbo.me>"
+grails.plugin.springsecurity.ui.register.emailSubject = 'Welcome to TLI'
+grails.plugin.springsecurity.ui.register.defaultRoleNames = [
+        "ROLE_USER"
+]
+
+// The following 2 entries make the app use basic auth by default
+grails.plugin.springsecurity.useBasicAuth = true
+grails.plugin.springsecurity.basic.realmName = "tli"
+
+// This stanza then says everything should use form apart from /api
+// More info: http://stackoverflow.com/questions/7065089/how-to-configure-grails-spring-authentication-scheme-per-url
+grails.plugin.springsecurity.filterChain.chainMap = [
+        '/api/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
+        '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
+        // '/soap/deposit': 'JOINED_FILTERS,-exceptionTranslationFilter',
+        // '/rest/**': 'JOINED_FILTERS,-exceptionTranslationFilter'
+        // '/rest/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
+
 ]
 
