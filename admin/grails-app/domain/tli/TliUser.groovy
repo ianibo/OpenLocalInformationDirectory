@@ -6,6 +6,7 @@ class TliUser {
 
 	String username
 	String password
+        String email
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
