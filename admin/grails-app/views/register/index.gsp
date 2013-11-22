@@ -7,7 +7,7 @@
 
 <body>
 
-<p/>
+<div class="container">
 
 <s2ui:form width='650' height='300' elementId='loginFormContainer' titleCode='spring.security.ui.register.description' center='true'>
 
@@ -44,6 +44,7 @@
 	</g:else>
 
 </g:form>
+</div>
 
 </s2ui:form>
 
