@@ -137,6 +137,7 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'tli.TliUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'tli.TliUserTliRole'
 grails.plugin.springsecurity.authority.className = 'tli.TliRole'
 grails.plugin.springsecurity.securityConfigType = "Annotation"
+grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
