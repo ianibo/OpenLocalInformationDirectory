@@ -125,9 +125,9 @@ log4j = {
            'grails.app.tagLib',
            'grails.app.filters',
            'grails.app.conf',
-           'grails.app.jobs',
-           'grails.app.services.grails.plugin.springsecurity.ui.SpringSecurityUiService',
-           'org.codehaus.groovy.grails.web.mapping'
+           'grails.app.jobs'
+           // 'grails.app.services.grails.plugin.springsecurity.ui.SpringSecurityUiService',
+           // 'org.codehaus.groovy.grails.web.mapping'
 
 }
 
@@ -136,8 +136,11 @@ log4j = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'tli.TliUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'tli.TliUserTliRole'
 grails.plugin.springsecurity.authority.className = 'tli.TliRole'
+grails.plugin.springsecurity.securityConfigType = "Annotation"
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
+	'/index':                         ['permitAll'],
+	'/index.gsp':                     ['permitAll'],
 	'/register':                      ['permitAll'],
 	'/register/**':                   ['permitAll'],
 	'/**/js/**':                      ['permitAll'],
