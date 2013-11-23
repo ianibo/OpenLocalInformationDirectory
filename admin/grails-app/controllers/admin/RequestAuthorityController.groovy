@@ -11,4 +11,14 @@ class RequestAuthorityController {
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
   }
+
+  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
+  def create() { 
+  }
+
+  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
+  def connect() { 
+  }
+
+  
 }

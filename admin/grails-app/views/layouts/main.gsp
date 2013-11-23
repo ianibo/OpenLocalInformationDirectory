@@ -35,6 +35,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
               <ul class="dropdown-menu">
+                <li><g:link controller="requestAuthority">Join existing Authority</g:link></li>
                 <li><g:link controller="requestAuthority">Request New Authority</g:link></li>
               </ul>
             </li>
