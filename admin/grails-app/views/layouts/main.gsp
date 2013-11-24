@@ -32,15 +32,17 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
-              <ul class="dropdown-menu">
-                <li><g:link controller="requestAuthority">Join existing Authority</g:link></li>
-                <li><g:link controller="requestAuthority">Request New Authority</g:link></li>
-              </ul>
-            </li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <sec:ifLoggedIn>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
+                <ul class="dropdown-menu">
+                  <li><g:link controller="requestAuthority">Join existing Authority</g:link></li>
+                  <li><g:link controller="requestAuthority">Request New Authority</g:link></li>
+                </ul>
+              </li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </sec:ifLoggedIn>
           </ul>
           <ul class="nav navbar-nav pull-right">
             <sec:ifLoggedIn>
@@ -53,7 +55,8 @@
               </li>
             </sec:ifLoggedIn>
             <sec:ifNotLoggedIn>
-              <li><p class="navbar-text">Not logged in</p></li>
+              <!--<li><p class="navbar-text">Not logged in</p></li>-->
+              <li><g:link controller="login">Login</g:link></li>
             </sec:ifNotLoggedIn>
           </ul>
         </div><!--/.nav-collapse -->
