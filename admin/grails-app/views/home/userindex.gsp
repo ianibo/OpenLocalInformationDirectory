@@ -9,7 +9,7 @@
 
    <div class="container-fluid">
      <div class="row-fluid">
-       Anon user index
+       User Index...
      </div>
    </div>
   
