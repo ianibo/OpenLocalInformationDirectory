@@ -13,10 +13,19 @@
          <div class="panel-heading clearfix">
            <h3>Create Authority</h3>
            <div class="panel-body">
-             <dl class="dl-horizontal">
-               <dt>One</dt>
-               <dd>Two</dd>
-             </dl>
+             <form role="form">
+               <div class="form-group">
+                 <label for="authorityCode">Authority Code</label>
+                 <input type="text" class="form-control" id="authorityControl" placeholder="Authority Code">
+                 <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+               </div>
+               <div class="form-group">
+                 <label for="exampleInputPassword1">Description</label>
+                 <input type="text" class="form-control" id="desc" placeholder="Description">
+                 <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+               </div>
+               <button type="submit" class="btn btn-default">Submit</button>
+             </form>
            </div>
          </div>
        </div>
