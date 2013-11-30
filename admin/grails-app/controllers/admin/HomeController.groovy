@@ -16,15 +16,18 @@ class HomeController {
     log.debug("home");
 
     def view="index.gsp"
+    def model=[:]
 
     if ( request.user != null ) {
       log.debug("Logged in user is ${request.user}");
       view='userindex.gsp'
+      model.records = []
+      model.authorities = []
     }
     else {
       log.debug("No logged in user");
     }
 
-    render view:view
+    render view:view, model:model
   }
 }
