@@ -10,15 +10,27 @@
    <br/>
    <div class="container">
      <div class="row">
-       <div class="col-md-2">
-         Avatar<br/>
-         Full Name<br/>
-         Username<br>
-         <hr/>
-         Organisations
+       <div class="col-md-6">
+         <div class="panel panel-default">
+           <div class="panel-heading clearfix">
+             Your Records
+             <button class="btn btn-success btn-xs pull-right">New Record</button>
+           </div>
+           <div class="panel-body">
+             Panel content
+           </div>
+         </div>
        </div>
-       <div class="col-md-10">
-         Current authorities and roles
+       <div class="col-md-6">
+         <div class="panel panel-default">
+           <div class="panel-heading clearfix">
+             Your Authorities
+             <button class="btn btn-success btn-xs pull-right">New Authority</button>
+           </div>
+           <div class="panel-body">
+             Panel content
+           </div>
+         </div>
        </div>
      </div>
    </div>
