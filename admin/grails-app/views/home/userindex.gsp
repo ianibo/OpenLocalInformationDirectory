@@ -14,7 +14,7 @@
          <div class="panel panel-default">
            <div class="panel-heading clearfix">
              Your Records
-             <button class="btn btn-success btn-xs pull-right">New Record</button>
+             <g:link controller="resource" action="create" class="btn btn-success btn-xs pull-right">New Record</g:link>
            </div>
            <div class="panel-body">
              Panel content
@@ -25,7 +25,7 @@
          <div class="panel panel-default">
            <div class="panel-heading clearfix">
              Your Authorities
-             <button class="btn btn-success btn-xs pull-right">New Authority</button>
+             <g:link controller="authority" action="create" class="btn btn-success btn-xs pull-right">New Authority</g:link>
            </div>
            <div class="panel-body">
              Panel content
