@@ -7,9 +7,19 @@
   </head>
   <body>
 
-   <div class="container-fluid">
-     <div class="row-fluid">
-       User Index...
+   <br/>
+   <div class="container">
+     <div class="row">
+       <div class="col-md-2">
+         Avatar<br/>
+         Full Name<br/>
+         Username<br>
+         <hr/>
+         Organisations
+       </div>
+       <div class="col-md-10">
+         Current authorities and roles
+       </div>
      </div>
    </div>
   

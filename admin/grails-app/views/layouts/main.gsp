@@ -58,6 +58,7 @@
             <sec:ifNotLoggedIn>
               <!--<li><p class="navbar-text">Not logged in</p></li>-->
               <li><g:link controller="login">Login</g:link></li>
+              <li><g:link controller="register">Register</g:link></li>
             </sec:ifNotLoggedIn>
           </ul>
         </div><!--/.nav-collapse -->
