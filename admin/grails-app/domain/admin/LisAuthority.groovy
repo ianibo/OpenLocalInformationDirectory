@@ -2,6 +2,9 @@ package admin
 
 class LisAuthority {
 
-    static constraints = {
-    }
+  String code
+  String description
+
+  static constraints = {
+  }
 }
