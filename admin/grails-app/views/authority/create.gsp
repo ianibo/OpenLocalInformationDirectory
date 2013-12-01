@@ -13,7 +13,7 @@
          <div class="panel-heading clearfix">
            <h3>Create Authority</h3>
            <div class="panel-body">
-             <form role="form">
+             <g:form role="form" method="post" controller="authority" action="create">
                <div class="form-group">
                  <label for="authorityCode">Authority Code</label>
                  <input type="text" class="form-control" id="authorityControl" placeholder="Authority Code">
@@ -25,7 +25,7 @@
                  <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                </div>
                <button type="submit" class="btn btn-default">Submit</button>
-             </form>
+             </g:form>
            </div>
          </div>
        </div>
