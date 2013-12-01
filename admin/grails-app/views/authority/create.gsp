@@ -20,6 +20,11 @@
                  <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                </div>
                <div class="form-group">
+                 <label for="name">Authority Name</label>
+                 <input type="text" class="form-control" id="name" name="name" placeholder="Authority Name">
+                 <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+               </div>
+               <div class="form-group">
                  <label for="exampleInputPassword1">Description</label>
                  <input type="text" class="form-control" name="desc" id="desc" placeholder="Description">
                  <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>

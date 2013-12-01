@@ -21,13 +21,17 @@
                <table class="table table-striped">
                  <thead>
                    <tr>
-                     <th>Head</th>
+                     <th></th>
+                     <th>Name</th>
                    </tr>
                  </thead>
                  <tbody>
-                   <tr>
-                     <th>Head</th>
-                   </tr>
+                   <g:each in="${authorities}" var="a">
+                     <tr>
+                       <td>${a.code}</td>
+                       <td><g:link controller="authority" action="index" id="${a.code}">${a.name}</g:link></td>
+                     </tr>
+                   </g:each>
                  </tbody>
                </table>
              </g:if>

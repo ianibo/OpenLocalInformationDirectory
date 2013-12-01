@@ -18,8 +18,8 @@ class AuthorityController {
     log.debug("Authority::create ${params} ${request.method}");
     if ( request.method == 'POST' ) {
       log.debug("post..");
-      def new_authority = new LisAuthority(code:params.code,description:params.desc,owner:request.user).save(flush:true);
-      def new_affiliation = new Affiliation(user:request.user, authority:new_authority, role:'admin').save(flush:true);
+      def new_authority = new LisAuthority(code:params.code,name:params.name,description:params.desc,owner:request.user).save(flush:true);
+      def new_affiliation = new Affiliation(user:request.user, authority:new_authority, role:'admin', status:1).save(flush:true);
       redirect controller:'home', action:'index'
     }
     else {
