@@ -1,7 +1,13 @@
 package admin
 
+import tli.*;
+
 class Affiliation {
 
-    static constraints = {
-    }
+  TliUser user
+  LisAuthority authority
+  String role
+
+  static constraints = {
+  }
 }

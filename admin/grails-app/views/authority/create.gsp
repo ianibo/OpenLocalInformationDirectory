@@ -15,13 +15,13 @@
            <div class="panel-body">
              <g:form role="form" method="post" controller="authority" action="create">
                <div class="form-group">
-                 <label for="authorityCode">Authority Code</label>
-                 <input type="text" class="form-control" id="authorityControl" placeholder="Authority Code">
+                 <label for="code">Authority Code</label>
+                 <input type="text" class="form-control" id="code" name="code" placeholder="Authority Code">
                  <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                </div>
                <div class="form-group">
                  <label for="exampleInputPassword1">Description</label>
-                 <input type="text" class="form-control" id="desc" placeholder="Description">
+                 <input type="text" class="form-control" name="desc" id="desc" placeholder="Description">
                  <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                </div>
                <button type="submit" class="btn btn-default">Submit</button>
