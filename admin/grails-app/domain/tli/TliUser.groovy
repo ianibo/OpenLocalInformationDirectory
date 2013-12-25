@@ -28,11 +28,15 @@ class TliUser extends TliParty {
   }
 
   def beforeInsert() {
-    if ( ( displayName == null ) || ( displayName == '' ) ) {
-      displayName = username
-    }
     encodePassword()
 
+  }
+
+  def setUsername(String username) {
+    this.username=username;
+    if ( displayName == null ) {
+      displayName = username;
+    }
   }
 
   def beforeUpdate() {
