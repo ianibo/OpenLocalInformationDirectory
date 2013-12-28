@@ -9,11 +9,13 @@ class OrgController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
-    log.debug("index");
   }
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def requestAffiliation() {
-    log.debug("requestAffiliation");
+  }
+
+  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
+  def requestNew() {
   }
 }
