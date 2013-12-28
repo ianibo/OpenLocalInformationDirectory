@@ -13,11 +13,11 @@
        <div class="col-md-6">
          <div class="panel panel-default">
            <div class="panel-heading clearfix">
-             Your Authorities
-             <g:link controller="authority" action="create" class="btn btn-success btn-xs pull-right">New Authority</g:link>
+             Your Organisations
+             <g:link controller="organisaion" action="create" class="btn btn-success btn-xs pull-right">New Organisation</g:link>
            </div>
            <div class="panel-body">
-             <g:if test="${authorities?.size() > 0}">
+             <g:if test="${organisations?.size() > 0}">
                <table class="table table-striped">
                  <thead>
                    <tr>
@@ -26,10 +26,10 @@
                    </tr>
                  </thead>
                  <tbody>
-                   <g:each in="${authorities}" var="a">
+                   <g:each in="${organisations}" var="a">
                      <tr>
                        <td>${a.code}</td>
-                       <td><g:link controller="authority" action="index" id="${a.code}">${a.name}</g:link></td>
+                       <td><g:link controller="organisation" action="index" id="${o.id}">${a.name}</g:link></td>
                      </tr>
                    </g:each>
                  </tbody>
