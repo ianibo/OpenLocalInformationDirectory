@@ -17,5 +17,9 @@ class OrgController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def requestNew() {
+    if ( request.method == 'POST' ) {
+    }
+    else {
+    }
   }
 }
