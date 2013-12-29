@@ -21,15 +21,15 @@
                <table class="table table-striped">
                  <thead>
                    <tr>
-                     <th></th>
-                     <th>Name</th>
+                     <th>Org (Status)</th>
+                     <th>Role (Status)</th>
                    </tr>
                  </thead>
                  <tbody>
                    <g:each in="${organisations}" var="a">
                      <tr>
-                       <td>${a.code}</td>
-                       <td><g:link controller="org" action="index" id="${o.id}">${a.name}</g:link></td>
+                       <td><g:link controller="org" action="index" id="${a.id}">${a.org.displayName}</g:link> (${a.org.status.value})</td>
+                       <td>${a.role} (${a.status.value})</td>
                      </tr>
                    </g:each>
                  </tbody>

@@ -30,6 +30,13 @@ class BootStrap {
       TliUserTliRole.create adminUser, userRole
     }
 
+    RefdataCategory.lookupOrCreate("status", "Pending Approval" )
+    RefdataCategory.lookupOrCreate("status", "Approved" )
+    RefdataCategory.lookupOrCreate("status", "Rejected" )
+    RefdataCategory.lookupOrCreate("affiliation", "Read Only User" )
+    RefdataCategory.lookupOrCreate("affiliation", "Standard User" )
+    RefdataCategory.lookupOrCreate("affiliation", "Administrator" )
+
     log.debug("Bootstrap completed");
   }
 

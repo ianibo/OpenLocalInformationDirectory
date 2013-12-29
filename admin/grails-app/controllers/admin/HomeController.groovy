@@ -23,7 +23,7 @@ class HomeController {
       log.debug("Logged in user is ${request.user}");
       view='userindex.gsp'
       model.records = []
-      model.organisations = TliOrg.executeQuery("select o from TliOrg as o where exists ( select a from Affiliation as a where a.user = ? and a.org = o and a.status = 1 )",[request.user]);
+      model.organisations = TliOrg.executeQuery("select a from Affiliation as a where a.user = ?",[request.user]);
 
       log.debug("Model: ${model}");
     }
