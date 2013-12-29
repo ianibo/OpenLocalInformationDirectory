@@ -14,6 +14,7 @@
 
     <g:layoutHead/>
     <g:javascript library="application"/>
+    <r:require modules="editable"/>
     <r:layoutResources />
 
   </head>
