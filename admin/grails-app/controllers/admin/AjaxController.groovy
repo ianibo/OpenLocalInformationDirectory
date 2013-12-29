@@ -1,13 +1,10 @@
-package com.k_int.kbplus
+package admin
 
 import org.springframework.dao.DataIntegrityViolationException
-import grails.plugins.springsecurity.Secured
 import grails.converters.*
 import org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsHibernateUtil
 
 class AjaxController {
-
-
 
   def lookup() {
     log.debug("AjaxController::lookup ${params}");
