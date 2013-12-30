@@ -20,8 +20,8 @@ class OrgController {
       def new_afflilation_request = new Affiliation(
         user:request.user,
         org:genericOIDService.resolveOID(params.org),
-        role:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
-        status:RefdataCategory.lookupOrCreate("affiliation", params.role )
+        status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
+        role:RefdataCategory.lookupOrCreate("affiliation", params.role )
       ).save()
       redirect(controller:'home', action:'index')
     }
