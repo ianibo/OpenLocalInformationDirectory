@@ -10,7 +10,6 @@ class AjaxSupportController {
   def genericOIDService
   def aclUtilService
 
-
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def edit() { 
     // edit [name:name, value:project:12, pk:org.gokb.cred.Package:2950, action:edit, controller:ajaxSupport]
@@ -162,7 +161,7 @@ class AjaxSupportController {
   def addToCollection() {
     log.debug("AjaxController::addToCollection ${params}");
 
-    def contextObj = resolveOID2(params.__context)
+    def contextObj = genericOIDService.resolveOID(params.__context)
     def domain_class = grailsApplication.getArtefact('Domain',params.__newObjectClass)
 
     if ( domain_class ) {
@@ -180,12 +179,12 @@ class AjaxSupportController {
                 // Set ref property
                 log.debug("set assoc ${p.name} to lookup of OID ${params[p.name]}");
                 // if ( key == __new__ then we need to create a new instance )
-                new_obj[p.name] = resolveOID2(params[p.name])
+                new_obj[p.name] = genericOIDService.resolveOID(params[p.name])
               }
               else {
                 // Add to collection
                 log.debug("add to collection ${p.name} for OID ${params[p.name]}");
-                new_obj[p.name].add(resolveOID2(params[p.name]))
+                new_obj[p.name].add(genericOIDService.resolveOID(params[p.name]))
               }
             }
             else {
@@ -248,7 +247,7 @@ class AjaxSupportController {
             log.debug("Testing ${hbc} -> ${params[hbc]}");
             if ( params[hbc] ) {
               log.debug("Setting ${hbc} to ${params[hbc]}");
-              new_obj[hbc] = resolveOID2(params[hbc])
+              new_obj[hbc] = genericOIDService.resolveOID(params[hbc])
             }
           }
           new_obj.save()
@@ -271,9 +270,9 @@ class AjaxSupportController {
   def addToStdCollection() {
     log.debug("addToStdCollection(${params})");
     // Adds a link to a collection that is not mapped through a join object
-    def contextObj = resolveOID2(params.__context)
+    def contextObj = genericOIDService.resolveOID(params.__context)
     if ( contextObj ) {
-      contextObj[params.__property].add(resolveOID2(params.__relatedObject))
+      contextObj[params.__property].add(genericOIDService.resolveOID(params.__relatedObject))
     }
     redirect(url: request.getHeader('referer'))
   }
@@ -282,9 +281,9 @@ class AjaxSupportController {
   def unlinkManyToMany() {
     log.debug("unlinkManyToMany(${params})");
     // Adds a link to a collection that is not mapped through a join object
-    def contextObj = resolveOID2(params.__context)
+    def contextObj = genericOIDService.resolveOID(params.__context)
     if ( contextObj ) {
-      def item_to_remove = resolveOID2(params.__itemToRemove)
+      def item_to_remove = genericOIDService.resolveOID(params.__itemToRemove)
       if ( item_to_remove ) {
         contextObj[params.__property].remove(item_to_remove)
         contextObj.save()
@@ -303,7 +302,7 @@ class AjaxSupportController {
   def delete() {
     log.debug("delete(${params})");
     // Adds a link to a collection that is not mapped through a join object
-    def contextObj = resolveOID2(params.__context)
+    def contextObj = genericOIDService.resolveOID(params.__context)
     if ( contextObj ) {
       contextObj.delete()
     }
@@ -312,27 +311,6 @@ class AjaxSupportController {
     }
     redirect(url: request.getHeader('referer'))
   }
-
-  def resolveOID2(oid) {
-    def oid_components = oid.split(':');
-    def result = null;
-    def domain_class=null;
-    domain_class = grailsApplication.getArtefact('Domain',oid_components[0])
-    if ( domain_class ) {
-      if ( oid_components[1]=='__new__' ) {
-        result = domain_class.getClazz().refdataCreate(oid_components)
-        log.debug("Result of create ${oid} is ${result}");
-      }
-      else {
-        result = domain_class.getClazz().get(oid_components[1])
-      }
-    }
-    else {
-      log.error("resolve OID failed to identify a domain class. Input was ${oid_components}");
-    }
-    result
-  }
-
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def lookup() {
@@ -354,7 +332,7 @@ class AjaxSupportController {
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def editableSetValue() {
     log.debug("editableSetValue ${params}");
-    def target_object = resolveOID2(params.pk)
+    def target_object = genericOIDService.resolveOID(params.pk)
     if ( target_object ) {
       if ( params.type=='date' ) {
         target_object."${params.name}" = params.date('value','yyyy-MM-dd')
@@ -440,66 +418,4 @@ class AjaxSupportController {
     result;
   }
 
-//  def grant() {
-//    log.debug("Grant: ${params}");
-//    def grantee_obj = genericOIDService.resolveOID(params.grantee)
-//    def dc = genericOIDService.resolveOID(params.__context)
-//    def perm_to_grant = null;
-//    switch ( params.perm ) {
-//      case 'READ':
-//        perm_to_grant = org.springframework.security.acls.domain.BasePermission.READ;
-//        break;
-//      case 'WRITE':
-//        perm_to_grant = org.springframework.security.acls.domain.BasePermission.WRITE;
-//        break;
-//      case 'ADMINISTRATION':
-//        perm_to_grant = org.springframework.security.acls.domain.BasePermission.ADMINISTRATION;
-//        break;
-//      case 'DELETE':
-//        perm_to_grant = org.springframework.security.acls.domain.BasePermission.DELETE;
-//        break;
-//      case 'CREATE':
-//        perm_to_grant = org.springframework.security.acls.domain.BasePermission.CREATE;
-//        break;
-//    }
-//
-//    if ( ( grantee_obj != null ) && ( dc != null ) && ( perm_to_grant != null ) ) {
-//      // http://docs.spring.io/autorepo/docs/spring-security/3.0.x/apidocs/org/springframework/security/acls/model/Acl.html
-//      def grantee = grantee_obj instanceof User ? grantee_obj.username : grantee_obj.authority
-//      aclUtilService.addPermission(dc, grantee, perm_to_grant);
-//    }
-//    redirect(url: request.getHeader('referer'))
-//  }
-//
-//  def revoke() {
-//    log.debug("Revoke: ${params}");
-//
-//    def dc = genericOIDService.resolveOID(params.__context)
-//    def perm_to_revoke = null
-//    switch ( params.perm?.toUpperCase() ) {
-//      case 'READ':
-//        perm_to_revoke = org.springframework.security.acls.domain.BasePermission.READ;
-//        break;
-//      case 'WRITE':
-//        perm_to_revoke = org.springframework.security.acls.domain.BasePermission.WRITE;
-//        break;
-//      case 'ADMINISTRATION':
-//        perm_to_revoke = org.springframework.security.acls.domain.BasePermission.ADMINISTRATION;
-//        break;
-//      case 'DELETE':
-//        perm_to_revoke = org.springframework.security.acls.domain.BasePermission.DELETE;
-//        break;
-//      case 'CREATE':
-//        perm_to_revoke = org.springframework.security.acls.domain.BasePermission.CREATE;
-//        break;
-//    }
-//
-//    if ( ( dc != null ) && ( perm_to_revoke != null ) ) {
-//      // http://docs.spring.io/autorepo/docs/spring-security/3.0.x/apidocs/org/springframework/security/acls/model/Acl.html
-//      log.debug("Revoking ${perm_to_revoke} from ${dc} for ${params.grantee}");
-//      aclUtilService.deletePermission(dc, params.grantee, perm_to_revoke);
-//    }
-//
-//    redirect(url: request.getHeader('referer'))
-//  }
 }
