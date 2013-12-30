@@ -35,13 +35,15 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <sec:ifLoggedIn>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
-                <ul class="dropdown-menu">
-                  <li><g:link controller="requestAuthority">Join existing Authority</g:link></li>
-                  <li><g:link controller="requestAuthority">Request New Authority</g:link></li>
-                </ul>
-              </li>
+              <sec:ifAnyGranted roles="ROLE_ADMIN">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">System Admin</a>
+                  <ul class="dropdown-menu">
+                    <li><g:link controller="admin" action="approveOrgs">Approve Organisations</g:link></li>
+                    <li><g:link controller="admin" action="approveAffiliations">Approve Affiliations</g:link></li>
+                  </ul>
+                </li>
+              </sec:ifAnyGranted>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             </sec:ifLoggedIn>
