@@ -57,21 +57,24 @@
        <div class="col-md-6">
          <div class="panel panel-default">
            <div class="panel-heading clearfix">
-             Your Records
-             <g:link controller="resource" action="create" class="btn btn-success btn-xs pull-right">New Record</g:link>
+             Your Collections
            </div>
            <div class="panel-body">
-             <g:if test="${records?.size() > 0}">
+             <g:if test="${colls?.size() > 0}">
                <table class="table table-striped">
                  <thead>
                    <tr>
-                     <th>Head</th>
+                     <th>Name</th>
+                     <th>Owned By</th>
                    </tr>
                  </thead>
                  <tbody>
-                   <tr>
-                     <th>Head</th>
-                   </tr>
+                   <g:each in="${colls}" var="c">
+                     <tr>
+                       <td><g:link controller="collection" id="${c.shortcode}" action="show">${c.name}</g:link></td>
+                       <td>${c.owner.displayName}</td>
+                     </tr>
+                   </g:each>
                  </tbody>
                </table>
              </g:if>

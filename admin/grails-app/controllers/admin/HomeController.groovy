@@ -27,7 +27,9 @@ class HomeController {
       model.records = []
       model.organisations = TliOrg.executeQuery("select a from Affiliation as a where a.user = ?",[request.user]);
 
-      log.debug("Model: ${model}");
+      // All collections this user has access to (Currently = collectons of the org)
+      model.colls = TliOrg.executeQuery("select c from TliCollection as c where exists ( select a from Affiliation as a where a.org = c.owner and a.user = ? )", [request.user]);
+
     }
     else {
       log.debug("No logged in user");
