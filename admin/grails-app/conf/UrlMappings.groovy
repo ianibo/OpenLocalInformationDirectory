@@ -11,8 +11,13 @@ class UrlMappings {
     "/"(controller:'home',action:'index')
     "500"(view:'/error')
 
-    "/orgs"(resources:"org")
+    "/orgs"(resources:"org") {
+    }
 
     "/org/$id/requestNewCollection"(controller='org',action:'requestNewCollection')
+
+    "/collections" (resources:"collection") {
+    }
+
   }
 }

@@ -30,6 +30,7 @@ class OrgController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def requestNewCollection(String id) {
+    log.debug("requestNewCollection ${params},${id}");
     def result = [:]
     if ( id != null && id != '' ) {
       result.org = TliOrg.findByShortcode(id)
@@ -37,6 +38,17 @@ class OrgController {
     else {
       redirect(controller:'home', action:'index');
     }
+
+    if ( request.method=='POST' ) {
+      log.debug("Create new collection");
+      def new_collection = new TliCollection(owner:result.org, 
+                                             name:params.collName, 
+                                             description:params.description,
+                                             shortcode:shortcodeService.generate('tli.TliCollection','shortcode',params.collName)).save()
+      redirect(controller:'org',id:result.org.shortcode)
+    }
+
+
     result
   }
 

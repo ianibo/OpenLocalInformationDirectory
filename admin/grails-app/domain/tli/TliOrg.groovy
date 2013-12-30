@@ -11,6 +11,14 @@ class TliOrg extends TliParty {
     shortcode(nullable:false, blank:false, unique:true)
   }
 
+  static hasMany = [
+    collections:TliCollection
+  ]
+
+  static mappedBy = [
+    collections:'owner'
+  ]
+
   static def refdataFind(params) {
     def result = [];
     def ql = null;
