@@ -20,14 +20,18 @@
                <thead>
                  <tr>
                    <th>Organisation Name</th>
-                   <th>Status</th>
+                   <th>Actions</th>
                  </tr>
                </thead>
                <tbody>
                  <g:each in="${pendinfg_orgs}" var="o">
                    <tr>
                      <td>${o.displayName}</td>
-                     <td>${o.status?.value}</td>
+                     <td>
+                       <g:link controller="admin" action="approveOrgs" params="${[org:o.id,act:'Y']}" class="btn btn-success btn-xs pull-right">Approve</g:link>
+                       &nbsp;
+                       <g:link controller="admin" action="approveOrgs" params="${[org:o.id,act:'N']}" class="btn btn-success btn-xs pull-right">Reject</g:link>
+                     </td>
                    </tr>
                  </g:each>
                </tbody>

@@ -22,7 +22,7 @@
                    <th>User Name</th>
                    <th>Organisation Name</th>
                    <th>Requested Permission</th>
-                   <th>Status</th>
+                   <th>Action</th>
                  </tr>
                </thead>
                <tbody>
@@ -31,7 +31,11 @@
                      <td>${a.user.displayName}</td>
                      <td>${a.org.displayName}</td>
                      <td>${a.role?.value}</td>
-                     <td>${a.status?.value}</td>
+                     <td>
+                       <g:link controller="admin" action="approveAffiliations" params="${[aff:a.id,act:'Y']}" class="btn btn-success btn-xs pull-right">Approve</g:link>
+                       &nbsp;
+                       <g:link controller="admin" action="approveAffiliations" params="${[aff:a.id,act:'N']}" class="btn btn-success btn-xs pull-right">Reject</g:link>
+                     </td>
                    </tr>
                  </g:each>
                </tbody>
