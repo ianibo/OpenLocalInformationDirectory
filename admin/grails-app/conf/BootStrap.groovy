@@ -37,14 +37,14 @@ class BootStrap {
     def affiliation_su = RefdataCategory.lookupOrCreate("affiliation", "Standard User" )
     def affiliation_ad = RefdataCategory.lookupOrCreate("affiliation", "Administrator" )
 
-    def test_org_1 = TliOrg.findByDisplayName('AtestOrg1') ?: new TliOrg(displayName:'AtestOrg1', status:status_approved).save();
-    def test_org_2 = TliOrg.findByDisplayName('BtestOrg2') ?: new TliOrg(displayName:'BtestOrg2', status:status_approved).save();
-    def test_org_3 = TliOrg.findByDisplayName('CtestOrg3') ?: new TliOrg(displayName:'CtestOrg3', status:status_approved).save();
-    def test_org_4 = TliOrg.findByDisplayName('DtestOrg4') ?: new TliOrg(displayName:'DtestOrg4', status:status_approved).save();
-    def test_org_5 = TliOrg.findByDisplayName('EtestOrg5') ?: new TliOrg(displayName:'EtestOrg5', status:status_approved).save();
-    def test_org_6 = TliOrg.findByDisplayName('FtestOrg6') ?: new TliOrg(displayName:'FtestOrg6', status:status_approved).save();
-    def test_org_7 = TliOrg.findByDisplayName('GtestOrg7') ?: new TliOrg(displayName:'GtestOrg7', status:status_approved).save();
-    def test_org_8 = TliOrg.findByDisplayName('HtestOrg8') ?: new TliOrg(displayName:'HtestOrg8', status:status_approved).save();
+    def test_org_1 = TliOrg.findByDisplayName('AtestOrg1') ?: new TliOrg(displayName:'AtestOrg1', status:status_approved, shortcode:'a').save();
+    def test_org_2 = TliOrg.findByDisplayName('BtestOrg2') ?: new TliOrg(displayName:'BtestOrg2', status:status_approved, shortcode:'b').save();
+    def test_org_3 = TliOrg.findByDisplayName('CtestOrg3') ?: new TliOrg(displayName:'CtestOrg3', status:status_approved, shortcode:'c').save();
+    def test_org_4 = TliOrg.findByDisplayName('DtestOrg4') ?: new TliOrg(displayName:'DtestOrg4', status:status_approved, shortcode:'d').save();
+    def test_org_5 = TliOrg.findByDisplayName('EtestOrg5') ?: new TliOrg(displayName:'EtestOrg5', status:status_approved, shortcode:'e').save();
+    def test_org_6 = TliOrg.findByDisplayName('FtestOrg6') ?: new TliOrg(displayName:'FtestOrg6', status:status_approved, shortcode:'f').save();
+    def test_org_7 = TliOrg.findByDisplayName('GtestOrg7') ?: new TliOrg(displayName:'GtestOrg7', status:status_approved, shortcode:'g').save();
+    def test_org_8 = TliOrg.findByDisplayName('HtestOrg8') ?: new TliOrg(displayName:'HtestOrg8', status:status_approved, shortcode:'h').save();
 
     log.debug("Bootstrap completed");
   }

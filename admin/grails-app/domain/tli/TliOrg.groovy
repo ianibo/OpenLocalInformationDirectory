@@ -4,9 +4,11 @@ package tli
 class TliOrg extends TliParty {
 
   RefdataValue status
+  String shortcode
 
   static constraints = {
-    status(nullable:true, blank:false)
+    status(nullable:false, blank:false)
+    shortcode(nullable:false, blank:false, unique:true)
   }
 
   static def refdataFind(params) {
