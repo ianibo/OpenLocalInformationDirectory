@@ -19,14 +19,25 @@
            <div>
 
              &nbsp;<br/>
-             <g:form action="requestNew" role="form" method="post">
+             <g:form action="requestAffiliation" role="form" method="post">
                <div class="col-lg-12">
                <fieldset>
                  <div class="control-group">
-                   <label class="control-label" for="orgName">Organisation Name</label>
+                   <label class="control-label" for="org">Organisation Name</label>
                    <div class="controls">
-                     <g:simpleReferenceTypedown class="input-xxlarge" style="width:350px;" name="orgName" baseClass="tli.TliOrg" data-filter1="${request.user?.id}"/>
+                     <g:simpleReferenceTypedown class="input-xxlarge" style="width:350px;" name="org" baseClass="tli.TliOrg" data-filter1="${request.user?.id}"/>
                      <p class="help-block">Search for the organisation you wish to associate with</p>
+                   </div>
+                 </div>
+                 <div class="control-group">
+                   <label class="control-label" for="role">Requested Role</label>
+                   <div class="controls">
+                     <select name="role">
+                       <option value="Standard User">Standard User - Able to manage records but not perform administrative functions</option>
+                       <option value="Administrator">Administrator - Able to manage records AND peform administrative functions</option>
+                       <option value="Read Only User">Read Only User - For reference use</option>
+                     </select>
+                     <p class="help-block">Role you wish to request</p>
                    </div>
                  </div>
                  <br/>

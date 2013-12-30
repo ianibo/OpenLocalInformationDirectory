@@ -7,6 +7,7 @@ import tli.*
 class OrgController {
 
   def springSecurityService
+  def genericOIDService
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
@@ -14,6 +15,16 @@ class OrgController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def requestAffiliation() {
+    log.debug("${params}");
+    if ( request.method == 'POST' ) {
+      def new_afflilation_request = new Affiliation(
+        user:request.user,
+        org:genericOIDService.resolveOID(params.org),
+        role:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
+        status:RefdataCategory.lookupOrCreate("affiliation", params.role )
+      ).save()
+      redirect(controller:'home', action:'index')
+    }
   }
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
