@@ -336,7 +336,7 @@ class AjaxSupportController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def lookup() {
-    log.debug("AjaxController::lookup ${params}");
+    log.debug("AjaxController::lookup ${params} ${request.user}");
     def result = [:]
     params.max = params.max ?: 10;
     def domain_class = grailsApplication.getArtefact('Domain',params.baseClass)

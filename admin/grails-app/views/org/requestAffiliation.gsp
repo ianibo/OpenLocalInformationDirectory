@@ -25,7 +25,7 @@
                  <div class="control-group">
                    <label class="control-label" for="orgName">Organisation Name</label>
                    <div class="controls">
-                     <g:simpleReferenceTypedown class="input-xxlarge" style="width:350px;" name="orgName" baseClass="tli.TliOrg"/>
+                     <g:simpleReferenceTypedown class="input-xxlarge" style="width:350px;" name="orgName" baseClass="tli.TliOrg" data-filter1="${request.user?.id}"/>
                      <p class="help-block">Search for the organisation you wish to associate with</p>
                    </div>
                  </div>
