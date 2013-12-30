@@ -10,5 +10,9 @@ class UrlMappings {
 
     "/"(controller:'home',action:'index')
     "500"(view:'/error')
+
+    "/orgs"(resources:"org")
+
+    "/org/$id/requestNewCollection"(controller='org',action:'requestNewCollection')
   }
 }

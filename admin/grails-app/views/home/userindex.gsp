@@ -30,7 +30,7 @@
                      <tr>
                        <td>
                          <g:if test="${a.org.status.value=='Approved'}">
-                           <g:link controller="org" action="index" id="${a.org.shortcode}">${a.org.displayName}</g:link>
+                           <g:link controller="org" id="${a.org.shortcode}" action="show">${a.org.displayName}</g:link>
                          </g:if>
                          <g:else>
                            ${a.org.displayName} (${a.org.status.value}) 
