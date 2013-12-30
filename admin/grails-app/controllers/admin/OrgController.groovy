@@ -12,41 +12,13 @@ class OrgController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
-  }
-
-  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
-  def requestAffiliation() {
-    log.debug("${params}");
-    if ( request.method == 'POST' ) {
-      def new_afflilation_request = new Affiliation(
-        user:request.user,
-        org:genericOIDService.resolveOID(params.org),
-        status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
-        role:RefdataCategory.lookupOrCreate("affiliation", params.role )
-      ).save()
-      redirect(controller:'home', action:'index')
-    }
-  }
-
-  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
-  def requestNew() {
-    if ( request.method == 'POST' ) {
-      def existing_org = TliOrg.findByDisplayNameIlike(params.orgName)
-      if ( existing_org == null ) {
-        def proposed_org = new TliOrg(displayName:params.orgName, 
-                                      status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
-                                      shortcode:shortcodeService.generate('tli.TliOrg','shortcode',params.orgName)).save()
-        def affiliation = new Affiliation(user:request.user, 
-                                          org:proposed_org,
-                                          status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
-                                          role:RefdataCategory.lookupOrCreate("affiliation", "Administrator" )).save(flush:true)
-        redirect(controller:'home', action:'index')
-      }
-      else {
-        redirect(controller:'org', action:'show', id:existing_org.id)
-      }
+    def result = [:]
+    if ( params.id != null && params.id != '' ) {
+      result.org = TliOrg.findByShortcode(params.id)
     }
     else {
+      redirect(controller:'home', action:'index');
     }
+    result
   }
 }

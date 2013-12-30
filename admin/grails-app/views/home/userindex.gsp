@@ -14,7 +14,7 @@
          <div class="panel panel-default">
            <div class="panel-heading clearfix">
              Your Organisations
-             <g:link controller="org" action="requestAffiliation" class="btn btn-success btn-xs pull-right">Request Affiliation</g:link>
+             <g:link controller="home" action="requestAffiliation" class="btn btn-success btn-xs pull-right">Request Affiliation</g:link>
            </div>
            <div class="panel-body">
              <g:if test="${organisations?.size() > 0}">
@@ -28,7 +28,14 @@
                  <tbody>
                    <g:each in="${organisations}" var="a">
                      <tr>
-                       <td><g:link controller="org" action="index" id="${a.id}">${a.org.displayName}</g:link> (${a.org.status.value})</td>
+                       <td>
+                         <g:if test="${a.org.status.value=='Approved'}">
+                           <g:link controller="org" action="index" id="${a.org.shortcode}">${a.org.displayName}</g:link>
+                         </g:if>
+                         <g:else>
+                           ${a.org.displayName} (${a.org.status.value}) 
+                         </g:else>
+                       </td>
                        <td>${a.role} (${a.status.value})</td>
                      </tr>
                    </g:each>

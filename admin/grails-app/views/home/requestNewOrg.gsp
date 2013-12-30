@@ -17,7 +17,7 @@
            </div>
            <div>
              &nbsp;<br/>
-             <g:form action="requestNew" role="form" method="post">
+             <g:form controller="home" action="requestNewOrg" role="form" method="post">
                <div class="col-lg-12">
                <fieldset>
                  <div class="control-group">  

@@ -14,12 +14,12 @@
         <div class="panel panel-default">
            <div class="panel-heading clearfix">
              Request Affiliation
-             <g:link controller="org" action="requestNew" class="btn btn-success btn-xs pull-right">Request New Organisation</g:link>
+             <g:link controller="home" action="requestNewOrg" class="btn btn-success btn-xs pull-right">Request New Organisation</g:link>
            </div>
            <div>
 
              &nbsp;<br/>
-             <g:form action="requestAffiliation" role="form" method="post">
+             <g:form controller="home" action="requestAffiliation" role="form" method="post">
                <div class="col-lg-12">
                <fieldset>
                  <div class="control-group">
