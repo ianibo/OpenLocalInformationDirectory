@@ -181,3 +181,27 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 ]
 
+
+globalSearchTemplates = [
+  'refdataCategories':[
+    baseclass:'tli.RefdataCategory',
+    title:'Refdata Categories ',
+    group:'Secondary',
+    qbeConfig:[
+      qbeForm:[
+        [
+          prompt:'Description',
+          qparam:'qp_desc',
+          placeholder:'Category Description',
+          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'desc']
+        ],
+      ],
+      qbeGlobals:[
+        ['ctxtp':'filter', 'prop':'desc', 'comparator' : 'ilike', 'value':'Combo.%', 'negate' : true]
+      ],
+      qbeResults:[
+        [heading:'Description', property:'desc',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id']]
+      ]
+    ]
+  ]
+]

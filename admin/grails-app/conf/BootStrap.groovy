@@ -1,8 +1,18 @@
 import tli.*
 
+import org.codehaus.groovy.grails.commons.DefaultGrailsDomainClass
+import javax.servlet.http.HttpServletRequest
+
 class BootStrap {
 
   def init = { servletContext ->
+
+    // Add a custom check to see if this is an ajax request.
+    HttpServletRequest.metaClass.isAjax = {
+      'XMLHttpRequest' == delegate.getHeader('X-Requested-With')
+    }
+
+
     // Global System Roles
     def userRole = TliRole.findByAuthority('ROLE_USER') ?: new TliRole(authority: 'ROLE_USER', roleType:'global').save(failOnError: true)
     def editorRole = TliRole.findByAuthority('ROLE_EDITOR') ?: new TliRole(authority: 'ROLE_EDITOR', roleType:'global').save(failOnError: true)

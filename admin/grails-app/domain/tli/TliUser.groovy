@@ -11,12 +11,17 @@ class TliUser extends TliParty {
   boolean accountExpired
   boolean accountLocked
   boolean passwordExpired
+  Long defaultPageSize = 10;
+  RefdataValue showQuickView
 
   static transients = ['springSecurityService']
 
   static constraints = {
     username blank: false, unique: true
     password blank: false
+    password blank: false
+    defaultPageSize(nullable:true, blank:false)
+    showQuickView(nullable:true, blank:false)
   }
 
   static mapping = {
