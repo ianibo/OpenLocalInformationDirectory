@@ -1,6 +1,7 @@
 <r:require modules="tlistyle"/>
 <r:require modules="editable"/>
-<form class="form-horizontal" role="form" >
+<div class="container-fluid">
+<form class="form form-horizontal" role="form" >
   <input type="hidden" name="qbe" value="${params.qbe}"/>
   <fieldset>
     <g:each in="${formdefn}" var="fld">
@@ -22,6 +23,7 @@
           </g:else>
         </div>
       </div>
+      </br>
     </g:each>
 
     <div class="control-group">
@@ -29,7 +31,9 @@
         <button type="submit" class="btn btn-primary">Search</button>
       </div>
     </div>
+    <br/>
+
   <fieldset>
 
 </form>
-
+</div>
