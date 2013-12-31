@@ -116,10 +116,12 @@
 	      </g:each>
 	    </tbody>
 	  </table>
+          <!--
 	  <div class="pull-right well" id="bulkActionControls">
 	    <h4>Available actions for selected rows</h4>
 	    <select id="selectedBulkAction" name="selectedBulkAction"></select>
 	    <button type="submit" class="btn btn-primary">Action</button>
 	  </div>
+          -->
 	</g:form>
 </g:else>
