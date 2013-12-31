@@ -20,34 +20,38 @@
   <div class="container-fluid">
     <div class="row-fluid">
       <div id="mainarea" class="${displayobj != null ? 'col-md-6' : 'col-md-12'}">
+
         <div class="well">
+
           <g:if test="${qbetemplate==null}">
               Please select a template from the navigation menu
             </g:if>
           <g:else>
+
             <nav class="navbar navbar-default" role="navigation">
-              <div class="navbar-inner">
-                <div class="navbar-header">
-                  <span class="brand">${qbetemplate.title?:'Search'}</brand>
-                  <g:if test="${recset != null}"> : Records ${offset+1} to ${lasthit} of ${reccount}
-                  </g:if>
-                </div>
-                <g:if test="${recset != null}">
-                  <ul class="nav navbar-nav navbar-right">
-                    <li><g:link title="Previous Page" controller="search"
+
+                <ul class="nav navbar-nav navbar-left">
+                  <li>
+                    <p class="navbar-text"><span class="brand">${qbetemplate.title?:'Search'}</brand>
+                    <g:if test="${recset != null}"> : Records ${offset+1} to ${lasthit} of ${reccount}
+                  </g:if></p>
+                  </li>
+                </ul>
+                  
+                <ul class="nav navbar-nav navbar-right">
+                  <li><g:link title="Previous Page" controller="search"
                         action="index"
                         params="${params+[offset:(offset-max),det:null]}">
                         <i class="icon-chevron-left"></i>
                       </g:link></li>
-                    <li class="divider-vertical"></li>
-                    <li><g:link title="Next Page" controller="search"
+                  <li class="divider-vertical"></li>
+                  <li><g:link title="Next Page" controller="search"
                         action="index"
                         params="${params+[offset:(offset+max),det:null]}">
                         <i class="icon-chevron-right"></i>
                       </g:link></li>
-                  </ul>
-                </g:if>
-              </div>
+                </ul>
+
             </nav>
 
             <g:if test="${(qbetemplate.message != null)}">
