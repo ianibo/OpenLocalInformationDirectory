@@ -6,6 +6,7 @@ class RefdataValue {
   String icon
   String description
   String sortKey
+  String termId
   RefdataValue useInstead
 
   static belongsTo = [
@@ -15,12 +16,13 @@ class RefdataValue {
   static mapping = {
     id column:'rdv_id'
     version column:'rdv_version'
-    owner column:'rdv_owner', index:'rdv_entry_idx'
+    owner column:'rdv_owner', index:'rdv_entry_idx, rdv_term_id_idx'
     value column:'rdv_value', index:'rdv_entry_idx'
     description column:'rdv_desc'
     sortKey column:'rdv_sortkey'
     useInstead column:'rdv_use_instead'
     icon column:'rdv_icon'
+    termId column:'rdv_term_id', index:'rdv_term_id_idx'
   }
 
   static constraints = {
@@ -28,6 +30,7 @@ class RefdataValue {
     description(nullable:true, blank:true, maxSize:64)
     useInstead(nullable:true, blank:false)
     sortKey(nullable:true, blank:false)
+    termId(nullable:true, blank:false)
   }
 
   @Override

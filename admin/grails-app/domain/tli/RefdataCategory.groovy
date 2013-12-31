@@ -3,10 +3,12 @@ package tli
 class RefdataCategory {
 
   String desc
+  String code
   Set values
 
   static mapping = {
          id column:'rdc_id'
+       code column:'rdc_code'
     version column:'rdc_version'
        desc column:'rdc_description', index:'rdc_description_idx'
      values sort:'value', order:'asc'
@@ -22,6 +24,8 @@ class RefdataCategory {
   ]
 
   static constraints = {
+    code(nullable:true, blank:false);
+    desc(nullable:true, blank:false);
   }
 
   static RefdataValue lookupOrCreate(category_name, value) {

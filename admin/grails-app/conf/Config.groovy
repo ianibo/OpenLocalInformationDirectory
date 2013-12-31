@@ -125,7 +125,9 @@ log4j = {
            'grails.app.tagLib',
            'grails.app.filters',
            'grails.app.conf',
-           'grails.app.jobs'
+           'grails.app.jobs',
+           'grails.app.bootstrap',
+           'grails.app.startup'
            // 'grails.app.services.grails.plugin.springsecurity.ui.SpringSecurityUiService',
            // 'org.codehaus.groovy.grails.web.mapping'
 

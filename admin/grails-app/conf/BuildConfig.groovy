@@ -76,6 +76,7 @@ grails.project.dependency.resolution = {
         compile ':mail:1.0.1', {
            excludes 'spring-test'
         }
+        compile ":rest:0.8"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"

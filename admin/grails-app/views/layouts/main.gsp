@@ -41,6 +41,7 @@
                   <ul class="dropdown-menu">
                     <li><g:link controller="admin" action="approveOrgs">Approve Organisations</g:link></li>
                     <li><g:link controller="admin" action="approveAffiliations">Approve Affiliations</g:link></li>
+                    <li><g:link controller="admin" action="loadVocabulary">Load Vocabulary</g:link></li>
                   </ul>
                 </li>
               </sec:ifAnyGranted>

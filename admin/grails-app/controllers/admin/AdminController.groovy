@@ -8,6 +8,7 @@ class AdminController {
 
   def springSecurityService
   def genericOIDService
+  def vocabSyncService
 
   @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
@@ -55,6 +56,16 @@ class AdminController {
 
     def status_pending = RefdataCategory.lookupOrCreate("status", "Pending Approval" )
     result.pendinfg_affiliations = Affiliation.findAllByStatus(status_pending)
+    result
+  }
+
+  @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+  def loadVocabulary() {
+    def result=[:]
+    if ( request.method=='POST' ) {
+      vocabSyncService.update(params.vocabCode,params.vocabBaseUrl, params.vocabPath);
+    }
+
     result
   }
 
