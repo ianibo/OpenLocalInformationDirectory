@@ -203,5 +203,34 @@ globalSearchTemplates = [
         [heading:'Description', property:'desc',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id']]
       ]
     ]
-  ]
+  ],
+  'resources':[
+    baseclass:'tli.DirectoryEntry',
+    title:'Directory Entry ',
+    group:'Primary',
+    qbeConfig:[
+      qbeForm:[
+        [
+          prompt:'Title',
+          qparam:'qp_title',
+          placeholder:'Title',
+          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'title']
+        ],
+      ],
+      qbeGlobals:[
+        // ['ctxtp':'filter', 'prop':'desc', 'comparator' : 'ilike', 'value':'Combo.%', 'negate' : true]
+      ],
+      qbeResults:[
+        [heading:'Title', property:'title',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id']],
+        [heading:'Description', property:'description']
+      ]
+    ]
+  ],
+
 ]
+
+// Types: staticgsp: under views/templates, dyngsp: in database, dynamic:full dynamic generation, other...
+globalDisplayTemplates = [
+  'tli.DirectoryEntry': [ type:'staticgsp', rendername:'resource' ],
+]
+
