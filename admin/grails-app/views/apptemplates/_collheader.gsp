@@ -4,6 +4,7 @@
     <ul class="nav nav-pills">
       <li class="active"><a href="">Search</a></li>
       <li><a href="">Stats</a></li>
+      <li class="pull-right"><a href="">New Directory Entry</a></li>
     </ul>
     <br/>
   </div>

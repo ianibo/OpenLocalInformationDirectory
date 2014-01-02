@@ -33,7 +33,6 @@
                            <g:link controller="org" id="${a.org.shortcode}" action="show">${a.org.displayName}</g:link><br/>
                            <ul class="inline">
                              <g:each in="${a.org.collections}" var="col">
-                               <li><g:link controller="search" action="index" params="${[qbe:'g:resources']}" >${col.name}</g:link></li>
                                <li><g:link controller="collection" action="index" id="${col.shortcode}">${col.name}</g:link></li>
                              </g:each>
                            </ul>

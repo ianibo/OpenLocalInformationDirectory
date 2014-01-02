@@ -49,13 +49,12 @@
                   <li><g:link title="Previous Page" controller="search"
                         action="index"
                         params="${params+[offset:(offset-max),det:null]}">
-                        <i class="icon-chevron-left"></i>
+                        <span class="glyphicon glyphicon-chevron-left"/>
                       </g:link></li>
-                  <li class="divider-vertical"></li>
                   <li><g:link title="Next Page" controller="search"
                         action="index"
                         params="${params+[offset:(offset+max),det:null]}">
-                        <i class="icon-chevron-right"></i>
+                        <span class="glyphicon glyphicon-chevron-right"/>
                       </g:link></li>
                 </ul>
 
