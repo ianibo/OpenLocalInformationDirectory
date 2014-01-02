@@ -19,11 +19,7 @@ class UrlMappings {
     // "/collections"(resources:"collection", action:"show") {
     // }
 
-    "/collections/$id"(controller:'search',action:'index') {
-      qbe='g:resources'
-    }
-
-    "/collections/$id/stats"(controller:'collection', action:'stats');
+    "/collections/$id/stats"(controller:'collection', action:'stats')
 
   }
 }
