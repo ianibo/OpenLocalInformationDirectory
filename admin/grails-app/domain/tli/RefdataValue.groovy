@@ -16,13 +16,13 @@ class RefdataValue {
   static mapping = {
     id column:'rdv_id'
     version column:'rdv_version'
-    owner column:'rdv_owner', index:'rdv_entry_idx, rdv_term_id_idx'
+    termId column:'rdv_term_id', index:'rdv_term_id_idx'
+    owner column:'rdv_owner', index:'rdv_entry_idx,rdv_term_id_idx'
     value column:'rdv_value', index:'rdv_entry_idx'
     description column:'rdv_desc'
     sortKey column:'rdv_sortkey'
     useInstead column:'rdv_use_instead'
     icon column:'rdv_icon'
-    termId column:'rdv_term_id', index:'rdv_term_id_idx'
   }
 
   static constraints = {

@@ -9,6 +9,9 @@ import tli.*
 class VocabSyncService {
 
   def shortcodeService
+  def sessionFactory
+  def propertyInstanceMap = org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin.PROPERTY_INSTANCE_MAP
+
 
   static transactional = true
 
@@ -87,7 +90,6 @@ class VocabSyncService {
               }
             }
           }
-
         }
 
       }
@@ -99,4 +101,13 @@ class VocabSyncService {
       log.debug("All done");
     }
   }
+
+  def cleanUpGorm() {
+    log.debug("Clean up GORM");
+    def session = sessionFactory.currentSession
+    session.flush()
+    session.clear()
+    propertyInstanceMap.get().clear()
+  }
+
 }
