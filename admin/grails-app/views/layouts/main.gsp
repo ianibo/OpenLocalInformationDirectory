@@ -44,6 +44,7 @@
                     <li><g:link controller="admin" action="loadVocabulary">Load Vocabulary</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:refdataCategories']}">Refdata Categories</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:resources']}">Resources</g:link></li>
+                    <li><g:link controller="search" action="index" params="${[qbe:'g:orgs']}">Organisations</g:link></li>
                   </ul>
                 </li>
               </sec:ifAnyGranted>

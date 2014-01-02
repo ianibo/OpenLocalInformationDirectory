@@ -208,6 +208,7 @@ globalSearchTemplates = [
     baseclass:'tli.DirectoryEntry',
     title:'Directory Entry ',
     group:'Primary',
+    customHeaderInclude:'collheader',
     qbeConfig:[
       qbeForm:[
         [
@@ -226,11 +227,34 @@ globalSearchTemplates = [
       ]
     ]
   ],
+  'orgs':[
+    baseclass:'tli.TliOrg',
+    title:'Organisation ',
+    group:'Primary',
+    qbeConfig:[
+      qbeForm:[
+        [
+          prompt:'Title',
+          qparam:'qp_title',
+          placeholder:'Org Name',
+          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'displayName']
+        ],
+      ],
+      qbeGlobals:[
+        // ['ctxtp':'filter', 'prop':'desc', 'comparator' : 'ilike', 'value':'Combo.%', 'negate' : true]
+      ],
+      qbeResults:[
+        [heading:'Organisation Name', property:'displayName',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id']]
+      ]
+    ]
+  ],
+
 
 ]
 
 // Types: staticgsp: under views/templates, dyngsp: in database, dynamic:full dynamic generation, other...
 globalDisplayTemplates = [
   'tli.DirectoryEntry': [ type:'staticgsp', rendername:'resource' ],
+  'tli.TliOrg': [ type:'staticgsp', rendername:'org' ],
 ]
 

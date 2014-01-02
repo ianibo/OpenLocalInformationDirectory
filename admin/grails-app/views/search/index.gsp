@@ -17,9 +17,15 @@
 </head>
 <body>
 
-  <div class="container-fluid">
-    <div class="row-fluid">
+  <div class="container">
+    <div class="row">
       <div id="mainarea" class="${displayobj != null ? 'col-md-6' : 'col-md-12'}">
+
+        <g:if test="${qbetemplate.customHeaderInclude!=null}">
+          <g:render template="${qbetemplate.customHeaderInclude}" 
+                    contextPath="../apptemplates" 
+                    model="${[qbeConfig:qbetemplate.qbeConfig, rows:recset, offset:offset, det:det]}" />
+        </g:if>
 
         <div class="well">
 
