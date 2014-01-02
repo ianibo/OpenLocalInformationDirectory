@@ -1,0 +1,218 @@
+http://www.aberdeencity.gov.uk/libraries	Aberdeen City	http://opac.aberdeencity.gov.uk/TalisPrism/
+http://www.aberdeenshire.gov.uk/libraries/	Aberdeenshire	http://opac.aberdeenshire.gov.uk/ 
+http://www.alderneylibrary.org/index.htm	Alderney
+http://www.ynysmon.gov.uk/doc.asp?cat=1213	Anglesey	http://talisweb.talnet.gov.uk/%22
+http://www.angus.gov.uk/services/view_service_detail.cfm?serviceid=1085	Angus	http://library.angus.gov.uk/
+http://www.argyll-bute.gov.uk/content/leisure/libraries/	Argyll &amp; Bute	https://lib.argyll-bute.gov.uk/
+http://www.barking-dagenham.gov.uk/4-libraries/libraries-menu.html	Barking &amp; Dagenham	http://library.barking-dagenham.gov.uk/
+http://www.barnet.gov.uk/cultural_services/libraries/	Barnet	http://www.libraries.barnet.gov.uk/
+http://www.barnsley.gov.uk/bguk/Leisure_Culture/Libraries	Barnsley	http://librarycatalogue.barnsley.gov.uk/
+http://www.bathnes.gov.uk/BathNES/leisureandculture/Libraries/default.htm	Bath &amp; North East Somerset	http://www.librarieswest.org.uk/
+http://www.galaxy.bedfordshire.gov.uk/cgi-bin/vlib.sh	Bedfordshire
+http://www.belb.org.uk/libraries/	Belfast ELB (N.I.)	http://opac.ni-libraries.net/
+http://www.bexley.gov.uk/library/library.html	Bexley	http://www.bexley.gov.uk/service/lib-e-library.html
+http://www.birmingham.gov.uk/libraries	Birmingham	http://www.birmingham.gov.uk/libcat
+http://www.blackburn.gov.uk/libraries/	Blackburn with Darwen	http://195.8.175.2/
+http://www.blackpool.gov.uk/LeisureandCulture/Libraries/	Blackpool	http://libraries.blackpool.gov.uk/
+http://www.blaenau-gwent.gov.uk/leisure/273.asp	Blaenau Gwent	http://bglibcat.blaenau-gwent.gov.uk/
+http://www.bolton.gov.uk/libraries	Bolton	http://www.bolton.gov.uk/portal/page?_pageid=62,46689&amp;_dad=portal92&amp;_schema=PORTAL92
+http://www.bournemouth.gov.uk/Residents/Libraries/	Bournemouth
+http://www.bracknell-forest.gov.uk/libraries/	Bracknell Forest	http://bracknell-hip.epixtech.co.uk/ipac20/ipac.jsp?session=O1885MK847725.1437&amp;profile=bbra&amp;menu=search&amp;ts=1188552847762#focus
+http://www.bradford.gov.uk/libraries	Bradford	http://www.biskit.yorks.com/catalogue.html
+http://www.brent.gov.uk/library.nsf	Brent	http://library.brent.gov.uk/
+http://www.bridgend.gov.uk/libraries	Bridgend	http://geoweb.bridgend.gov.uk:8000/
+http://www.citylibraries.info/	Brighton &amp; Hove	http://brighton-hove.spydus.co.uk/
+http://www.bristol-city.gov.uk/libraries	Bristol	http://www.bristol-city.gov.uk/librarycatalogue
+http://www.bromley.gov.uk/libraries	Bromley	http://www.library.bromley.gov.uk/
+http://www.buckscc.gov.uk/libraries	Buckinghamshire	http://www.buckscc.gov.uk/libraries/pubcat.htm
+http://www.bury.gov.uk/libraries	Bury	http://library.bury.gov.uk
+http://www.caerphilly.gov.uk/learning/libraries/index.htm	Caerphilly	http://www.caerphilly.gov.uk/learning/libraries/onlinelibrarycatalogue/
+http://www.calderdale.gov.uk/leisure/libraries/index.html	Calderdale	http://libonline.calderdale.gov.uk/
+http://www.cambridgeshire.gov.uk/leisure/libraries/	Cambridgeshire	http://www.cambridgeshire.gov.uk/leisure/libraries/catalogue/
+http://www.camden.gov.uk/libraries	Camden	http://www.camden.gov.uk/librarycatalogue
+http://www.cardiff.gov.uk/libraries	Cardiff	http://ibistro.cardiff.gov.uk
+http://www.carmarthenshire.gov.uk/eng/index.asp?docID=7765	Carmarthenshire	http://libraries.carmarthenshire.gov.uk/opac_eng/webopac_splash_eng.htm
+http://www.castletown.gov.im/default.aspx?CategoryID=34	Castletown
+http://www.ceredigion.gov.uk/index.cfm?articleid=348	Ceredigion	http://libraries.ceredigion.gov.uk/
+http://www.cheshire.gov.uk/Library/	Cheshire	http://libcat.cheshire.gov.uk/cgi-bin/viewpoint_server.sh
+http://www.cityoflondon.gov.uk/libraries	City of London	http://librarycatalogue.cityoflondon.gov.uk/www-bin/www_talis
+http://www.clacksweb.org.uk/dyna/library/	Clackmannanshire	http://www.clacksweb.org.uk/dyna/libcat/
+http://www.conwy.gov.uk/libraries	Conwy	http://talisprism.talnet.gov.uk/
+http://www.cornwall.gov.uk/index.cfm?articleid=310	Cornwall	http://library.cornwall.gov.uk/TalisPrism/
+http://www.coventry.gov.uk/ccm/navigation/leisure-and-culture/libraries/	Coventry	http://www.coventry.gov.uk/ccm/navigation/leisure-and-culture/libraries/library-catalogue/
+http://www.croydon.gov.uk/leisure/libraries/	Croydon	http://www.croydon.gov.uk/leisure/libraries/catalogue/
+http://www.cumbria.gov.uk/libraries/	Cumbria	http://www.cumbria.gov.uk/libraries/access.asp
+http://www.darlington.gov.uk/Education/Library/Library+Service.htm	Darlington	http://www.darlington.gov.uk/Education/Library/OnlineLibraryCatalogue/Library+Catalogue.htm
+http://www.denbighshire.gov.uk/libraries	Denbighshire	http://galaxy.denbighshire.gov.uk/cgi-bin/vps2_denbighshire.sh
+http://www.derby.gov.uk/libraries/	Derby City	http://213.249.162.173/uhtbin/cgisirsi/0/MAIN/0/57/49?user_id=CI-IBISTRO
+http://www.derbyshire.gov.uk/libraries/	Derbyshire	http://www.derbyshire.gov.uk/libraries/library_catalogue/
+http://www.devon.gov.uk/library/	Devon	http://www.devon.gov.uk/library/catalogue
+http://www.doncaster.gov.uk/Leisure_in_Doncaster/Libraries/Libraries.asp	Doncaster	http://library.doncaster.gov.uk
+http://www.dorsetcc.gov.uk/libraries	Dorset	http://libcat.dorsetforyou.com/
+http://www.douglas.gov.im/councilinformation.asp?ID=1025	Douglas	http://www.douglas.org.im/heri4
+http://www.dudley.gov.uk/libraries	Dudley
+http://www.dumgal.gov.uk/dumgal/MiniWeb.aspx?id=86&amp;amp;menuid=915&amp;amp;openid=915	Dumfries &amp; Galloway	http://www.dumgal.gov.uk/dumgal/MiniWeb.aspx?id=86&amp;amp;menuid=4670&amp;amp;openid=4670
+http://www.dundeecity.gov.uk/library/main.htm	Dundee
+http://www.durham.gov.uk/DurhamCC%5Cusp.nsf/pws/libraries+-+libraries+in+county+durham	Durham County	http://www.durham.gov.uk/DurhamCC/usp.nsf/pws/Libraries+-+Libraries+Online
+http://www.ealing.gov.uk/services/leisure/libraries/	Ealing	http://galaxy.ealing.gov.uk
+http://www.east-ayrshire.gov.uk/comser/libraries/libraries.asp	East Ayrshire	http://libcatalogue.east-ayrshire.gov.uk/uhtbin/webcat
+http://www.eastdunbarton.gov.uk/Web+Site/Live/EDWebLive.nsf/InternetMF?ReadForm&amp;amp;M=KRAE-6CGAXXC=http://www.eastdunbarton.gov.uk/Web+Site/Live/EDWebLive.nsf/LU-AllContent/DMAN-5HRJY9?OpenDocument	East Dunbartonshire
+http://www.eastlothian.gov.uk/libraries	East Lothian	http://www.libcat.eastlothian.gov.uk/TalisPrism/index.jsp
+http://www.eastrenfrewshire.gov.uk/libraries	East Renfrewshire	http://194.168.184.53/TalisPrism/
+http://www.eastriding.gov.uk/cs/culture-and-information/libraries/network/	East Riding of Yorkshire	http://www.eastriding.gov.uk/catalogue/
+http://www.eastsussexcc.gov.uk/lia/main.htm	East Sussex	http://e-library.eastsussexcc.gov.uk/
+http://www.edinburgh.gov.uk/libraries/	Edinburgh	http://eclis.edinburgh.gov.uk/
+http://www.enfield.gov.uk/nav2/200062.asp	Enfield	http://libraries.enfield.gov.uk/cgi-bin/viewpoint_server.sh
+http://www.essexcc.gov.uk/libraries/	Essex	http://essexlibraries.essexcc.gov.uk/evs-app/Vubis.csp
+http://www.falkirk.gov.uk/services/community/library_services/library_services.aspx	Falkirk	http://www.falkirk.gov.uk/services/community/library_services/library_catalogue.aspx
+http://www.fife.gov.uk/libraries	Fife	http://www.libcat.fife.gov.uk/TalisPrism/
+http://www.flintshire.gov.uk/webcont/libs.nsf/fma_SplashEnglish?readform	Flintshire	http://catalogue.libraries.flintshire.gov.uk/cgi-bin/vps2_viewpoint.sh?session_no=3159
+http://www.asaplive.com/	Gateshead
+http://www.glasgow.gov.uk/en/Residents/Libraries/	Glasgow	http://www.libcat.glasgow.gov.uk/cgi-bin/vps2_glasgow.sh
+http://www.gloucestershire.gov.uk/libraries	Gloucestershire
+http://www.greenwich.gov.uk/libraries/	Greenwich	http://ipac.greenwich.gov.uk/ipac20/ipac.jsp?profile=su-def
+http://www.library.gg/	Guernsey - Guilles-Allès Library	http://gin.library.gg/TalisPrism/doSearch.do?newsession=true&amp;interface=localinterface
+http://www.priaulxlibrary.co.uk/	Guernsey - The Priaulx Library	http://gin.library.gg/TalisPrism/?interface=localinterface&amp;newsession=true&amp;rid=-372419217
+http://www.gwynedd.gov.uk/gwy_section.asp?cat=2542&amp;amp;Language=1	Gwynedd	http://talisweb.talnet.gov.uk/
+http://www.hackney.gov.uk/libraries.htm	Hackney	http://193.129.6.51/ipac20/ipac.jsp?profile=dial#focus
+http://www.halton.gov.uk/libraries/	Halton	http://www.halton.gov.uk/libraries/catalogue.asp
+http://www.lbhf.gov.uk/Directory/Leisure_and_Culture/Libraries/	Hammersmith and Fulham	http://www.library.lbhf.gov.uk/
+http://www.hants.gov.uk/library/index.html	Hampshire	http://libcat.hants.gov.uk
+http://www.haringey.gov.uk/data/libraries	Haringey	http://libraries.haringey.gov.uk/TalisPrism/
+http://www.harrow.gov.uk/ccm/navigation/leisure-and-culture/libraries/	Harrow	http://lib.harrow.gov.uk/
+http://www.hartlepool.gov.uk/site/scripts/documents.php?categoryID=1102	Hartlepool	http://opac.hartlepool.gov.uk/TalisPrism/
+http://www.havering.gov.uk/libraries/	Havering	http://library.havering.gov.uk/
+http://www.libraries.herefordshire.gov.uk/	Herefordshire	http://www.libraries.herefordshire.gov.uk/onlinecatalogue.htm
+http://www.hertsdirect.org/libsleisure/libraries/	Hertfordshire	https://zones.hertsdirect.org/alswww2.dll/APS_OPAC?Style=Portal2
+http://www.highland.gov.uk/leisureandtourism/libraries/	Highlands	http://libraries.highland.gov.uk/TalisPrism/
+http://www.hillingdon.gov.uk/index.jsp?articleid=8908	Hillingdon	http://www.librarycatalogue.hillingdongrid.org/uhtbin/webcat
+http://www.hounslow.info/page.aspx?pointerid=C42CC1FD62604B31B3D6A48D47F39DDA&amp;amp;thelang=001lngdef	Hounslow	http://www.hounslowlibraries.org
+http://www.hullcc.gov.uk/portal/page?_pageid=221,52843&amp;_dad=portal&amp;_schema=PORTAL	Hull	http://prismcollect.hullcc.gov.uk/
+http://www.inverclyde.gov.uk/Libraries/	Inverclyde
+http://www.iwight.com/library/libraries/default.asp	Isle of Wight	http://www.iwight.com/library/viewpoint/home.asp
+http://www.islington.gov.uk/libraries/	Islington	http://www.islington.gov.uk/Education/Libraries/113.asp
+http://www.gov.je/ESC/Lifelong+Learning/Libraries/default.htm	Jersey	http://talisprism.gov.je/TalisPrism/?newsession=true&amp;interface=External
+http://www.rbkc.gov.uk/libraries/general/	Kensington and Chelsea	http://www.rbkc.gov.uk/librarycatalogue/
+http://www.kent.gov.uk/leisure-and-culture/libraries/	Kent	http://libcat.kent.gov.uk/
+http://www.kingston.gov.uk/leisure/libraries.htm	Kingston Upon Thames	http://opac.kingston.gov.uk/TalisPrism/
+http://www.kirklees.gov.uk/libraries	Kirklees	http://libraries.kirklees.gov.uk/
+http://www.knowsley.gov.uk/leisure/libraries/	Knowsley	http://artemis.knowsley.gov.uk/uhtbin/
+http://www.lambeth.gov.uk/Services/LeisureCulture/Libraries/	Lambeth	http://libraries.lambeth.gov.uk/TalisPrism/
+http://www.lancashire.gov.uk/libraries	Lancashire
+http://www.leeds.gov.uk/libraries	Leeds	http://librarycatalogue.leedslearning.net
+http://www.leicester.gov.uk/departments/page.asp?pgid=2089	Leicester City	http://www.bookfinder.leicester.gov.uk/
+http://www.leics.gov.uk/libraries/	Leicestershire	http://libraries.leics.gov.uk/TalisPrism/
+http://www.lewisham.gov.uk/LeisureAndCulture/Libraries/	Lewisham	http://ipac.lewisham.gov.uk/
+http://www.lincolnshire.gov.uk/libraries/	Lincolnshire	http://lincslib.lincolnshire.gov.uk/?catId=218
+http://www.liverpool.gov.uk/libraries	Liverpool	http://www.liverpool.gov.uk/talis/frame.htm
+london.html	London	http://www.londonlibraries.org.uk/will/
+http://www.luton.gov.uk/library/	Luton	http://www.galaxy.bedfordshire.gov.uk/
+http://www.manchester.gov.uk/libraries/	Manchester	http://catalogue.manchester.gov.uk/
+http://www.medway.gov.uk/index/leisure/libraries.htm	Medway	http://libcat.medway.gov.uk
+http://www.merthyr.gov.uk/Home/Leisure+and+Tourism/Libraries/default.htm	Merthyr Tydfil	http://talisweb.libraries.merthyr.gov.uk/TalisPrism/index.jsp
+http://www.merton.gov.uk/libraries/	Merton	http://viewpoint.merton.gov.uk/
+http://www.middlesbrough.gov.uk/ccm/navigation/leisure-and-culture/libraries/	Middlesbrough	http://libraries.middlesbrough.gov.uk/cgi-bin/viewpoint_server_web.sh?session_no=
+http://www.midlothian.gov.uk/Library/default.asp	Midlothian	http://libraries.midlothian.gov.uk/
+http://www.mkweb.co.uk/library_services/home.asp	Milton Keynes	http://library.buckscc.gov.uk/alswww2mk.dll/APS_OPAC&amp;Style%3DOpacB
+http://libraries.monmouthshire.gov.uk/	Monmouthshire	http://catalogue.monmouthshire.gov.uk/
+http://www.moray.gov.uk/moray_standard/page_1472.html	Moray	http://www.moray.gov.uk/moray_standard/page_41028.html
+http://www.neath-porttalbot.gov.uk/libraries/	Neath Port Talbot	http://ipac.npt.gov.uk/#focus
+http://www.newcastle.gov.uk/libraries	Newcastle
+http://www.newham.gov.uk/libraries	Newham	http://library.newham.gov.uk/
+http://www.newport.gov.uk/_dc/index.cfm?fuseaction=libraries.homepage	Newport	http://www.opac.newport.gov.uk/opac/bin/search.cgi
+http://www.library.norfolk.gov.uk/	Norfolk	http://norlink.norfolk.gov.uk/
+http://www.ers.north-ayrshire.gov.uk/	North Ayrshire
+http://www.nelincs.gov.uk/leisure/libraries	North East Lincolnshire	http://www.nelincs.gov.uk/Leisure/Libraries/onlinecatalogue.htm
+http://www.neelb.org.uk/library-user	North Eastern ELB (N.I.)	http://opac.ni-libraries.net/
+http://www.northlan.gov.uk/leisure+and+tourism/libraries/index.html	North Lanarkshire	http://librariesnl.northlan.gov.uk/vs/Vubis.csp
+http://www.northlincs.gov.uk/NorthLincs/Leisure/libraries/	North Lincolnshire	http://www.opac.northlincs.gov.uk/
+http://www.n-somerset.gov.uk/Leisure/Libraries/	North Somerset	http://www.librarieswest.org.uk/
+http://www.northtyneside.gov.uk/libraries.htm	North Tyneside	http://www.northtyneside.gov.uk/www-bin/www_talis32
+http://www.northyorks.gov.uk/libraries	North Yorkshire	https://www4.northyorks.gov.uk/TalisPrism/index.jsp
+http://www.northamptonshire.gov.uk/Leisure/Libraries/Home.htm	Northamptonshire	http://www.library.northamptonshire.gov.uk/www-bin/www_talis32?
+http://pscm.northumberland.gov.uk/portal/page?_pageid=107,95719&amp;_dad=portal92&amp;_schema=PORTAL92&amp;id=102	Northumberland	http://pscm.northumberland.gov.uk/portal/page?_pageid=107,54495&amp;_dad=portal92&amp;_schema=PORTAL92&amp;pid=439
+http://www.nottinghamcity.gov.uk/coun/department/leisure_com/libraries/default.asp	Nottingham City	http://nelib.nottscc.gov.uk/
+http://www.nottscc.gov.uk/libraries/	Nottinghamshire	http://nelib.nottscc.gov.uk/
+http://www.oldham.gov.uk/libraries	Oldham	http://catalogue.oldham.gov.uk/alswww2.dll/APS_CAT?Style=OpacB
+http://www.library.onchan.org.im/	Onchan
+http://www.orkneylibrary.org.uk/	Orkney	http://212.219.208.10/TalisPrism/
+http://www.oxfordshire.gov.uk/libraries	Oxfordshire	http://www.libcat.oxfordshire.gov.uk/
+http://www.peelonline.net/ward/	Peel
+http://www.pembrokeshire.gov.uk/content.asp?nav=107,108&amp;parent_directory_id=646	Pembrokeshire	http://libraryonline.pembrokeshire.gov.uk/pemvs/Vubis.csp
+http://www.pkc.gov.uk/library/	Perth &amp; Kinross	http://193.63.61.5/TalisPrism/
+http://www.peterborough.gov.uk/page-37	Peterborough	http://193.129.6.53:8080/ipac20/ipac.jsp?profile=pboroweb#focus
+http://www.plymouth.gov.uk/libraries/	Plymouth	http://www.libcat.info
+http://www.boroughofpoole.com/categories.asp?id=262B549E7AFE4A&amp;amp;title=Libraries	Poole	http://talis.boroughofpoole.com/www-bin/www_talis32
+http://www.portsmouth.gov.uk/learning/29.html	Portsmouth	http://librarycat.portsmouth.gov.uk/
+http://library.powys.gov.uk/	Powys
+http://www.readinglibraries.org.uk	Reading	http://www.readinglibraries.org.uk/catalogue/index.htm
+http://www.redbridge.gov.uk/cms/education__learning/libraries.aspx	Redbridge	http://library.redbridge.gov.uk/
+http://www.redcar-cleveland.gov.uk/libraries/	Redcar &amp; Cleveland	http://194.203.108.4/
+http://www.renfrewshire.gov.uk/libraries	Renfrewshire	http://libcat.renfrewshire.gov.uk:8000/
+http://webapps.rhondda-cynon-taff.gov.uk/Libraries/	Rhondda Cynon Taff	http://library.rhondda-cynon-taff.gov.uk/TalisPrism/
+http://www.richmond.gov.uk/libraries/	Richmond upon Thames	http://www.richmondlibraries.org/default.aspx
+http://www.rochdale.gov.uk/education_and_learning/libraries.aspx	Rochdale	http://libraries.rochdale.gov.uk/
+http://www.rotherham.gov.uk/graphics/Learning/Libraries/	Rotherham	http://library.rotherham.gov.uk/TalisPrism/
+http://www.rutland.gov.uk/libraries	Rutland	http://libraries.leics.gov.uk/TalisPrism/
+http://www.sthelens.gov.uk/category.do?parent=100009&amp;itemid=200062	St Helens	http://eps.sthelens.gov.uk/rooms/
+http://www.salford.gov.uk/libraries	Salford	http://libraryonline.salford.gov.uk/TalisPrism/
+http://www.lea.sandwell.gov.uk/libraries/	Sandwell	http://webopac.lib.sandwell.net/
+http://www.scottishborders.gov.uk/libraries/	Scottish Borders	http://librarysearch.scotborders.gov.uk/
+http://www.sefton.gov.uk/libraries	Sefton	http://www.catalogue.sefton.gov.uk/
+http://www.sheffield.gov.uk/libraries	Sheffield	http://hip.sheffield.gov.uk/
+http://www.shetland-library.gov.uk/	Shetland	http://library.shetland.gov.uk/TalisPrism/
+http://www.shropshire.gov.uk/library.nsf	Shropshire	http://www2.shropshire-cc.gov.uk/
+http://www.sloughlibrary.org.uk/	Slough	http://www.sloughcatalogue.info/
+http://www.solihull.gov.uk/libraries	Solihull	http://libraries.solihull.gov.uk/TalisPrism/
+http://www.somerset.gov.uk/somerset/culturecommunity/culturalservice/libraries/index.cfm	Somerset	http://www.librarieswest.org.uk/
+http://www.south-ayrshire.gov.uk/libraries/	South Ayrshire	http://www.south-ayrshire.gov.uk/frames/libweb.htm
+http://www.seelb.org.uk/libraries/libraries.htm	South Eastern ELB (N.I.)	http://opac.ni-libraries.net/
+http://www.southglos.gov.uk/LeisureCulture/Libraries/	South Gloucestershire	http://www.librarieswest.org.uk/
+http://www.southlanarkshire.gov.uk/portal/page/portal/EXTERNAL_WEBSITE_DEVELOPMENT/SLC_ONLINE_HOME/EDUCATION_LIBRARIES/LIBRARIES_COMM_LEARNING?CONTENT_ID=418	South Lanarkshire	http://www.library.southlanarkshire.gov.uk/
+http://www.southtyneside.info/learningandleisure/libraries/	South Tyneside	http://prism2.southtyneside.gov.uk/TalisPrism/
+http://www.southampton.gov.uk/Libraries/	Southampton	http://library.southampton.gov.uk/
+http://www.southend.gov.uk/content.asp?section=318	Southend on Sea	http://essexlibraries.essexcc.gov.uk/evs-app/
+http://www.selb.org/library/index.htm	Southern ELB (N.I.)	http://opac.ni-libraries.net/
+http://www.southwark.gov.uk/YourServices/LibrariesSection/	Southwark	http://213.86.249.168/TalisPrism/
+http://www.staffordshire.gov.uk/libraries	Staffordshire
+http://www.stirling.gov.uk/libraries/	Stirling	http://www.stirling.gov.uk/index/services_homepage/libraries/lib-cat.htm
+http://www.stockport.gov.uk/content/leisureculture/libraries/	Stockport	http://193.112.136.180/TalisPrism/
+http://www.stockton.gov.uk/citizenservices/leisureandents/Libraries/	Stockton-on-Tees	http://213.106.232.36/TalisPrism/
+http://www.stoke.gov.uk/libraries	Stoke-on-Trent	http://librariesonline.stoke.gov.uk/vs/Vubis.csp
+http://www.suffolk.gov.uk/LeisureAndCulture/Libraries/	Suffolk	http://sld.suffolkcc.gov.uk/cgi-bin/vps_server.sh
+http://www.sunderland.gov.uk/public/editable/themes/lifelong-learning/home-page.asp	Sunderland	http://www.sunderland.gov.uk/uhtbin/cgisirsi.exe/x/0/0/49
+http://www.surreycc.gov.uk/libraries	Surrey	http://catalogue.surreylibraries.org/
+http://www.sutton.gov.uk/leisure/libraries/	Sutton	http://www.sutton-libraries.gov.uk/
+http://www.swansea.gov.uk/index.cfm?articleid=397	Swansea
+http://www.swindon.gov.uk/libraries	Swindon	http://217.33.247.237/svs-app/Vubis.csp
+http://www.tameside.gov.uk/libraries/	Tameside	http://intouch.tameside.gov.uk/geo
+http://www.telford.gov.uk/libraries	Telford &amp; Wrekin	http://library.telford.gov.uk/
+http://www.thurrock-community.org.uk/council/libraries/	Thurrock	http://elan.essexcc.gov.uk/
+http://www.torbay.gov.uk/libraries	Torbay	http://libraries.torbay.gov.uk/
+http://www.torfaen.gov.uk/LeisureAndCulture/Libraries/Home.aspx	Torfaen	http://www.ipac.torfaen.gov.uk/
+http://www.ideastore.co.uk/	Tower Hamlets
+http://www.trafford.gov.uk/libraries/	Trafford	http://libraries.trafford.gov.uk/TalisPrism/
+http://www.croydon.gov.uk/leisure/libraries/croydonlibs/unorwoodlib	Upper Norwood
+http://www.valeofglamorgan.gov.uk/working/libraries.aspx	Vale of Glamorgan	http://libhip.valeofglamorgan.gov.uk/
+http://www.wakefield.gov.uk/libraries/	Wakefield	http://libraries.wakefield.gov.uk/
+http://www.walsall.gov.uk/libraries/	Walsall	http://libcat.walsall.gov.uk/
+http://www.lbwf.gov.uk//index/leisure/libraries.htm	Waltham Forest	http://libsonline.walthamforest.gov.uk/
+http://www.wandsworth.gov.uk/libraries/	Wandsworth	http://library.wandsworth.gov.uk/
+http://www.warrington.gov.uk/libraries/	Warrington	http://www.warrington.gov.uk/eps
+http://www.warwickshire.gov.uk/libraries	Warwickshire
+http://www.westberks.gov.uk/index.aspx?articleid=862	West Berkshire	http://www.westberks.gov.uk/index.aspx?articleid=4344
+http://www.wdcweb.info/library/	West Dunbartonshire	http://ipac.west-dunbarton.gov.uk/ipac20/ipac.jsp?profile=al#focus
+http://www.wlonline.org/827/427/	West Lothian	http://webpac.westlothian.org.uk/
+http://www.westsussex.gov.uk/ccm/navigation/libraries-and-archives/libraries/	West Sussex	http://www.westsussex.gov.uk/ccm/content/libraries-and-archives/libraries/online-services/catalogue-search-and-reserve.en
+http://www.welbni.org/libraries/	Western ELB (N.I.)	http://opac.ni-libraries.net/
+http://www.w-isles.gov.uk/library/	Western Isles	http://194.83.245.249/
+http://www.westminster.gov.uk/libraries/	Westminster
+http://www.wlct.org/Libraries/libraries.htm	Wigan	http://212.132.132.175/TalisPrism/
+http://www.wiltshire.gov.uk/libraries/	Wiltshire	http://libraries.wiltshire.gov.uk/
+http://www.rbwm.gov.uk/web/libraries.htm	Windsor and Maidenhead	http://www.rbwm.gov.uk/web/library_catalogue.htm
+http://www.wirral-libraries.net/	Wirral	http://prism.wirral-libraries.net/TalisPrism/
+http://www.wokingham.gov.uk/libraries	Wokingham	http://wokingham.spydus.co.uk/
+http://www.wolverhampton.gov.uk/leisure_culture/libraries/	Wolverhampton	http://search.wolverhamptonlibraries.gov.uk/TalisPrism/
+http://www.worcestershire.gov.uk/libraries	Worcestershire	http://opac.worcestershire.gov.uk/TalisPrism/index.html
+http://www.wrexham.gov.uk/english/community/libraries/LibHome.htm	Wrexham	https://www.wrexham.gov.uk/Library-Online-Catalogue/cgi-bin/vps2_viewpoint.sh
+http://www.york.gov.uk/libraries/	York	http://library.york.gov.uk/uhtbin/cgisirsi/x/0/0/57/49?user_id=WEB-YO&amp;password=YO
