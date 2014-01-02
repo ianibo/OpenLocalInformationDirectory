@@ -33,7 +33,7 @@
                            <g:link controller="org" id="${a.org.shortcode}" action="show">${a.org.displayName}</g:link><br/>
                            <ul class="inline">
                              <g:each in="${a.org.collections}" var="col">
-                               <li><g:link controller="collection" id="${col.shortcode}" action="show">${col.name}</g:link></li>
+                               <li><g:link uri="/collections/${col.shortcode}">${col.name}</g:link></li>
                              </g:each>
                            </ul>
                      

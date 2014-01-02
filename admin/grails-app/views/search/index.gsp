@@ -24,7 +24,8 @@
         <div class="well">
 
           <g:if test="${qbetemplate==null}">
-              Please select a template from the navigation menu
+              Please select a template from the navigation menu<br/>
+              <pre>${params}</pre>
             </g:if>
           <g:else>
 

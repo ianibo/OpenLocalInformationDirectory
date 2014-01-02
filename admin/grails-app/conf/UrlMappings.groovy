@@ -14,10 +14,16 @@ class UrlMappings {
     "/orgs"(resources:"org") {
     }
 
-    "/org/$id/requestNewCollection"(controller='org',action:'requestNewCollection')
+    "/org/$id/requestNewCollection"(controller:'org',action:'requestNewCollection')
 
-    "/collections" (resources:"collection") {
+    // "/collections"(resources:"collection", action:"show") {
+    // }
+
+    "/collections/$id"(controller:'search',action:'index') {
+      qbe='g:resources'
     }
+
+    "/collections/$id/stats"(controller:'collection', action:'stats');
 
   }
 }
