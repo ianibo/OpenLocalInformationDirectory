@@ -65,11 +65,11 @@
               <p style="text-align:center"><bootstrap:alert class="alert-info">${qbetemplate.message}</bootstrap:alert></p>
             </g:if>
             <g:if test="${!request.isAjax()}" >
-	            <g:render template="qbeform" contextPath="."
+	            <g:render template="qbeform" contextPath="../search"
 	              model="${[formdefn:qbetemplate.qbeConfig?.qbeForm]}" />
 	          </g:if>
             <g:if test="${recset != null}">
-              <g:render template="qberesult" contextPath="."
+              <g:render template="qberesult" contextPath="../search"
                 model="${[qbeConfig:qbetemplate.qbeConfig, rows:recset, offset:offset, det:det]}" />
             </g:if>
           </g:else>

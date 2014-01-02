@@ -45,6 +45,7 @@
                     <li><g:link controller="search" action="index" params="${[qbe:'g:refdataCategories']}">Refdata Categories</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:resources']}">Resources</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:orgs']}">Organisations</g:link></li>
+                    <li><g:link controller="collection" action="index">Resources</g:link></li>
                   </ul>
                 </li>
               </sec:ifAnyGranted>

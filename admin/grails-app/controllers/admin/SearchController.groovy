@@ -82,7 +82,7 @@ class SearchController {
     // log.debug("leaving SearchController::index...");
 
     withFormat {
-      html result
+      html { render(view:'../search/index',model:result) }
       json { render apiresponse as JSON }
       xml { render apiresponse as XML }
     }
