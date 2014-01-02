@@ -41,6 +41,7 @@ class VocabSyncService {
 
         // Step 1 - Do we have a vocab already for code?
         def voc = RefdataCategory.findByCode(voc_id) ?: new RefdataCategory(code:voc_id, desc:vocab.Metadata.Title.text()).save(flush:true)
+        def voc_pk = voc.id;
   
         log.debug("Processing items.... voc is ${voc}");
         vocab.Item.each { item ->
@@ -64,6 +65,7 @@ class VocabSyncService {
 
         // Process relations
         vocab.Item.each { item ->
+          voc = RefdataCategory.get(voc_pk)
           def rel_term_id = item.'@Id'.text()
           def existing_term = RefdataValue.findByOwnerAndTermId(voc, rel_term_id)
 
@@ -90,6 +92,7 @@ class VocabSyncService {
               }
             }
           }
+          cleanUpGorm();
         }
 
       }
