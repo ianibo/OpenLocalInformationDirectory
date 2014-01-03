@@ -72,8 +72,18 @@
     <hr/>
   </div>
 
-  Starts on X
-  Ends Never, On, After n Occurrences
+  <dl class="dl-horizontal">
+    <dt>Starts On:</dt>
+    <dd>
+      <span></span>
+      <input name="rrule_start_date" type="hidden" class="hdp" />
+    </dd>
+  </dl>
+
+  <dl class="dl-horizontal">
+    <dt>Ends On :</dt>
+    <dd>Never, Date, After n Occurrences</dd>
+  </dl>
   
 </div>
 

@@ -1,5 +1,6 @@
 <r:require modules="tlistyle"/>
 <r:require modules="editable"/>
+<r:require modules="jquery-ui"/>
 
 <h3>${d.id ? d.title : 'Create New Directory Entry'}</h3>
 
@@ -109,5 +110,17 @@
       $( '#freq'+$(this).val() ).show();
     });
 
+    $("input.hdp").datepicker({
+      buttonImage: '../../images/calendar.gif',
+      buttonImageOnly: true,
+      changeMonth: true,
+      changeYear: true,
+      showOn: 'both',
+      onSelect: function(dateText, inst) {
+        inst.input.parent().find('span').html(dateText)
+      }
+    });
+
   });
+
 </script>

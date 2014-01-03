@@ -8,7 +8,9 @@ modules = {
     resource url:'js/editable.js.gsp'
     resource url:'js/moment.min.js'
     resource url:'js/select2.min.js'
-    resource url: 'css/bootstrap-editable.css'
+    resource url:'css/bootstrap-editable.css'
+    // resource url:'js/bootstrap-datetimepicker.min.js'
+    // resource url:'css/bootstrap-datetimepicker.min.css'
   }
 
 }
