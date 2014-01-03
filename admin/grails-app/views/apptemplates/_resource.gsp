@@ -28,28 +28,35 @@
       </dl>
 
       <dl class="dl-horizontal">
-          <dt>Subjects</dt>
-          <dd>
-            <table class="table table-striped table-bordered table-condensed" id="subjects">
+        <dt>Subjects</dt>
+        <dd>
+          <table class="table table-striped table-bordered table-condensed" id="subjects">
               <thead>
                 <tr><th>Name</th><th>actions</th></tr>
               </thead>
               <tbody>
-                <tr><td>a</td><td>b</td></tr>
                 <g:each in="${d.subjects}" var="s">
                   <tr><td>${s.value}</td><td><a href="">delete</a></td></tr>
                 </g:each>
               </tbody>
-            </table>
-            <form>
-              Add subject : <g:simpleReferenceTypedown class="input-xxlarge" 
-                                       style="width:350px;" 
-                                       name="org" 
-                                       baseClass="tli.RefdataValue" 
-                                       data-filter2="Subject"/>
-              <input type="submit"/>
-            </form>
-          </dd>
+          </table>
+
+          <g:if test="${d.id != null}">
+            <g:form controller="ajaxSupport" action="addToStdCollection" class="form-inline">
+              <input type="hidden" name="__context" value="${d.class.name}:${d.id}" />
+              <input type="hidden" name="__property" value="subjects" />
+              <dt>Add Subject</dt>
+              <dd> 
+                <g:simpleReferenceTypedown class="input-xxlarge" 
+                                           style="width:350px;" 
+                                           name="__relatedObject" 
+                                           baseClass="tli.RefdataValue" 
+                                           data-filter2="Subject"/>
+              </dd>
+              <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
+            </g:form>
+          </g:if>
+        </dd>
       </dl>
 
     </div>
