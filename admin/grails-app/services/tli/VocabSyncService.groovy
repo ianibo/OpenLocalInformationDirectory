@@ -31,6 +31,7 @@ class VocabSyncService {
 
       def bt_rel = RefdataCategory.lookupOrCreate('thes_relations','Broader Term')
       def rel_rel = RefdataCategory.lookupOrCreate('thes_relations','Related Term')
+      def subj_cat_type = RefdataCategory.lookupOrCreate("CategoryType", "Subject" )
 
       if ( vocab != null ) {
         log.debug("Got vocab Title: ${vocab.Metadata.Title.text()}");
@@ -40,7 +41,9 @@ class VocabSyncService {
         log.debug("Using ${voc_id} as vocab ID");
 
         // Step 1 - Do we have a vocab already for code?
-        def voc = RefdataCategory.findByCode(voc_id) ?: new RefdataCategory(code:voc_id, desc:vocab.Metadata.Title.text()).save(flush:true)
+        def voc = RefdataCategory.findByCode(voc_id) ?: new RefdataCategory(code:voc_id, 
+                                                                            desc:vocab.Metadata.Title.text(),
+                                                                            catType:subj_cat_type).save(flush:true)
         def voc_pk = voc.id;
   
         log.debug("Processing items.... voc is ${voc}");
@@ -51,7 +54,10 @@ class VocabSyncService {
           def existing_term = RefdataValue.findByOwnerAndTermId(voc, term_id)
           if ( existing_term == null ) {
             log.debug("Unable to locate term for voc ${voc.id}, term ${term_id}");
-            existing_term = new RefdataValue(owner:voc, value:item.Name.text(), termId:term_id)
+            existing_term = new RefdataValue(owner:voc, 
+                                             value:item.Name.text(), 
+                                             termId:term_id,
+                                             description:item.Name.text())
             if ( existing_term.save(flush:true) ) {
             }
             else {

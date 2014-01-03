@@ -26,7 +26,9 @@ $(document).ready(function() {
           format:'json',
           q: term,
           baseClass:$(this).data('domain'),
-          filter1:$(this).data('filter1')
+          filter1:$(this).data('filter1'),
+          filter2:$(this).data('filter2'),
+          filter3:$(this).data('filter3')
         };
       },
       results: function (data, page) {

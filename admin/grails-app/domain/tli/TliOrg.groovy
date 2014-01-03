@@ -10,6 +10,7 @@ class TliOrg extends TliParty {
   static constraints = {
     status(nullable:false, blank:false)
     shortcode(nullable:false, blank:false, unique:true)
+    url(nullable:true, blank:false)
   }
 
   static hasMany = [

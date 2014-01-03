@@ -16,14 +16,42 @@
 
   <div id="my-tab-content" class="tab-content">
     <div class="tab-pane active" id="details">
+
       <dl class="dl-horizontal">
           <dt>Description</dt>
           <dd><g:xEditable type="textarea" class="ipe" owner="${d}" field="description"/></dd>
       </dl>
+
       <dl class="dl-horizontal">
           <dt>URL</dt>
           <dd><g:xEditable type="text" class="ipe" owner="${d}" field="url"/></dd>
       </dl>
+
+      <dl class="dl-horizontal">
+          <dt>Subjects</dt>
+          <dd>
+            <table class="table table-striped table-bordered table-condensed" id="subjects">
+              <thead>
+                <tr><th>Name</th><th>actions</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>a</td><td>b</td></tr>
+                <g:each in="${d.subjects}" var="s">
+                  <tr><td>${s.value}</td><td><a href="">delete</a></td></tr>
+                </g:each>
+              </tbody>
+            </table>
+            <form>
+              Add subject : <g:simpleReferenceTypedown class="input-xxlarge" 
+                                       style="width:350px;" 
+                                       name="org" 
+                                       baseClass="tli.RefdataValue" 
+                                       data-filter2="Subject"/>
+              <input type="submit"/>
+            </form>
+          </dd>
+      </dl>
+
     </div>
   </div>
 
