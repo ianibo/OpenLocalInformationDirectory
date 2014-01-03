@@ -12,6 +12,7 @@
 
   <ul id="tabs" class="nav nav-tabs">
     <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+    <li><a href="#sessions" data-toggle="tab">Sessions</a></li>
   </ul>
 
   <div id="my-tab-content" class="tab-content">
@@ -27,21 +28,35 @@
           <dd><g:xEditable type="text" class="ipe" owner="${d}" field="url"/></dd>
       </dl>
 
-      <dl class="dl-horizontal">
-        <dt>Subjects</dt>
-        <dd>
-          <table class="table table-striped table-bordered table-condensed" id="subjects">
+      <g:if test="${d.id != null}">
+        <dl class="dl-horizontal">
+          <dt>Collections</dt>
+          <dd>
+            <table class="table table-striped table-bordered table-condensed" id="subjects">
               <thead>
-                <tr><th>Name</th><th>actions</th></tr>
+                <tr><th>Name</th></tr>
               </thead>
               <tbody>
-                <g:each in="${d.subjects}" var="s">
-                  <tr><td>${s.value} (${s.owner.desc})</td><td><a href="">delete</a></td></tr>
+                <g:each in="${d.collections}" var="c">
+                  <tr><td>${c.name}</td></tr>
                 </g:each>
               </tbody>
-          </table>
+            </table>
+          </dd>
 
-          <g:if test="${d.id != null}">
+          <dt>Subjects</dt>
+          <dd>
+            <table class="table table-striped table-bordered table-condensed" id="subjects">
+                <thead>
+                  <tr><th>Name</th><th>actions</th></tr>
+                </thead>
+                <tbody>
+                  <g:each in="${d.subjects}" var="s">
+                    <tr><td>${s.value} (${s.owner.desc})</td><td><a href="">delete</a></td></tr>
+                  </g:each>
+                </tbody>
+            </table>
+
             <g:form controller="ajaxSupport" action="addToStdCollection" class="form-inline">
               <input type="hidden" name="__context" value="${d.class.name}:${d.id}" />
               <input type="hidden" name="__property" value="subjects" />
@@ -55,9 +70,27 @@
               </dd>
               <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
             </g:form>
-          </g:if>
-        </dd>
-      </dl>
+          </dd>
+        </dl>
+    </div>
+    <div class="tab-pane" id="sessions">
+        <dl class="dl-horizontal">
+          <dt>Sessions</dt>
+          <dd>
+            <table class="table table-striped table-bordered table-condensed" id="subjects">
+              <thead>
+                <tr><th>Name</th></tr>
+              </thead>
+              <tbody>
+                <g:each in="${d.sessions}" var="s">
+                  <tr><td>${s.id}</td></tr>
+                </g:each>
+              </tbody>
+            </table>
+          </dd>
+        </dl>
+      </g:if>
+
 
     </div>
   </div>

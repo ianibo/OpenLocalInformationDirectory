@@ -8,12 +8,16 @@ class DirectoryEntry {
   String description
   String url
   Set subjects
+  Set sessions
+  Set collections
 
-  static hasMany = [ subjects:RefdataValue ]
+  static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection ]
+  static mappedBy = [sessions:'owner' ]
 
   static mapping = {
     description type:'text'
-    subject joinTable:[name:'directory_entry_subjects',key:'dirent_id',column:'term_id']
+    subjects joinTable:[name:'directory_entry_subjects',key:'dirent_id',column:'term_id']
+    collections joinTable:[name:'directory_entry_collections',key:'dirent_id',column:'coll_id']
   }
 
   static constraints = {

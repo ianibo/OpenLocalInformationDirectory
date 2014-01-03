@@ -1,5 +1,14 @@
 $(document).ready(function() {
 
+  if (location.hash !== '') 
+    $('a[href="' + location.hash + '"]').tab('show');
+
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    e.preventDefault()
+    window.location.hash = e.target.hash;
+    $(this).tab('show')
+  })
+
   $.fn.editable.defaults.mode = 'inline';
 
   $('.xEditableValue').editable();
