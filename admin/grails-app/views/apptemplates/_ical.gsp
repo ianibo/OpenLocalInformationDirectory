@@ -24,7 +24,20 @@
 
     <dl class="dl-horizontal">
       <dt>Repeat On:</dt>
-      <dd><table><tr><td id=":3e.checkboxes"><div><span class="ep-rec-dow"><input id=":3e.dow1" name="MO" type="checkbox" checked="" aria-label="Repeat on Monday" title="Monday"><label for=":3e.dow1" title="Monday">M</label></span><span class="ep-rec-dow"><input id=":3e.dow2" name="TU" type="checkbox" aria-label="Repeat on Tuesday" title="Tuesday"><label for=":3e.dow2" title="Tuesday">T</label></span><span class="ep-rec-dow"><input id=":3e.dow3" name="WE" type="checkbox" aria-label="Repeat on Wednesday" title="Wednesday"><label for=":3e.dow3" title="Wednesday">W</label></span><span class="ep-rec-dow"><input id=":3e.dow4" name="TH" type="checkbox" aria-label="Repeat on Thursday" title="Thursday"><label for=":3e.dow4" title="Thursday">T</label></span><span class="ep-rec-dow"><input id=":3e.dow5" name="FR" type="checkbox" aria-label="Repeat on Friday" title="Friday"><label for=":3e.dow5" title="Friday">F</label></span><span class="ep-rec-dow"><input id=":3e.dow6" name="SA" type="checkbox" aria-label="Repeat on Saturday" title="Saturday"><label for=":3e.dow6" title="Saturday">S</label></span><span class="ep-rec-dow"><input id=":3e.dow0" name="SU" type="checkbox" aria-label="Repeat on Sunday" title="Sunday"><label for=":3e.dow0" title="Sunday">S</label></span></div></td></tr></table>
+      <dd><span ><input id=":3e.dow1" name="MO" type="checkbox" checked="" aria-label="Repeat on Monday" title="Monday"/>
+                 <label for=":3e.dow1" title="Monday">M</label></span>&nbsp;
+          <span ><input id=":3e.dow2" name="TU" type="checkbox" aria-label="Repeat on Tuesday" title="Tuesday">
+                 <label for=":3e.dow2" title="Tuesday">T</label></span>&nbsp;
+          <span ><input id=":3e.dow3" name="WE" type="checkbox" aria-label="Repeat on Wednesday" title="Wednesday">
+                 <label for=":3e.dow3" title="Wednesday">W</label></span>&nbsp;
+          <span ><input id=":3e.dow4" name="TH" type="checkbox" aria-label="Repeat on Thursday" title="Thursday">
+                 <label for=":3e.dow4" title="Thursday">T</label></span>&nbsp;
+          <span ><input id=":3e.dow5" name="FR" type="checkbox" aria-label="Repeat on Friday" title="Friday">
+                 <label for=":3e.dow5" title="Friday">F</label></span>&nbsp;
+          <span ><input id=":3e.dow6" name="SA" type="checkbox" aria-label="Repeat on Saturday" title="Saturday">
+                 <label for=":3e.dow6" title="Saturday">S</label></span>&nbsp;
+          <span ><input id=":3e.dow0" name="SU" type="checkbox" aria-label="Repeat on Sunday" title="Sunday">
+                 <label for=":3e.dow0" title="Sunday">S</label>
       </dd>
     </dl>
   </div>
