@@ -17,8 +17,12 @@
   <div id="my-tab-content" class="tab-content">
     <div class="tab-pane active" id="details">
       <dl class="dl-horizontal">
+          <dt>Description</dt>
+          <dd><g:xEditable type="textarea" class="ipe" owner="${d}" field="description"/></dd>
+      </dl>
+      <dl class="dl-horizontal">
           <dt>URL</dt>
-          <dd>url</dd>
+          <dd><g:xEditable type="text" class="ipe" owner="${d}" field="url"/></dd>
       </dl>
     </div>
   </div>
