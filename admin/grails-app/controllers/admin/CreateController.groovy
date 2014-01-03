@@ -42,6 +42,8 @@ class CreateController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def process() {
+    log.debug("Create.. process ${params}");
+
     def result=['responseText':'OK']
 
     if ( params.cls ) {
@@ -89,7 +91,7 @@ class CreateController {
           }
           log.debug("Completed setting properties");
 
-          if ( result.newobj?.postCreateClosure != null ) {
+          if ( result.newobj.metaClass.hasProperty('postCreateClosure') ) {
             log.debug("Created object has a post create closure.. call it");
             result.newobj.postCreateClosure.call([user:request.user])
           }
@@ -106,7 +108,8 @@ class CreateController {
             // render view: 'index', model: [d: result.newobj]
           }
           else {
-            result.uri = new ApplicationTagLib().createLink([controller: 'resource', action:'show', id:"${params.cls}:${result.newobj.id}"])
+            result.id = params.cls+":"+result.newobj.id
+            result.uri = new ApplicationTagLib().createLink([controller: 'resource', action:'show', id:"${result.id}"])
           }
         }
         catch ( Exception e ) {

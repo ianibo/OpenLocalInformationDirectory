@@ -27,6 +27,34 @@
     <script type="text/javascript">
 
       $('#save-btn').click(function() {
+        var data,
+            $elems = $('.editable'),
+            errors = $elems.editable('validate'); //run validation for all values
+        if($.isEmptyObject(errors)) {
+            data = $elems.editable('getValue'); //get all values
+            $.ajax({
+                type: 'POST',
+                url: "${createLink(controller:'create', action: 'process', params:[cls:params.tmpl])}",
+                data: data, 
+                dataType: 'json'
+            }).success(function(response) {
+                if(response && response.id) {
+                   // $elems.editable('option', 'pk', response.id); //store pk
+                   // $elems.editable('markAsSaved');  //on success mark fields as saved
+                   window.location = response.uri;
+                   /* other success actions */
+                } else {
+                   /* server-side validation error */
+                }
+            }).error(function() {
+               /* ajax error */
+            });
+        } else {
+            /* client-side validation error */
+        }
+      });
+
+      $('#old-save-btn').click(function() {
           $('.editable').editable('submit', {   //call submit
               url: "${createLink(controller:'create', action: 'process', params:[cls:params.tmpl])}",
               ajaxOptions: {
