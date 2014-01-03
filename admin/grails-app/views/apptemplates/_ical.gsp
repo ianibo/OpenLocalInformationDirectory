@@ -82,7 +82,9 @@
 
   <dl class="dl-horizontal">
     <dt>Ends On :</dt>
-    <dd>Never, Date, After n Occurrences</dd>
+    <dd><input type="radio" name="endsOnOption" value="never"/> &nbsp; Never<br/>
+        <input type="radio" name="endsOnOption" value="date"/> &nbsp; On Date: <span></span> <input name="rrule_end_date" type="hidden" class="hdp" /> <br/>
+        <input type="radio" name="endsOnOption" value="aftern"/> &nbsp; After n Occurrences <input type="text" name="count" size="2"/><br/></dd>
   </dl>
   
 </div>
