@@ -7,7 +7,7 @@
 
   <dl class="dl-horizontal">
       <dt>Title</dt>
-      <dd><g:xEditable class="ipe" owner="${d}" field="title"/></dd>
+      <dd><g:xEditable type="text" class="ipe" owner="${d}" field="title"/></dd>
   </dl>
 
   <ul id="tabs" class="nav nav-tabs">
@@ -16,6 +16,10 @@
 
   <div id="my-tab-content" class="tab-content">
     <div class="tab-pane active" id="details">
+      <dl class="dl-horizontal">
+          <dt>URL</dt>
+          <dd>url</dd>
+      </dl>
     </div>
   </div>
 
