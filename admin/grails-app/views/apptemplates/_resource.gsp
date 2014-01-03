@@ -36,7 +36,7 @@
               </thead>
               <tbody>
                 <g:each in="${d.subjects}" var="s">
-                  <tr><td>${s.value}</td><td><a href="">delete</a></td></tr>
+                  <tr><td>${s.value} (${s.owner.desc})</td><td><a href="">delete</a></td></tr>
                 </g:each>
               </tbody>
           </table>
