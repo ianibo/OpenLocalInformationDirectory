@@ -1,13 +1,13 @@
 <r:require modules="tlistyle"/>
 <r:require modules="editable"/>
 
-<h3>${d.id ? d.getNiceName() + ': ' + (d.name ?: d.id) : 'Create New ' + d.getNiceName()}</h3>
+<h3>${d.id ? d.title : 'Create New Directory Entry'}</h3>
 
 <div id="content">
 
   <dl class="dl-horizontal">
-      <dt>Name</dt>
-      <dd><g:xEditable class="ipe" owner="${d}" field="name"/></dd>
+      <dt>Title</dt>
+      <dd><g:xEditable class="ipe" owner="${d}" field="title"/></dd>
   </dl>
 
   <ul id="tabs" class="nav nav-tabs">

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="layout" content="main"/>
-    <r:require modules="tlistyle"/>
+    <r:require modules="tlistyle,editable"/>
     <title>TLI</title>
   </head>
   <body class="" >

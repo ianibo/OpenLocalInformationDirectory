@@ -5,6 +5,7 @@ class TliOrg extends TliParty {
 
   RefdataValue status
   String shortcode
+  String url
 
   static constraints = {
     status(nullable:false, blank:false)

@@ -1,4 +1,4 @@
-package tli
+package admin
 
 import grails.plugin.springsecurity.annotation.Secured
 

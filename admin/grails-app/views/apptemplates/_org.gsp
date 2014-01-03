@@ -10,6 +10,11 @@
       <dd><g:xEditable class="ipe" owner="${d}" field="displayName"/></dd>
   </dl>
 
+  <dl class="dl-horizontal">
+      <dt>URL</dt>
+      <dd><g:xEditable class="ipe" owner="${d}" field="url"/></dd>
+  </dl>
+
   <ul id="tabs" class="nav nav-tabs">
     <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
   </ul>

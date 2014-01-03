@@ -2,6 +2,8 @@ import admin.ClassUtils
 
 class InplaceTagLib {
 
+  def genericOIDService
+
   /**
    * simpleReferenceTypedown - create a hidden input control that has the value fully.qualified.class:primary_key and which is editable with the
    * user typing into the box. Takes advantage of refdataFind and refdataCreate methods on the domain class.
@@ -76,6 +78,55 @@ class InplaceTagLib {
       }
     }
     result;
+  }
+
+  /**
+   * Attributes:
+   *   owner - Object
+   *   field - property
+   *   id [optional] - 
+   *   class [optional] - additional classes
+   */
+  def xEditable = { attrs, body ->
+
+    def owner = ClassUtils.deproxy(attrs.owner);
+
+    def oid = owner.id != null ? "${owner.class.name}:${owner.id}" : ''
+    def id = attrs.id ?: "${oid}:${attrs.field}"
+
+    out << "<span id=\"${id}\" class=\"xEditableValue ${attrs.class?:''}\""
+    out << " data-type=\"${attrs.type?:'textarea'}\""
+    if ( oid && ( oid != '' ) )
+      out << " data-pk=\"${oid}\""
+    out << " data-name=\"${attrs.field}\""
+
+    def data_link = null
+    switch ( attrs.type ) {
+      case 'date':
+        data_link = createLink(controller:'ajaxSupport', action: 'editableSetValue', params:[type:'date',format:'yyyy/MM/dd'])
+        break;
+      case 'string':
+      default:
+        data_link = createLink(controller:'ajaxSupport', action: 'editableSetValue')
+        break;
+    }
+
+    out << " data-url=\"${data_link}\""
+    out << ">"
+
+    if ( body ) {
+      out << body()
+    }
+    else {
+      if ( owner[attrs.field] && attrs.type=='date' ) {
+        def sdf = new java.text.SimpleDateFormat(attrs.format?:'yyyy-MM-dd')
+        out << sdf.format(owner[attrs.field])
+      }
+      else {
+        out << owner[attrs.field]
+      }
+    }
+    out << "</span>"
   }
 
 }
