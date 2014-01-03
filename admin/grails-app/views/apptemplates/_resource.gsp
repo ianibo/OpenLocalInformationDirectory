@@ -87,6 +87,8 @@
                 </g:each>
               </tbody>
             </table>
+            <h3>Add session</h3>
+            <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj]}"/>
           </dd>
         </dl>
       </g:if>
@@ -95,11 +97,17 @@
     </div>
   </div>
 
-  <!--  template="componentStatus" contextPath="../apptemplates" model="${[d:displayobj, rd:refdata_properties, dtype:'KBComponent']}" -->
 </div>
 
 <script type="text/javascript">
   $(document).ready(function() {
+
     $.fn.editable.defaults.mode = 'inline';
+
+    $('#frequency').change( function() {
+      $( '.ical div' ).hide();
+      $( '#freq'+$(this).val() ).show();
+    });
+
   });
 </script>
