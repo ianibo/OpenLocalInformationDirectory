@@ -1,6 +1,7 @@
 <r:require modules="tlistyle"/>
 <r:require modules="editable"/>
 <r:require modules="jquery-ui"/>
+<r:require modules="rrule"/>
 
 <h3>${d.id ? d.title : 'Create New Directory Entry'}</h3>
 
@@ -89,7 +90,20 @@
               </tbody>
             </table>
             <h3>Add session</h3>
-            <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj]}"/>
+            <dl class="dl-horizontal">
+              <dt>Session Name:</dt>
+              <dd>
+                Session Name Edit
+              </dd>
+              <dt>Description:</dt>
+              <dd>
+                Description
+              </dd>
+              <dt>Reccurrence Rule:</dt>
+              <dd>
+                <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj]}"/>
+              </dd>
+            </dl>
           </dd>
         </dl>
       </g:if>
