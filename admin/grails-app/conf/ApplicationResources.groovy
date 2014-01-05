@@ -13,9 +13,10 @@ modules = {
     // resource url:'css/bootstrap-datetimepicker.min.css'
   }
   rrule {
+    resource url:'js/underscore-min.js'
     resource url:'js/rrule.js'
     resource url:'js/nlp.js'
     resource url:'js/tlirrule.js'
-    resource url:'js/underscore-min.js'
+    resource url:'js/require.js'
   }
 }
