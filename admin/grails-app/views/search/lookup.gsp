@@ -46,16 +46,13 @@
                 </ul>
                   
                 <ul class="nav navbar-nav navbar-right">
-                  <li><g:link title="Previous Page" controller="search"
-                        action="index"
-                        params="${params+[offset:(offset-max),det:null]}">
+                  <li><g:link title="Previous Page" controller="search" action="index" params="${params+[offset:(offset-max),det:null]}">
                         <span class="glyphicon glyphicon-chevron-left"/>
                       </g:link></li>
-                  <li><g:link title="Next Page" controller="search"
-                        action="index"
-                        params="${params+[offset:(offset+max),det:null]}">
+                  <li><g:link title="Next Page" controller="search" action="index" params="${params+[offset:(offset+max),det:null]}">
                         <span class="glyphicon glyphicon-chevron-right"/>
                       </g:link></li>
+                  <li><a href="" title="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove"/></a></li>
                 </ul>
 
             </nav>

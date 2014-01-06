@@ -4,10 +4,8 @@
 
 <table class="table table-striped table-condensed table-bordered">
   <thead>
-    <tr class="nav">
-      <g:each in="${qbeConfig.qbeResults}" var="c">
-        <th>
-          <g:if test="${c.sort}">
+    <tr><g:if test="${params.mode=='lookup'}"><th></th></g:if><g:each in="${qbeConfig.qbeResults}" var="c">
+        <th><g:if test="${c.sort}">
             <g:if test="${params.sort==c.sort && params.order=='asc'}">
               <g:link params="${params+['sort':c.sort,order:'desc']}"> ${c.heading} <i class="icon-sort-up"></i></g:link>
             </g:if>
@@ -22,8 +20,7 @@
           </g:if>
           <g:else>
             ${c.heading}
-          </g:else>
-        </th>
+          </g:else></th>
       </g:each>
     </tr>
   </thead>
@@ -32,17 +29,8 @@
       <g:set var="r" value="${r}"/>
       <tr class="${++counter==det ? 'success':''}">
         <!-- Row ${counter} -->
-        <g:each in="${qbeConfig.qbeResults}" var="c">
-          <td>
-            <g:if test="${c.link != null}">
-              <g:link controller="${c.link.controller}" 
-                      action="${c.link.action}" 
-                      id="${c.link.id!=null?groovy.util.Eval.x(pageScope,c.link.id):''}"
-                      params="${c.link.params!=null?groovy.util.Eval.x(pageScope,c.link.params):[]}">${groovy.util.Eval.x(r, 'x.' + c.property) ?: 'Empty'}</g:link>
-            </g:if>
-            <g:else>
-              ${groovy.util.Eval.x(r, 'x.' + c.property)}
-            </g:else>
+        <g:if test="${params.mode=='lookup'}"><td>Use</td></g:if><g:each in="${qbeConfig.qbeResults}" var="c"><td>
+            ${groovy.util.Eval.x(r, 'x.' + c.property)}
           </td>
         </g:each>
       </tr>
