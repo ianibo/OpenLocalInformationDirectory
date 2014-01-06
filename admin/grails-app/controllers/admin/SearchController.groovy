@@ -82,7 +82,16 @@ class SearchController {
     // log.debug("leaving SearchController::index...");
 
     withFormat {
-      html { render(view:'../search/index',model:result) }
+      html { 
+        if ( params.mode=="lookup" ) {
+          render(view:'../search/lookup',model:result) 
+        }
+        else if ( request.isAjax() ) {
+          render(view:'../search/ajax',model:result) 
+        }
+        else
+          render(view:'../search/index',model:result) 
+      }
       json { render apiresponse as JSON }
       xml { render apiresponse as XML }
     }

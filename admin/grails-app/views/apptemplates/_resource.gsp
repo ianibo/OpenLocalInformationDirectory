@@ -115,8 +115,8 @@
                   </tr>
                 </g:each>
                 <tr><td colspan="7"><h4>Add Session</h4></td></tr>
-                <tr>
-                  <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
+                <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
+                  <tr>
                     <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
                     <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
                     <input type="hidden" name="__recip" value="owner"/>
@@ -126,8 +126,11 @@
                     <td><input type="text" name="endTime"/></td>
                     <td colspan="2"> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/></td>
                     <td><button type="submit">Add Session</button></td>
-                  </g:form>
-                </tr>
+                  </tr>
+                  <tr>
+                    <td colspan="7">Session Location : <g:manyToOne property="location"/></td>
+                  </tr>
+                </g:form>
               </tbody>
             </table>
           </dd>

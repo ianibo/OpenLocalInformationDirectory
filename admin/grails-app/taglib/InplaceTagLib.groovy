@@ -129,5 +129,9 @@ class InplaceTagLib {
     out << "</span>"
   }
 
+  def manyToOne = { attrs, body ->
+    def data_link = createLink(controller:'search', action: 'index', params:[qbe:'g:resources',mode:'lookup'])
+    out << "<span class=\"someclass\" data-toggle=\"modal\" data-target=\"#manyToOneModal\" data-remote=\"${data_link}\">manyToOne</span>"
+  }
 }
 

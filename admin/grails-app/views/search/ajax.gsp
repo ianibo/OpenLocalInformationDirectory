@@ -21,7 +21,7 @@
     <div class="row">
       <div id="mainarea" class="${displayobj != null ? 'col-md-6' : 'col-md-12'}">
 
-        <g:if test="${qbetemplate?.customHeaderInclude!=null}">
+        <g:if test="${qbetemplate.customHeaderInclude!=null}">
           <g:render template="${qbetemplate.customHeaderInclude}" 
                     contextPath="../apptemplates" 
                     model="${[qbeConfig:qbetemplate.qbeConfig, rows:recset, offset:offset, det:det]}" />
@@ -64,11 +64,8 @@
               <p style="text-align:center"><bootstrap:alert class="alert-info">${qbetemplate.message}</bootstrap:alert></p>
             </g:if>
 
-            <g:render template="qbeform" contextPath="../search" model="${[formdefn:qbetemplate.qbeConfig?.qbeForm]}" />
-
             <g:if test="${recset != null}">
-              <g:render template="qberesult" contextPath="../search"
-                model="${[qbeConfig:qbetemplate.qbeConfig, rows:recset, offset:offset, det:det]}" />
+              <g:render template="ajaxqberesult" contextPath="../search" model="${[qbeConfig:qbetemplate.qbeConfig, rows:recset, offset:offset, det:det]}" />
             </g:if>
 
           </g:else>
