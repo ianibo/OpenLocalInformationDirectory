@@ -12,9 +12,20 @@
       <dd><g:xEditable type="text" class="ipe" owner="${d}" field="title"/></dd>
   </dl>
 
+  <dl class="dl-horizontal">
+      <dt>Description</dt>
+      <dd><g:xEditable type="textarea" class="ipe" owner="${d}" field="description"/></dd>
+  </dl>
+
+  <dl class="dl-horizontal">
+      <dt>Primary URL</dt>
+      <dd><g:xEditable type="text" class="ipe" owner="${d}" field="url"/></dd>
+  </dl>
+
   <ul id="tabs" class="nav nav-tabs">
     <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
     <li><a href="#sessions" data-toggle="tab">Sessions</a></li>
+    <li><a href="#regs" data-toggle="tab">Registrations</a></li>
   </ul>
 
   <div id="my-tab-content" class="tab-content">
@@ -131,6 +142,12 @@
       </g:if>
 
 
+    </div>
+    <div class="tab-pane active" id="regs">
+      <dl class="dl-horizontal">
+          <dt>Registered Charity#</dt>
+          <dd><g:xEditable type="text" class="ipe" owner="${d}" field="registeredCharityNo"/></dd>
+      </dl>
     </div>
   </div>
 

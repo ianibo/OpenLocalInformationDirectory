@@ -10,6 +10,7 @@ class DirectoryEntry {
   Set subjects
   Set sessions
   Set collections
+  String registeredCharityNo
 
   static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection ]
   static mappedBy = [sessions:'owner' ]
