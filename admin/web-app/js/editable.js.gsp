@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  if (location.hash !== '') 
-    $('a[href="' + location.hash + '"]').tab('show');
+  if (window.location.hash !== '') 
+    $('a[href="' + window.location.hash + '"]').tab('show');
 
   $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     e.preventDefault()

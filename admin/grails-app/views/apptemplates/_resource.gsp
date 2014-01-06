@@ -81,29 +81,51 @@
           <dd>
             <table class="table table-striped table-bordered table-condensed" id="subjects">
               <thead>
-                <tr><th>Name</th></tr>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+                  <th>Recurrence Rule</th>
+                  <th>Text Recurrence</th>
+                  <th>Actions</th>
+                </tr>
               </thead>
               <tbody>
                 <g:each in="${d.sessions}" var="s">
-                  <tr><td>${s.id}</td></tr>
+                  <tr>
+                    <td>${s.name}</td>
+                    <td>${s.description}</td>
+                    <td>${s.startTime}</td>
+                    <td>${s.endTime}</td>
+                    <td>${s.rrule}</td>
+                    <td>${s.trrule}</td>
+                    <td></td>
+                  </tr>
                 </g:each>
               </tbody>
             </table>
             <h3>Add session</h3>
-            <dl class="dl-horizontal">
-              <dt>Session Name:</dt>
-              <dd>
-                Session Name Edit
-              </dd>
-              <dt>Description:</dt>
-              <dd>
-                Description
-              </dd>
-              <dt>Reccurrence Rule:</dt>
-              <dd>
-                <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj]}"/>
-              </dd>
-            </dl>
+            <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
+              <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
+              <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
+              <input type="hidden" name="__recip" value="owner"/>
+
+              <dl class="dl-horizontal">
+                <dt>Session Name:</dt>
+                <dd><input type="text" name="name"/></dd>
+                <dt>Description:</dt>
+                <dd><input type="texarea" name="description"/></dd>
+                <dt>Start Time:</dt>
+                <dd><input type="text" name="startTime"/></dd>
+                <dt>End Time:</dt>
+                <dd><input type="text" name="endTime"/></dd>
+                <dt>Reccurrence Rule:</dt>
+                <dd>
+                  <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/>
+                </dd>
+              </dl>
+            </g:form>
           </dd>
         </dl>
       </g:if>

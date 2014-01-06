@@ -8,7 +8,7 @@ function validateRRuleNlp(sourceRuleTextControlId, targetControlId) {
       console.log("1 from \""+$source_rule.val()+"\"");
       var rule = RRule.fromText($source_rule.val());
       console.log("2");
-      target_control.value = rule.toString();
+      target_control.val(rule.toString());
       console.log("3:"+target_control.value);
     } catch (_error) {
       e = _error;
