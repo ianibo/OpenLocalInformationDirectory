@@ -114,29 +114,22 @@
                     <td></td>
                   </tr>
                 </g:each>
+                <tr><td colspan="7"><h4>Add Session</h4></td></tr>
+                <tr>
+                  <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
+                    <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
+                    <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
+                    <input type="hidden" name="__recip" value="owner"/>
+                    <td><input type="text" name="name"/></td>
+                    <td><input type="textarea" name="description"/></td>
+                    <td><input type="text" name="startTime"/></td>
+                    <td><input type="text" name="endTime"/></td>
+                    <td colspan="2"> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/></td>
+                    <td><button type="submit">Add Session</button></td>
+                  </g:form>
+                </tr>
               </tbody>
             </table>
-            <h3>Add session</h3>
-            <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
-              <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
-              <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
-              <input type="hidden" name="__recip" value="owner"/>
-
-              <dl class="dl-horizontal">
-                <dt>Session Name:</dt>
-                <dd><input type="text" name="name"/></dd>
-                <dt>Description:</dt>
-                <dd><input type="texarea" name="description"/></dd>
-                <dt>Start Time:</dt>
-                <dd><input type="text" name="startTime"/></dd>
-                <dt>End Time:</dt>
-                <dd><input type="text" name="endTime"/></dd>
-                <dt>Reccurrence Rule:</dt>
-                <dd>
-                  <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/>
-                </dd>
-              </dl>
-            </g:form>
           </dd>
         </dl>
       </g:if>
