@@ -139,7 +139,7 @@
 
 
     </div>
-    <div class="tab-pane active" id="regs">
+    <div class="tab-pane" id="regs">
       <dl class="dl-horizontal">
           <dt>Registered Charity#</dt>
           <dd><g:xEditable type="text" class="ipe" owner="${d}" field="registeredCharityNo"/></dd>

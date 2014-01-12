@@ -15,6 +15,10 @@ class DirectoryEntry {
   static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection ]
   static mappedBy = [sessions:'owner' ]
 
+  // Typical Price?
+  // Age Range?
+  // Experience?
+
   static mapping = {
     description type:'text'
     subjects joinTable:[name:'directory_entry_subjects',key:'dirent_id',column:'term_id']
