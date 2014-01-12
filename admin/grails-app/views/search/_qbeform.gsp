@@ -2,7 +2,7 @@
 <r:require modules="editable"/>
 
 <div class="container">
-  <form class="form-horizontal" role="form" >
+  <form class="form-horizontal" role="form" method="get">
     <input type="hidden" name="qbe" value="${params.qbe}"/>
     <fieldset>
       <g:each in="${formdefn}" var="fld">

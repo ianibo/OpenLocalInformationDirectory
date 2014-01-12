@@ -117,8 +117,7 @@
               </g:if>
             </g:if>
             <g:else>
-                No template currenly available for instances of ${displayobjclassname}
-              ${displayobj as grails.converters.JSON}
+                No template currenly available for instances of ${displayobjclassname} ${displayobj as grails.converters.JSON}
             </g:else>
           </div>
         </div>
@@ -139,10 +138,5 @@
     </div>
   </div>
 
-  <script language="javascript">
-      $('#modal').on('hidden', function() {
-        $(this).data('modal').$element.removeData();
-      })
-    </script>
 </body>
 </html>
