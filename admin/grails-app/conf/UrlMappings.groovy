@@ -20,6 +20,5 @@ class UrlMappings {
     }
 
     "/collections/$id/stats"(controller:'collection', action:'stats')
-
   }
 }
