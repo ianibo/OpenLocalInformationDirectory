@@ -71,7 +71,7 @@
                  <tbody>
                    <g:each in="${colls}" var="c">
                      <tr>
-                       <td><g:link controller="collection" id="${c.shortcode}" action="show">${c.name}</g:link></td>
+                       <td><g:link controller="collection" id="${c.shortcode}" action="index">${c.name}</g:link></td>
                        <td>${c.owner.displayName}</td>
                      </tr>
                    </g:each>

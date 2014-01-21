@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><g:layoutTitle default="TLI"/></title>
+    <title><g:layoutTitle default="olid - The Open Local Information Directory - Public information from trusted Sources curated freely using an open platform"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <g:link controller="home" action="index" class="navbar-brand">Local Information Store</g:link>
+          <g:link controller="home" action="index" class="navbar-brand">Open Local Information Directory</g:link>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

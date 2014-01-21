@@ -22,6 +22,33 @@
            This page explains the TLI Collections API calls.
          </p>
 
+
+         <h3>Collections available to this user</h3>
+             <g:if test="${colls?.size() > 0}">
+               <table class="table table-striped">
+                 <thead>
+                   <tr>
+                     <th>Name</th>
+                     <th>Owned By</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   <g:each in="${colls}" var="c">
+                     <tr>
+                       <td><g:link controller="collection" id="${c.shortcode}" action="index">${c.name}</g:link></td>
+                       <td>${c.owner.displayName}</td>
+                     </tr>
+                   </g:each>
+                 </tbody>
+               </table>
+             </g:if>
+             <g:else>
+               You do not currently have API access to any collections defined in this directory. Please register an affiliation
+               and wait for your local administrator to approve the affiliation (Or a olid administrator if you are the first from your
+               organisation).
+             </g:else>
+
+
        </div>
      </div>
    </div>
