@@ -10,4 +10,11 @@ drop table if exists tli_collection;
 drop table if exists refdata_value;
 drop table if exists refdata_category;
 drop table if exists refdata_relation;
+drop table if exists additional_property;
+drop table if exists additional_property_definition;
+drop table if exists directory_entry_collections;
+drop table if exists directory_entry_subjects;
+drop table if exists tli_location;
+drop table if exists tli_session;
+
 SET foreign_key_checks = 1;

@@ -5,6 +5,7 @@ import tli.*;
 class DirectoryEntry {
 
   String title
+  String sourceReference
   String description
   String url
   Set subjects
@@ -27,6 +28,7 @@ class DirectoryEntry {
 
   static constraints = {
     title(nullable:false, blank:false)
+    sourceReference(nullable:true, blank:true)
     description(nullable:true, blank:true)
     url(nullable:true, blank:true)
     registeredCharityNo(nullable:true, blank:true)

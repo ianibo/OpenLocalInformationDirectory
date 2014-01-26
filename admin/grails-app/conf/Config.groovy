@@ -222,8 +222,8 @@ globalSearchTemplates = [
         // ['ctxtp':'filter', 'prop':'desc', 'comparator' : 'ilike', 'value':'Combo.%', 'negate' : true]
       ],
       qbeResults:[
-        [heading:'Title', property:'title',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id']],
-        [heading:'Description', property:'description']
+        [heading:'Title', property:'title',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id', cls:'col-md-6']],
+        [heading:'Description', property:'description', cls:'col-md-6']
       ]
     ]
   ],
