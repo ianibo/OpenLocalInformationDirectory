@@ -43,6 +43,12 @@
           <dd><g:xEditable type="text" class="ipe" owner="${d}" field="url"/></dd>
       </dl>
 
+      <dl class="dl-horizontal">
+          <dt>Source Reference</dt>
+          <dd><g:xEditable type="text" class="ipe" owner="${d}" field="sourceReference"/></dd>
+      </dl>
+
+
       <g:if test="${d.id != null}">
         <dl class="dl-horizontal">
           <dt>Collections</dt>
@@ -53,7 +59,7 @@
               </thead>
               <tbody>
                 <g:each in="${d.collections}" var="c">
-                  <tr><td>${c.name}</td></tr>
+                  <tr><td><g:link controller="collection" action="index" id="${c.shortcode}">${c.name}</g:link></td></tr>
                 </g:each>
               </tbody>
             </table>

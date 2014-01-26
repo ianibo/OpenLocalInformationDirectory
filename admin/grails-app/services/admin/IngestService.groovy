@@ -77,10 +77,10 @@ class IngestService {
     }
   }
 
-  private def gettxt(in) {
+  private def gettxt(i) {
     def result = null
-    if ( ( in != null ) && ( in instanceof java.util.Collection ) ) {
-      result = in.join(' ')
+    if ( ( i != null ) && ( i instanceof java.util.Collection ) ) {
+      result = i.join(' ')
     }
     result
   }
