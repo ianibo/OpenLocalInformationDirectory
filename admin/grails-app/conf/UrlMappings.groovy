@@ -16,9 +16,8 @@ class UrlMappings {
 
     "/org/$id/requestNewCollection"(controller:'org',action:'requestNewCollection')
 
-    "/collections/$id"(controller:'collection', action:"index") {
-    }
-
-    "/collections/$id/stats"(controller:'collection', action:'stats')
+    "/collections/$id"(controller:'collection', action:"index")
+    "/collections/$id/$action"(controller:'collection')
+    "/api/$id/$action"(controller:'api')
   }
 }

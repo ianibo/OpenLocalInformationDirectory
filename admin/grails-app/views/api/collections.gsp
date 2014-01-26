@@ -37,6 +37,12 @@
                      <tr>
                        <td><g:link controller="collection" id="${c.shortcode}" action="index">${c.name}</g:link></td>
                        <td>${c.owner.displayName}</td>
+                       <td>
+                         <g:link controller="collections" id="${c.shortcode}" action="stats">Stats</g:link>
+                         <g:link controller="api" id="${c.shortcode}" action="upload">Upload</g:link>
+                         <g:link controller="api" id="${c.shortcode}" action="oai">OAI</g:link>
+                         <g:link controller="api" id="${c.shortcode}" action="download">Download</g:link>
+                       </td>
                      </tr>
                    </g:each>
                  </tbody>
