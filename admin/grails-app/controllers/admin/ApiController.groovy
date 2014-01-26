@@ -11,6 +11,7 @@ class ApiController {
   def springSecurityService
   def genericOIDService
   def shortcodeService
+  def ingestService
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
@@ -25,8 +26,15 @@ class ApiController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def upload() {
+    log.debug("upload...");
     def model=[:]
-    model.colls = TliOrg.executeQuery("select c from TliCollection as c where exists ( select a from Affiliation as a where a.org = c.owner and a.user = ? )", [request.user]);
+    if ( request.method=='POST') {
+      log.debug("Post....");
+      def file = request.getFile("tf")
+      def record = new String(file.getBytes())
+      ingestService.ingest(record,params.id, request.user, file.contentType);
+    }
+    
     model
   }
 
