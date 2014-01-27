@@ -12,6 +12,7 @@ class DirectoryEntry {
   Set sessions
   Set collections
   String registeredCharityNo
+  RefdataValue status
 
   static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection ]
   static mappedBy = [sessions:'owner' ]
@@ -33,5 +34,32 @@ class DirectoryEntry {
     url(nullable:true, blank:true)
     registeredCharityNo(nullable:true, blank:true)
   }
+
+  @Transient
+  static def oaiConfig = [
+    id:'resources',
+    lastModified:'lastUpdated',
+    textDescription:'TLI Resources',
+    schemas:[
+      'oai_dc':[type:'method',methodName:'toOaiDcXml'],
+      'tli':[type:'method',methodName:'toTliXml'],
+    ],
+    // query:" from DirectoryEntry as o where o.status.value != 'Deleted'"
+    query:" from DirectoryEntry as o where o.status.value != 'Deleted'"
+  ]
+
+  /**
+   *  Render this package as OAI_dc
+   */
+  @Transient
+  def toOaiDcXml(builder) {
+    builder.'oai_dc:dc'('xmlns:oai_dc':'http://www.openarchives.org/OAI/2.0/oai_dc/',
+                    'xmlns:dc':'http://purl.org/dc/elements/1.1/',
+                    'xsi:schemaLocation':'http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd')
+    {
+      'dc:title'(title)
+    }
+  }
+
 }
 

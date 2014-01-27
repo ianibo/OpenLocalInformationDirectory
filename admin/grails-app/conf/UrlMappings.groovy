@@ -19,5 +19,6 @@ class UrlMappings {
     "/collections/$id"(controller:'collection', action:"index")
     "/collections/$id/$action"(controller:'collection')
     "/api/$id/$action"(controller:'api')
+    "/oai/$id"(controller:'oai',action:'index')
   }
 }

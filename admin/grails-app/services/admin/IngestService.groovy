@@ -49,7 +49,8 @@ class IngestService {
       def db_record = DirectoryEntry.find('from DirectoryEntry as d where exists ( select c from d.collections as c where c = ? ) and d.sourceReference = ?',[collection, json.id])
 
       if ( db_record == null ) {
-        db_record = new DirectoryEntry()
+        def entry_status_current = RefdataCategory.lookupOrCreate("entrystatus", "Current" )
+        db_record = new DirectoryEntry(status:entry_status_current)
         db_record.collections=[]
       }
 

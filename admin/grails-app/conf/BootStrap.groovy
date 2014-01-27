@@ -51,6 +51,12 @@ class BootStrap {
       def status_pending = RefdataCategory.lookupOrCreate("status", "Pending Approval" )
       def status_approved = RefdataCategory.lookupOrCreate("status", "Approved" )
       def status_rejected = RefdataCategory.lookupOrCreate("status", "Rejected" )
+
+      def entry_status_category = RefdataCategory.findByDesc('entrystatus') ?: new RefdataCategory(desc:'entrystatus',catType:refdata_type).save();
+      def entry_status_pending = RefdataCategory.lookupOrCreate("entrystatus", "Pending" )
+      def entry_status_current = RefdataCategory.lookupOrCreate("entrystatus", "Current" )
+      def entry_status_deleted = RefdataCategory.lookupOrCreate("entrystatus", "Deleted" )
+
   
       log.debug("Checking affiliation types");
       def affiliation_category = RefdataCategory.findByDesc('affiliation') ?: new RefdataCategory(desc:'affiliation',catType:refdata_type).save();
