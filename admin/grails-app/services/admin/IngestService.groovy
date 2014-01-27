@@ -90,11 +90,11 @@ class IngestService {
 
       json.categories.each { cat ->
         // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
-        def cat_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", kw )
+        def cat_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", cat )
 
         // If not matched, see if we can match on a private local term
         if ( cat_object == null ) {
-          cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", kw )
+          cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", cat )
         }
 
         db_record.categories.add(cat_object)
