@@ -81,7 +81,38 @@
               </dd>
               <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
             </g:form>
+            <br/>
           </dd>
+          
+          <dt>Categories</dt>
+          <dd>
+            <table class="table table-striped table-bordered table-condensed" id="subjects">
+                <thead>
+                  <tr><th>Category</th><th>actions</th></tr>
+                </thead>
+                <tbody>
+                  <g:each in="${d.categories}" var="s">
+                    <tr><td>${s.value} (${s.owner.desc})</td><td><a href="">delete</a></td></tr>
+                  </g:each>
+                </tbody>
+            </table>
+
+            <g:form controller="ajaxSupport" action="addToStdCollection" class="form-inline">
+              <input type="hidden" name="__context" value="${d.class.name}:${d.id}" />
+              <input type="hidden" name="__property" value="categories" />
+              <dt>Add Subject</dt>
+              <dd>
+                <g:simpleReferenceTypedown class="input-xxlarge" 
+                                           style="width:350px;" 
+                                           name="__relatedObject" 
+                                           baseClass="tli.RefdataValue" 
+                                           data-filter2="Subject"/>
+              </dd>
+              <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
+            </g:form>
+            <br/>
+          </dd>
+
         </dl>
       </g:if>
       <g:else>
