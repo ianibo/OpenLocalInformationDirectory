@@ -12,10 +12,11 @@ class DirectoryEntry {
   Set subjects
   Set sessions
   Set collections
+  Set categories
   String registeredCharityNo
   RefdataValue status
 
-  static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection ]
+  static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection, categories:RefdataValue ]
   static mappedBy = [sessions:'owner' ]
 
   // Typical Price?
@@ -26,6 +27,7 @@ class DirectoryEntry {
     description type:'text'
     subjects joinTable:[name:'directory_entry_subjects',key:'dirent_id',column:'term_id']
     collections joinTable:[name:'directory_entry_collections',key:'dirent_id',column:'coll_id']
+    categories joinTable:[name:'directory_entry_cats',key:'dirent_id',column:'term_id']
   }
 
   static constraints = {

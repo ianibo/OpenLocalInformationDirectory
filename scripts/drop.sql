@@ -16,5 +16,5 @@ drop table if exists directory_entry_collections;
 drop table if exists directory_entry_subjects;
 drop table if exists tli_location;
 drop table if exists tli_session;
-
+drop table if exists directory_entry_refdata_value;
 SET foreign_key_checks = 1;

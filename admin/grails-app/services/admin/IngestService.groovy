@@ -60,6 +60,8 @@ class IngestService {
         def entry_status_current = RefdataCategory.lookupOrCreate("entrystatus", "Current" )
         db_record = new DirectoryEntry(status:entry_status_current)
         db_record.collections=[]
+        db_record.subjects=[]
+        db_record.categories=[]
       }
 
       db_record.title = gettxt(json.title)
@@ -69,19 +71,40 @@ class IngestService {
       db_record.collections.add(collection)
       db_record.registeredCharityNo = gettxt(json."Charity Number")
     
-      if ( db_record.save(flush:true) ) {
-      }
-      else {
-        log.error("Problem:${record.errors}");
-      }
       // Set subjects
       // Set sessions
       // Set collections
       // String registeredCharityNo
 
-
       json.keywords.each { kw ->
-        log.debug("Kw: ${kw}");
+        // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
+        def kw_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", kw )
+
+        // If not matched, see if we can match on a private local term
+        if ( kw_object == null ) {
+          kw_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-kw", kw )
+        }
+
+        db_record.subjects.add(kw_object)
+      }
+
+      json.categories.each { cat ->
+        // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
+        def cat_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", kw )
+
+        // If not matched, see if we can match on a private local term
+        if ( cat_object == null ) {
+          cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", kw )
+        }
+
+        db_record.categories.add(cat_object)
+      }
+
+
+      if ( db_record.save(flush:true) ) {
+      }
+      else {
+        log.error("Problem:${record.errors}");
       }
     }
   }

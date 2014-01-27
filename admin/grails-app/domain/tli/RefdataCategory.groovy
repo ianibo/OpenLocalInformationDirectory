@@ -80,4 +80,9 @@ class RefdataCategory {
       }
     }
   }
+
+  static RefdataValue lookup(category_name, value) {
+    def cat = RefdataCategory.findByDesc(category_name);
+    RefdataValue.findByOwnerAndValueIlike(cat, value)
+  }
 }
