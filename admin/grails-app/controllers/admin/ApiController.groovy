@@ -32,7 +32,7 @@ class ApiController {
       log.debug("Post....");
       def file = request.getFile("tf")
       def record = new String(file.getBytes())
-      ingestService.ingest(record,params.id, request.user, file.contentType);
+      model.ingestResult = ingestService.ingest(record,params.id, request.user, file.contentType);
     }
     
     model

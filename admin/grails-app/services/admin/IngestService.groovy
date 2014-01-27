@@ -13,6 +13,7 @@ class IngestService {
 
   def ingest(record, collection, user, contentType) {
     log.debug("ingest.... [coll=${collection}, contentType:${contentType}]");
+    def result = [:]
 
     def coll_obj = TliCollection.findByShortcode(collection)
 
@@ -32,6 +33,13 @@ class IngestService {
           break;
       }
     }
+    else {
+      log.error("Unknown Collection: ${collection}");
+      result.status=false
+      result.message("Unknown Collection: ${collection}");
+    }
+
+    result
   }
  
 
