@@ -51,4 +51,15 @@ class ApiController {
     model.colls = TliOrg.executeQuery("select c from TliCollection as c where exists ( select a from Affiliation as a where a.org = c.owner and a.user = ? )", [request.user]);
     model
   }
+
+  @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+  def loadVocabulary() {
+    def result=[:]
+    if ( request.method=='POST' ) {
+      vocabSyncService.update(params.vocabCode,params.vocabBaseUrl, params.vocabPath);
+    }
+
+    result
+  }
+
 }
