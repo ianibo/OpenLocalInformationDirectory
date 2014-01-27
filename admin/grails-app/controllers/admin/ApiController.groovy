@@ -12,6 +12,7 @@ class ApiController {
   def genericOIDService
   def shortcodeService
   def ingestService
+  def vocabSyncService
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
@@ -54,6 +55,8 @@ class ApiController {
 
   @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
   def loadVocabulary() {
+    log.debug("loadVocabulary(${params})");
+
     def result=[:]
     if ( request.method=='POST' ) {
       vocabSyncService.update(params.vocabCode,params.vocabBaseUrl, params.vocabPath);

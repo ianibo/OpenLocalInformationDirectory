@@ -49,11 +49,11 @@ class VocabSyncService {
         log.debug("Processing items.... voc is ${voc}");
         vocab.Item.each { item ->
           def term_id = item.'@Id'.text()
-          log.debug("Test item id:\"${term_id}\" Name:\"${item.Name.text()}\"");
+          // log.debug("Test item id:\"${term_id}\" Name:\"${item.Name.text()}\"");
   
-          def existing_term = RefdataValue.findByOwnerAndTermId(voc, term_id)
+          def existing_term = RefdataValue.findByTermIdAndOwner(term_id, voc)
           if ( existing_term == null ) {
-            log.debug("Unable to locate term for voc ${voc.id}, term ${term_id}");
+            log.debug("Unable to locate term for voc ${voc.id}, term ${term_id}.. Creating");
             existing_term = new RefdataValue(owner:voc, 
                                              value:item.Name.text(), 
                                              termId:term_id,
