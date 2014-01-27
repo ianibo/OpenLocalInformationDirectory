@@ -1,6 +1,7 @@
 package tli
 
 import tli.*;
+import javax.persistence.Transient
 
 class DirectoryEntry {
 

@@ -1,7 +1,6 @@
 package admin
 
 import grails.converters.*
-import grails.plugins.springsecurity.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import tli.*
 import groovy.xml.MarkupBuilder
