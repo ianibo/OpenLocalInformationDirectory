@@ -3,6 +3,7 @@ package admin
 import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import tli.*
+import au.com.bytecode.opencsv.CSVReader
 
 class AdminController {
 
@@ -69,5 +70,22 @@ class AdminController {
     result
   }
 
+  @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+  def loadOrgs() {
+    def result=[:]
+    if ( request.method=='POST' ) {     
+      def orgs_csv = request.getPart('orgscsv')
+      def upload_mime_type = orgs_csv?.contentType
+      def upload_filename = orgs_csv?.getOriginalFilename()
+      log.debug("Uploaded type: ${upload_mime_type} filename was ${upload_filename}");
+      CSVReader r = new CSVReader( new InputStreamReader(orgs_csv?.inputStream, 
+                                   java.nio.charset.Charset.forName('UTF-8') ) )
+      String[] nl;
+      while ((nl = r.readNext()) != null) {
+        println(nl)
+      }
+    }
+    result
+  }
 
 }
