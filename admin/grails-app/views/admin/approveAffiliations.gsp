@@ -32,9 +32,8 @@
                      <td>${a.org.displayName}</td>
                      <td>${a.role?.value}</td>
                      <td>
-                       <g:link controller="admin" action="approveAffiliations" params="${[aff:a.id,act:'Y']}" class="btn btn-success btn-xs pull-right">Approve</g:link>
-                       &nbsp;
-                       <g:link controller="admin" action="approveAffiliations" params="${[aff:a.id,act:'N']}" class="btn btn-success btn-xs pull-right">Reject</g:link>
+                       <g:link controller="admin" action="approveAffiliations" params="${[aff:a.id,act:'Y']}" class="btn btn-success btn-xs ">Approve</g:link>
+                       <g:link controller="admin" action="approveAffiliations" params="${[aff:a.id,act:'N']}" class="btn btn-success btn-xs ">Reject</g:link>
                      </td>
                    </tr>
                  </g:each>

@@ -28,9 +28,8 @@
                    <tr>
                      <td>${o.displayName}</td>
                      <td>
-                       <g:link controller="admin" action="approveOrgs" params="${[org:o.id,act:'Y']}" class="btn btn-success btn-xs pull-right">Approve</g:link>
-                       &nbsp;
-                       <g:link controller="admin" action="approveOrgs" params="${[org:o.id,act:'N']}" class="btn btn-success btn-xs pull-right">Reject</g:link>
+                         <g:link controller="admin" action="approveOrgs" params="${[org:o.id,act:'Y']}" class="btn btn-success btn-xs">Approve</g:link>
+                         <g:link controller="admin" action="approveOrgs" params="${[org:o.id,act:'N']}" class="btn btn-success btn-xs" >Reject</g:link>
                      </td>
                    </tr>
                  </g:each>
