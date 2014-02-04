@@ -77,8 +77,8 @@ class AjaxSupportController {
       log.debug("Count qry: ${config.countQry}");
       log.debug("Row qry: ${config.rowQry}");
 
-      def cq = Org.executeQuery(config.countQry,query_params);
-      def rq = Org.executeQuery(config.rowQry,
+      def cq = RefdataValue.executeQuery(config.countQry,query_params);
+      def rq = RefdataValue.executeQuery(config.rowQry,
                                 query_params,
                                 [max:params.iDisplayLength?:400,offset:params.iDisplayStart?:0]);
 
@@ -352,6 +352,7 @@ class AjaxSupportController {
     outs.close()
   }
 
+  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def genericSetRel() {
     // [id:1, value:JISC_Collections_NESLi2_Lic_IOP_Institute_of_Physics_NESLi2_2011-2012_01012011-31122012.., type:License, action:inPlaceSave, controller:ajax
     // def clazz=grailsApplication.domainClasses.findByFullName(params.type)
@@ -403,7 +404,7 @@ class AjaxSupportController {
     def result=''
     if ( value ) {
       switch ( value.class ) {
-        case org.gokb.cred.RefdataValue.class:
+        case RefdataValue.class:
           if ( value.icon != null ) {
             result="<span class=\"select-icon ${value.icon}\"></span>${value.value}"
           }

@@ -36,6 +36,7 @@ class DirectoryEntry {
     description(nullable:true, blank:true)
     url(nullable:true, blank:true)
     registeredCharityNo(nullable:true, blank:true)
+    status(nullable:true, blank:false)
   }
 
   @Transient

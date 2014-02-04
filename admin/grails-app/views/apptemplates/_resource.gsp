@@ -22,6 +22,12 @@
       <dd><g:xEditable type="text" class="ipe" owner="${d}" field="url"/></dd>
   </dl>
 
+  <dl class="dl-horizontal">
+      <dt>Status</dt>
+      <dd><g:xEditableRefData owner="${d}" field="status" config='entrystatus' /></dd>
+  </dl>
+
+
   <ul id="tabs" class="nav nav-tabs">
     <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
     <g:if test="${d.id != null}">
