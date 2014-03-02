@@ -154,25 +154,33 @@
                     <td></td>
                   </tr>
                 </g:each>
-                <tr><td colspan="7"><h4>Add Session</h4></td></tr>
-                <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
-                  <tr>
-                    <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
-                    <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
-                    <input type="hidden" name="__recip" value="owner"/>
-                    <td><input type="text" name="name"/></td>
-                    <td><input type="textarea" name="description"/></td>
-                    <td><input type="text" name="startTime"/></td>
-                    <td><input type="text" name="endTime"/></td>
-                    <td colspan="2"> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/></td>
-                    <td><button type="submit">Add Session</button></td>
-                  </tr>
-                  <tr>
-                    <td colspan="7">Session Location : <g:manyToOne property="location"/></td>
-                  </tr>
-                </g:form>
               </tbody>
             </table>
+
+            Add Session<hr/>
+            <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
+              <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
+              <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
+              <input type="hidden" name="__recip" value="owner"/>
+              <dl>
+                <dt>Name</dt>
+                <dd><input type="text" name="name"/></dd>
+                <dt>Description</dt>
+                <dd><input type="textarea" name="description"/></dd>
+                <dt>Start Time</dt>
+                <dd><input type="text" name="startTime"/></dd>
+                <dt>End Time</dt>
+                <dd><input type="text" name="endTime"/></dd>
+                <dt>Recurrence</dt>
+                <dd colspan="2"> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/>
+                    <button type="submit">Add Session</button>
+                </dd>
+                <dt>Location</dt>
+                <dd>
+                    <g:manyToOne property="location"/>
+                </dd>
+              </dl>
+            </g:form>
           </dd>
         </dl>
       </div>
