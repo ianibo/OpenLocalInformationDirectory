@@ -176,14 +176,14 @@
                 </dd>
                 <dt>Location</dt>
                 <dd>
-                  <div class="dropdown">
-                    btn: <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown">Dropdown<span class="caret"></span></a>aa
+                  <div id="ddwrap" class="dropdown">
+                    <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown"></a>
                     <table>
                       <thead>
                         <tr>
                           <td>Postcode</td>
-                          <td>House Name</td>
-                          <td>Number</td>
+                          <td>Bulding Name</td>
+                          <td>Building Number</td>
                           <td>Street</td>
                           <td>Town/City</td>
                           <td>Region</td>
@@ -192,15 +192,13 @@
                       </thead>
                       <tbody>
                         <tr class="rowlink">
-                          <td><input type="text" class="addrtd"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td><input type="text"/></td>
-                          <td>
-                          </td>
+                          <td><input name="__adPostcode" type="text" class="addrtd"/></td>
+                          <td><input name="__adBuildingName" type="text" class="addrtd"/></td>
+                          <td><input name="__adBuildingNumber" type="text" class="addrtd"/></td>
+                          <td><input name="__adStreet" type="text" class="addrtd"/></td>
+                          <td><input name="__adTown" type="text" class="addrtd"/></td>
+                          <td><input name="__adRegion" type="text" class="addrtd"/></td>
+                          <td><input name="__adCountry" type="text" class="addrtd"/></td>
                         </tr>
                       </tbody>
                     </table>
@@ -257,8 +255,12 @@
 
     $('.addrtd').bind('input', function(e) { 
         // $(this).val() // get the current value of the input field.
-        $('#fishy').dropdown('toggle');
-        $(this).focus();
+        if ( $('#ddwrap').hasClass('open') ) {
+        }
+        else {
+          $('#fishy').dropdown('toggle');
+          $(this).focus();
+        }
     });
   });
 

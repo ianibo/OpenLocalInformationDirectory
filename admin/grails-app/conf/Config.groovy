@@ -248,6 +248,33 @@ globalSearchTemplates = [
       ]
     ]
   ],
+  'locations':[
+    baseclass:'tli.TliLocation',
+    title:'Addresses ',
+    group:'Primary',
+    qbeConfig:[
+      qbeForm:[
+        [
+          prompt:'Postcode',
+          qparam:'qp_postcode',
+          placeholder:'Postcode',
+          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'postcode']
+        ],
+      ],
+      qbeGlobals:[
+        // ['ctxtp':'filter', 'prop':'desc', 'comparator' : 'ilike', 'value':'Combo.%', 'negate' : true]
+      ],
+      qbeResults:[
+        [heading:'Building Name', property:'buildingName',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id']],
+        [heading:'Building Number', property:'buildingNumber'],
+        [heading:'Street', property:'street'],
+        [heading:'Postcode', property:'postcode'],
+        [heading:'City', property:'city'],
+        [heading:'Region', property:'region'],
+        [heading:'Country', property:'country']
+      ]
+    ]
+  ],
 
 
 ]
