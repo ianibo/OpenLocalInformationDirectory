@@ -173,11 +173,50 @@
                 <dd><input type="text" name="endTime"/></dd>
                 <dt>Recurrence</dt>
                 <dd colspan="2"> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/>
-                    <button type="submit">Add Session</button>
                 </dd>
                 <dt>Location</dt>
                 <dd>
-                    <g:manyToOne property="location"/>
+                  <div class="dropdown">
+                    btn: <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown">Dropdown<span class="caret"></span></a>aa
+                    <table>
+                      <thead>
+                        <tr>
+                          <td>Postcode</td>
+                          <td>House Name</td>
+                          <td>Number</td>
+                          <td>Street</td>
+                          <td>Town/City</td>
+                          <td>Region</td>
+                          <td>Country</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="rowlink">
+                          <td><input type="text" class="addrtd"/></td>
+                          <td><input type="text"/></td>
+                          <td><input type="text"/></td>
+                          <td><input type="text"/></td>
+                          <td><input type="text"/></td>
+                          <td><input type="text"/></td>
+                          <td><input type="text"/></td>
+                          <td>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+                </dd>
+                <dt>
+                </dt>
+                <dd>
+                    <button type="submit">Add Session</button>
                 </dd>
               </dl>
             </g:form>
@@ -216,6 +255,10 @@
       }
     });
 
+    $('.addrtd').bind('input', function() { 
+        $(this).val() // get the current value of the input field.
+        $('#fishy').dropdown('toggle');
+    });
   });
 
 </script>
