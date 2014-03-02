@@ -255,9 +255,10 @@
       }
     });
 
-    $('.addrtd').bind('input', function() { 
-        $(this).val() // get the current value of the input field.
+    $('.addrtd').bind('input', function(e) { 
+        // $(this).val() // get the current value of the input field.
         $('#fishy').dropdown('toggle');
+        $(this).focus();
     });
   });
 
