@@ -110,6 +110,7 @@ class CreateController {
           else {
             result.id = params.cls+":"+result.newobj.id
             result.uri = new ApplicationTagLib().createLink([controller: 'resource', action:'show', id:"${result.id}"])
+            result.str = result.newobj.toString()
           }
         }
         catch ( Exception e ) {

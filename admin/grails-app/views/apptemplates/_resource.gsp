@@ -125,6 +125,7 @@
         <p>Other properties will become editable once you have saved the record</p>
       </g:else>
     </div>
+
     <g:if test="${d.id != null}">
       <div class="tab-pane" id="sessions">
         <dl class="dl-horizontal">
@@ -177,7 +178,7 @@
                 <dt>Location</dt>
                 <dd>
                   <span id="SelectedLocation">None Selected, use the fields below to select an existing address, or create a new one</span><br/>
-                  <input type="hidden" name="location" value=""/>
+                  <input id="location" type="hidden" name="location" value=""/>
                   <div id="ddwrap" class="dropdown">
                     <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown"></a>
                     <table>
@@ -293,14 +294,16 @@
                               country:$('#__country').val()
                             } })
         .done(function(resp) {
-          alert( "success" );
+          // alert( "success" );
           console.log("Response: %o",resp);
+          $('#SelectedLocation').html(resp.str);
+          $('#location').val(resp.id);
         })
         .fail(function() {
-          alert( "error" );
+          // alert( "error" );
         })
         .always(function() {
-          alert( "complete" );
+          // alert( "complete" );
         });
 
       return false;
