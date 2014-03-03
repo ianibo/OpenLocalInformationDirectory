@@ -176,6 +176,8 @@
                 </dd>
                 <dt>Location</dt>
                 <dd>
+                  <span id="SelectedLocation">None Selected, use the fields below to select an existing address, or create a new one</span><br/>
+                  <input type="hidden" name="location" value=""/>
                   <div id="ddwrap" class="dropdown">
                     <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown"></a>
                     <table>
@@ -199,6 +201,7 @@
                           <td><input name="__adTown" type="text" class="addrtd"/></td>
                           <td><input name="__adRegion" type="text" class="addrtd"/></td>
                           <td><input name="__adCountry" type="text" class="addrtd"/></td>
+                          <td><button type="button" id="createAddrBtn" name="createAddress">Create Address</button></td>
                         </tr>
                       </tbody>
                     </table>
@@ -272,6 +275,12 @@
           }
         }
     });
+
+    $('#createAddrBtn').click(function(){
+      alert("Create address");
+      return false;
+    });
   });
+
 
 </script>
