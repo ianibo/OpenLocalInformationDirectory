@@ -11,7 +11,7 @@
      <div class="row">
        <div class="col-lg-12">
          <h1>Local Information Directory - Admin
-         <img src="${resource(dir: 'images', file: 'ods_transparent.png')}" class="pull-right"/>
+         <!-- img src="${resource(dir: 'images', file: 'ods_transparent.png')}" class="pull-right" -->
          </h1>
        </div>
      </div>

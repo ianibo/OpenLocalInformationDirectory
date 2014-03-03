@@ -146,6 +146,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/home/**':                       ['permitAll'],
 	'/index':                         ['permitAll'],
 	'/index.gsp':                     ['permitAll'],
+	'/oai':                           ['permitAll'],
+	'/oai/**':                        ['permitAll'],
 	'/register':                      ['permitAll'],
 	'/register/**':                   ['permitAll'],
 	'/login/**':                      ['permitAll'],
@@ -215,7 +217,7 @@ globalSearchTemplates = [
           prompt:'Title',
           qparam:'qp_title',
           placeholder:'Title',
-          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'title']
+          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'title', 'wildcard':'B']
         ],
       ],
       qbeGlobals:[
@@ -256,5 +258,26 @@ globalSearchTemplates = [
 globalDisplayTemplates = [
   'tli.DirectoryEntry': [ type:'staticgsp', rendername:'resource' ],
   'tli.TliOrg': [ type:'staticgsp', rendername:'org' ],
+]
+
+defaultOaiConfig = [
+  lastModified:'lastUpdated',
+  schemas:[
+    'oai_dc':[
+      type:'method',
+      methodName:'toOaiDcXml',
+      schema:'http://www.openarchives.org/OAI/2.0/oai_dc.xsd',
+      metadataNamespaces: [
+        '_default_' : 'http://www.openarchives.org/OAI/2.0/oai_dc/',
+        'dc'        : "http://purl.org/dc/elements/1.1/"
+      ]],
+    'tli':[
+      type:'method',
+      methodName:'toTliXml',
+      schema:'http://www.tli.org/schemas/oai_metadata.xsd',
+      metadataNamespaces: [
+        '_default_': 'http://www.tli.org/oai_metadata/'
+      ]],
+  ]
 ]
 

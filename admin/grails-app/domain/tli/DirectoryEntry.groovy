@@ -19,6 +19,10 @@ class DirectoryEntry {
   static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection, categories:RefdataValue ]
   static mappedBy = [sessions:'owner' ]
 
+  // Timestamps
+  Date dateCreated
+  Date lastUpdated
+
   // Typical Price?
   // Age Range?
   // Experience?
