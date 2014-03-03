@@ -154,25 +154,70 @@
                     <td></td>
                   </tr>
                 </g:each>
-                <tr><td colspan="7"><h4>Add Session</h4></td></tr>
-                <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
-                  <tr>
-                    <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
-                    <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
-                    <input type="hidden" name="__recip" value="owner"/>
-                    <td><input type="text" name="name"/></td>
-                    <td><input type="textarea" name="description"/></td>
-                    <td><input type="text" name="startTime"/></td>
-                    <td><input type="text" name="endTime"/></td>
-                    <td colspan="2"> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/></td>
-                    <td><button type="submit">Add Session</button></td>
-                  </tr>
-                  <tr>
-                    <td colspan="7">Session Location : <g:manyToOne property="location"/></td>
-                  </tr>
-                </g:form>
               </tbody>
             </table>
+
+            Add Session<hr/>
+            <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
+              <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
+              <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
+              <input type="hidden" name="__recip" value="owner"/>
+              <dl>
+                <dt>Name</dt>
+                <dd><input type="text" name="name"/></dd>
+                <dt>Description</dt>
+                <dd><input type="textarea" name="description"/></dd>
+                <dt>Start Time</dt>
+                <dd><input type="text" name="startTime"/></dd>
+                <dt>End Time</dt>
+                <dd><input type="text" name="endTime"/></dd>
+                <dt>Recurrence</dt>
+                <dd colspan="2"> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/>
+                </dd>
+                <dt>Location</dt>
+                <dd>
+                  <div id="ddwrap" class="dropdown">
+                    <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown"></a>
+                    <table>
+                      <thead>
+                        <tr>
+                          <td>Postcode</td>
+                          <td>Bulding Name</td>
+                          <td>Building Number</td>
+                          <td>Street</td>
+                          <td>Town/City</td>
+                          <td>Region</td>
+                          <td>Country</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="rowlink">
+                          <td><input name="__adPostcode" type="text" class="addrtd"/></td>
+                          <td><input name="__adBuildingName" type="text" class="addrtd"/></td>
+                          <td><input name="__adBuildingNumber" type="text" class="addrtd"/></td>
+                          <td><input name="__adStreet" type="text" class="addrtd"/></td>
+                          <td><input name="__adTown" type="text" class="addrtd"/></td>
+                          <td><input name="__adRegion" type="text" class="addrtd"/></td>
+                          <td><input name="__adCountry" type="text" class="addrtd"/></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                      <li role="presentation" class="divider"></li>
+                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+                </dd>
+                <dt>
+                </dt>
+                <dd>
+                    <button type="submit">Add Session</button>
+                </dd>
+              </dl>
+            </g:form>
           </dd>
         </dl>
       </div>
@@ -208,6 +253,25 @@
       }
     });
 
+    $('.addrtd').bind('input', function(e) { 
+        // $(this).val() // get the current value of the input field.
+        var num_addresses = 0;
+        // Search for addresses
+        if ( num_addresses > 0 ) {
+          if ( $('#ddwrap').hasClass('open') ) {
+          }
+          else {
+            $('#fishy').dropdown('toggle');
+            $(this).focus();
+          }
+        }
+        else {
+          if ( $('#ddwrap').hasClass('open') ) {
+            $('#fishy').dropdown('toggle');
+            $(this).focus();
+          }
+        }
+    });
   });
 
 </script>

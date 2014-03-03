@@ -22,7 +22,7 @@
   <body>
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -45,6 +45,7 @@
                     <li><g:link controller="search" action="index" params="${[qbe:'g:refdataCategories']}">Refdata Categories</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:resources']}">Resources</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:orgs']}">Organisations</g:link></li>
+                    <li><g:link controller="search" action="index" params="${[qbe:'g:locations']}">Addresses</g:link></li>
                     <li><g:link controller="collection" action="index">Resources</g:link></li>
                     <li><g:link controller="admin" action="loadOrgs">Bulk Load Organisations</g:link></li>
 
