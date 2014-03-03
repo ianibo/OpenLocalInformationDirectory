@@ -256,12 +256,19 @@ globalSearchTemplates = [
     group:'Primary',
     qbeConfig:[
       qbeForm:[
-        [
-          prompt:'Postcode',
-          qparam:'qp_postcode',
-          placeholder:'Postcode',
-          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'postcode']
-        ],
+        [ prompt:'Postcode', qparam:'qp_postcode', placeholder:'Postcode', contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'postcode','wildcard':'B'] ],
+        [ prompt:'Building Name', qparam:'qp_buildname', placeholder:'Building Name', 
+                          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'buildingName', 'wildcard':'B'] ],
+        [ prompt:'Building Number', qparam:'qp_buildnum', placeholder:'Building Number', 
+                          contextTree:['ctxtp':'qry','comparator':'ilike', 'prop':'buildingNumber', 'wildcard':'B'] ],
+        [ prompt:'Street', qparam:'qp_street', placeholder:'Street', 
+                          contextTree:['ctxtp':'qry','comparator':'ilike', 'prop':'street', 'wildcard':'B'] ],
+        [ prompt:'City', qparam:'qp_city', placeholder:'City', 
+                          contextTree:['ctxtp':'qry','comparator':'ilike', 'prop':'city', 'wildcard':'B'] ],
+        [ prompt:'Region', qparam:'qp_region', placeholder:'Region', 
+                          contextTree:['ctxtp':'qry','comparator':'ilike', 'prop':'region', 'wildcard':'B'] ],
+        [ prompt:'Country', qparam:'qp_country', placeholder:'Country', 
+                          contextTree:['ctxtp':'qry','comparator':'ilike', 'prop':'country', 'wildcard':'B'] ],
       ],
       qbeGlobals:[
         // ['ctxtp':'filter', 'prop':'desc', 'comparator' : 'ilike', 'value':'Combo.%', 'negate' : true]

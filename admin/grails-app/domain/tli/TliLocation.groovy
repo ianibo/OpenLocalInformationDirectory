@@ -4,8 +4,6 @@ import tli.*;
 
 class TliLocation {
 
-  String description
-  String locType
   String buildingName
   String buildingNumber
   String street
@@ -16,8 +14,6 @@ class TliLocation {
 
 
   static constraints = {
-    description(nullable:true, blank:false)
-    locType(nullable:true, blank:false)
     buildingName(nullable:true, blank:false)
     buildingNumber(nullable:true, blank:false)
     street(nullable:true, blank:false)

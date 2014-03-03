@@ -194,13 +194,13 @@
                       </thead>
                       <tbody>
                         <tr class="rowlink">
-                          <td><input name="__adPostcode" type="text" class="addrtd"/></td>
-                          <td><input name="__adBuildingName" type="text" class="addrtd"/></td>
-                          <td><input name="__adBuildingNumber" type="text" class="addrtd"/></td>
-                          <td><input name="__adStreet" type="text" class="addrtd"/></td>
-                          <td><input name="__adTown" type="text" class="addrtd"/></td>
-                          <td><input name="__adRegion" type="text" class="addrtd"/></td>
-                          <td><input name="__adCountry" type="text" class="addrtd"/></td>
+                          <td><input id="__adPostcode" type="text" class="addrtd"/></td>
+                          <td><input id="__adBuildingName" type="text" class="addrtd"/></td>
+                          <td><input id="__adBuildingNumber" type="text" class="addrtd"/></td>
+                          <td><input id="__adStreet" type="text" class="addrtd"/></td>
+                          <td><input id="__adTown" type="text" class="addrtd"/></td>
+                          <td><input id="__adRegion" type="text" class="addrtd"/></td>
+                          <td><input id="__adCountry" type="text" class="addrtd"/></td>
                           <td><button type="button" id="createAddrBtn" name="createAddress">Create Address</button></td>
                         </tr>
                       </tbody>
@@ -284,7 +284,13 @@
                             type:"POST",
                             data:{
                               cls:'tli.TliLocation',
-                              buildingName:'SomeBuilding'
+                              postcode:$('#__adPostcode').val(),
+                              buildingName:$('#__adBuildingName').val(),
+                              buildingNumber:$('#__adBuildingNumber').val(),
+                              street:$('#__adstreet').val(),
+                              city:$('#__adtown').val(),
+                              region:$('#__region').val(),
+                              country:$('#__country').val()
                             } })
         .done(function(resp) {
           alert( "success" );
