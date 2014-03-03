@@ -255,11 +255,21 @@
 
     $('.addrtd').bind('input', function(e) { 
         // $(this).val() // get the current value of the input field.
-        if ( $('#ddwrap').hasClass('open') ) {
+        var num_addresses = 0;
+        // Search for addresses
+        if ( num_addresses > 0 ) {
+          if ( $('#ddwrap').hasClass('open') ) {
+          }
+          else {
+            $('#fishy').dropdown('toggle');
+            $(this).focus();
+          }
         }
         else {
-          $('#fishy').dropdown('toggle');
-          $(this).focus();
+          if ( $('#ddwrap').hasClass('open') ) {
+            $('#fishy').dropdown('toggle');
+            $(this).focus();
+          }
         }
     });
   });
