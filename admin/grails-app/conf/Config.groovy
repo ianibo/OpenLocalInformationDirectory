@@ -285,6 +285,7 @@ globalSearchTemplates = [
 globalDisplayTemplates = [
   'tli.DirectoryEntry': [ type:'staticgsp', rendername:'resource' ],
   'tli.TliOrg': [ type:'staticgsp', rendername:'org' ],
+  'tli.TliLocation': [ type:'staticgsp', rendername:'location' ],
 ]
 
 defaultOaiConfig = [
