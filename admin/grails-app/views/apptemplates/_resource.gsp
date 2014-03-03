@@ -278,6 +278,25 @@
 
     $('#createAddrBtn').click(function(){
       alert("Create address");
+      // Call the create controller process action with domain=tli.TliLocation, and then name:value pairs for the properties
+      // Get result.id from json return - thats the OID to use.
+      var jqxhr = $.ajax( { url: "<g:createLink controller='create' action='process'/>",
+                            type:"POST",
+                            data:{
+                              cls:'tli.TliLocation',
+                              buildingName:'SomeBuilding'
+                            } })
+        .done(function(resp) {
+          alert( "success" );
+          console.log("Response: %o",resp);
+        })
+        .fail(function() {
+          alert( "error" );
+        })
+        .always(function() {
+          alert( "complete" );
+        });
+
       return false;
     });
   });

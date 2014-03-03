@@ -46,6 +46,7 @@
                     <li><g:link controller="search" action="index" params="${[qbe:'g:resources']}">Resources</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:orgs']}">Organisations</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:locations']}">Addresses</g:link></li>
+                    <li><g:link controller="create" action="index" params="${[tmpl:'tli.TliLocation']}">Create Address</g:link></li>
                     <li><g:link controller="collection" action="index">Resources</g:link></li>
                     <li><g:link controller="admin" action="loadOrgs">Bulk Load Organisations</g:link></li>
 
