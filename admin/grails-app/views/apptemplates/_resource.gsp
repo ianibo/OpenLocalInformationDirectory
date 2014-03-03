@@ -298,6 +298,12 @@
           console.log("Response: %o",resp);
           $('#SelectedLocation').html(resp.str);
           $('#location').val(resp.id);
+          $('#__adBuildingName').val('');
+          $('#__adBuildingNumber').val('');
+          $('#__adstreet').val('');
+          $('#__adtown').val('');
+          $('#__region').val('');
+          $('#__country').val('');
         })
         .fail(function() {
           // alert( "error" );
