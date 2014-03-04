@@ -16,5 +16,25 @@ class TliCollection {
     description(nullable:true, blank:true)
     owner(nullable:false, blank:false)
   }
+
+  static def refdataFind(params) {
+    def result = [];
+    def ql = null;
+
+    def query_params = []
+    def query = "from TliCollection as c"
+    query += " order by c.name"
+
+    ql = TliCollection.findAll(query, query_params, params)
+
+    if ( ql ) {
+      ql.each { id ->
+        result.add([id:"${id.class.name}:${id.id}",text:"${id.name}"])
+      }
+    }
+
+    result
+  }
+
 }
 
