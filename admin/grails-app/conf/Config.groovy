@@ -213,6 +213,15 @@ globalSearchTemplates = [
     customHeaderInclude:'collheader',
     qbeConfig:[
       qbeForm:[
+        // [
+        //   type:'lookup',
+        //   baseClass:'tli.Collection',
+        //   filter1:'__USER__',
+        //   prompt:'Collection',
+        //   qparam:'qp_collection',
+        //   placeholder:'Collection',
+        //   contextTree:['ctxtp':'qry', 'comparator' : 'eq', 'prop':'collection']
+        // ],
         [
           prompt:'Title',
           qparam:'qp_title',
