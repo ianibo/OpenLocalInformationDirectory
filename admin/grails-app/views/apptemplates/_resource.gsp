@@ -271,23 +271,41 @@
       }
     });
 
+    $('form').attr('autocomplete', 'off');
+
     $('.addrtd').bind('input', function(e) { 
         // $(this).val() // get the current value of the input field.
         var num_addresses = 0;
         // Search for addresses
-        if ( num_addresses > 0 ) {
-          if ( $('#ddwrap').hasClass('open') ) {
+        var jqxhr = $.ajax( { url: "<g:createLink controller='search' action='index'/>",
+                            type:"POST",
+                            data:{
+                              qbe:'g:locations',
+                              format:'json',
+                            } })
+        .done(function(resp) {
+          console.log("Result %o %d",resp,resp.count);
+          num_addresses = parseInt(resp.count);
+          if ( num_addresses > 0 ) {
+            if ( $('#ddwrap').hasClass('open') ) {
+            }
+            else {
+              $('#fishy').dropdown('toggle');
+              $(this).focus();
+            }
           }
           else {
-            $('#fishy').dropdown('toggle');
-            $(this).focus();
+            console.log("num_addresses less or equal 0 : %d",num_addresses)
           }
-        }
-        else {
-          if ( $('#ddwrap').hasClass('open') ) {
-            $('#fishy').dropdown('toggle');
-            $(this).focus();
-          }
+        })
+        .fail(function() {
+        })
+        .always(function() {
+        });
+
+        if ( $('#ddwrap').hasClass('open') ) {
+          $('#fishy').dropdown('toggle');
+          $(this).focus();
         }
     });
 
