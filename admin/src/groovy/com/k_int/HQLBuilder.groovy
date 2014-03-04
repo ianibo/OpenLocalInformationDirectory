@@ -126,7 +126,7 @@ public class HQLBuilder {
       case 'eq':
         hql_builder_context.query_clauses.add("${crit.defn.contextTree.negate?'not ':''}${scoped_property} = :${crit.defn.qparam}");
         if ( crit.defn.type=='lookup' ) {
-          hql_builder_context.bindvars[crit.defn.qparam] = hql_builder_context.genericOIDService.resolveOID2(crit.value)
+          hql_builder_context.bindvars[crit.defn.qparam] = hql_builder_context.genericOIDService.resolveOID(crit.value)
         }
         else {
           switch ( crit.defn.contextTree.type ) {
@@ -144,6 +144,15 @@ public class HQLBuilder {
         hql_builder_context.bindvars[crit.defn.qparam] = ( ( crit.defn.contextTree.wildcard=='L' || crit.defn.contextTree.wildcard=='B') ? '%' : '') +
                                                          crit.value.toLowerCase() +
                                                          ( ( crit.defn.contextTree.wildcard=='R' || crit.defn.contextTree.wildcard=='B') ? '%' : '')
+      case 'contains':
+        if ( crit.defn.type=='lookup' ) {
+          def newscope_name='xxx'
+          hql_builder_context.declared_scopes[newscope_name] = "${scoped_property} as ${newscope_name}" 
+          hql_builder_context.query_clauses.add("${newscope_name} = :${crit.defn.qparam}")
+          hql_builder_context.bindvars[crit.defn.qparam] = hql_builder_context.genericOIDService.resolveOID(crit.value)
+          // select a from class as a join a.b as b where b=c
+        }
+        break;
       default:
         log.error("Unhandled comparator. crit: ${crit}");
     }

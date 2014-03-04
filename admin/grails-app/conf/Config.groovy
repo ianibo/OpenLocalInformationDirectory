@@ -220,7 +220,7 @@ globalSearchTemplates = [
           prompt:'Collection',
           qparam:'qp_collection',
           placeholder:'Collection',
-          contextTree:['ctxtp':'qry', 'comparator' : 'eq', 'prop':'collection']
+          contextTree:['ctxtp':'qry', 'comparator' : 'contains', 'prop':'collections']
         ],
         [
           prompt:'Title',
