@@ -218,12 +218,7 @@
                               </tr>
                             </tbody>
                           </table>
-                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                          <ul id="addrdropdown" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                           </ul>
                         </div>
                       </dd>
@@ -251,6 +246,17 @@
 </div>
 
 <script type="text/javascript">
+
+  function addNN(arr,val) {
+    if ( val != null ) {
+      arr.push(val);
+    }
+  }
+
+  function selectLocation(oid,desc) {
+    alert(oid+" "+desc);
+  }
+
   $(document).ready(function() {
 
     $.fn.editable.defaults.mode = 'inline';
@@ -284,7 +290,6 @@
                               format:'json',
                             } })
         .done(function(resp) {
-          console.log("Result %o %d",resp,resp.count);
           num_addresses = parseInt(resp.count);
           if ( num_addresses > 0 ) {
             if ( $('#ddwrap').hasClass('open') ) {
@@ -293,9 +298,27 @@
               $('#fishy').dropdown('toggle');
               $(this).focus();
             }
+
+            $('#addrdropdown').empty();
+            for (var r in resp.records) {
+              var arr = []
+              addNN(arr,resp.records[r]['Building Name']);
+              addNN(arr,resp.records[r]['Building Number']);
+              addNN(arr,resp.records[r]['Street']);
+              addNN(arr,resp.records[r]['Postcode']);
+              addNN(arr,resp.records[r]['City']);
+              addNN(arr,resp.records[r]['Region']);
+              addNN(arr,resp.records[r]['Country']);
+              
+              var s = arr.join();
+              var oid = resp.records[r]["oid"]
+              var onclick="selectLocation('"+oid+"','"+s+"')";
+
+              $('#addrdropdown').append('<li role="presentation"><a role="menuitem" tabindex="-1" href="#" onClick="'+onclick+'">'+s+'</a></li>');
+            }
+ 
           }
           else {
-            console.log("num_addresses less or equal 0 : %d",num_addresses)
           }
         })
         .fail(function() {
@@ -327,7 +350,6 @@
                             } })
         .done(function(resp) {
           // alert( "success" );
-          console.log("Response: %o",resp);
           $('#SelectedLocation').html(resp.str);
           $('#location').val(resp.id);
           $('#__adBuildingName').val('');
