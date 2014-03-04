@@ -57,7 +57,7 @@ public class HQLBuilder {
     def count_hql = "select count (o) ${hql}"
     def fetch_hql = "select o ${hql}"
 
-    log.debug("Attempt count qry");
+    log.debug("Attempt count qry ${hql}");
     result.reccount = baseclass.executeQuery(count_hql, hql_builder_context.bindvars)[0]
     result.recset = baseclass.executeQuery(fetch_hql, hql_builder_context.bindvars,[max: result.max, offset: result.offset])
   }

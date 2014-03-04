@@ -127,7 +127,8 @@ log4j = {
            'grails.app.conf',
            'grails.app.jobs',
            'grails.app.bootstrap',
-           'grails.app.startup'
+           'grails.app.startup',
+           'com.k_int'
            // 'grails.app.services.grails.plugin.springsecurity.ui.SpringSecurityUiService',
            // 'org.codehaus.groovy.grails.web.mapping'
 
