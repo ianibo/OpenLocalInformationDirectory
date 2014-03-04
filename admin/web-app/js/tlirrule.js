@@ -1,19 +1,18 @@
-function validateRRuleNlp(sourceRuleTextControlId, targetControlId) {
+function validateRRuleNlp(sourceRuleTextControlId, targetControlId, resultId) {
     console.log("Convert");
     var $source_rule=$(sourceRuleTextControlId);
     var target_control=$(targetControlId);
+    var result_control=$(resultId);
 
     console.log("try");
     try {
-      console.log("1 from \""+$source_rule.val()+"\"");
       var rule = RRule.fromText($source_rule.val());
-      console.log("2");
-      target_control.val(rule.toString());
-      console.log("3:"+target_control.value);
+      var the_rule = rule.toString();
+      target_control.val(the_rule);
+      result_control.html(the_rule);
     } catch (_error) {
       e = _error;
-      console.log(e.stack)
-      $("#error").append($('<pre class="error"/>').text('=> ' + String(e || null)));
+      result_control.html($(String(e || null)));
       return;
     }
 }

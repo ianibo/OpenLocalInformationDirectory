@@ -159,68 +159,82 @@
             </table>
 
             Add Session<hr/>
-            <g:form controller="ajaxSupport" action="addToCollection" class="form-inline">
+            <g:form controller="ajaxSupport" action="addToCollection" class="container-fluid">
               <input type="hidden" name="__context" value="${d.class.name}:${d.id}"/>
               <input type="hidden" name="__newObjectClass" value="tli.TliSession"/>
               <input type="hidden" name="__recip" value="owner"/>
-              <dl>
-                <dt>Name</dt>
-                <dd><input type="text" name="name"/></dd>
-                <dt>Description</dt>
-                <dd><input type="textarea" name="description"/></dd>
-                <dt>Start Time</dt>
-                <dd><input type="text" name="startTime"/></dd>
-                <dt>End Time</dt>
-                <dd><input type="text" name="endTime"/></dd>
-                <dt>Recurrence</dt>
-                <dd colspan="2"> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/>
-                </dd>
-                <dt>Location</dt>
-                <dd>
-                  <span id="SelectedLocation">None Selected, use the fields below to select an existing address, or create a new one</span><br/>
-                  <input id="location" type="hidden" name="location" value=""/>
-                  <div id="ddwrap" class="dropdown">
-                    <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown"></a>
-                    <table>
-                      <thead>
-                        <tr>
-                          <td>Postcode</td>
-                          <td>Bulding Name</td>
-                          <td>Building Number</td>
-                          <td>Street</td>
-                          <td>Town/City</td>
-                          <td>Region</td>
-                          <td>Country</td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="rowlink">
-                          <td><input id="__adPostcode" type="text" class="addrtd"/></td>
-                          <td><input id="__adBuildingName" type="text" class="addrtd"/></td>
-                          <td><input id="__adBuildingNumber" type="text" class="addrtd"/></td>
-                          <td><input id="__adStreet" type="text" class="addrtd"/></td>
-                          <td><input id="__adTown" type="text" class="addrtd"/></td>
-                          <td><input id="__adRegion" type="text" class="addrtd"/></td>
-                          <td><input id="__adCountry" type="text" class="addrtd"/></td>
-                          <td><button type="button" id="createAddrBtn" name="createAddress">Create Address</button></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-                      <li role="presentation" class="divider"></li>
-                      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-                    </ul>
+              
+                <div class="row">
+                  <div class="col-md-6">
+                    <dl>
+                      <dt>Name</dt>
+                      <dd><input type="text" name="name" class="form-control"/></dd>
+                      <dt>Description</dt>
+                      <dd><input type="textarea" name="description" class="form-control"/></dd>
+                      <dt>Start Time</dt>
+                      <dd><input type="text" name="startTime" class="form-control"/></dd>
+                      <dt>End Time</dt>
+                      <dd><input type="text" name="endTime" class="form-control"/></dd>
+                    </dl>
                   </div>
-                </dd>
-                <dt>
-                </dt>
-                <dd>
-                    <button type="submit">Add Session</button>
-                </dd>
-              </dl>
+                  <div class="col-md-6">
+                    <dl>
+                      <dt>Recurrence</dt>
+                      <dd> <g:render template="ical" contextPath="../apptemplates" model="${[d:displayobj,fname:'rrule',tfname:'trrule']}"/> </dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <dl>
+                      <dt>Location</dt>
+                      <dd>
+                        <span id="SelectedLocation">None Selected, use the fields below to select an existing address, or create a new one</span><br/>
+                        <input id="location" type="hidden" name="location" value=""/>
+                        <div id="ddwrap" class="dropdown">
+                          <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown"></a>
+                          <table>
+                            <thead>
+                              <tr>
+                                <td>Postcode</td>
+                                <td>Bulding Name</td>
+                                <td>Building Number</td>
+                                <td>Street</td>
+                                <td>Town/City</td>
+                                <td>Region</td>
+                                <td>Country</td>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class="rowlink">
+                                <td><input id="__adPostcode" type="text" class="addrtd form-control"/></td>
+                                <td><input id="__adBuildingName" type="text" class="addrtd form-control"/></td>
+                                <td><input id="__adBuildingNumber" type="text" class="addrtd form-control"/></td>
+                                <td><input id="__adStreet" type="text" class="addrtd form-control"/></td>
+                                <td><input id="__adTown" type="text" class="addrtd form-control"/></td>
+                                <td><input id="__adRegion" type="text" class="addrtd form-control"/></td>
+                                <td><input id="__adCountry" type="text" class="addrtd form-control"/></td>
+                                <td><button type="button" id="createAddrBtn" name="createAddress">Create</button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+                          </ul>
+                        </div>
+                      </dd>
+                      <dt>
+                      </dt>
+                      <dd>
+                          <button type="submit">Add Session</button>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
             </g:form>
           </dd>
         </dl>

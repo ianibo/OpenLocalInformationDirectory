@@ -1,8 +1,14 @@
 <div class="ical">
-  <input id="sessionRRuleNLP" type="text" name="${tfname}" class="rruleinput input-xlarge"/>
-  <input id="sessionRRule" type="hidden" name="${fname}"/>
-  <button onClick="validateRRuleNlp('#sessionRRuleNLP','#sessionRRule')">Validate</button>
-     
+  <div class="input-group">
+    <input id="sessionRRuleNLP" 
+           type="text" 
+           name="${tfname}" 
+           class="form-control rruleinput" onkeyup="validateRRuleNlp('#sessionRRuleNLP','#sessionRRule','#Error')"/>
+    <span id="Error" class="input-group-addon"></span>
+    <input id="sessionRRule" type="hidden" name="${fname}"/>
+  </div>
+
+
   <p>Examples:
     <ul>
       <li>Every weekday</li>
@@ -12,7 +18,6 @@
       <li>Every 6 months</li>
     </ul>
   </p>
-  <p id="Error"></p>
 </div>
 
 
