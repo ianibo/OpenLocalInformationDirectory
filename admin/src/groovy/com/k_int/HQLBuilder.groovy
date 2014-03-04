@@ -146,7 +146,7 @@ public class HQLBuilder {
                                                          ( ( crit.defn.contextTree.wildcard=='R' || crit.defn.contextTree.wildcard=='B') ? '%' : '')
       case 'contains':
         if ( crit.defn.type=='lookup' ) {
-          def newscope_name='xxx'
+          def newscope_name='qc_'+crit.defn.qparam.hashCode();
           hql_builder_context.declared_scopes[newscope_name] = "${scoped_property} as ${newscope_name}" 
           hql_builder_context.query_clauses.add("${newscope_name} = :${crit.defn.qparam}")
           hql_builder_context.bindvars[crit.defn.qparam] = hql_builder_context.genericOIDService.resolveOID(crit.value)
