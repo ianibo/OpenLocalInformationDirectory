@@ -219,6 +219,12 @@ globalSearchTemplates = [
           placeholder:'Title',
           contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'title', 'wildcard':'B']
         ],
+        [
+          prompt:'Description',
+          qparam:'qp_description',
+          placeholder:'Description',
+          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'description', 'wildcard':'B']
+        ],
       ],
       qbeGlobals:[
         // ['ctxtp':'filter', 'prop':'desc', 'comparator' : 'ilike', 'value':'Combo.%', 'negate' : true]

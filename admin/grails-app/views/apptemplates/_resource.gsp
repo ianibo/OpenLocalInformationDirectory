@@ -3,6 +3,12 @@
 <r:require modules="jquery-ui"/>
 <r:require modules="rrule"/>
 
+<ul class="nav nav-pills">
+<g:each in="${d.collections}" var="c">
+  <li><g:link controller="collection" action="index" id="${c.shortcode}">${c.name}</g:link></li>
+</g:each>
+</ul>
+
 <h3>${d.id ? d.title : 'Create New Directory Entry'}</h3>
 
 <div id="content">
