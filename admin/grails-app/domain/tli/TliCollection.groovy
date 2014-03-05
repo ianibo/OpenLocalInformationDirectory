@@ -36,5 +36,9 @@ class TliCollection {
     result
   }
 
+  public String toString() {
+    return name?.toString()
+  }
+
 }
 

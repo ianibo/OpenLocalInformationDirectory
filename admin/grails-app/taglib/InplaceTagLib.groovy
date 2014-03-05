@@ -23,6 +23,12 @@ class InplaceTagLib {
       }
     }
 
+    if ( attrs.value != null ) {
+      out << "value=\"${attrs.value}\" "
+      def o = genericOIDService.resolveOID(attrs.value)
+      out << "data-displayvalue=\"${o.toString()}\" "
+    }
+
     out << "class=\"simpleReferenceTypedown ${attrs.class}\" />"
   }
 
