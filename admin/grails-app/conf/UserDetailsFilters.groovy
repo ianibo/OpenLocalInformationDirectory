@@ -18,6 +18,9 @@ class UserDetailsFilters {
         }
         else {
           request.user = springSecurityService.currentUser
+          request.tliorganisations = TliOrg.executeQuery("select a from Affiliation as a where a.user = ?",[request.user]);
+          request.tlicolls = TliOrg.executeQuery("select c from TliCollection as c where exists ( select a from Affiliation as a where a.org = c.owner and a.user = ? )", [request.user]);
+
         }
       }
     }
