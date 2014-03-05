@@ -85,5 +85,11 @@ grails.project.dependency.resolution = {
         //compile ":less-asset-pipeline:1.5.0"
         //compile ":coffee-asset-pipeline:1.5.0"
         //compile ":handlebars-asset-pipeline:1.0.0.3"
+        runtime ":jquery-ui:1.10.3"
+        runtime ":famfamfam:1.0.1"
+        runtime ':gsp-resources:0.4.4'
+
+        compile ":twitter-bootstrap:3.0.3"
+        compile ":rest:0.8"
     }
 }
