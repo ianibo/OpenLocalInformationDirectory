@@ -44,96 +44,99 @@
 
   <div id="my-tab-content" class="tab-content">
     <div class="tab-pane active" id="details">
-
-      <dl class="dl-horizontal">
-          <dt>Source Reference</dt>
-          <dd><g:xEditable type="text" class="ipe" owner="${d}" field="sourceReference"/></dd>
-      </dl>
-
-
-      <g:if test="${d.id != null}">
+      <p>
+  
         <dl class="dl-horizontal">
-          <dt>Collections</dt>
-          <dd>
-            <table class="table table-striped table-bordered table-condensed" id="subjects">
-              <thead>
-                <tr><th>Name</th></tr>
-              </thead>
-              <tbody>
-                <g:each in="${d.collections}" var="c">
-                  <tr><td><g:link controller="collection" action="index" id="${c.shortcode}">${c.name}</g:link></td></tr>
-                </g:each>
-              </tbody>
-            </table>
-          </dd>
-
-          <dt>Subjects</dt>
-          <dd>
-            <table class="table table-striped table-bordered table-condensed" id="subjects">
-                <thead>
-                  <tr><th>Name</th><th>actions</th></tr>
-                </thead>
-                <tbody>
-                  <g:each in="${d.subjects}" var="s">
-                    <tr><td>${s.value} (${s.owner.desc})</td><td><a href="">delete</a></td></tr>
-                  </g:each>
-                </tbody>
-            </table>
-
-            <g:form controller="ajaxSupport" action="addToStdCollection" class="form-inline">
-              <input type="hidden" name="__context" value="${d.class.name}:${d.id}" />
-              <input type="hidden" name="__property" value="subjects" />
-              <dt>Add Subject</dt>
-              <dd> 
-                <g:simpleReferenceTypedown class="input-xxlarge" 
-                                           style="width:350px;" 
-                                           name="__relatedObject" 
-                                           baseClass="tli.RefdataValue" 
-                                           data-filter2="Subject"/>
-              </dd>
-              <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
-            </g:form>
-            <br/>
-          </dd>
-          
-          <dt>Categories</dt>
-          <dd>
-            <table class="table table-striped table-bordered table-condensed" id="subjects">
-                <thead>
-                  <tr><th>Category</th><th>actions</th></tr>
-                </thead>
-                <tbody>
-                  <g:each in="${d.categories}" var="s">
-                    <tr><td>${s.value} (${s.owner.desc})</td><td><a href="">delete</a></td></tr>
-                  </g:each>
-                </tbody>
-            </table>
-
-            <g:form controller="ajaxSupport" action="addToStdCollection" class="form-inline">
-              <input type="hidden" name="__context" value="${d.class.name}:${d.id}" />
-              <input type="hidden" name="__property" value="categories" />
-              <dt>Add Subject</dt>
-              <dd>
-                <g:simpleReferenceTypedown class="input-xxlarge" 
-                                           style="width:350px;" 
-                                           name="__relatedObject" 
-                                           baseClass="tli.RefdataValue" 
-                                           data-filter2="Subject"/>
-              </dd>
-              <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
-            </g:form>
-            <br/>
-          </dd>
-
+            <dt>Source Reference</dt>
+            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="sourceReference"/></dd>
         </dl>
-      </g:if>
-      <g:else>
-        <p>Other properties will become editable once you have saved the record</p>
-      </g:else>
+  
+  
+        <g:if test="${d.id != null}">
+          <dl class="dl-horizontal">
+            <dt>Collections</dt>
+            <dd>
+              <table class="table table-striped table-bordered table-condensed" id="subjects">
+                <thead>
+                  <tr><th>Name</th></tr>
+                </thead>
+                <tbody>
+                  <g:each in="${d.collections}" var="c">
+                    <tr><td><g:link controller="collection" action="index" id="${c.shortcode}">${c.name}</g:link></td></tr>
+                  </g:each>
+                </tbody>
+              </table>
+            </dd>
+  
+            <dt>Subjects</dt>
+            <dd>
+              <table class="table table-striped table-bordered table-condensed" id="subjects">
+                  <thead>
+                    <tr><th>Name</th><th>actions</th></tr>
+                  </thead>
+                  <tbody>
+                    <g:each in="${d.subjects}" var="s">
+                      <tr><td>${s.value} (${s.owner.desc})</td><td><a href="">delete</a></td></tr>
+                    </g:each>
+                  </tbody>
+              </table>
+  
+              <g:form controller="ajaxSupport" action="addToStdCollection" class="form-inline">
+                <input type="hidden" name="__context" value="${d.class.name}:${d.id}" />
+                <input type="hidden" name="__property" value="subjects" />
+                <dt>Add Subject</dt>
+                <dd> 
+                  <g:simpleReferenceTypedown class="input-xxlarge" 
+                                             style="width:350px;" 
+                                             name="__relatedObject" 
+                                             baseClass="tli.RefdataValue" 
+                                             data-filter2="Subject"/>
+                </dd>
+                <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
+              </g:form>
+              <br/>
+            </dd>
+            
+            <dt>Categories</dt>
+            <dd>
+              <table class="table table-striped table-bordered table-condensed" id="subjects">
+                  <thead>
+                    <tr><th>Category</th><th>actions</th></tr>
+                  </thead>
+                  <tbody>
+                    <g:each in="${d.categories}" var="s">
+                      <tr><td>${s.value} (${s.owner.desc})</td><td><a href="">delete</a></td></tr>
+                    </g:each>
+                  </tbody>
+              </table>
+  
+              <g:form controller="ajaxSupport" action="addToStdCollection" class="form-inline">
+                <input type="hidden" name="__context" value="${d.class.name}:${d.id}" />
+                <input type="hidden" name="__property" value="categories" />
+                <dt>Add Subject</dt>
+                <dd>
+                  <g:simpleReferenceTypedown class="input-xxlarge" 
+                                             style="width:350px;" 
+                                             name="__relatedObject" 
+                                             baseClass="tli.RefdataValue" 
+                                             data-filter2="Subject"/>
+                </dd>
+                <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
+              </g:form>
+              <br/>
+            </dd>
+  
+          </dl>
+        </g:if>
+        <g:else>
+          <p>Other properties will become editable once you have saved the record</p>
+        </g:else>
+      </p>
     </div>
 
     <g:if test="${d.id != null}">
       <div class="tab-pane" id="sessions">
+        <p>
         <dl class="dl-horizontal">
           <dt>Sessions</dt>
           <dd>
@@ -241,12 +244,15 @@
             </g:form>
           </dd>
         </dl>
+        </p>
       </div>
       <div class="tab-pane" id="regs">
-        <dl class="dl-horizontal">
+        <p>
+          <dl class="dl-horizontal">
             <dt>Registered Charity#</dt>
             <dd><g:xEditable type="text" class="ipe" owner="${d}" field="registeredCharityNo"/></dd>
-        </dl>
+          </dl>
+        </p>
       </div>
     </g:if>
   </div>
