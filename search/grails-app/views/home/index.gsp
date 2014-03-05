@@ -10,14 +10,10 @@
    <div class="container">
      <div class="row">
        <div class="col-lg-12">
-         <h1>Local Information Directory - Admin
-         <img src="${resource(dir: 'images', file: 'ods_transparent.png')}" class="pull-right">
-         </h1>
-       </div>
-     </div>
-     <div class="row">
-       <div class="col-lg-12">
+         <img src="${resource(dir: 'images', file: 'ods_transparent.gif')}" class="pull-right">
+         <h1>Local Information Directory - Admin </h1>
          <h2>Welcome</h2>
+         <p>Text</p>
        </div>
      </div>
    </div>
