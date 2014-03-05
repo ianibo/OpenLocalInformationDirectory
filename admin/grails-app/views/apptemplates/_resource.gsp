@@ -144,8 +144,9 @@
                   <th>Description</th>
                   <th>Start Time</th>
                   <th>End Time</th>
-                  <th>Recurrence Rule</th>
                   <th>Text Recurrence</th>
+                  <th>Recurrence</th>
+                  <th>Location</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -156,8 +157,9 @@
                     <td>${s.description}</td>
                     <td>${s.startTime}</td>
                     <td>${s.endTime}</td>
-                    <td>${s.rrule}</td>
                     <td>${s.trrule}</td>
+                    <td>${s.rrule!=null?'OK':'Error'}</td>
+                    <td>${s.location.toString()}</td>
                     <td></td>
                   </tr>
                 </g:each>
@@ -195,7 +197,7 @@
                     <dl>
                       <dt>Location</dt>
                       <dd>
-                        <span id="SelectedLocation">None Selected, use the fields below to select an existing address, or create a new one</span><br/>
+                        <span id="SelectedLocation"><b>None Selected, use the fields below to select an existing address, or create a new one</b></span><br/>
                         <input id="location" type="hidden" name="location" value=""/>
                         <div id="ddwrap" class="dropdown">
                           <a href="#" id="fishy" class="dropdown-toggle rowlink" data-toggle="dropdown"></a>
@@ -261,6 +263,15 @@
 
   function selectLocation(oid,desc) {
     alert(oid+" "+desc);
+    $('#SelectedLocation').html("<b>"+desc+"</b>");
+    $('#location').val(oid);
+    $('#__adPostcode').val('');
+    $('#__adBuildingName').val('');
+    $('#__adBuildingNumber').val('');
+    $('#__adstreet').val('');
+    $('#__adtown').val('');
+    $('#__region').val('');
+    $('#__country').val('');
   }
 
   $(document).ready(function() {
@@ -358,6 +369,7 @@
           // alert( "success" );
           $('#SelectedLocation').html(resp.str);
           $('#location').val(resp.id);
+          $('#__adPostcode').val('');
           $('#__adBuildingName').val('');
           $('#__adBuildingNumber').val('');
           $('#__adstreet').val('');
