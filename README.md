@@ -27,3 +27,14 @@ Future Developments
 * More granular control of information publishing
 
 * Development of a national federated identity service which can underpin an evolving culture of information stewardship in public services.
+
+# Some screenshots
+
+![OLID - Add a session](https://raw.github.com/ianibo/tli/dev/images/admin/olid-add-session.png)
+![OLID - Search a collection](https://raw.github.com/ianibo/tli/dev/images/admin/olid-coll-search.png)
+![OLID - Record Details](https://raw.github.com/ianibo/tli/dev/images/admin/olid-details.png)
+![OLID - Login](https://raw.github.com/ianibo/tli/dev/images/admin/olid-login.png)
+![OLID - Add Sessions to a Record](https://raw.github.com/ianibo/tli/dev/images/admin/olid-sessions.png)
+![OLID - User Home Page](https://raw.github.com/ianibo/tli/dev/images/admin/olid-user-home.png)
+![OLID - Welcome Page](https://raw.github.com/ianibo/tli/dev/images/admin/olid-welcome.png)
+
