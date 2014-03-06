@@ -51,7 +51,7 @@ can, however, suggest creation of an authority (And subsequently a collection)
 ## User home page
 
 The users home page lists all the organisations the user is affiliated with. A user can be affiliated with multiple organisations. The page also shows
-all collections the user has access to via there organisational affiliation. This information is replicated on the menu. The page also allows the user to
+all collections the user has access to via their organisational affiliation. This information is replicated on the menu. The page also allows the user to
 request affiliation to a known organisation, or propose a new organisation. In both cases an administrator can approve the request to accept the proposal.
 In the future, local administrative accounts will be able to approve new user requests for afilliation. This is to ease the administrative burden on
 central admins. Users can navigate to a collection home page by clicking the link.
