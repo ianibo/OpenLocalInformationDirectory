@@ -19,7 +19,7 @@
 
 <body>
 
-<s2ui:layoutResources module='register' />
+  <s2ui:layoutResources module='register' />
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">

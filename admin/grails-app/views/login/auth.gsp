@@ -102,14 +102,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Local Information Store</a>
+          <a class="navbar-brand" href="#">Open Local Information Directory</a>
         </div>
       </div>
     </div>
 
 
 
-<div id='login'>
+<div class="container-fluid" id='login'>
 	<div class='inner'>
 		<div class='fheader'><g:message code="springSecurity.login.header"/> (Or <g:link controller="register">Register Here</g:link>)</div>
 
