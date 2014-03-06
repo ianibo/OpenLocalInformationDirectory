@@ -1,7 +1,7 @@
-tli
-===
+Open Local Information Directory
+================================
 
-This is the readme for the _Trusted Local Information_ (tli) project. TLI is a platform for any organisation wishing to collate, manage and share civic information and then publish/share/search that information in a spatially enabled way. Examples of such collections might include Citizens Information Datatabases managed by local library authorities, Childcare provision registers maintained by Family Service Units and Databases of Clubs and Events maintained by civic marketing departments.
+This is the readme for the _The Open Local Information Directory_ (OLID) project. OLID is a platform for any organisation wishing to collate, manage and share civic information and then publish/share/search that information in a spatially enabled way. Examples of such collections might include Citizens Information Datatabases managed by local library authorities, Childcare provision registers maintained by Family Service Units and Databases of Clubs and Events maintained by civic marketing departments.
 
 Our goal is to provide a best-of-breed information delivery portal which is free to use in local government and the third sector. The platform combines administrative functions with local search portal and APIs as well as publishing data streams to third party applications. Support for inclusion in local and hyperlocal systems is of high importance as well as the "Big Player" search engines and local portals. 
 
