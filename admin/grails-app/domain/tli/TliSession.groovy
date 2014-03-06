@@ -16,7 +16,7 @@ class TliSession {
   TliLocation location
 
   static constraints = {
-    name(nullable:false, blank:false)
+    name(nullable:true, blank:false)
     owner(nullable:false, blank:false)
     rrule(nullable:true, blank:false)
     startTime(nullable:true, blank:false)
