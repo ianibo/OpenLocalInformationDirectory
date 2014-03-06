@@ -304,6 +304,7 @@
 
     $('.addrtd').bind('input', function(e) { 
         // $(this).val() // get the current value of the input field.
+        var orig = $(this);
         var num_addresses = 0;
         // Search for addresses
         var jqxhr = $.ajax( { url: "<g:createLink controller='search' action='index'/>",
@@ -316,10 +317,11 @@
           num_addresses = parseInt(resp.count);
           if ( num_addresses > 0 ) {
             if ( $('#ddwrap').hasClass('open') ) {
+              orig.focus();
             }
             else {
               $('#fishy').dropdown('toggle');
-              $(this).focus();
+              orig.focus();
             }
 
             $('#addrdropdown').empty();

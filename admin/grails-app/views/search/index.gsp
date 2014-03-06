@@ -46,7 +46,7 @@
                 <ul class="nav navbar-nav navbar-left">
                   <li>
                     <p class="navbar-text"><span class="brand">${qbetemplate.title?:'Search'}</brand>
-                    <g:if test="${recset != null}"> : Records ${offset+1} to ${lasthit} of ${reccount}
+                    <g:if test="${recset != null}"> : Records <b>${offset+1}</b> to <b>${lasthit}</b> of <b>${reccount}</b>
                   </g:if></p>
                   </li>
                 </ul>
@@ -88,7 +88,7 @@
             <nav class="navbar navbar-default" role="navigation">
 
               <ul class="nav navbar-nav navbar-left">
-                  <li> <p class="navbar-text"><span class="brand">Record ${det} of ${reccount}</span></p> </li>
+                  <li> <p class="navbar-text"><span class="brand">Record <b>${det}</b> of <b>${reccount}</b></span></p> </li>
               </ul>
 
               <ul class="nav navbar-nav navbar-right" style="padding-right:10px">
