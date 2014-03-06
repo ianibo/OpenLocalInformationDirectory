@@ -15,7 +15,7 @@ The system itself is split into two major components -
 
 The administrative system exposes an open data interface which publishes the maintained records as linked open data.
 
-An agent consumes the open data feed and uses this data to populate:
+An agent consumes the open data feed and uses this data to populate (The system "eats it's own dogfood"):
 
 2) An end user information portal which allows the public a faceted search the collections using keyword and spatal search.
 
