@@ -7,7 +7,7 @@
   </head>
   <body class="" >
     <g:if test="${displayobj.respondsTo('availableActions')}">
-        <div class="pull-right well" id="actionControls">
+      <div class="pull-right well" id="actionControls">
   	<g:form controller="workflow" action="action" method="post"  class='action-form' >
           <h4>Available actions</h4>
           <select id="selectedAction" name="selectedBulkAction">

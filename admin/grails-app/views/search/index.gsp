@@ -17,17 +17,23 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div id="mainarea" class="${displayobj != null ? 'col-md-6' : 'col-md-12'}">
+  <div class="container-fluid">
 
-        <g:if test="${qbetemplate?.customHeaderInclude!=null}">
+    <g:if test="${qbetemplate?.customHeaderInclude!=null}">
+      <div class="row-fluid">
+        <div id="mainarea" class="col-md-12">
           <g:render template="${qbetemplate.customHeaderInclude}" 
                     contextPath="../apptemplates" 
                     model="${[qbeConfig:qbetemplate.qbeConfig, rows:recset, offset:offset, det:det]}" />
-        </g:if>
+        </div>
+      </div>
+    </g:if>
+
+    <div class="row-fluid">
+      <div id="mainarea" class="${displayobj != null ? 'col-md-6' : 'col-md-12'}">
 
         <div class="well">
+
 
           <g:if test="${qbetemplate==null}">
               Please select a template from the navigation menu<br/>
@@ -45,7 +51,7 @@
                   </li>
                 </ul>
                   
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" style="padding-right:10px">
                   <li><g:link title="Previous Page" controller="search"
                         action="index"
                         params="${params+[offset:(offset-max),det:null]}">
@@ -79,39 +85,27 @@
         <div id="resultsarea" class="col-md-6">
           <div class="well">
 
-            <div class="navbar">
-              <div class="navbar-inner">
-                <div class="brand">
-                  Record
-                  ${det}
-                  of
-                  ${reccount}
-                </div>
-                <ul class="nav pull-right">
+            <nav class="navbar navbar-default" role="navigation">
 
-                  <li><a data-toggle="modal" data-cache="false"
-                    title="Show History"
-                    data-remote='<g:createLink controller="fwk" action="history" id="${displayobj.class.name}:${displayobj.id}"/>'
-                    data-target="#modal"><i class="icon-time"></i></a></li>
+              <ul class="nav navbar-nav navbar-left">
+                  <li> <p class="navbar-text"><span class="brand">Record ${det} of ${reccount}</span></p> </li>
+              </ul>
 
-                  <li><a data-toggle="modal" data-cache="false"
-                    title="Show Notes"
-                    data-remote='<g:createLink controller="fwk" action="notes" id="${displayobj.class.name}:${displayobj.id}"/>'
-                    data-target="#modal"><i class="icon-comment"></i></a></li>
-
+              <ul class="nav navbar-nav navbar-right" style="padding-right:10px">
                   <li><g:link controller="search" title="Previous Record"
                       action="index"
                       params="${params+['det':det-1, offset:((int)((det-2) / max))*max]}">
-                      <i class="icon-chevron-left"></i>
+                      <span class="glyphicon glyphicon-chevron-left"/>
                     </g:link></li>
                   <li><g:link controller="search" title="Next Record"
                       action="index"
                       params="${params+['det':det+1, offset:((int)(det / max))*max]}">
-                      <i class="icon-chevron-right"></i>
+                      <span class="glyphicon glyphicon-chevron-right"/>
                     </g:link></li>
-                </ul>
-              </div>
-            </div>
+                  <li>&nbsp;</li>
+              </ul>
+            </nav>
+
             <g:if test="${displaytemplate != null}">
               <g:if test="${displaytemplate.type=='staticgsp'}">
                

@@ -81,4 +81,9 @@ If the system is able to understand the string, a parsed version is shown to the
 ![OLID - Add Sessions to a Record](https://raw.github.com/ianibo/tli/dev/images/admin/olid-sessions.png)
 ![OLID - Add a session](https://raw.github.com/ianibo/tli/dev/images/admin/olid-add-session.png)
 
+## Side by side view
+
+If you have a bigger screen, side by side view can be easier to work with.
+
+![OLID - Add a session](https://raw.github.com/ianibo/tli/dev/images/admin/olid-side-by-side.png)
 

@@ -63,8 +63,10 @@ class BootStrap {
       def affiliation_ro = RefdataCategory.lookupOrCreate("affiliation", "Read Only User" )
       def affiliation_su = RefdataCategory.lookupOrCreate("affiliation", "Standard User" )
       def affiliation_ad = RefdataCategory.lookupOrCreate("affiliation", "Administrator" )
-  
-  
+
+      RefdataCategory.lookupOrCreate('YN', 'Yes').save()
+      RefdataCategory.lookupOrCreate('YN', 'No').save()
+
       def test_org_1 = TliOrg.findByDisplayName('AtestOrg1') ?: new TliOrg(displayName:'AtestOrg1', status:status_approved, shortcode:'a').save();
       def test_org_2 = TliOrg.findByDisplayName('BtestOrg2') ?: new TliOrg(displayName:'BtestOrg2', status:status_approved, shortcode:'b').save();
       def test_org_3 = TliOrg.findByDisplayName('CtestOrg3') ?: new TliOrg(displayName:'CtestOrg3', status:status_approved, shortcode:'c').save();
