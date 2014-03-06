@@ -1,7 +1,7 @@
 tli
 ===
 
-This is the readme for the _Trusted Local Information_ (tli) project. TLI is a platform for any organisation wishing to collate, manage and share civic information. Examples of such collections might include Citizens Information Datatabases managed by local library authorities, Childcare provision registers maintained by Family Service Units and Databases of Clubs and Events maintained by civic marketing departments.
+This is the readme for the _Trusted Local Information_ (tli) project. TLI is a platform for any organisation wishing to collate, manage and share civic information and then publish/share/search that information in a spatially enabled way. Examples of such collections might include Citizens Information Datatabases managed by local library authorities, Childcare provision registers maintained by Family Service Units and Databases of Clubs and Events maintained by civic marketing departments.
 
 The platform itself is Open Source, and freely downloadable and usable. It is maintained by the Sheffield Open Data group (An activity under the Better With Data Society banner)
 
