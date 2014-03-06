@@ -5,7 +5,7 @@ This is the readme for the _Trusted Local Information_ (tli) project. TLI is a p
 
 Our goal is to provide a best-of-breed information delivery portal which is free to use in local government and the third sector. The platform combines administrative functions with local search portal and APIs as well as publishing data streams to third party applications. Support for inclusion in local and hyperlocal systems is of high importance as well as the "Big Player" search engines and local portals. 
 
-The platform itself is Open Source, and freely downloadable and usable. It is maintained by the Sheffield Open Data group (An activity under the Better With Data Society banner)
+The platform itself is Open Source, and freely downloadable and usable. It is maintained by the Sheffield Open Data group (An activity under the Better With Data Society banner). Sheffield Open Data consists of a number of industry professionals and is supported and attended by representatives from local universities (Sheffield Hallam, and UoS) and the local authority (Sheffield City Council) as well as the wider community in and around south yorkshire. The system is not intended to be geographically constrained however, and should be portable globally.
 
 The driving principle behind TLI is that information collated and maintained by public bodies should be freely available to the public whos taxes pay for that service to reuse and innovate with openly.
 
