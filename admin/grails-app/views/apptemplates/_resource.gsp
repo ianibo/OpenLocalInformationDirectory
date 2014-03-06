@@ -268,7 +268,6 @@
   }
 
   function selectLocation(oid,desc) {
-    alert(oid+" "+desc);
     $('#SelectedLocation').html("<b>"+desc+"</b>");
     $('#location').val(oid);
     $('#__adPostcode').val('');
@@ -312,6 +311,13 @@
                             data:{
                               qbe:'g:locations',
                               format:'json',
+                              qp_postcode: $('#__adPostcode').val(),
+                              qp_buildname: $('#__adBuildingName').val(),
+                              qp_buildnum: $('#__adBuildingNumber').val(),
+                              qp_street: $('#__adstreet').val(),
+                              qp_city: $('#__adtown').val(),
+                              qp_region: $('#__region').val(),
+                              qp_country: $('#__country').val(),
                             } })
         .done(function(resp) {
           num_addresses = parseInt(resp.count);
@@ -358,7 +364,6 @@
     });
 
     $('#createAddrBtn').click(function(){
-      alert("Create address");
       // Call the create controller process action with domain=tli.TliLocation, and then name:value pairs for the properties
       // Get result.id from json return - thats the OID to use.
       var jqxhr = $.ajax( { url: "<g:createLink controller='create' action='process'/>",
@@ -374,7 +379,6 @@
                               country:$('#__country').val()
                             } })
         .done(function(resp) {
-          // alert( "success" );
           $('#SelectedLocation').html(resp.str);
           $('#location').val(resp.id);
           $('#__adPostcode').val('');
@@ -386,10 +390,8 @@
           $('#__country').val('');
         })
         .fail(function() {
-          // alert( "error" );
         })
         .always(function() {
-          // alert( "complete" );
         });
 
       return false;
