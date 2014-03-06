@@ -42,7 +42,7 @@ Future Developments
 In the default configuration any user can register, but will be unable to edit any records until an organisational affiliation is approved. New users
 can, however, suggest creation of an authority (And subsequently a collection)
 
-![OLID - Welcome Page](https://raw.github.com/ianibo/tli/dev/images/admin/olid-welcome.png)
+![OLID - Welcome Page](https://raw.github.com/ianibo/tli/dev/images/admin/olid-register.png)
 
 ## Login Page
 
