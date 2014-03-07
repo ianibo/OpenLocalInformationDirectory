@@ -92,12 +92,14 @@ class IngestService {
 
       json.activityDetails.each { ad ->
         def location = null;
+        log.debug("Processing activity details: ${ad}");
         if ( ad.address.size() > 3 ) {
-          def region = ad.address[ad.address.size()-1]
-          def town = ad.address[ad.address.size()-2]
-          def street = ad.address[ad.address.size()-3]
-          def buildingname = ad.address[0]
-          location = TliLocation.lookupOrCreate(buildingname,street,town,region,ad.postcode,newGazetteerService);
+          def region = ad.address[ad.address.size()-1].toString()
+          def town = ad.address[ad.address.size()-2].toString()
+          def street = ad.address[ad.address.size()-3].toString()
+          def buildingname = ad.address[0].toString()
+          def postcode = !(ad.postcode?.equals(null)) ? ad.postcode[0] : null
+          location = TliLocation.lookupOrCreate(buildingname,street,town,region,postcode,newGazetteerService);
         }
       }
 

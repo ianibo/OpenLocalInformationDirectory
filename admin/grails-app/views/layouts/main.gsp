@@ -69,7 +69,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Organisations</a>
                 <ul class="dropdown-menu">
                   <g:each in="${request.tliorganisations}" var="o">
-                    <li><g:link controller="org" action="show" id="${o.org.shortcode}">${o.org.displayName}</g:link></li>
+                    <li><g:link controller="org" action="show" id="${o.org?.shortcode}">${o.org?.displayName}</g:link></li>
                   </g:each>
                 </ul>
               </li>

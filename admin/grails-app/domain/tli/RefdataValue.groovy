@@ -42,7 +42,7 @@ class RefdataValue {
   public boolean equals (Object obj) {
 
     if (obj != null) {
-      Object dep_obj = KBComponent.deproxy (obj)
+      Object dep_obj = admin.ClassUtils.deproxy (obj)
       if (dep_obj instanceof RefdataValue) {
         return dep_obj.id == id
       }

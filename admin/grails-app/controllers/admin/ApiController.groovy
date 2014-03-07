@@ -3,8 +3,7 @@ package admin
 import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import tli.*;
-
-
+import grails.converters.*
 
 class ApiController {
 
@@ -29,14 +28,20 @@ class ApiController {
   def upload() {
     log.debug("upload...");
     def model=[:]
-    if ( request.method=='POST') {
-      log.debug("Post....");
-      def file = request.getFile("tf")
-      def record = new String(file.getBytes())
-      model.ingestResult = ingestService.ingest(record,params.id, request.user, file.contentType);
+
+    try {
+      if ( request.method=='POST') {
+        log.debug("Post....");
+        def file = request.getFile("tf")
+        def record = new String(file.getBytes())
+        model.ingestResult = ingestService.ingest(record,params.id, request.user, file.contentType);
+      }
+    }
+    catch ( Exception e ) {
+      log.error("Problem",e);
     }
     
-    model
+    render model as JSON
   }
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
