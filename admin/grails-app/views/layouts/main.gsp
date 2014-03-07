@@ -49,6 +49,7 @@
                     <li><g:link controller="create" action="index" params="${[tmpl:'tli.TliLocation']}">Create Address</g:link></li>
                     <li><g:link controller="collection" action="index">Resources</g:link></li>
                     <li><g:link controller="admin" action="loadOrgs">Bulk Load Organisations</g:link></li>
+                    <li><g:link controller="admin" action="forceFTUpdate">Force Index Update</g:link></li>
 
                   </ul>
                 </li>

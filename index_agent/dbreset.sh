@@ -21,14 +21,14 @@ curl -X PUT "localhost:9200/olid/entry/_mapping" -d '{
       "title" : {
         type : "string",
         analyzer : "snowball"
-      }
+      },
       "description" : {
         type : "string",
         analyzer : "snowball"
-      }
+      },
       "sessions": {
         "loc": {
-          "type" 'geo_point'
+          "type":"geo_point"
         }
       }
     }

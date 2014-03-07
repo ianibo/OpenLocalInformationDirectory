@@ -10,6 +10,7 @@ class AdminController {
   def springSecurityService
   def genericOIDService
   def vocabSyncService
+  def pushService
 
   @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
@@ -88,4 +89,9 @@ class AdminController {
     result
   }
 
+
+  @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+  def forceFTUpdate() {
+    pushService.updateFTIndexes();
+  }
 }
