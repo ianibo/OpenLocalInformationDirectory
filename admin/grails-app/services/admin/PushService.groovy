@@ -11,6 +11,7 @@ class PushService {
   def ESWrapperService
   def mongoService
   def sessionFactory
+  def propertyInstanceMap = org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin.PROPERTY_INSTANCE_MAP
 
   def updateFTIndexes() {
     log.debug("updateFTIndexes");
@@ -28,14 +29,17 @@ class PushService {
     org.elasticsearch.groovy.node.GNode esnode = ESWrapperService.getNode()
     org.elasticsearch.groovy.client.GClient esclient = esnode.getClient()
 
+    log.debug("Call updateES with de closure");
+
     updateES(esclient, tli.DirectoryEntry.class) { de ->
       def result = [:]
+      println(de.title)
       result._id = "tli.DirectoryEntry:"+de.id
       result.title = de.title
       result.description = de.description
       result.sessions=[]
       de.sessions?.each { sess ->
-        sessions.add(['sesid':"${sess.id}"]);
+        result.sessions.add(['sesid':"${sess.id}"]);
       }
       result
     }
@@ -87,7 +91,7 @@ class PushService {
         def idx_record = recgen_closure(r)
 
         def future = esclient.index {
-          index "kbplus"
+          index "olid"
           type domain.name
           id idx_record['_id']
           source idx_record
