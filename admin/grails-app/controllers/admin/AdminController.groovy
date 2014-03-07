@@ -93,5 +93,6 @@ class AdminController {
   @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
   def forceFTUpdate() {
     pushService.updateFTIndexes();
+    redirect controller:'home',action:'index';
   }
 }

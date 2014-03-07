@@ -5,7 +5,7 @@ import org.hibernate.ScrollMode
 import java.nio.charset.Charset
 import java.util.GregorianCalendar
 
-class DataloadService {
+class PushService {
 
   def executorService
   def ESWrapperService
@@ -125,19 +125,6 @@ class DataloadService {
       result = val
 
     result
-  }
-
-  def lookupOrCreateCanonicalIdentifier(ns, value) {
-    log.debug("lookupOrCreateCanonicalIdentifier(${ns},${value})");
-    def namespace = IdentifierNamespace.findByNs(ns) ?: new IdentifierNamespace(ns:ns).save();
-    Identifier.findByNsAndValue(namespace,value) ?: new Identifier(ns:namespace, value:value).save();
-  }
-
-
-  def lookupOrCreateRefdataEntry(refDataCategory, refDataCode) {
-    def category = RefdataCategory.findByDesc(refDataCategory) ?: new RefdataCategory(desc:refDataCategory).save(flush:true)
-    def result = RefdataValue.findByOwnerAndValue(category, refDataCode) ?: new RefdataValue(owner:category,value:refDataCode).save(flush:true)
-    result;
   }
 
   def cleanUpGorm() {

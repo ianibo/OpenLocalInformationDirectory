@@ -51,6 +51,7 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         runtime 'mysql:mysql-connector-java:5.1.27'
         runtime 'net.sf.opencsv:opencsv:2.0'
+        runtime 'org.elasticsearch:elasticsearch-lang-groovy:1.4.0'
     }
 
     plugins {
@@ -70,7 +71,6 @@ grails.project.dependency.resolution = {
         runtime ":resources:1.2.1"
         runtime ':gsp-resources:0.4.4'
 
-
         compile ":spring-security-core:2.0-RC2"
         compile ":spring-security-ui:1.0-RC1"
         compile ":twitter-bootstrap:3.0.3"
@@ -78,6 +78,7 @@ grails.project.dependency.resolution = {
            excludes 'spring-test'
         }
         compile ":rest:0.8"
+        compile ":executor:0.3"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
