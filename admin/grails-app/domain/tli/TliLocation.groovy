@@ -69,7 +69,7 @@ class TliLocation {
           //                 created: System.currentTimeMillis() ]
         }
         catch ( Exception e ) {
-          log.error("Problem attempting to geocode",e);
+          e.printStackTrace()
         }
       }
       result.save()
