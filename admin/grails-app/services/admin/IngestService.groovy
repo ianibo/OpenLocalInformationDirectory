@@ -11,6 +11,8 @@ import tli.*
 @Transactional
 class IngestService {
 
+  def newGazetteerService
+
   def ingest(record, collection, user, contentType) {
     log.debug("ingest.... [coll=${collection}, contentType:${contentType}]");
     def result = [:]
@@ -86,6 +88,17 @@ class IngestService {
         }
 
         db_record.subjects.add(kw_object)
+      }
+
+      json.activityDetails.each { ad ->
+        def location = null;
+        if ( ad.address.size() > 3 ) {
+          def region = ad.address[ad.address.size()-1]
+          def town = ad.address[ad.address.size()-2]
+          def street = ad.address[ad.address.size()-3]
+          def buildingname = ad.address[0]
+          location = TliLocation.lookupOrCreate(buildingname,street,town,region,ad.postcode,newGazetteerService);
+        }
       }
 
       json.categories.each { cat ->
