@@ -50,6 +50,7 @@
                     <li><g:link controller="collection" action="index">Resources</g:link></li>
                     <li><g:link controller="admin" action="loadOrgs">Bulk Load Organisations</g:link></li>
                     <li><g:link controller="admin" action="forceFTUpdate">Force Index Update</g:link></li>
+                    <li><g:link controller="admin" action="forceEnrichment">Force Enrichment</g:link></li>
 
                   </ul>
                 </li>

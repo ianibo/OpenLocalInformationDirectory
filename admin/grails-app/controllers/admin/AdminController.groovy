@@ -11,6 +11,7 @@ class AdminController {
   def genericOIDService
   def vocabSyncService
   def pushService
+  def enrichmentService
 
   @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
@@ -93,6 +94,12 @@ class AdminController {
   @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
   def forceFTUpdate() {
     pushService.updateFTIndexes();
+    redirect controller:'home',action:'index';
+  }
+
+  @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+  def forceEnrichment() {
+    enrichmentService.runEnrhchment()
     redirect controller:'home',action:'index';
   }
 }
