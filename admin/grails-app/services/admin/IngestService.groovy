@@ -64,6 +64,7 @@ class IngestService {
         db_record.collections=[]
         db_record.subjects=[]
         db_record.categories=[]
+        db_record.sessions=[]
       }
 
       db_record.title = gettxt(json.title)
@@ -72,6 +73,8 @@ class IngestService {
       db_record.url = gettxt(json.url)
       db_record.collections.add(collection)
       db_record.registeredCharityNo = gettxt(json."Charity Number")
+
+      db_record.defaultLocation = processAddressElements(json)
     
       // Set subjects
       // Set sessions
@@ -91,15 +94,26 @@ class IngestService {
       }
 
       json.activityDetails.each { ad ->
-        def location = null;
         log.debug("Processing activity details: ${ad}");
-        if ( ad.address.size() > 3 ) {
-          def region = ad.address[ad.address.size()-1].toString()
-          def town = ad.address[ad.address.size()-2].toString()
-          def street = ad.address[ad.address.size()-3].toString()
-          def buildingname = ad.address[0].toString()
-          def postcode = !(ad.postcode?.equals(null)) ? ad.postcode[0] : null
-          location = TliLocation.lookupOrCreate(buildingname,street,town,region,postcode,newGazetteerService);
+        def location = processAddressElements(ad);
+        if ( location != null ) {
+          def new_session = new TliSession(owner:db_record, name:db_record.title, location:location, trrule:ad.daysAndTimes)
+          if ( new_session.validate() ) {
+            db_record.sessions.add(new_session);
+          }
+          else {
+            log.error(new_session.errors);
+          }
+        }
+      }
+
+      if ( ( db_record.sessions.size() == 0 ) && ( db_record.defaultLocation != null ) ) {
+        def new_session = new TliSession(owner:db_record, name:db_record.title, location:db_record.defaultLocation)
+        if ( new_session.validate() ) {
+          db_record.sessions.add(new_session);
+        }
+        else {
+          log.error(new_session.errors);
         }
       }
 
@@ -130,5 +144,18 @@ class IngestService {
       result = i.join(' ')
     }
     result
+  }
+
+  def processAddressElements(owner) {
+    def location = null;
+    if ( owner.address.size() > 3 ) {
+      def region = owner.address[owner.address.size()-1].toString()
+      def town = owner.address[owner.address.size()-2].toString()
+      def street = owner.address[owner.address.size()-3].toString()
+      def buildingname = owner.address[0].toString()
+      def postcode = !(owner.postcode?.equals(null)) ? owner.postcode[0] : null
+      location = TliLocation.lookupOrCreate(buildingname,street,town,region,postcode,newGazetteerService);
+    }
+    return location
   }
 }

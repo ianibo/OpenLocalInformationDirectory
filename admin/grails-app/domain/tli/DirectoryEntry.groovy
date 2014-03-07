@@ -15,6 +15,7 @@ class DirectoryEntry {
   Set categories
   String registeredCharityNo
   RefdataValue status
+  TliLocation defaultLocation
 
   static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection, categories:RefdataValue ]
   static mappedBy = [sessions:'owner' ]
@@ -41,6 +42,7 @@ class DirectoryEntry {
     url(nullable:true, blank:true)
     registeredCharityNo(nullable:true, blank:true)
     status(nullable:true, blank:false)
+    defaultLocation(nullable:true, blank:false)
   }
 
   @Transient

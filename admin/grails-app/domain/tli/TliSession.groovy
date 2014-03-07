@@ -15,15 +15,19 @@ class TliSession {
   String description
   TliLocation location
 
+  static mapping = {
+    description type:'text'
+  }
+
   static constraints = {
-    name(nullable:true, blank:false)
     owner(nullable:false, blank:false)
-    rrule(nullable:true, blank:false)
+    name(nullable:true, blank:false)
     startTime(nullable:true, blank:false)
     endTime(nullable:true, blank:false)
-    trrule(nullable:true, blank:false)
-    location(nullable:true, blank:false)
+    rrule(nullable:true, blank:false, maxSize:256)
+    trrule(nullable:true, blank:false, maxSize:512)
     description(nullable:true, blank:false)
+    location(nullable:true, blank:false)
   }
 }
 

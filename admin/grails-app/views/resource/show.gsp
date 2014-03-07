@@ -3,7 +3,7 @@
   <head>
     <meta name="layout" content="main"/>
     <r:require modules="tlistyle,editable"/>
-    <title>TLI</title>
+    <title>Open Local Information Directory</title>
   </head>
   <body class="" >
     <g:if test="${displayobj.respondsTo('availableActions')}">

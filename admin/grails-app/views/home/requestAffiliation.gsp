@@ -16,7 +16,7 @@
              Request Affiliation
              <g:link controller="home" action="requestNewOrg" class="btn btn-success btn-xs pull-right">Request New Organisation</g:link>
            </div>
-           <div>
+           <div class="clearfix">
 
              &nbsp;<br/>
              <g:form controller="home" action="requestAffiliation" role="form" method="post">

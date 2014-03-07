@@ -39,29 +39,33 @@ class TliLocation {
   }
 
   public static def lookupOrCreate(buildingname,street,town,region,postcode,gaz) {
-    def q = TliLocation.executeQuery("find l from TliLocation as l where lower(l.buildingName)=? and lower(l.street)=? and lower(l.city)=? and lower(l.postcode)=?",
-                                       [buildingname.toLowerCase(),
-                                        street.toLowerCase(),
-                                        town.toLowerCase(),
-                                        region.toLowerCase(),
-                                        postcode.toLowerCase()]);
+
+    def q = TliLocation.executeQuery("select l from TliLocation as l where lower(l.buildingName)=? and lower(l.street)=? and lower(l.city)=? and lower(l.region) = ? and lower(l.postcode)=?",
+                                       [buildingname?buildingname.toLowerCase():'',
+                                        street?street.toLowerCase():'',
+                                        town?town.toLowerCase():'',
+                                        region?region.toLowerCase():'',
+                                        postcode?postcode.toLowerCase():'']);
     def result = null
     if ( q.size() > 0 ) {
       result = q[0];
     }
     else {
       result = new TliLocation(
-                               buildingName:buildingname,
-                               street:street,
-                               town:town,
-                               region:region,
-                               postcode:postcode)
+                               buildingName:buildingname?:'',
+                               street:street?:'',
+                               town:town?:'',
+                               region:region?:'',
+                               postcode:postcode?:'')
+
       if ( ( gaz != null ) && ( postcode != null ) ) {
         try {
           def gazres = gaz.geocode(postcode)
-          if ( ( gazres != null ) && ( gazres.result != null ) ) {
-            result.lat = gazres.result.geo.lat;
-            result.lon = gazres.result.geo.lng;
+          
+          println("Process result: ${gazres}");
+          if ( ( gazres != null ) && ( gazres.response != null ) ) {
+            result.lat = gazres.response.geo.lat;
+            result.lon = gazres.response.geo.lng;
           }
           // result = [ address:postcode,
           //                 response:json,
