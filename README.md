@@ -19,6 +19,7 @@ An agent consumes the open data feed and uses this data to populate (The system 
 
 2) An end user information portal which allows the public a faceted search the collections using keyword and spatal search.
 
+APIs are provided for bulk data loading and setup of controlled vocabularies. The system is distributed with a tested  copy of the IPSV and uploaded records are automatically cross-referenced with IPSV where they control subject headings and/or categories.
 
 --
 
