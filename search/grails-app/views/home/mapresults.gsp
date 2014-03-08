@@ -29,7 +29,6 @@
 
     var map;
 
-
     var locations = [
       <g:each in="${hits}" var="h">
         <g:each in="${h.source.sessions}" var="s">
@@ -49,19 +48,24 @@
 
       var bounds = new google.maps.LatLngBounds();
 
+      var next_label = 'A'
       for (i = 0; i < locations.length; i++) {  
-        console.log("marker");
-        marker = new google.maps.Marker({ position: new google.maps.LatLng(locations[i][1], locations[i][2]), map: map });
+        if ( locations[i][1] != null ) {
+          marker = new google.maps.Marker({ position: new google.maps.LatLng(locations[i][1], locations[i][2]), 
+                                            icon: "http://maps.google.com/mapfiles/marker" + next_label + ".png",
+                                            map: map });
   
-        //extend the bounds to include each markers position
-        bounds.extend(marker.position);
+          //extend the bounds to include each markers position
+          bounds.extend(marker.position);
   
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-          return function() {
-            infowindow.setContent(locations[i][0]);
-            infowindow.open(map, marker);
-          }
-        })(marker, i));
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+          next_label = String.fromCharCode(next_label.charCodeAt(0) + 1);
+        }
       }
 
       map.fitBounds(bounds);
@@ -117,10 +121,17 @@
           </div>
 
           <ul class="media-list">
+            <g:set var="lab" value="A"/>
             <g:each in="${hits}" var="res">
               <li class="media">
-                <div class="media-body"> 
-                  <strong><g:link controller="entry" id="${res.source._id}">${res.source.title}</g:link></strong>
+                <div class="media-body">
+                  <g:if test="${res.source.sessions.size() > 0}">
+                    <img src="http://maps.google.com/mapfiles/marker${lab++}.png"/>
+                    <strong><g:link controller="entry" id="${res.source._id}">${res.source.title}</g:link></strong>
+                  </g:if>
+                  <g:else>
+                    <strong><g:link controller="entry" id="${res.source._id}">${res.source.title}</g:link></strong>
+                  </g:else>
                 </div>
               </li>
             </g:each>
