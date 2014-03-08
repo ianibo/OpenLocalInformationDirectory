@@ -15,8 +15,8 @@ curl -X PUT "localhost:9200/olid" -d '{
   "settings" : {}
 }'
 
-curl -X PUT "localhost:9200/olid/entry/_mapping" -d '{
-  "entry" : {
+curl -X PUT "localhost:9200/olid/tli.DirectoryEntry/_mapping" -d '{
+  "tli.DirectoryEntry" : {
     "properties" : {
       "title" : {
         type : "string",
@@ -27,8 +27,10 @@ curl -X PUT "localhost:9200/olid/entry/_mapping" -d '{
         analyzer : "snowball"
       },
       "sessions": {
-        "loc": {
-          "type":"geo_point"
+        "properties" : {
+          "loc": {
+            "type":"geo_point"
+          }
         }
       }
     }

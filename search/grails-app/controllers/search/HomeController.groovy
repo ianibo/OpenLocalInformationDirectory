@@ -58,15 +58,15 @@ class HomeController {
 
       try {
        def search = esclient.search{
-          indices "localchatter"
-          types "resource"
+          indices "olid"
+          types "tli.DirectoryEntry"
           source {
             from = params.offset
             size = params.max
             if ( geo == true ) {
                 sort = [
                   '_geo_distance' : [
-                    'position' : [
+                    'sessions.loc' : [
                       'lat':"${g_lat}",
                       'lon':"${g_lon}"
                     ],
@@ -84,7 +84,7 @@ class HomeController {
                   filter {
                     geo_distance {
                       distance = "${params.distance}${dunit}"
-                      position {
+                      'sessions.loc' {
                         lat=g_lat
                         lon=g_lon
                       }
@@ -98,23 +98,23 @@ class HomeController {
                 query_string (query: query_str)
               }
             }
-            facets {
-              infotypes {
-                  terms {
-                       field = 'orig.infotypes'
-                  }
-              }
-              district {
-                terms {
-                  field = 'district_facet'
-                }
-              }
-              ward {
-                  terms {
-                       field = 'ward_facet'
-                  }
-              }
-            }
+            // facets {
+              // infotypes {
+              //     terms {
+              //          field = 'orig.infotypes'
+              //     }
+              // }
+              // district {
+              //   terms {
+              //     field = 'district_facet'
+              //   }
+              // }
+              // ward {
+              //     terms {
+              //          field = 'ward_facet'
+              //     }
+              // }
+            // }
           }
         }
 
@@ -134,14 +134,17 @@ class HomeController {
         if ( search.response.facets != null ) {
           result.facets = [:]
           search.response.facets.facets.each { facet ->
+            log.debug("Facet: ${facet.key}");
             def facet_values = []
             facet.value.entries.each { fe ->
-              // log.debug('adding to '+ facet.key + ': ' + fe.term + ' (' + fe.count + ' )')
-              def components = fe.term.split(':');
-              if ( components.length > 1 )
-                facet_values.add([term: fe.term,display:components[1],count:"${fe?.count}"])
-              else
-                facet_values.add([term: fe.term,display:components[0],count:"${fe?.count}"])
+              if ( fe.term != null ) {
+                log.debug('adding to '+ facet.key + ': ' + fe.term + ' (' + fe.count + ' )')
+                def components = fe.term.split(':');
+                if ( components.length > 1 )
+                  facet_values.add([term: fe.term,display:components[1],count:"${fe?.count}"])
+                else
+                  facet_values.add([term: fe.term,display:components[0],count:"${fe?.count}"])
+              }
             }
 
             result.facets[facet.key] = facet_values

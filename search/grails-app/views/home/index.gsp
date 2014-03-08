@@ -18,7 +18,7 @@
 
   <g:if test="${flash.message}">
     <div class="content">
-      <div class="container"><div class="row"><div class="span12">
+      <div class="container-fluid"><div class="row-fluid"><div class="span12">
         <bootstrap:alert class="alert-info">${flash.message}</bootstrap:alert>
       </div></div></div>
     </div>
@@ -28,7 +28,7 @@
   <div class="content">
     <div class="container">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-12">
           <div style="text-align:center;">
             <g:form action="index" method="get" class="form-inline">
               <h1>Search</h1>
@@ -39,9 +39,6 @@
               <button class='btn'>Go!</button>
             </g:form>
           </div>
-        </div>
-        <div class="col-lg-3">
-          <g:render template="addpanel" contextPath="../templates"/>
         </div>
       </div>
     </div>

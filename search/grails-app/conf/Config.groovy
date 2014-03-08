@@ -2,10 +2,10 @@
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
 
-// grails.config.locations = [ "classpath:${appName}-config.properties",
-//                             "classpath:${appName}-config.groovy",
-//                             "file:${userHome}/.grails/${appName}-config.properties",
-//                             "file:${userHome}/.grails/${appName}-config.groovy"]
+grails.config.locations = [ "classpath:${appName}-config.properties",
+                            "classpath:${appName}-config.groovy",
+                            "file:${userHome}/.grails/${appName}-config.properties",
+                            "file:${userHome}/.grails/${appName}-config.groovy"]
 
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
@@ -95,6 +95,10 @@ environments {
 
 // log4j configuration
 log4j = {
+    appenders {
+      console name: "stdout", threshold: org.apache.log4j.Level.ALL
+    }
+
     // Example of changing the log pattern for the default console appender:
     //
     //appenders {
@@ -112,4 +116,17 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    debug  'grails.app.controllers',
+           'grails.app.service',
+           'grails.app.services',
+           'grails.app.domain',
+           'grails.app.tagLib',
+           'grails.app.filters',
+           'grails.app.conf',
+           'grails.app.jobs',
+           'grails.app.bootstrap',
+           'grails.app.startup',
+           'com.k_int'
+
 }
