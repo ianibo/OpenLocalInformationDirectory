@@ -79,7 +79,9 @@
     <div class="container-fluid fill mc">
       <div class="row-fluid mc">
         <div class="col-lg-2">
-             <g:each in="${facets}" var="facet">
+
+
+          <g:each in="${facets}" var="facet">
                 <div>
                   ${facet.key}
                   <ul>
@@ -92,13 +94,37 @@
                     </g:each>
                   </ul>
                 </div>
-              </g:each>
+          </g:each>
         </div>
         <div class="col-lg-8 mc">
           <div id="mapcanvas"></div>
         </div>
         <div class="col-lg-2 mc">
-          Hits and navigation
+          <div style="text-align:center;">
+            <g:if test="${hits?.totalHits}">Results ${params.offset+1} to ${params.lastrec} of ${hits?.totalHits}</g:if>
+
+            <small>
+              <g:paginate action="index" 
+                          controller="home" 
+                          params="${params}" 
+                          next="&gt;" 
+                          prev="&lt;"
+                          maxsteps="1" 
+                          total="${hits.totalHits}" 
+                          class="pagination-right"
+                          omitFirst="true" omitLast="true" />
+            </small>
+          </div>
+
+          <ul class="media-list">
+            <g:each in="${hits}" var="res">
+              <li class="media">
+                <div class="media-body"> 
+                  <strong><g:link controller="entry" id="${res.source._id}">${res.source.title}</g:link></strong>
+                </div>
+              </li>
+            </g:each>
+          </ul>
         </div>
       </div>
     </div>

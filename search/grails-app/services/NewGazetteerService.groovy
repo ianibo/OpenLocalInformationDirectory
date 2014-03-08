@@ -30,9 +30,19 @@ class NewGazetteerService {
       response.success = {resp, json ->
         log.debug("Process geocode response: ${json}");
         result = [ address:postcode,
-                            response:json,
-                            lastSeen: System.currentTimeMillis(),
-                            created: System.currentTimeMillis() ]
+                   response: [
+                     postcode: json.postcode,
+                     geo: [
+                       lat: "${json.geo.lat}",
+                       lng: "${json.geo.lng}",
+                       easting: "${json.geo.easting}",
+                       northing: "${json.geo.northig}",
+                       geohash: json.geo.geohash
+                     ],
+                     administrative: json.administrative
+                   ],
+                   lastSeen: System.currentTimeMillis(),
+                   created: System.currentTimeMillis() ]
         gazcache_db.entries.save(result);
       }
       response.failure = { resp ->
