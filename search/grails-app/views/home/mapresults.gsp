@@ -16,6 +16,8 @@
         padding: 0px
       }
       #mapcanvas {
+      }
+      .pt { 
         margin-top:50px;
       }
       .mc { 
@@ -73,13 +75,30 @@
 
   <body>
 
-  <div class="content mc">
+  <div class="content mc pt">
     <div class="container-fluid fill mc">
       <div class="row-fluid mc">
         <div class="col-lg-2">
+             <g:each in="${facets}" var="facet">
+                <div>
+                  ${facet.key}
+                  <ul>
+                    <g:each in="${facet.value}" var="v">
+                      <li>
+                        <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>
+                        <g:link controller="home" action="index" params="${params+[fname:'Y']}">${v.display}</g:link> (${v.count})
+                        <g:if test="${params[fname]=='Y'}">Tick</g:if>
+                      </li>
+                    </g:each>
+                  </ul>
+                </div>
+              </g:each>
         </div>
-        <div class="col-lg-10 mc">
+        <div class="col-lg-8 mc">
           <div id="mapcanvas"></div>
+        </div>
+        <div class="col-lg-2 mc">
+          Hits and navigation
         </div>
       </div>
     </div>

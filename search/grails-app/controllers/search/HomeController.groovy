@@ -98,23 +98,28 @@ class HomeController {
                 query_string (query: query_str)
               }
             }
-            // facets {
-              // infotypes {
-              //     terms {
-              //          field = 'orig.infotypes'
-              //     }
-              // }
-              // district {
-              //   terms {
-              //     field = 'district_facet'
-              //   }
-              // }
+            facets {
+              subjects {
+                terms {
+                  field = 'subjects.subjname'
+                }
+              }
+              categories {
+                terms {
+                  field = 'categories.catid'
+                }
+              }
+              collections {
+                terms {
+                  field = 'collections.collname'
+                }
+              }
               // ward {
               //     terms {
               //          field = 'ward_facet'
               //     }
               // }
-            // }
+            }
           }
         }
 
@@ -139,11 +144,7 @@ class HomeController {
             facet.value.entries.each { fe ->
               if ( fe.term != null ) {
                 log.debug('adding to '+ facet.key + ': ' + fe.term + ' (' + fe.count + ' )')
-                def components = fe.term.split(':');
-                if ( components.length > 1 )
-                  facet_values.add([term: fe.term,display:components[1],count:"${fe?.count}"])
-                else
-                  facet_values.add([term: fe.term,display:components[0],count:"${fe?.count}"])
+                facet_values.add([term: fe.term,display:fe.term,count:"${fe?.count}"])
               }
             }
 
