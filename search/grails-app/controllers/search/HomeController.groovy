@@ -15,7 +15,7 @@ class HomeController {
 
 
   def index() { 
-    log.debug("index");
+    log.debug("index ${params}");
     def result = [:]
 
     def dunit = params.dunit ?: 'miles'
@@ -151,7 +151,12 @@ class HomeController {
           }
         }
 
-        render(view:'results',model:result);
+        if ( params.mapSearchButton=='true' ) {
+          render(view:'mapresults',model:result);
+        }
+        else {
+          render(view:'results',model:result);
+        }
       }
       catch ( Exception e ) {
         log.error("Problem",e);
@@ -232,6 +237,7 @@ class HomeController {
     }
 
     def result = sw.toString();
+
     result;
   }
 
