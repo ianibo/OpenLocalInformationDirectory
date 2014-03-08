@@ -1,6 +1,6 @@
 <html>
    <head>
-      <meta name="layout" content="main"/>
+      <meta name="layout" content="searchmain"/>
       <r:require modules="bootstrap"/>
       <meta name="description" content="Use localchatter to search for community improved information from trusted local sources. You will information collected from local authorities and other trusted sources, imrpved and refined by the community"/>
 
@@ -28,16 +28,9 @@
 
 
   <div class="content">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span8">
-          <div class="row-fluid" style="text-align:center;">
-              <g:form action="index" method="get" class="form-inline">
-                Postcode: <input name="postcode" placeholder="Enter your postcode..." type="text" value="${params.postcode}" />
-                Keywords: <input name="q" placeholder="Keywords, eg Childcare..." type="text"  value="${params.q}"/>
-                <button class='btn'>Go!</button>
-              </g:form>
-          </div>
+        <div class="col-lg-10">
           <div class="row-fluid">
             <div class="facetFilter col-lg-3">
               <g:each in="${facets}" var="facet">
@@ -73,7 +66,7 @@
             </div>
           </div>
         </div>
-        <div class="span4">
+        <div class="col-lg-2">
           <g:render template="addpanel" contextPath="../templates"/>
         </div>
       </div>
