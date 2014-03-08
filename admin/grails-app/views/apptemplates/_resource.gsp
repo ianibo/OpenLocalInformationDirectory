@@ -35,8 +35,8 @@
 
 
   <ul id="tabs" class="nav nav-tabs">
-    <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
     <li class="active"><a href="#contact" data-toggle="tab">Contact Information</a></li>
+    <li><a href="#details" data-toggle="tab">Details</a></li>
     <g:if test="${d.id != null}">
       <li><a href="#sessions" data-toggle="tab">Sessions</a></li>
       <li><a href="#regs" data-toggle="tab">Registrations</a></li>
@@ -44,7 +44,7 @@
   </ul>
 
   <div id="my-tab-content" class="tab-content">
-    <div class="tab-pane active" id="details">
+    <div class="tab-pane" id="details">
       <p>
   
         <dl class="dl-horizontal">
@@ -67,6 +67,18 @@
                   </g:each>
                 </tbody>
               </table>
+              <g:form controller="ajaxSupport" action="addToStdCollection" class="form-inline">
+                <input type="hidden" name="__context" value="${d.class.name}:${d.id}" />
+                <input type="hidden" name="__property" value="collections" />
+                <dt>Add Collection</dt>
+                <dd>
+                  <g:simpleReferenceTypedown class="input-xxlarge" 
+                                             style="width:350px;" 
+                                             name="__relatedObject" 
+                                             baseClass="tli.Collection" />
+                </dd>
+                <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
+              </g:form>
             </dd>
   
             <dt>Subjects</dt>
@@ -158,7 +170,7 @@
         </dl>
         <dl class="dl-horizontal">
             <dt>Twitter</dt>
-            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="twitter details"/></dd>
+            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="twitter"/></dd>
         </dl>
       </p>
     </div>

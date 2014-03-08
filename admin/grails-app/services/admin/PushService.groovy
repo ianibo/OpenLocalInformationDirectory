@@ -37,9 +37,45 @@ class PushService {
       result._id = "tli.DirectoryEntry:"+de.id
       result.title = de.title
       result.description = de.description
+      result.url = de.url
+      result.contactName = de.contactName
+      result.contactEmail = de.contactEmail
+      result.contactTelephone = de.contactTelephone
+      result.contactFax = de.contactFax
+      result.facebook = de.facebook
+      result.twitter = de.twitter
       result.sessions=[]
       de.sessions?.each { sess ->
-        result.sessions.add(['sesid':"${sess.id}"]);
+        result.sessions.add(['sesid':"${sess.id}",
+                             'name':sess.name,
+                             'startTime':sess.startTime,
+                             'endTime':sess.endTime,
+                             'rrule':sess.rrule,
+                             'trrule':sess.trrule,
+                             'description':sess.description,
+                             'location':[
+                               'buildingName':sess.location?.buildingName,
+                               'buildingNumber':sess.location?.buildingNumber,
+                               'street':sess.location?.street,
+                               'city':sess.location?.city,
+                               'postcode':sess.location?.postcode,
+                               'region':sess.location?.region,
+                               'country':sess.location?.country
+                             ],
+                             'loc':[lat:sess.location.lat, lon:sess.location.lon]
+                            ]);
+      }
+      result.subjects=[]
+      de.subjects?.each { subj ->
+        result.subjects.add(['subjid':subj.value,'subjname':subj.description]);
+      }
+      result.categories=[]
+      de.categories?.each { cat ->
+        result.categories.add(['catid':cat.value,'catname':cat.description]);
+      }
+      result.collections=[]
+      de.collections?.each { coll ->
+        result.collections.add(['collid':coll.shortcode,'collname':coll.name]);
       }
       result
     }

@@ -89,7 +89,7 @@ If you have a bigger screen, side by side view can be easier to work with.
 ![OLID - Add a session](https://raw.github.com/ianibo/tli/dev/images/admin/olid-side-by-side.png)
 
 
-    Copyright (C) 2013  Ian Ibbotson
+    Copyright (C) 2013  Knowledge Integration Ltd
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as

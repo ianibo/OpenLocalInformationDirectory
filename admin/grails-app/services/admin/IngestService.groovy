@@ -73,6 +73,13 @@ class IngestService {
       db_record.url = gettxt(json.url)
       db_record.collections.add(collection)
       db_record.registeredCharityNo = gettxt(json."Charity Number")
+      db_record.contactName = gettxt(json."contact")
+      db_record.contactEmail =  gettxt(json."email")
+      db_record.contactTelephone =  gettxt(json."telephone")
+      db_record.contactFax =  gettxt(json."fax")
+      db_record.facebook =  gettxt(json."facebook")
+      db_record.twitter =  gettxt(json."twitter")
+
 
       db_record.defaultLocation = processAddressElements(json)
     
