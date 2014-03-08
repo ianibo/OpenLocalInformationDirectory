@@ -49,15 +49,27 @@
               </g:each>
             </div>
             <div class="col-lg-9">
-              <g:if test="${hits?.totalHits}">Results ${params.offset+1} to ${params.lastrec} of ${hits?.totalHits}</g:if>
 
-              <ul>
+              <div class="resultStats"><p>
+              <g:if test="${hits?.totalHits}">Results ${params.offset+1} to ${params.lastrec} of ${hits?.totalHits}</g:if>
+              </p></div>
+
+              <ul class="media-list">
                 <g:each in="${hits}" var="res">
-                  <li>
+                  <li class="media">
                     <strong><g:link controller="entry" id="${res.source._id}">${res.source.title}</g:link></strong><br/>
-                    ${res.source.description}<br/>
-                    <g:if test="${params.postcode}">Distance from ${params.postcode} : ${res.sortValues[0].round(2)} ${dunit}<br/></g:if>
-                    Information Source: ${res.source.owner}
+                    <g:if test="${res.source.url != null}">
+                      <a href="${res.source.url}">${res.source.url}</a><br/>
+                    </g:if>
+
+                    <p>
+                    ${res.source.description}
+                     </p>
+                    <g:if test="${params.postcode}"><b>Distance from ${params.postcode} : ${res.sortValues[0].round(2)} ${dunit}</b><br/></g:if>
+                    <g:if test="${res.source.contactName}">Contact ${res.source.contactName}</g:if>
+                    <g:if test="${res.source.contactTelephone}">Tel: ${res.source.contactTelephone}</g:if>
+                    <g:if test="${res.source.contactFax}">Fax: ${res.source.contactFax}</g:if>
+                    <g:if test="${res.source.contactEmail}">Email: ${res.source.contactEmail}</g:if>
  
                   </li>
                 </g:each>

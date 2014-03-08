@@ -130,3 +130,7 @@ log4j = {
            'com.k_int'
 
 }
+
+grails.plugins.twitterbootstrap.fixtaglib = true
+grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
+

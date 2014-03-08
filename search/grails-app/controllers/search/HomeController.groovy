@@ -173,7 +173,7 @@ class HomeController {
         sw.write(params.q)
       }
       else{
-        sw.write("(${params.q})")
+        sw.write("(${params.q}~)")
       }
     }
     else
@@ -220,7 +220,7 @@ class HomeController {
             // Couldn't be more wrong as it was: non_analyzed_fields.contains(params[mapping.key]) Should be checking mapped property, not source
             if(non_analyzed_fields.contains(mapping.value))
             {
-                sw.write("${params[mapping.key]}")
+                sw.write("${params[mapping.key]}~")
             }
             else
             {
