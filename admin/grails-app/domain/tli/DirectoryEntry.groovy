@@ -16,6 +16,12 @@ class DirectoryEntry {
   String registeredCharityNo
   RefdataValue status
   TliLocation defaultLocation
+  String contactName
+  String contactEmail
+  String contactTelephone
+  String contactFax
+  String facebook
+  String twitter
 
   static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection, categories:RefdataValue ]
   static mappedBy = [sessions:'owner' ]
@@ -43,6 +49,12 @@ class DirectoryEntry {
     registeredCharityNo(nullable:true, blank:true)
     status(nullable:true, blank:false)
     defaultLocation(nullable:true, blank:false)
+    contactName(nullable:true, blank:false)
+    contactEmail(nullable:true, blank:false)
+    contactTelephone(nullable:true, blank:false)
+    contactFax(nullable:true, blank:false)
+    facebook(nullable:true, blank:false)
+    twitter(nullable:true, blank:false)
   }
 
   @Transient

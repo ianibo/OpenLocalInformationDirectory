@@ -36,6 +36,7 @@
 
   <ul id="tabs" class="nav nav-tabs">
     <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+    <li class="active"><a href="#contact" data-toggle="tab">Contact Information</a></li>
     <g:if test="${d.id != null}">
       <li><a href="#sessions" data-toggle="tab">Sessions</a></li>
       <li><a href="#regs" data-toggle="tab">Registrations</a></li>
@@ -131,6 +132,34 @@
         <g:else>
           <p>Other properties will become editable once you have saved the record</p>
         </g:else>
+      </p>
+    </div>
+    <div class="tab-pane active" id="contact">
+      <p>
+        <dl class="dl-horizontal">
+            <dt>Contact Name</dt>
+            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="contactName"/></dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>Contact Email</dt>
+            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="contactEmail"/></dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>Contact Telephone</dt>
+            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="contactTelephone"/></dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>Contact Fax</dt>
+            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="contactFax"/></dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>Facebook Link</dt>
+            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="facebook"/></dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>Twitter</dt>
+            <dd><g:xEditable type="text" class="ipe" owner="${d}" field="twitter details"/></dd>
+        </dl>
       </p>
     </div>
 
