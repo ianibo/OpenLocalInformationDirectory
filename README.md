@@ -31,8 +31,18 @@ Future Developments
 
 * Development of a national federated identity service which can underpin an evolving culture of information stewardship in public services.
 
-# Some screenshots
+# Some screenshots - Front end search
 
+![OLID - Search Front Page](olid-search-front.png)
+
+![OLID - Postcode Search - Text Results](olid-postcode-search-text-results.png)
+
+![OLID - Search - Map Results](olid-postcode-search-map-results.png)
+
+![OLID - Postcode Search - Details](olid-search-details.png)
+
+
+# Some screenshots - Back office system
 
 ## Welcome page - Administrative system
 
