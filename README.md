@@ -7,7 +7,7 @@ Our goal is to provide a best-of-breed information delivery portal which is free
 
 The platform itself is Open Source, and freely downloadable and usable. It is maintained by the Sheffield Open Data group (An activity under the Better With Data Society banner). Sheffield Open Data consists of a number of industry professionals and is supported and attended by representatives from local universities (Sheffield Hallam, and UoS) and the local authority (Sheffield City Council) as well as the wider community in and around south yorkshire. The system is not intended to be geographically constrained however, and should be portable globally.
 
-The driving principle behind TLI is that information collated and maintained by public bodies should be freely available to the public whos taxes pay for that service to reuse and innovate with openly.
+The driving principle behind OLID is that information collated and maintained by public bodies should be freely available to the public whos taxes pay for that service to reuse and innovate with openly.
 
 The system itself is split into two major components - 
 
@@ -102,7 +102,7 @@ If you have a bigger screen, side by side view can be easier to work with.
 There are a few videos demonstrating different aspects of this system here (Part 1 - Search interface)
 http://youtu.be/ILzhW6eMBaE  and here (Part 2 - Administrative Interface): http://youtu.be/yXZ5VQogQOY.
 
-    Copyright (C) 2013  Knowledge Integration Ltd
+    Copyright (C) 2013  Ian Ibbotson, Open Data Sheffield, Some Parts Knowledge Integration Ltd.
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
