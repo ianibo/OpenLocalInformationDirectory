@@ -3,6 +3,16 @@
 <r:require modules="jquery-ui"/>
 <r:require modules="rrule"/>
 
+<g:if test="${d.id == null}">
+  <g:if test="${params.collection!=null}">
+    <script language="javascript">
+      var editable_defaults = {
+        'collections':'${params.collection}'
+      };  
+    </script>
+  </g:if>
+</g:if>
+
 <ul class="nav nav-pills">
 <g:each in="${d.collections}" var="c">
   <li><g:link controller="collection" action="index" id="${c.shortcode}">${c.name}</g:link></li>

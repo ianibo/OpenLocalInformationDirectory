@@ -30,8 +30,14 @@
         var data,
             $elems = $('.editable'),
             errors = $elems.editable('validate'); //run validation for all values
+
         if($.isEmptyObject(errors)) {
             data = $elems.editable('getValue'); //get all values
+
+            if ( editable_defaults != null ) {
+              $.extend(data, editable_defaults);
+            }
+
             $.ajax({
                 type: 'POST',
                 url: "${createLink(controller:'create', action: 'process', params:[cls:params.tmpl])}",

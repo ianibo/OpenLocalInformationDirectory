@@ -76,6 +76,16 @@ class CreateController {
                   def related_item = genericOIDService.resolveOID(p.value);
                   result.newobj[p.key] = related_item
                 }
+                else if ( pdef.isOneToMany() ) {
+                  log.debug("one-to-many");
+                  def related_item = genericOIDService.resolveOID(p.value);
+                  if( result.newobj[p.key] == null ) {
+                    result.newobj[p.key] = [related_item]
+                  }
+                  else {
+                    result.newobj[p.key].add(related_item);
+                  }
+                }
                 else {
                   log.debug("unhandled association type");
                 }
