@@ -85,7 +85,7 @@
                   <g:simpleReferenceTypedown class="input-xxlarge" 
                                              style="width:350px;" 
                                              name="__relatedObject" 
-                                             baseClass="tli.Collection" />
+                                             baseClass="tli.TliCollection" />
                 </dd>
                 <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
               </g:form>

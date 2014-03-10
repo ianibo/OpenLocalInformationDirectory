@@ -21,12 +21,22 @@
        <div class="col-lg-12">
         <div class="panel panel-default">
            <div class="panel-heading clearfix">
-             Collections
+             Collections owned by ${org.displayName}
              <g:if test="${affiliation?.role?.value='Administrator'}">
                <g:link controller="org" id="${org.shortcode}" action="requestNewCollection" class="btn btn-success btn-xs pull-right">Create Collection</g:link>
              </g:if>
            </div>
            <div>
+             <table class="table table-striped table-bordered">
+               <g:each in="${collections}" var="c">
+                 <tr>
+                   <td>
+                     <g:link controller="collection" action="index" id="${c.shortcode}">${c.name}</g:link>
+                   </td>
+                 </tr>
+               </g:each>
+             </table>
+           </div>
          </div>
        </div>
      </div>

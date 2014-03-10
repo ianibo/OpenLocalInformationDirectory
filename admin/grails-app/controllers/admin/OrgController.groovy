@@ -21,10 +21,13 @@ class OrgController {
     if ( id != null && id != '' ) {
       result.org = TliOrg.findByShortcode(id)
       result.affiliation = Affiliation.findByOrgAndUser(result.org, request.user)
+      result.collections = TliCollection.findAllByOwner(result.org);
     }
     else {
       redirect(controller:'home', action:'index');
     }
+
+    log.debug("Result:${result}");
     result
   }
 
