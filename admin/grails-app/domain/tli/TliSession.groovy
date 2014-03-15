@@ -13,6 +13,7 @@ class TliSession {
   String rrule
   String trrule
   String description
+  String iconType
   TliLocation location
 
   static mapping = {
@@ -28,6 +29,7 @@ class TliSession {
     trrule(nullable:true, blank:false, maxSize:512)
     description(nullable:true, blank:false)
     location(nullable:true, blank:false)
+    iconType(nullable:true, blank:false)
   }
 }
 

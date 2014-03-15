@@ -110,7 +110,8 @@ class IngestService {
         def new_session = new TliSession(owner:db_record, 
                                          name:db_record.title, 
                                          location:location, 
-                                         trrule:gettxt(ad.daysAndTimes))
+                                         trrule:gettxt(ad.daysAndTimes,
+                                         iconType:ad.iconType))
         if ( new_session.validate() ) {
           db_record.sessions.add(new_session);
         }

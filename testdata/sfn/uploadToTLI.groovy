@@ -71,7 +71,7 @@ try{
         "categories": [
             "SFN","FOOD",marker.type
         ],
-        "mapIcon":marker.type?.replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase(),
+        "iconType":marker.type?.replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase(),
         "title": [
             marker.title?.replaceAll("\\p{Punct}","").trim()
         ],
@@ -111,7 +111,8 @@ try{
                 "access": [
                 ],
                 "daysAndTimes": [
-                ]
+                ],
+                "iconType": "mapIcon":marker.type?.replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase()
             ]
         ],
         "Languages": [
