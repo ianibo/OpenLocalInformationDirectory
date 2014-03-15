@@ -71,6 +71,7 @@ try{
         "categories": [
             "SFN","FOOD",marker.type
         ],
+        "mapIcon":marker.type?.replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase(),
         "title": [
             marker.title?.replaceAll("\\p{Punct}","").trim()
         ],

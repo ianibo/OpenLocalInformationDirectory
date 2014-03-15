@@ -44,8 +44,9 @@
                 <input id="kwin" type="text" class="form-control" placeholder="Keyword" name="q" value="${params.q}">
               </div>
             </div>
-            <button name="listSearchButton" type="submit" value="true" class="btn btn-default navbar-btn">See List</button>
-            <button name="mapSearchButton" type="submit" value="true" class="btn btn-default navbar-btn">See Map</button>
+            <button name="listSearchButton" type="submit" value="true" class="btn btn-default navbar-btn">List Closest</button>
+            <button name="mapSearchButton" type="submit" value="true" class="btn btn-default navbar-btn">Show Closest on Map</button>
+            <button name="mapAllButton" type="submit" value="true" class="btn btn-default navbar-btn">Show All on Map</button>
           </g:form>
         </div>
 

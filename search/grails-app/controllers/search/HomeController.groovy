@@ -25,6 +25,11 @@ class HomeController {
     params.offset = params.offset ? params.int('offset') : 0
     params.distance = params.distance ? params.int('distance') : 5
 
+    if ( params.mapAllButton=='true' ) {
+      params.offset=0
+      params.max=1000
+    }
+
     if ( params.postcode || params.q ) {
 
       def geo = false;
@@ -154,6 +159,9 @@ class HomeController {
 
         if ( params.mapSearchButton=='true' ) {
           render(view:'mapresults',model:result);
+        }
+        else if ( params.mapAllButton=='true' ) {
+          render(view:'mapall',model:result);
         }
         else {
           render(view:'results',model:result);
