@@ -103,14 +103,14 @@ class IngestService {
       db_record.subjects.add(kw_object)
     }
 
-    json.activityDetails.each { ad ->
+    json.timesAndPlaces.each { ad ->
       log.debug("Processing activity details: ${ad}");
       def location = processAddressElements(ad);
       if ( location != null ) {
         def new_session = new TliSession(owner:db_record, 
                                          name:db_record.title, 
                                          location:location, 
-                                         trrule:ad.daysAndTimes)
+                                         trrule:gettxt(ad.daysAndTimes))
         if ( new_session.validate() ) {
           db_record.sessions.add(new_session);
         }
@@ -163,6 +163,9 @@ class IngestService {
   }
 
   def processAddressElements(owner) {
+
+    log.debug("Process address elements ${owner}");
+
     def location = null;
 
     def region = owner.address.size() > 0 ? owner.address[owner.address.size()-1].toString() : null

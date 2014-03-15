@@ -101,7 +101,7 @@ try{
                 "address":address_elements,
                 "location" : [
                   lat:marker.lat,
-                  lon:marker.lon
+                  lon:marker.lng
                 ],
                 "postcode": [
                 ],
@@ -118,6 +118,8 @@ try{
       ]
 
       def record = new JsonBuilder( json_record ).toPrettyString()
+
+       println(record);
 
       requestContentType = 'multipart/form-data'
       uri.path="/olid/api/${coll_shortcode}/upload"
