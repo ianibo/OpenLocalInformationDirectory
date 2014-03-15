@@ -54,68 +54,63 @@ class IngestService {
     log.debug("Got record with url ${json.url}");
     log.debug("Got record with postcode ${json.postcode}");
 
-    if ( json.id  != null ) {
+    if ( json.id  == null ) {
+      log.debug("No source reference... reconcile/update will not be possible");
+    }
 
-      def db_record = DirectoryEntry.find('from DirectoryEntry as d where exists ( select c from d.collections as c where c = ? ) and d.sourceReference = ?',[collection, json.id])
 
-      if ( db_record == null ) {
-        def entry_status_current = RefdataCategory.lookupOrCreate("entrystatus", "Current" )
-        db_record = new DirectoryEntry(status:entry_status_current)
-        db_record.collections=[]
-        db_record.subjects=[]
-        db_record.categories=[]
-        db_record.sessions=[]
+    def db_record = DirectoryEntry.find('from DirectoryEntry as d where exists ( select c from d.collections as c where c = ? ) and d.sourceReference = ?',[collection, json.id])
+
+    if ( db_record == null ) {
+      def entry_status_current = RefdataCategory.lookupOrCreate("entrystatus", "Current" )
+      db_record = new DirectoryEntry(status:entry_status_current)
+      db_record.collections=[]
+      db_record.subjects=[]
+      db_record.categories=[]
+      db_record.sessions=[]
+    }
+
+    db_record.title = gettxt(json.title)
+    db_record.sourceReference = json.id
+    db_record.description = gettxt(json.description)
+    db_record.url = gettxt(json.url)
+    db_record.collections.add(collection)
+    db_record.registeredCharityNo = gettxt(json."Charity Number")
+    db_record.contactName = gettxt(json."contact")
+    db_record.contactEmail =  gettxt(json."email")
+    db_record.contactTelephone =  gettxt(json."telephone")
+    db_record.contactFax =  gettxt(json."fax")
+    db_record.facebook =  gettxt(json."facebook")
+    db_record.twitter =  gettxt(json."twitter")
+
+
+    db_record.defaultLocation = processAddressElements(json)
+  
+    // Set subjects
+    // Set sessions
+    // Set collections
+    // String registeredCharityNo
+
+    json.keywords.each { kw ->
+      // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
+      def kw_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", kw )
+
+      // If not matched, see if we can match on a private local term
+      if ( kw_object == null ) {
+        kw_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-kw", kw )
       }
 
-      db_record.title = gettxt(json.title)
-      db_record.sourceReference = json.id
-      db_record.description = gettxt(json.description)
-      db_record.url = gettxt(json.url)
-      db_record.collections.add(collection)
-      db_record.registeredCharityNo = gettxt(json."Charity Number")
-      db_record.contactName = gettxt(json."contact")
-      db_record.contactEmail =  gettxt(json."email")
-      db_record.contactTelephone =  gettxt(json."telephone")
-      db_record.contactFax =  gettxt(json."fax")
-      db_record.facebook =  gettxt(json."facebook")
-      db_record.twitter =  gettxt(json."twitter")
+      db_record.subjects.add(kw_object)
+    }
 
-
-      db_record.defaultLocation = processAddressElements(json)
-    
-      // Set subjects
-      // Set sessions
-      // Set collections
-      // String registeredCharityNo
-
-      json.keywords.each { kw ->
-        // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
-        def kw_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", kw )
-
-        // If not matched, see if we can match on a private local term
-        if ( kw_object == null ) {
-          kw_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-kw", kw )
-        }
-
-        db_record.subjects.add(kw_object)
-      }
-
-      json.activityDetails.each { ad ->
-        log.debug("Processing activity details: ${ad}");
-        def location = processAddressElements(ad);
-        if ( location != null ) {
-          def new_session = new TliSession(owner:db_record, name:db_record.title, location:location, trrule:ad.daysAndTimes)
-          if ( new_session.validate() ) {
-            db_record.sessions.add(new_session);
-          }
-          else {
-            log.error(new_session.errors);
-          }
-        }
-      }
-
-      if ( ( db_record.sessions.size() == 0 ) && ( db_record.defaultLocation != null ) ) {
-        def new_session = new TliSession(owner:db_record, name:db_record.title, location:db_record.defaultLocation)
+    json.activityDetails.each { ad ->
+      log.debug("Processing activity details: ${ad}");
+      def location = processAddressElements(ad);
+      if ( location != null ) {
+        def new_session = new TliSession(owner:db_record, 
+                                         name:db_record.title, 
+                                         location:location, 
+                                         trrule:ad.daysAndTimes)
         if ( new_session.validate() ) {
           db_record.sessions.add(new_session);
         }
@@ -123,25 +118,35 @@ class IngestService {
           log.error(new_session.errors);
         }
       }
+    }
 
-      json.categories.each { cat ->
-        // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
-        def cat_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", cat )
-
-        // If not matched, see if we can match on a private local term
-        if ( cat_object == null ) {
-          cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", cat )
-        }
-
-        db_record.categories.add(cat_object)
-      }
-
-
-      if ( db_record.save(flush:true) ) {
+    if ( ( db_record.sessions.size() == 0 ) && ( db_record.defaultLocation != null ) ) {
+      def new_session = new TliSession(owner:db_record, name:db_record.title, location:db_record.defaultLocation)
+      if ( new_session.validate() ) {
+        db_record.sessions.add(new_session);
       }
       else {
-        log.error("Problem:${record.errors}");
+        log.error(new_session.errors);
       }
+    }
+
+    json.categories.each { cat ->
+      // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
+      def cat_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", cat )
+
+      // If not matched, see if we can match on a private local term
+      if ( cat_object == null ) {
+        cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", cat )
+      }
+
+      db_record.categories.add(cat_object)
+    }
+
+
+    if ( db_record.save(flush:true) ) {
+    }
+    else {
+      log.error("Problem:${db_record.errors}");
     }
   }
 
@@ -150,19 +155,35 @@ class IngestService {
     if ( ( i != null ) && ( i instanceof java.util.Collection ) ) {
       result = i.join(' ')
     }
+
+    if ( result?.trim()?.length() == 0 ) {
+      result = null
+    }
     result
   }
 
   def processAddressElements(owner) {
     def location = null;
-    if ( owner.address.size() > 3 ) {
-      def region = owner.address[owner.address.size()-1].toString()
-      def town = owner.address[owner.address.size()-2].toString()
-      def street = owner.address[owner.address.size()-3].toString()
-      def buildingname = owner.address[0].toString()
-      def postcode = !(owner.postcode?.equals(null)) ? owner.postcode[0] : null
-      location = TliLocation.lookupOrCreate(buildingname,street,town,region,postcode,newGazetteerService);
+
+    def region = owner.address.size() > 0 ? owner.address[owner.address.size()-1].toString() : null
+    def town = owner.address.size() > 1 ? owner.address[owner.address.size()-2].toString() : null
+    def street = owner.address.size() > 2 ? owner.address[owner.address.size()-3].toString() : null
+
+    def buildingname = owner.address[0].toString()
+    def postcode = null;
+    if ((owner.postcode != null )&&(owner.postcode.size() > 0)) {
+      postcode = owner.postcode[0]
     }
+
+    location = TliLocation.lookupOrCreate(buildingname,
+                                          street,
+                                          town,
+                                          region,
+                                          postcode,
+                                          owner.location?.lat,
+                                          owner.location?.lon,
+                                          newGazetteerService);
+    
     return location
   }
 }

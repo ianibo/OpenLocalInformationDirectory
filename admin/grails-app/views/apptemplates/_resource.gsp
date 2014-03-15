@@ -48,7 +48,7 @@
     <li class="active"><a href="#contact" data-toggle="tab">Contact Information</a></li>
     <li><a href="#details" data-toggle="tab">Details</a></li>
     <g:if test="${d.id != null}">
-      <li><a href="#sessions" data-toggle="tab">Sessions</a></li>
+      <li><a href="#timesandplaces" data-toggle="tab">Times and Places</a></li>
       <li><a href="#regs" data-toggle="tab">Registrations</a></li>
     </g:if>
   </ul>
@@ -186,10 +186,10 @@
     </div>
 
     <g:if test="${d.id != null}">
-      <div class="tab-pane" id="sessions">
+      <div class="tab-pane" id="timesandplaces">
         <p>
         <dl class="dl-horizontal">
-          <dt>Sessions</dt>
+          <dt>Times and Places</dt>
           <dd>
             <table class="table table-striped table-bordered table-condensed" id="subjects">
               <thead>

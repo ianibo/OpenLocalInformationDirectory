@@ -1,0 +1,67 @@
+record:{
+    "id": "SHYS19748",
+    "keywords": [
+        "KW",
+    ],
+    "categories": [
+        "Cat",
+    ],
+    "title": [
+        "Rock Lea Activity Centre",
+        "Peak Activities Ltd"
+    ],
+    "description": [
+        "Event description"
+    ],
+    "url": [
+        "http://url"
+    ],
+    "address": [
+      "Street
+      "Locality",
+      "City",
+      "County"
+    ],
+    "contact": [
+        ""
+    ],
+    "telephone": [
+        "nnnnn nnnnnnn"
+    ],
+    "fax": [
+        "nnnnn nnnnnnn"
+    ],
+    "mobile": [
+        "nnnnn nnnnnnn"
+    ],
+    "email": [
+        "a@b.c.d"
+    ],
+    "timesAndPlaces": [
+        {
+            "address": [
+                "Peak Activities Ltd",
+                "Station Road",
+                "Hope Valley",
+                "Derbyshire"
+            ],
+            "postcode": [
+                "S32 1DD"
+            ],
+            "maplink": [
+                "http://www.multimap.com/maps/?hloc=GB|S321DD"
+            ],
+            "access": [
+                "Wheelchair Accessible",
+                "Wheelchair Accessible Toilet",
+                "Minibus Adapted For Wheelchair Use"
+            ],
+            "daysAndTimes": [
+                "Please contact for details"
+            ]
+        }
+    ],
+    "Languages": [
+        "French, German, Italian"
+    ]
+}

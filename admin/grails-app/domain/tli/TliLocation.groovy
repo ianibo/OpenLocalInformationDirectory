@@ -38,7 +38,7 @@ class TliLocation {
     return sw.toString()
   }
 
-  public static def lookupOrCreate(buildingname,street,town,region,postcode,gaz) {
+  public static def lookupOrCreate(buildingname,street,town,region,postcode,lat,lon,gaz) {
 
     def q = TliLocation.executeQuery("select l from TliLocation as l where lower(l.buildingName)=? and lower(l.street)=? and lower(l.city)=? and lower(l.region) = ? and lower(l.postcode)=?",
                                        [buildingname?buildingname.toLowerCase():'',
@@ -56,9 +56,14 @@ class TliLocation {
                                street:street?:'',
                                town:town?:'',
                                region:region?:'',
-                               postcode:postcode?:'')
+                               postcode:postcode?:'',
+                               lat:lat,
+                               lon:lon)
 
-      if ( ( gaz != null ) && ( postcode != null ) ) {
+      if ( ( lat == null ) 
+           && ( lon==null ) 
+           && ( gaz != null ) 
+           && ( postcode != null ) ) {
         try {
           def gazres = gaz.geocode(postcode)
           
