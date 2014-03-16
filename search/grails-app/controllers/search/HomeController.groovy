@@ -89,8 +89,8 @@ class HomeController {
                 sort = [
                   '_geo_distance' : [
                     'sessions.loc' : [
-                      'lat':"${g_lat}",
-                      'lon':"${g_lon}"
+                      'lat':g_lat,
+                      'lon':g_lon
                     ],
                     'order' : 'asc',
                     'unit' : dunit
