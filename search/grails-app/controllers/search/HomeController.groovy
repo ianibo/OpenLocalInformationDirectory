@@ -59,10 +59,11 @@ class HomeController {
           flash.error = "Unable to look up postcode ${params.postcode}, please try again with a different one"
         }
         else {
-          g_lat = place.response.geo.lat
-          g_lon = place.response.geo.lng
-          geo = true;
-
+          if ( ( place.response.geo.lat != null ) && ( place.response.geo.lng != null ) ) {
+            g_lat = Double.parseDouble(place.response.geo.lat)
+            g_lon = Double.parseDouble(place.response.geo.lng)
+            geo = true;
+          }
         }
         log.debug("Place:${place}");
       }
@@ -88,8 +89,8 @@ class HomeController {
                 sort = [
                   '_geo_distance' : [
                     'sessions.loc' : [
-                      'lat':"${g_lat}",
-                      'lon':"${g_lon}"
+                      'lat':g_lat,
+                      'lon':g_lon
                     ],
                     'order' : 'asc',
                     'unit' : dunit
