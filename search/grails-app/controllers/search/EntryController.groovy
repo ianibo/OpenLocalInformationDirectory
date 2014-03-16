@@ -35,4 +35,30 @@ class EntryController {
     result
   }
 
+  def popup() {
+    log.debug(params);
+    def result = [:]
+    if ( params.id ) {
+      org.elasticsearch.groovy.node.GNode esnode = elasticSearchService.getESNode()
+      org.elasticsearch.groovy.client.GClient esclient = esnode.getClient()
+      def search = esclient.search {
+        indices "olid"
+        types "tli.DirectoryEntry"
+        source {
+          query {
+            term('_id': params.id.toString())
+          }
+        }
+      }
+      if ( search.response.hits.totalHits == 1 ) {
+        log.debug("Setting result.record...");
+        result.record = search.response.hits.getAt(0)
+      }
+
+    }
+    else {
+    }
+    result
+  }
+
 }
