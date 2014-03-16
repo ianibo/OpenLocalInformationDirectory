@@ -41,6 +41,8 @@ Future Developments
 
 ![OLID - Postcode Search - Details](https://raw.github.com/ianibo/tli/dev/images/search/olid-search-details.png)
 
+![OLID - Show All on Map](https://raw.github.com/ianibo/tli/dev/images/search/olid-map-show-all.png)
+
 
 # Some screenshots - Back office system
 
