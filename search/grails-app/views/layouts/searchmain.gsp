@@ -35,7 +35,7 @@
         <p class="navbar-text">Search:</p>
 
         <div class="collapse navbar-collapse">
-          <g:form role="search" action="index" controller="home" method="get">
+          <g:form role="search" action="index" controller="home" method="get" params="${params.portal != null ? [portal:params.portal] : [:]}">
             <div class="navbar-form navbar-left">
               <div class="form-group">
                 <input id="pcin" type="text" class="form-control" placeholder="Postcode" name="postcode" value="${params.postcode}">

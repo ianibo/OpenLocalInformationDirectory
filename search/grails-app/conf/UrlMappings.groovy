@@ -8,6 +8,8 @@ class UrlMappings {
         }
 
         "/"(controller:'home',action:'index')
+        "/in/$portal"(controller:'home',action:'index')
+        "/in"(controller:'home',action:'index')
 
         "500"(view:'/error')
 	}

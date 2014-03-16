@@ -13,10 +13,26 @@ class HomeController {
 
   def non_analyzed_fields = ['docid','outcode','district','ward','district_facet','ward_facet','ofstedUrn','childcareType','postcode']
 
+  def portal_configs = [
+    'sfn':[
+      coll_id:'sfn',
+      default_view:'mapall'
+    ],
+    'hys':[
+      coll_id:'sheffield_help_yourself',
+      default_view:'mapall'
+    ]
+  ]
+
 
   def index() { 
     log.debug("index ${params}");
     def result = [:]
+
+    def portal_config = null;
+    if ( params.portal != null ) {
+      result.portal_config = portal_configs[params.portal]
+    }
 
     def dunit = params.dunit ?: 'miles'
     result.dunit=dunit
@@ -58,7 +74,7 @@ class HomeController {
       org.elasticsearch.groovy.node.GNode esnode = elasticSearchService.getESNode()
       org.elasticsearch.groovy.client.GClient esclient = esnode.getClient()
 
-      def query_str = buildQuery(params)
+      def query_str = buildQuery(params, result.portal_config)
       log.debug("query: ${query_str}");
 
       try {
@@ -163,6 +179,12 @@ class HomeController {
         else if ( params.mapAllButton=='true' ) {
           render(view:'mapall',model:result);
         }
+        else if ( params.listSearchButton=='true' ) {
+          render(view:'results',model:result);
+        }
+        else if ( result.portal_config != null ) {
+          render(view:result.portal_config.default_view,model:result)
+        }
         else {
           render(view:'results',model:result);
         }
@@ -177,10 +199,14 @@ class HomeController {
   }
 
 
-  def buildQuery(params) {
+  def buildQuery(params, portal_config) {
     log.debug("BuildQuery...");
 
     StringWriter sw = new StringWriter()
+
+    if ( portal_config != null ) {
+      sw.write("collections.collid:'${portal_config.coll_id}' AND ");
+    }
 
     if ( ( params != null ) && ( params.q != null ) && ( params.q.trim().length() > 0 ) ) {
       if(params.q.equals("*")){
