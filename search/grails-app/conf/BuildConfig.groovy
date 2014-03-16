@@ -51,7 +51,7 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.27'
         // runtime 'org.postgresql:postgresql:9.3-1100-jdbc41'
         runtime 'com.gmongo:gmongo:1.3'
-        runtime 'org.elasticsearch:elasticsearch-lang-groovy:2.0.0' // 2.0.0RC avail
+        runtime 'org.elasticsearch:elasticsearch-client-groovy:0.10.0' // 2.0.0RC avail
         runtime 'mysql:mysql-connector-java:5.1.26'
         runtime ( 'org.codehaus.groovy.modules.http-builder:http-builder:0.6' ) {
           excludes "org.codehaus.groovy", "groovy"
