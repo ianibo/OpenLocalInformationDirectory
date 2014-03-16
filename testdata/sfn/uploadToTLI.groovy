@@ -112,7 +112,7 @@ try{
                 ],
                 "daysAndTimes": [
                 ],
-                "iconType": "mapIcon":marker.type?.replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase()
+                "iconType": marker.type?.replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase()
             ]
         ],
         "Languages": [

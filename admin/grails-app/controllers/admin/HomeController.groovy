@@ -14,8 +14,20 @@ class HomeController {
   def genericOIDService
   def shortcodeService
 
+  private static final String HEADER_PRAGMA = "Pragma";
+  private static final String HEADER_EXPIRES = "Expires";
+  private static final String HEADER_CACHE_CONTROL = "Cache-Control";
+
+  protected preventCache (response) {
+    response.setHeader(HEADER_PRAGMA, "no-cache");
+    response.setDateHeader(HEADER_EXPIRES, 1L);
+    response.setHeader(HEADER_CACHE_CONTROL, "no-cache");
+    response.addHeader(HEADER_CACHE_CONTROL, "no-store");
+  }
+
   // @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() { 
+    preventCache(response);
     log.debug("home");
 
     def view="index.gsp"
