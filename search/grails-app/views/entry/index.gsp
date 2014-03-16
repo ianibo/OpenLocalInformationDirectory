@@ -4,16 +4,16 @@
       <title>OLID:Details</title>
       <r:require modules="bootstrap"/>
 
-      <g:if test="${record.source.sessions[0].loc && record.source.sessions[0].loc.lat && record.source.sessions[0].loc.lon}">
+      <g:if test="${record.source.sessions && record.source.sessions[0] && record.source.sessions[0].loc && record.source.sessions[0].loc.lat && record.source.sessions[0].loc.lon}">
         <meta property="ICBM" name="ICBM" content="${record.source.sessions[0].loc.lat}, ${record.source.sessions[0].loc.lon}" />
         <meta property="geo.position" name="geo.position" content="${record.source.sessions[0].loc.lat}, ${record.source.sessions[0].loc.lon}" />
         <meta property="og:latitude" content="${record.source.sessions[0].loc.lat}" />
         <meta property="og:longitude" content="${record.source.sessions[0].loc.lon}" />
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <meta property="geo.region" name="geo.region" content="${record.source.sessions[0].location.toString()}" />
+        <meta property="geo.placename" name="geo.placename" content="${record.source?.sessions[0].location.toString()}" />
       </g:if>
 
-      <meta property="geo.region" name="geo.region" content="${record.source.sessions[0].location.toString()}" />
-      <meta property="geo.placename" name="geo.placename" content="${record.source?.sessions[0].location.toString()}" />
 
       <!-- OGP Properties -->
       <meta property="og:title" content="${record.source.title}" />
@@ -47,7 +47,7 @@
         <div class="row">
           <div class="span9" itemscope itemtype="directoryEntry">
 
-          <g:if test="${record.source.sessions.get(0) && record.source.sessions.get(0).loc.lat && record.source.sessions.get(0).loc.lon }">
+          <g:if test="${record.source.sessions && record.source.sessions.get(0) && record.source.sessions.get(0).loc.lat && record.source.sessions.get(0).loc.lon }">
               <div id="map" class="pull-right" style="width: 250px; height: 250px;"></div>
           </g:if>
   
@@ -57,7 +57,9 @@
 
             <dl>
               <dt>Address</dt>
-              <dd itemprop="address">${record.source.sessions[0].location.buildingName} ${record.source.sessions[0].location.buildingNumber} ${record.source.sessions[0].location.street} ${record.source.sessions[0].location.city} ${record.source.sessions[0].location.county} ${record.source.sessions[0].location.postcode}</dd>
+              <g:if test="${record.source.sessions && ( record.source.sessions.size() > 0 ) }">
+              <dd itemprop="address">${record.source.sessions[0].location?.buildingName} ${record.source.sessions[0].location?.buildingNumber} ${record.source.sessions[0].location?.street} ${record.source.sessions[0].location?.city} ${record.source.sessions[0].location?.county} ${record.source.sessions[0].location?.postcode}</dd>
+              </g:if>
               <g:if test="${record.source.contactEmail}"><dt>Email</td><dd><a href="mailto:${record.source.contactEmail}" itemprop="email">${record.source.contactEmail}</a></dd></g:if>
               <g:if test="${record.source.contactTelephone}"><dt>Telephone</td><dd><a href="mailto:${record.source.contactTelephone}" itemprop="telephone">${record.source.contactTelephone}</a></dd></g:if>
               <g:if test="${record.source.url}"><dt>Website</td><dd><a href="${record.source.url}" itemprop="url">${record.source.url}</a></dd></g:if>
@@ -92,7 +94,7 @@
                       <td>${s.startTime}</td>
                       <td>${s.endTime}</td>
                       <td>${s.indicativeCost}</td>
-                      <td>${s.location.buildingName} ${s.location.buildingNumber} ${s.location.street} ${s.location.city} ${s.location.county} ${s.location.postcode}</td>
+                      <td>${s.location?.buildingName} ${s.location?.buildingNumber} ${s.location?.street} ${s.location?.city} ${s.location?.county} ${s.location?.postcode}</td>
                     </tr>
                   </g:each>
                 </table>
