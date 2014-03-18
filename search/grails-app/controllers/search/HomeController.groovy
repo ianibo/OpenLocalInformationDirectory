@@ -54,7 +54,7 @@ class HomeController {
 
       if ( params.postcode ) {
         log.debug("Geocode ${params.postcode}"); 
-        def result.place = newGazetteerService.geocode(params.postcode.toUpperCase().trim())
+        result.place = newGazetteerService.geocode(params.postcode.toUpperCase().trim())
         if ( result.place == null ) {
           flash.error = "Unable to look up postcode ${params.postcode}, please try again with a different one"
         }
