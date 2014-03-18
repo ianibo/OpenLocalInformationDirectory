@@ -62,10 +62,8 @@
                       <a href="${res.source.url}">${res.source.url}</a><br/>
                     </g:if>
 
-                    <p>
-                    ${res.source.description}
-                     </p>
-                    <g:if test="${params.postcode}"><b>Distance from ${params.postcode} : ${res.sortValues[0].round(2)} ${dunit}</b><br/></g:if>
+                    <p>${res.source.description}</p>
+                    <g:if test="${( ( params.postcode ) && ( place != null ) ) }"><b>Distance from ${params.postcode} : ${res.sortValues[0].round(2)} ${dunit}</b><br/></g:if>
                     <g:if test="${res.source.contactName}">Contact ${res.source.contactName}</g:if>
                     <g:if test="${res.source.contactTelephone}">Tel: ${res.source.contactTelephone}</g:if>
                     <g:if test="${res.source.contactFax}">Fax: ${res.source.contactFax}</g:if>
