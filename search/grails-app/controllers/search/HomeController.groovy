@@ -54,18 +54,18 @@ class HomeController {
 
       if ( params.postcode ) {
         log.debug("Geocode ${params.postcode}"); 
-        def place = newGazetteerService.geocode(params.postcode.toUpperCase().trim())
-        if ( place == null ) {
+        def result.place = newGazetteerService.geocode(params.postcode.toUpperCase().trim())
+        if ( result.place == null ) {
           flash.error = "Unable to look up postcode ${params.postcode}, please try again with a different one"
         }
         else {
-          if ( ( place.response.geo.lat != null ) && ( place.response.geo.lng != null ) ) {
-            g_lat = Double.parseDouble(place.response.geo.lat)
-            g_lon = Double.parseDouble(place.response.geo.lng)
+          if ( ( result.place.response.geo.lat != null ) && ( result.place.response.geo.lng != null ) ) {
+            g_lat = Double.parseDouble(result.place.response.geo.lat)
+            g_lon = Double.parseDouble(result.place.response.geo.lng)
             geo = true;
           }
         }
-        log.debug("Place:${place}");
+        log.debug("Place:${result.place}");
       }
 
       def filters = geo
