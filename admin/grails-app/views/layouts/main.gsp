@@ -102,7 +102,6 @@
 
     <g:layoutBody/>
 
-    <r:layoutResources/>
 
 <div class="modal fade" id="manyToOneModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -130,6 +129,7 @@
       </g:javascript>
     </g:if>
 
+    <r:layoutResources/>
 
     </body>
 </html>

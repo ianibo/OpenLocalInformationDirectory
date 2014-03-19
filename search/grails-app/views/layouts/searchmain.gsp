@@ -61,7 +61,6 @@
 
     <g:layoutBody/>
 
-    <r:layoutResources/>
 
     <g:if test="${grailsApplication.config.analytics?.code!=null}">
       <g:javascript>
@@ -71,5 +70,6 @@
       </g:javascript>
     </g:if>
 
+    <r:layoutResources/>
   </body>
 </html>
