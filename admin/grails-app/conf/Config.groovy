@@ -163,15 +163,15 @@ grails.plugin.springsecurity.ui.password.maxLength = 64
 grails.plugin.springsecurity.ui.password.validationRegex = '^.*$'
 
 //configure register
-grails.plugin.springsecurity.ui.register.emailFrom = "TLI<no-reply@tli.ianibbo.me>"
-grails.plugin.springsecurity.ui.register.emailSubject = 'Welcome to TLI'
+grails.plugin.springsecurity.ui.register.emailFrom = "Open Local Information Directory <no-reply@data.opendatasheffield.org>"
+grails.plugin.springsecurity.ui.register.emailSubject = 'Welcome to the Open Local Information Directory'
 grails.plugin.springsecurity.ui.register.defaultRoleNames = [
         "ROLE_USER"
 ]
 
 // The following 2 entries make the app use basic auth by default
 grails.plugin.springsecurity.useBasicAuth = true
-grails.plugin.springsecurity.basic.realmName = "tli"
+grails.plugin.springsecurity.basic.realmName = "olid"
 
 // This stanza then says everything should use form apart from /api
 // More info: http://stackoverflow.com/questions/7065089/how-to-configure-grails-spring-authentication-scheme-per-url
