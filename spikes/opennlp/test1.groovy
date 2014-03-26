@@ -5,6 +5,8 @@
   @Grab(group='org.codehaus.groovy.modules.http-builder', module='http-builder', version='0.5.1'),
   @Grab(group='xerces', module='xercesImpl', version='2.9.1') ])
 
+// Download the en files from http://opennlp.sourceforge.net/models-1.5/
+
 //   @Grab(group='org.apache.nlp', module='opennlp-uima', version='1.5.3'),
 //   @Grab(group='org.apache.nlp', module='opennlp-maxent', version='3.0.3'),
 import groovyx.net.http.*
