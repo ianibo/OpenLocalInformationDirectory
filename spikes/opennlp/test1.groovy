@@ -50,7 +50,7 @@ def test() {
     "The 86-year-old Reagan will remain overnight for observation at a hospital in Santa Monica, California, said Joanne Drake, chief of staff for the Reagan Foundation."];
 
   println("Declare modelDir");
-  def modelDir = '/home/student/opennlp'
+  def modelDir = '/home/ibbo/opennlp'
 
   println("Create finders....");
   NameFinderME[] finders = new NameFinderME[3];
@@ -65,6 +65,7 @@ def test() {
   for (int si = 0; si < sentences.length; si++) {
     def allAnnotations = []
     String[] tokens = tokenizer.tokenize(sentences[si]);
+    println("Tokens: ${tokens}");
     for (int fi = 0; fi < finders.length; fi++) {
       Span[] spans = finders[fi].find(tokens);
       double[] probs = finders[fi].probs(spans);
