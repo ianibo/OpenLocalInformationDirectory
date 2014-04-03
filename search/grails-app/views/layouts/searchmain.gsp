@@ -32,22 +32,7 @@
           <g:link controller="home" action="index" class="navbar-brand">Open Local Information Directory</g:link>
         </div>
 
-        <p class="navbar-text">Search:</p>
-
         <div class="collapse navbar-collapse">
-          <g:form role="search" action="index" controller="home" method="get" params="${params.portal != null ? [portal:params.portal] : [:]}">
-            <div class="navbar-form navbar-left">
-              <div class="form-group">
-                <input id="pcin" type="text" class="form-control" placeholder="Postcode" name="postcode" value="${params.postcode}">
-              </div>
-              <div class="form-group">
-                <input id="kwin" type="text" class="form-control" placeholder="Keyword" name="q" value="${params.q}">
-              </div>
-            </div>
-            <button name="listSearchButton" type="submit" value="true" class="btn btn-default navbar-btn">List Closest</button>
-            <button name="mapSearchButton" type="submit" value="true" class="btn btn-default navbar-btn">Show Closest on Map</button>
-            <button name="mapAllButton" type="submit" value="true" class="btn btn-default navbar-btn">Show All on Map</button>
-          </g:form>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -57,6 +42,24 @@
           </ul>
         </div><!--/.nav-collapse -->
       </nav>
+      <div class="row well text-center">
+        <g:form role="form" action="index" controller="home" method="get" params="${params.portal != null ? [portal:params.portal] : [:]}" class="form-inline">
+          <fieldset>
+            <label class="control-label">Postcode : </span>
+            <div class="form-group">
+              <input id="pcin" type="text" class="form-control" placeholder="Postcode" name="postcode" value="${params.postcode}">
+            </div>
+            <label class="control-label">Keywords : </span>
+            <div class="form-group">
+              <input id="kwin" type="text" class="form-control" placeholder="Keyword" name="q" value="${params.q}">
+            </div>
+            &nbsp;
+            <button name="listSearchButton" type="submit" value="true" class="btn btn-default">List Closest</button>
+            <button name="mapSearchButton" type="submit" value="true" class="btn btn-default">Show Closest on Map</button>
+            <button name="mapAllButton" type="submit" value="true" class="btn btn-default">Show All on Map</button>
+          </fieldset>
+        </g:form>
+      </div>
     </div>
 
     <g:layoutBody/>

@@ -47,7 +47,8 @@ def test() {
   println("Declare sentences");
   String[] sentences = [
     "Former first lady Nancy Reagan was taken to a suburban Los Angeles hospital \"as a precaution\" Sunday after a fall at her home, an, aide said. ",
-    "The 86-year-old Reagan will remain overnight for observation at a hospital in Santa Monica, California, said Joanne Drake, chief of staff for the Reagan Foundation."];
+    "The 86-year-old Reagan will remain overnight for observation at a hospital in Santa Monica, California, said Joanne Drake, chief of staff for the Reagan Foundation.",
+    "December 2013, on 1 July, on 31 March 2001, June 3 2021"];
 
   println("Declare modelDir");
   def modelDir = '/home/ibbo/opennlp'

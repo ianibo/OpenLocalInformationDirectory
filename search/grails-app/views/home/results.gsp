@@ -40,7 +40,7 @@
                     <g:each in="${facet.value}" var="v">
                       <li>
                         <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>
-                        <g:link controller="home" action="index" params="${params+[fname:'Y']}">${v.display}</g:link> (${v.count})
+                        <g:link controller="home" action="index" params="params+["fct_${facet.name}":"${fname}"]">${v.display}</g:link> (${v.count})
                         <g:if test="${params[fname]=='Y'}">Tick</g:if>
                       </li>
                     </g:each>
