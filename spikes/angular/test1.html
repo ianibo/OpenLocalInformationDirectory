@@ -7,15 +7,17 @@
   <body ng-app="dataEdit">
     <h1>Hello, World.</h1>
 
-    <div ng-controller="DataEditController">
+    <div id="decroot" ng-controller="DataEditController">
       <input name="title2" ng-model="root.title.value"/>
       <ul>
         <li data-ng-repeat="session in root.sessions.value">
-          <input name="sessionName" ng-model="session.sessionName"/> {{session.sessionName}} {{session.place}}
+          <input name="sessionName" ng-model="session.sessionName"/>
         </li>
       </ul>
 
-      Title: {{ root.title.value }}
+      <button ng-click="addSession()">Add Session</button><br/>
+
+      Record: {{ root }}
     <div>
 
     <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js'></script>
@@ -38,8 +40,12 @@
             { sessionName:'Session4', place:'Session1Place4' }
           ]}
         };
-      });
 
+        $scope.addSession = function() {
+           $scope.root.sessions.value.push({ __newclass:'a.b.c' });
+        }
+      });
+  
     </script>
   </body>
 </html>
