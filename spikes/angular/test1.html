@@ -8,16 +8,14 @@
     <h1>Hello, World.</h1>
 
     <div ng-controller="DataEditController">
-      <input name="title" ng-model="title"/>
-      <input name="title" ng-model="entry.title"/>
+      <input name="title2" ng-model="root.title.value"/>
       <ul>
-        <li data-ng-repeat="session in entry.sessions">
-          {{session.sessionName}} {{session.place}}
+        <li data-ng-repeat="session in root.sessions.value">
+          <input name="sessionName" ng-model="session.sessionName"/> {{session.sessionName}} {{session.place}}
         </li>
       </ul>
 
-      {{ title }}
-      {{ entry.title }}
+      Title: {{ root.title.value }}
     <div>
 
     <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js'></script>
@@ -25,19 +23,21 @@
       function Clock($scope) {
         $scope.currentTime = new Date();
       }
+
       var app = angular.module('dataEdit',[]);
 
       app.controller('DataEditController', function($scope) {
-        $scope.entry = {
-          title:'Some entry',
-          sessions:[
+        $scope.root = {
+          title:{value:'Some entry',type:'string'},
+          sessions:{
+            type:'set',
+            value : [
             { sessionName:'Session1', place:'Session1Place1' },
             { sessionName:'Session2', place:'Session1Place2' },
             { sessionName:'Session3', place:'Session1Place3' },
             { sessionName:'Session4', place:'Session1Place4' }
-          ]
+          ]}
         };
-        $scope.title="flooble";
       });
 
     </script>
