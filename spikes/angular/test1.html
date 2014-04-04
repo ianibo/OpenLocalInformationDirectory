@@ -15,7 +15,7 @@
         </li>
       </ul>
 
-      <button ng-click="addSession()">Add Session</button><br/>
+      <button ng-click="addSession('root.sessions.value')">Add Session</button><br/>
 
       Record: {{ root }}
     <div>
@@ -41,8 +41,10 @@
           ]}
         };
 
-        $scope.addSession = function() {
-           $scope.root.sessions.value.push({ __newclass:'a.b.c' });
+        $scope.addSession = function(path) {
+           // $scope.root.sessions.value.push({ __newclass:'a.b.c' });
+           var ctxobj = eval('$scope.'+path);
+           ctxobj.push({ __newclass:'a.b.c' });
         }
       });
   
