@@ -23,8 +23,8 @@ class DirectoryEntry {
   String facebook
   String twitter
 
-  static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection, categories:RefdataValue ]
-  static mappedBy = [sessions:'owner' ]
+  static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection, categories:RefdataValue, shortcodes:DirectoryEntryShortcode ]
+  static mappedBy = [sessions:'owner', shortcodes:'dirent' ]
 
   // Timestamps
   Date dateCreated
@@ -81,6 +81,12 @@ class DirectoryEntry {
     {
       'dc:title'(title)
     }
+  }
+
+
+  @Transient
+  def afterInsert() {
+    DirectoryEntryShortcode.generateShortcode(this, this.title, true);
   }
 
 }

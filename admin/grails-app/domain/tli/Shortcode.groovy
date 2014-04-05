@@ -1,10 +1,9 @@
 package tli
 
-abstract class Shortcode {
+public class Shortcode {
 
   String shortcode
-
-  abstract def getItem();
+  Boolean canonical = false;
 
   static constraints = {
   }

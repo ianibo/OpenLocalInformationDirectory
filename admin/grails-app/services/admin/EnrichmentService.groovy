@@ -15,6 +15,16 @@ class EnrichmentService {
 
   def runEnrhchment() {
     doLocationEnrichment()
+    fillInShortCodes()
+  }
+
+  def fillInShortCodes() {
+    def entries_without_shortcodes = DirectoryEntry.executeQuery('select e.id from tli.DirectoryEntry as e where not exists ( select s from tli.DirectoryEntryShortcode as s where s.dirent = e )');
+    entries_without_shortcodes.each { e ->
+      def de = DirectoryEntry.get(e);
+      DirectoryEntryShortcode.generateShortcode(de,de.title,true);
+      log.debug("Lookup id ${e}");
+    }
   }
 
   def doLocationEnrichment() {
