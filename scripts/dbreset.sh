@@ -26,6 +26,10 @@ curl -X PUT "localhost:9200/olid/tli.DirectoryEntry/_mapping" -d '{
         "type" : "string",
         "analyzer" : "snowball"
       },
+      "dbid" : {
+        "type" : "integer",
+        "index" : "not_analyzed"
+      },
       "sessions": {
         "properties" : {
           "loc": {
