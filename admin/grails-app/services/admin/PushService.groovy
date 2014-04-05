@@ -35,6 +35,8 @@ class PushService {
       def result = [:]
       println(de.title)
       result._id = "tli.DirectoryEntry:"+de.id
+      result.dbid = de.id
+      result.uid = de.uid
       result.title = de.title
       result.description = de.description
       result.url = de.url
@@ -44,6 +46,10 @@ class PushService {
       result.contactFax = de.contactFax
       result.facebook = de.facebook
       result.twitter = de.twitter
+      result.shortcodes=[]
+      de.shortcodes.each { sc ->
+        result.shortcodes.add([shortcode:sc.shortcode, canonical:sc.canonical]);
+      }
       result.sessions=[]
       de.sessions?.each { sess ->
         result.sessions.add(['sesid':"${sess.id}",
