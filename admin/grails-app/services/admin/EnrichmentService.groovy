@@ -16,9 +16,11 @@ class EnrichmentService {
   def runEnrhchment() {
     doLocationEnrichment()
     fillInShortCodes()
+    fillInMissingUID()
   }
 
   def fillInShortCodes() {
+    log.debug("Filling out missing short codes...");
     def entries_without_shortcodes = DirectoryEntry.executeQuery('select e.id from tli.DirectoryEntry as e where not exists ( select s from tli.DirectoryEntryShortcode as s where s.dirent = e )');
     entries_without_shortcodes.each { e ->
       def de = DirectoryEntry.get(e);
@@ -26,6 +28,18 @@ class EnrichmentService {
       log.debug("Lookup id ${e}");
     }
   }
+
+  def fillInMissingUID() {
+    log.debug("Filling out missing UIDs...");
+    def entries_without_uid = DirectoryEntry.executeQuery('select e.id from tli.DirectoryEntry as e where e.uid is null or e.uid=?',['']);
+    entries_without_uid.each { e ->
+      def de = DirectoryEntry.get(e);
+      de.uid = java.util.UUID.randomUUID().toString();
+      de.save();
+    }
+    
+  }
+
 
   def doLocationEnrichment() {
     log.debug("Searching for postcodes to mark up");

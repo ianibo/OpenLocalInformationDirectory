@@ -9,6 +9,7 @@ class DirectoryEntry {
   String sourceReference
   String description
   String url
+  String uid
   Set subjects
   Set sessions
   Set collections
@@ -55,6 +56,7 @@ class DirectoryEntry {
     contactFax(nullable:true, blank:false)
     facebook(nullable:true, blank:false)
     twitter(nullable:true, blank:false)
+    uid(nullable:true, blank:false)
   }
 
   @Transient
@@ -81,6 +83,11 @@ class DirectoryEntry {
     {
       'dc:title'(title)
     }
+  }
+
+  @Transient
+  def beforeInsert() {
+    uid = java.util.UUID.randomUUID().toString();
   }
 
 

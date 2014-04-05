@@ -3,7 +3,7 @@
   <head>
     <meta name="layout" content="main"/>
     <r:require modules="tlistyle"/>
-    <title>TLI</title>
+    <title>Open Local Information Directory</title>
   </head>
   <body>
 
