@@ -20,7 +20,6 @@
    <head>
       <meta name="layout" content="searchmain"/>
       <r:require modules="bootstrap"/>
-      <meta name="description" content="Use localchatter to search for community improved information from trusted local sources. You will information collected from local authorities and other trusted sources, imrpved and refined by the community"/>
 
       <!-- Ask search engines not to index the search results pages, it looks horrible in google -->
       <meta name="robots" CONTENT="noindex, follow">
@@ -52,16 +51,22 @@
           <div class="row-fluid">
             <div class="facetFilter col-lg-3">
               <g:each in="${facets}" var="facet">
-                <div>
-                  ${facet.key}
-                  <ul>
-                    <g:each in="${facet.value}" var="v">
-                      <li>
-                        <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>
-                        <g:link controller="home" action="index" params="${addFacet(params,facet.key,v.term)}">${v.display}</g:link> (${v.count})
-                      </li>
-                    </g:each>
-                  </ul>
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">${facet.key}</h3>
+                  </div>
+                  <div class="panel-body">
+                    <ul>
+                      <g:each in="${facet.value}" var="v">
+                        <li>
+                          <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>
+                          <g:link controller="home" action="index" params="${addFacet(params,facet.key,v.term)}">${v.display}</g:link> (${v.count})
+                        </li>
+                      </g:each>
+                    </ul>
+                  </div>
                 </div>
               </g:each>
             </div>

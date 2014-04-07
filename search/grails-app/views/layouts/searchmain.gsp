@@ -42,7 +42,7 @@
           </ul>
         </div><!--/.nav-collapse -->
       </nav>
-      <div class="row well text-center">
+      <div class="row well text-center searchheader">
         <g:form role="form" action="index" controller="home" method="get" params="${params.portal != null ? [portal:params.portal] : [:]}" class="form-inline">
           <fieldset>
             <label class="control-label">Postcode : </span>

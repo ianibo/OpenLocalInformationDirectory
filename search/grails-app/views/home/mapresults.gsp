@@ -1,8 +1,26 @@
 <html>
+<%
+  def addFacet = { params, facet, val ->
+    // ${params+[('fct_'+facet.key):(params.list('fct_'+facet.key).add(v.term))]}
+    def newparams = [:]
+    newparams.putAll(params)
+    def current = newparams[facet]
+    if ( current == null ) {
+      newparams[facet] = val
+    }
+    else if ( current instanceof List ) {
+      newparams[facet].add(val);
+    }
+    else {
+      newparams[facet] = [ current, val ]
+    }
+    newparams
+  }
+%>
+
    <head>
       <meta name="layout" content="searchmain"/>
       <r:require modules="bootstrap"/>
-      <meta name="description" content="Use localchatter to search for community improved information from trusted local sources. You will information collected from local authorities and other trusted sources, imrpved and refined by the community"/>
 
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
@@ -18,10 +36,12 @@
       #mapcanvas {
       }
       .pt { 
-        margin-top:50px;
       }
       .mc { 
         height: 100%;
+      }
+      .searchheader {
+        margin-top:50px;
       }
     </style>
 
@@ -85,20 +105,26 @@
         <div class="col-lg-2">
 
 
-          <g:each in="${facets}" var="facet">
-                <div>
-                  ${facet.key}
-                  <ul>
-                    <g:each in="${facet.value}" var="v">
-                      <li>
-                        <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>
-                        <g:link controller="home" action="index" params="${params+[fname:'Y']}">${v.display}</g:link> (${v.count})
-                        <g:if test="${params[fname]=='Y'}">Tick</g:if>
-                      </li>
-                    </g:each>
-                  </ul>
+              <g:each in="${facets}" var="facet">
+
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">${facet.key}</h3>
+                  </div>
+                  <div class="panel-body">
+                    <ul>
+                      <g:each in="${facet.value}" var="v">
+                        <li>
+                          <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>
+                          <g:link controller="home" action="index" params="${addFacet(params,facet.key,v.term)}">${v.display}</g:link> (${v.count})
+                        </li>
+                      </g:each>
+                    </ul>
+                  </div>
                 </div>
-          </g:each>
+              </g:each>
+
         </div>
         <div class="col-lg-8 mc">
           <div id="mapcanvas"></div>
