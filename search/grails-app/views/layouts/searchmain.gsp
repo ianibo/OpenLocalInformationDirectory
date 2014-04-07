@@ -60,12 +60,10 @@
           </fieldset>
         </g:form>
         <p>
-          <g:each in="${params}" var="k,v">
-            <g:if test="${k.startsWith('fct_')}">
-              <g:each in="${params.list(k)}" var="v2">
-                <span class="badge alert-info">${v2} &nbsp; <span class="glyphicon glyphicon-remove"></span></span>
-              </g:each>
-            </g:if>
+          <g:each in="${['collections','categories','subjects']}" var="facet">
+            <g:each in="${params.list(facet)}" var="fv">
+              <span class="badge alert-info">${fv} &nbsp; <span class="glyphicon glyphicon-remove"></span></span>
+            </g:each>
           </g:each>
         </p>
       </div>
