@@ -1,4 +1,22 @@
 <html>
+<%
+  def addFacet = { params, facet, val ->
+    // ${params+[('fct_'+facet.key):(params.list('fct_'+facet.key).add(v.term))]}
+    def newparams = [:]
+    newparams.putAll(params)
+    def current = newparams[facet]
+    if ( current == null ) {
+      newparams[facet] = val
+    }
+    else if ( current instanceof List ) {
+      newparams[facet].add(val);
+    }
+    else {
+      newparams[facet] = [ current, val ]
+    }
+    newparams
+  }
+%>
    <head>
       <meta name="layout" content="searchmain"/>
       <r:require modules="bootstrap"/>
@@ -40,8 +58,7 @@
                     <g:each in="${facet.value}" var="v">
                       <li>
                         <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>
-                        <g:link controller="home" action="index" params="${params+[('fct_'+facet.key):(v.term)]}">${v.display}</g:link> (${v.count})
-                        <g:if test="${params[fname]=='Y'}">Tick</g:if>
+                        <g:link controller="home" action="index" params="${addFacet(params,facet.key,v.term)}">${v.display}</g:link> (${v.count})
                       </li>
                     </g:each>
                   </ul>
