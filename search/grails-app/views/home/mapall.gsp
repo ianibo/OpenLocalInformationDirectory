@@ -19,10 +19,12 @@
       #mapcanvas {
       }
       .pt { 
-        margin-top:50px;
       }
       .mc { 
         height: 100%;
+      }
+      .searchheader {
+        margin-top:50px;
       }
     </style>
 
