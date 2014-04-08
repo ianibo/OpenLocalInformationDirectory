@@ -9,7 +9,10 @@ class HomeController {
   def reversemap = ['subject':'subjectKw',
                     'title':'title',
                     'description':'description',
-                    'provider':'provider' ]
+                    'provider':'provider',
+                    'collections':'collections.collname',
+                    'categories':'categories.catid',
+                    'subjects':'subjects.subname' ]
 
   def non_analyzed_fields = ['docid','outcode','district','ward','district_facet','ward_facet','ofstedUrn','childcareType','postcode']
 
