@@ -49,6 +49,9 @@ class PushService {
       result.shortcodes=[]
       de.shortcodes.each { sc ->
         result.shortcodes.add([shortcode:sc.shortcode, canonical:sc.canonical]);
+        if ( sc.canonical ) {
+          result.canonical_shortcode = sc.shortcode
+        }
       }
       result.sessions=[]
       de.sessions?.each { sess ->
