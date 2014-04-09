@@ -63,7 +63,14 @@
                       <g:each in="${facet.value}" var="v">
                         <li>
                           <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>
-                          <g:link controller="home" action="index" params="${addFacet(params,facet.key,v.term)}">${v.display}</g:link> (${v.count})
+
+                          <g:if test="${params.list(facet.key).contains(v.term.toString())}">
+                            ${v.display} (${v.count})
+                          </g:if>
+                          <g:else>
+                            <g:link controller="home" action="index" params="${addFacet(params,facet.key,v.term)}">${v.display}</g:link> (${v.count})
+                          </g:else>
+
                         </li>
                       </g:each>
                     </ul>
