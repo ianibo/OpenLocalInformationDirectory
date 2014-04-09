@@ -45,6 +45,9 @@
       <div class="row well text-center searchheader">
         <g:form role="form" action="index" controller="home" method="get" params="${params.portal != null ? [portal:params.portal] : [:]}" class="form-inline">
           <fieldset>
+            <g:each in="${params.list('collections')}" var="subject"><input type="hidden" name="collections" value="${subject}"/></g:each>
+            <g:each in="${params.list('categories')}" var="subject"><input type="hidden" name="categories" value="${subject}"/></g:each>
+            <g:each in="${params.list('subjects')}" var="subject"><input type="hidden" name="subjects" value="${subject}"/></g:each>
             <label class="control-label">Postcode : </span>
             <div class="form-group">
               <input id="pcin" type="text" class="form-control" placeholder="Postcode" name="postcode" value="${params.postcode}">
