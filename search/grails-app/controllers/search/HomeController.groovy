@@ -12,7 +12,7 @@ class HomeController {
                     'provider':'provider',
                     'collections':'collections.collname',
                     'categories':'categories.catid',
-                    'subjects':'subjects.subname' ]
+                    'subjects':'subjects.subjname' ]
 
   def non_analyzed_fields = ['docid','outcode','district','ward','district_facet','ward_facet','ofstedUrn','childcareType','postcode']
 
@@ -234,8 +234,9 @@ class HomeController {
       // If the query string supplies a value for that mapped parameter
       if ( params[mapping.key] != null ) {
 
+        log.debug("Process ${mapping.key}, ${params[mapping.key]}, ${params[mapping.key].class}");
         // If we have a list of values, rather than a scalar
-        if ( params[mapping.key].class == java.util.ArrayList) {
+        if ( params.list(mapping.key).size() > 1 ) {
           params[mapping.key].each { p ->
                 sw.write(" AND ")
                 sw.write(mapping.value)

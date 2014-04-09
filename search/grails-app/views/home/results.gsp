@@ -1,14 +1,15 @@
 <html>
 <%
   def addFacet = { params, facet, val ->
-    // ${params+[('fct_'+facet.key):(params.list('fct_'+facet.key).add(v.term))]}
     def newparams = [:]
     newparams.putAll(params)
     def current = newparams[facet]
     if ( current == null ) {
       newparams[facet] = val
     }
-    else if ( current instanceof List ) {
+    else if ( current instanceof String[] ) {
+      newparams.remove(current)
+      newparams[facet] = current as List
       newparams[facet].add(val);
     }
     else {
