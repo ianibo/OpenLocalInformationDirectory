@@ -23,9 +23,10 @@ class EnrichmentService {
     log.debug("Filling out missing short codes...");
     def entries_without_shortcodes = DirectoryEntry.executeQuery('select e.id from tli.DirectoryEntry as e where not exists ( select s from tli.DirectoryEntryShortcode as s where s.dirent = e )');
     entries_without_shortcodes.each { e ->
+      log.debug("Generate shortcode for ${e}");
       def de = DirectoryEntry.get(e);
       DirectoryEntryShortcode.generateShortcode(de,de.title,true);
-      log.debug("Lookup id ${e}");
+      log.debug("Result: ${de.shortcodes}");
     }
   }
 
