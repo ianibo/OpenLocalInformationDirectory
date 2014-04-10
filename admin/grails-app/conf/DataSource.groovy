@@ -22,7 +22,7 @@ environments {
             password = "tli"
             url = "jdbc:mysql://localhost/tli?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8"
             pooled = true
-            logSql = true
+            // logSql = true
             // formatSql = true
             properties {
                 maxActive = -1

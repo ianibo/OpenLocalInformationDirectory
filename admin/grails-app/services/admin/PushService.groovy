@@ -7,6 +7,8 @@ import java.util.GregorianCalendar
 
 class PushService {
 
+  static transactional = false
+
   def executorService
   def ESWrapperService
   def mongoService
