@@ -87,7 +87,7 @@
               <ul class="media-list">
                 <g:each in="${hits}" var="res">
                   <li class="media">
-                    <strong><g:link controller="entry" id="${res.source._id}">${res.source.title}</g:link></strong><br/>
+                    <strong><g:link controller="entry" id="${res.source.canonical_shortcode}">${res.source.title}</g:link></strong><br/>
                     <g:if test="${res.source.url != null}">
                       <a href="${res.source.url}">${res.source.url}</a><br/>
                     </g:if>

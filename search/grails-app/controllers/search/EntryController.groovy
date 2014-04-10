@@ -18,7 +18,7 @@ class EntryController {
         types "tli.DirectoryEntry"
         source {
           query {
-            term('_id': params.id.toString())
+            term('canonical_shortcode': params.id.toString())
           }
         }
       }
