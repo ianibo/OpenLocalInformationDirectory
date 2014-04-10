@@ -22,7 +22,13 @@ class DirectoryEntryShortcode extends Shortcode {
       located_record = DirectoryEntryShortcode.executeQuery("select count(o) from tli.DirectoryEntryShortcode as o where o.shortcode = ?",shortcode)[0]
     }
 
-    result = new DirectoryEntryShortcode(dirent:entry,shortcode:shortcode,canonical:canonical).save()
+
+    result = new DirectoryEntryShortcode(dirent:entry,shortcode:shortcode,canonical:canonical)
+    if ( result.save() ) {
+    }
+    else {
+      println("Problem: ${result.errors}");
+    }
 
     return result
   }

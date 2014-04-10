@@ -26,6 +26,11 @@ class EnrichmentService {
       log.debug("Generate shortcode for ${e}");
       def de = DirectoryEntry.get(e);
       DirectoryEntryShortcode.generateShortcode(de,de.title,true);
+      if ( de.save(flush:true) ) {
+      }
+      else {
+        log.error("Problem updating: ${de.errors}");
+      }
       log.debug("Result: ${de.shortcodes}");
     }
   }
