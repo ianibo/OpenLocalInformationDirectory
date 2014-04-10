@@ -20,18 +20,23 @@ class EnrichmentService {
   }
 
   def fillInShortCodes() {
-    log.debug("Filling out missing short codes...");
-    def entries_without_shortcodes = DirectoryEntry.executeQuery('select e.id from tli.DirectoryEntry as e where not exists ( select s from tli.DirectoryEntryShortcode as s where s.dirent = e )');
-    entries_without_shortcodes.each { e ->
-      log.debug("Generate shortcode for ${e}");
-      def de = DirectoryEntry.get(e);
-      DirectoryEntryShortcode.generateShortcode(de,de.title,true);
-      if ( de.save(flush:true) ) {
+    try {
+      log.debug("Filling out missing short codes...");
+      def entries_without_shortcodes = DirectoryEntry.executeQuery('select e.id from tli.DirectoryEntry as e where not exists ( select s from tli.DirectoryEntryShortcode as s where s.dirent = e )');
+      entries_without_shortcodes.each { e ->
+        log.debug("Generate shortcode for ${e}");
+        def de = DirectoryEntry.get(e);
+        log.debug("Create shortcoce for ${de.id}, ${de.title}");
+        DirectoryEntryShortcode.generateShortcode(de,de.title,true);
+        de.refresh()
+
+        de.shortcodes.each { sc ->
+          log.debug("${sc.shortcode}");
+        }
       }
-      else {
-        log.error("Problem updating: ${de.errors}");
-      }
-      log.debug("Result: ${de.shortcodes}");
+    }
+    catch ( Exception e ) {
+      log.error("Problem: ${e}");
     }
   }
 
