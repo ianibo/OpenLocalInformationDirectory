@@ -3,12 +3,12 @@ package tli
 class DirectoryEntryShortcode extends Shortcode {
 
   DirectoryEntry dirent
-
   
   static constraints = {
   }
 
   static generateShortcode(entry, base, canonical) {
+    log.debug("generateShortcode(${entry},${base},${canonical})");
 
     def result = null
 

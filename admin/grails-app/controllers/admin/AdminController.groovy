@@ -99,7 +99,7 @@ class AdminController {
 
   @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
   def forceEnrichment() {
-    enrichmentService.runEnrhchment()
+    enrichmentService.runEnrichment()
     redirect controller:'home',action:'index';
   }
 }
