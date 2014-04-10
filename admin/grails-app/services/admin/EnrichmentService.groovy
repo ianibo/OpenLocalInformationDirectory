@@ -12,9 +12,16 @@ class EnrichmentService {
   def ESWrapperService
   def mongoService
   def sessionFactory
+  def executorService
   def propertyInstanceMap = org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin.PROPERTY_INSTANCE_MAP
 
-  def runEnrhchment() {
+  def runEnrichment() {
+    def future = executorService.submit({
+      internalRunEnrichment()
+    } as java.util.concurrent.Callable)
+  }
+
+  def internalRunEnrichment() {
     doLocationEnrichment()
     fillInShortCodes()
     fillInMissingUID()
