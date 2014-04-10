@@ -8,7 +8,6 @@ import grails.transaction.Transactional
 
 class EnrichmentService {
 
-  def executorService
   def ESWrapperService
   def mongoService
   def sessionFactory
