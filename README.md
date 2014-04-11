@@ -1,7 +1,8 @@
 Open Local Information Directory
 ================================
 
-This is the readme for the _The Open Local Information Directory_ (OLID) project. OLID is a platform for any organisation [But initially targetted at public libraries and local authorities in the UK] wishing to collate, manage and share directories of civic information and then publish/share/search that information in a spatially enabled and semantically meaningful way. Examples of such collections might include Citizens Information Datatabases managed by local library authorities, Childcare provision registers maintained by Family Service Units, Social Care Registers and Databases of Clubs and Events maintained by civic marketing departments.
+This is the readme for the _The Open Local Information Directory_ (OLID) project. Release notes can be found [here](ReleaseNotes.md) OLID is a platform for any organisation [But initially targetted at public libraries and local authorities in the UK] wishing to collate, manage and share directories of civic information and then publish/share/search that information in a spatially enabled and semantically meaningful way. Examples of such collections might include Citizens Information Datatabases managed by local library authorities, Childcare provision registers maintained by Family Service Units, Social Care Registers and Databases of Clubs and Events maintained by civic marketing departments.
+
 
 Our goal is to provide a best-of-breed information delivery portal which is free to use in local government and the third sector. The platform combines administrative functions with local search portal and APIs as well as publishing data streams to third party applications. Support for inclusion in local and hyperlocal systems is of high importance as well as the "Big Player" search engines and local portals. 
 
@@ -30,6 +31,15 @@ Future Developments
 * More granular control of information publishing
 
 * Development of a national federated identity service which can underpin an evolving culture of information stewardship in public services.
+
+# Screenshots from v1.0 release
+
+![Search front page in v 1.0.0](https://raw.github.com/ianibo/tli/dev/images/search/search_home_v1_0_0.png)
+![Standard search results in v 1.0.0](https://raw.github.com/ianibo/tli/dev/images/search/text_search_results_v1_0_0.png)
+![Paging through results using the map view in v 1.0.0](https://raw.github.com/ianibo/tli/dev/images/search/search_map_pages_v1_0_0.png)
+![Faceting in v 1.0.0](https://raw.github.com/ianibo/tli/dev/images/search/search_facets_v1_0_0.png)
+![See all on Map in v 1.0.0](https://raw.github.com/ianibo/tli/dev/images/search/search_map_all_v1_0_0.png)
+
 
 # Some screenshots - Front end search
 
