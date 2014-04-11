@@ -46,8 +46,8 @@ Future Developments
 
 We prepared some screen casts for a project bid - they are a little dated, but might be of interest
 
-![Admin Sub System](https://www.youtube.com/watch?v=yXZ5VQogQOY)
-![Search Sub System](https://www.youtube.com/watch?v=ILzhW6eMBaE)
+[Admin Sub System](https://www.youtube.com/watch?v=yXZ5VQogQOY)
+[Search Sub System](https://www.youtube.com/watch?v=ILzhW6eMBaE)
 
 # Some screenshots - Front end search
 
