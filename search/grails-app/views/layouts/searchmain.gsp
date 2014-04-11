@@ -4,6 +4,25 @@
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
+<%
+  def removeFacet = { params, facet, val ->
+    def newparams = [:]
+    newparams.putAll(params)
+    def current = newparams[facet]
+    if ( current == null ) {
+    }
+    else if ( current instanceof String[] ) {
+      newparams.remove(current)
+      newparams[facet] = current as List
+      newparams[facet].remove(val);
+    }
+    else if ( current?.equals(val.toString()) ) {
+      newparams.remove(facet)
+    }
+    newparams
+  }
+%>
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -65,10 +84,15 @@
         <p>
           <g:each in="${['collections','categories','subjects']}" var="facet">
             <g:each in="${params.list(facet)}" var="fv">
-              <span class="badge alert-info">${fv} &nbsp; <span class="glyphicon glyphicon-remove"></span></span>
+              <span class="badge alert-info">${fv} &nbsp; <g:link controller="home" action="index" params="${removeFacet(params,facet,fv)}"><span class="glyphicon glyphicon-remove"></span></g:link></span>
             </g:each>
           </g:each>
         </p>
+        <g:if test="${hits!=null}">
+          <p>
+            Your search found ${hits?.totalHits} records
+          </p>
+        </g:if>
       </div>
     </div>
 

@@ -153,10 +153,10 @@
                 <div class="media-body">
                   <g:if test="${res.source.sessions.size() > 0}">
                     <img src="http://maps.google.com/mapfiles/marker${lab++}.png"/>
-                    <strong><g:link controller="entry" id="${res.source._id}">${res.source.title}</g:link></strong>
+                    <strong><g:link controller="entry" id="${res.source.canonical_shortcode}">${res.source.title}</g:link></strong>
                   </g:if>
                   <g:else>
-                    <strong><g:link controller="entry" id="${res.source._id}">${res.source.title}</g:link></strong>
+                    <strong><g:link controller="entry" id="${res.source.canonical_shortcode}">${res.source.title}</g:link></strong>
                   </g:else>
                 </div>
               </li>

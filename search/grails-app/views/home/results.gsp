@@ -80,9 +80,7 @@
             </div>
             <div class="col-lg-9">
 
-              <div class="resultStats"><p>
-              <g:if test="${hits?.totalHits}">Results ${params.offset+1} to ${params.lastrec} of ${hits?.totalHits}</g:if>
-              </p></div>
+            <g:if test="${hits?.totalHits}"><p><small>Results ${params.offset+1} to ${lastrec} of ${hits?.totalHits}</small></p></g:if>
 
               <ul class="media-list">
                 <g:each in="${hits}" var="res">
