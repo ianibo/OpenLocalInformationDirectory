@@ -1,7 +1,7 @@
 Open Local Information Directory
 ================================
 
-This is the readme for the _The Open Local Information Directory_ (OLID) project. Release notes can be found [here](ReleaseNotes.md). The development test system (Hosting a number of Open Data collections from in and around sheffield) is [here](http://data.opendatasheffield.org/search). Please note this is very much a _development_ system. 
+This is the readme for the _The Open Local Information Directory_ (OLID) project. Release notes can be found [here](ReleaseNotes.md). The development test system (Hosting a number of Open Data collections from in and around sheffield) is [here](http://data.opendatasheffield.org/search). Please note this is very much a _development_ system.
 
 OLID is a platform for any organisation [But initially targetted at public libraries and local authorities in the UK] wishing to collate, manage and share directories of civic information and then publish/share/search that information in a spatially enabled and semantically meaningful way. Examples of such collections might include Citizens Information Datatabases managed by local library authorities, Childcare provision registers maintained by Family Service Units, Social Care Registers and Databases of Clubs and Events maintained by civic marketing departments.
 
@@ -42,6 +42,12 @@ Future Developments
 ![Faceting in v 1.0.0](https://raw.github.com/ianibo/tli/dev/images/search/search_facets_v1_0_0.png)
 ![See all on Map in v 1.0.0](https://raw.github.com/ianibo/tli/dev/images/search/search_map_all_v1_0_0.png)
 
+# Pre 1.0.0
+
+We prepared some screen casts for a project bid - they are a little dated, but might be of interest
+
+![Admin Sub System](https://www.youtube.com/watch?v=yXZ5VQogQOY)
+![Search Sub System](https://www.youtube.com/watch?v=ILzhW6eMBaE)
 
 # Some screenshots - Front end search
 
