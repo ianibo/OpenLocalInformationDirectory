@@ -1,7 +1,7 @@
 <html>
    <head>
       <meta name="layout" content="searchmain"/>
-      <r:require modules="bootstrap"/>
+      <r:require modules="bootstrap,spider"/>
       <meta name="description" content="Use localchatter to search for community improved information from trusted local sources. You will information collected from local authorities and other trusted sources, imrpved and refined by the community"/>
 
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>

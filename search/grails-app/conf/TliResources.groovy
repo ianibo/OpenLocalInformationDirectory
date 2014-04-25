@@ -9,5 +9,8 @@ modules = {
     // resource url: 'css/bootstrap-editable.css'
     // resource url: "css/${ApplicationHolder.application.config.defaultCssSkin?:'live.css'}"
   }
+  spider {
+    resource url: 'js/oms.min.js'
+  }
 }
 

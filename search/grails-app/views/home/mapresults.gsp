@@ -20,7 +20,7 @@
 
    <head>
       <meta name="layout" content="searchmain"/>
-      <r:require modules="bootstrap"/>
+      <r:require modules="bootstrap,spider"/>
 
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
