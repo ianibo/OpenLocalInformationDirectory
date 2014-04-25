@@ -68,6 +68,17 @@
 
       var bounds = new google.maps.LatLngBounds();
 
+      var oms = new OverlappingMarkerSpiderfier(map);
+
+      var iw = new gm.InfoWindow();
+      oms.addListener('click', function(marker, event) {
+        iw.setContent(marker.desc);
+        iw.open(map, marker);
+      });
+      oms.addListener('spiderfy', function(markers) {
+        iw.close();
+      });
+
       var next_label = 'A'
       for (i = 0; i < locations.length; i++) {  
         if ( locations[i][1] != null ) {
@@ -85,6 +96,8 @@
             }
           })(marker, i));
           next_label = String.fromCharCode(next_label.charCodeAt(0) + 1);
+
+          oms.addMarker(marker);
         }
       }
 
