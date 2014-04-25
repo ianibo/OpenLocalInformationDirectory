@@ -52,11 +52,25 @@
       var bounds = new google.maps.LatLngBounds();
       var markers = [];
 
+      var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, markersWontHide:true, markersWontMove:true, circleSpiralSwitchover :0});
+
+      var iw = new google.maps.InfoWindow();
+      oms.addListener('click', function(marker, event) {
+        iw.setContent(marker.desc);
+        iw.open(map, marker);
+      });
+      oms.addListener('spiderfy', function(markers) {
+        iw.close();
+      });
+
+
+
       for (i = 0; i < locations.length; i++) {  
         if ( locations[i][1] != null ) {
           marker = new google.maps.Marker({ position: new google.maps.LatLng(locations[i][1], locations[i][2]), 
                                             map: map });
 
+           oms.addMarker(marker);
          markers.push(marker);
   
           //extend the bounds to include each markers position
@@ -73,10 +87,11 @@
               infowindow.open(map, marker);
             }
           })(marker, i));
+
         }
       }
 
-      var mcOptions = {}; // {gridSize: 50, maxZoom: 15};
+      var mcOptions = {maxZoom:16}; // {gridSize: 50, maxZoom: 15};
       var mc = new MarkerClusterer(map, markers, mcOptions);
 
       map.fitBounds(bounds);
