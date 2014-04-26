@@ -32,9 +32,15 @@ if (f){
   }
 } 
 
+if ( args.length < 1 ) {
+  println("Usage: groovy uploadToTli.groovy");
+  println("Example hosts: [\"http://localhost:8888\"|\"http://data.opendatasheffield.org\"]");
+}
+
 try{
   // def url = "http://localhost:8888"
-  def url = "http://data.opendatasheffield.org"
+  // def url = "http://data.opendatasheffield.org"
+  url = args[0]
   def coll_shortcode = 'sfn'
 
   def api = new RESTClient(url)
@@ -125,7 +131,7 @@ try{
        println(record);
 
       requestContentType = 'multipart/form-data'
-      uri.path="/admin/api/${coll_shortcode}/upload"
+      uri.path="/olid/api/${coll_shortcode}/upload"
       def multipart_entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
       // multipart_entity.addPart("owner", new StringBody( 'ofsted', 'text/plain', Charset.forName('UTF-8')))
       def uploaded_file_body_part = new org.apache.http.entity.mime.content.ByteArrayBody(record.getBytes('UTF8'), 'application/json', "sfn.json");

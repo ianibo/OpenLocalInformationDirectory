@@ -26,7 +26,7 @@ class ApiController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def upload() {
-    log.debug("upload...");
+    log.debug("upload... user:${request.user}");
     def model=[:]
 
     try {

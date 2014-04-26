@@ -6,6 +6,9 @@ import javax.annotation.PostConstruct;
 import net.sf.json.JSON
 import groovy.json.JsonSlurper
 import tli.*
+import me.ianibbo.common.*
+
+
 
 
 @Transactional
@@ -48,6 +51,7 @@ class IngestService {
   def uploadJSON(record,collection,user) {
 
     def json = new JsonSlurper().parseText(record)
+    log.debug("Got Upload request - user is ${user}");
     log.debug("Got record with source reference ${json.id}");
     log.debug("Got record with title ${json.title}");
     log.debug("Got record with description ${json.description}");
@@ -85,11 +89,8 @@ class IngestService {
 
 
     db_record.defaultLocation = processAddressElements(json)
+    log.debug("After adddress processing, db_record.defaultLocation = ${db_record.defaultLocation}");
   
-    // Set subjects
-    // Set sessions
-    // Set collections
-    // String registeredCharityNo
 
     json.keywords.each { kw ->
       // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
@@ -100,9 +101,36 @@ class IngestService {
         kw_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-kw", kw )
       }
 
+      log.debug("Adding subject..");
       db_record.subjects.add(kw_object)
     }
 
+    log.debug("Processing categories..");
+    json.categories.each { cat ->
+      // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
+      def cat_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", cat )
+
+      // If not matched, see if we can match on a private local term
+      if ( cat_object == null ) {
+        cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", cat )
+      }
+
+      db_record.categories.add(cat_object)
+    }
+
+    log.debug("Attempt save");
+    if ( db_record.save(flush:true, failOnError:true) ) {
+      log.debug("saved");
+      DirectoryEntryShortcode.generateShortcode(db_record, db_record.title, true);
+    }
+    else {
+      log.debug("problem");
+      db_record.errors.each { e ->
+        log.error(e);
+      }
+    }
+
+    log.debug("Iterate timesAndPlaces");
     json.timesAndPlaces.each { ad ->
       log.debug("Processing activity details: ${ad}");
       def location = processAddressElements(ad);
@@ -124,31 +152,13 @@ class IngestService {
     if ( ( db_record.sessions.size() == 0 ) && ( db_record.defaultLocation != null ) ) {
       def new_session = new TliSession(owner:db_record, name:db_record.title, location:db_record.defaultLocation)
       if ( new_session.validate() ) {
-        db_record.sessions.add(new_session);
+        new_session.save(flush:true, failOnError:true)
       }
       else {
         log.error(new_session.errors);
       }
     }
 
-    json.categories.each { cat ->
-      // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
-      def cat_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", cat )
-
-      // If not matched, see if we can match on a private local term
-      if ( cat_object == null ) {
-        cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", cat )
-      }
-
-      db_record.categories.add(cat_object)
-    }
-
-
-    if ( db_record.save(flush:true) ) {
-    }
-    else {
-      log.error("Problem:${db_record.errors}");
-    }
   }
 
   private def gettxt(i) {

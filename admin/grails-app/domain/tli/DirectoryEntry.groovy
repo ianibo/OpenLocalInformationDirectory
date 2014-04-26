@@ -95,7 +95,7 @@ class DirectoryEntry {
 
   @Transient
   def afterInsert() {
-    DirectoryEntryShortcode.generateShortcode(this, this.title, true);
+    // DirectoryEntryShortcode.generateShortcode(this, this.title, true);
   }
 
 }

@@ -84,7 +84,7 @@ class TliLocation {
           e.printStackTrace()
         }
       }
-      result.save()
+      result.save(flush:true)
     }
 
     return result

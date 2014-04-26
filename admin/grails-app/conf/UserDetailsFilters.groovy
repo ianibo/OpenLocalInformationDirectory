@@ -16,8 +16,10 @@ class UserDetailsFilters {
         // else {
         // }
         if ( springSecurityService.principal instanceof String ) {
+          log.debug("Principal is string: ${springSecurityService.principal}");
         }
         else {
+          println("Current user: ${springSecurityService.currentUser}");
           request.user = springSecurityService.currentUser
           request.tliorganisations = AuthCommonOrganisation.executeQuery("select a from AuthCommonAffiliation as a where a.user = ?",[request.user]);
           request.tlicolls = AuthCommonOrganisation.executeQuery("select c from TliCollection as c where exists ( select a from AuthCommonAffiliation as a where a.org = c.owner and a.user = ? )", [request.user]);
