@@ -4,6 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import tli.*
 import au.com.bytecode.opencsv.CSVReader
+import me.ianibbo.common.*
 
 class AdminController {
 
@@ -24,7 +25,7 @@ class AdminController {
          ( params.act != null ) &&
          ( params.org != '' ) &&
          ( params.act == 'Y' || params.act == 'N' ) ) {
-      def org_to_approve = TliOrg.get(params.org)
+      def org_to_approve = AuthCommonOrganisation.get(params.org)
       if ( params.act == 'Y' ) {
         org_to_approve.status = RefdataCategory.lookupOrCreate("status", "Approved" )
       }
@@ -35,7 +36,7 @@ class AdminController {
     }
 
     def status_pending = RefdataCategory.lookupOrCreate("status", "Pending Approval" )
-    result.pendinfg_orgs = TliOrg.findAllByStatus(status_pending)
+    result.pendinfg_orgs = AuthCommonOrganisation.findAllByStatus(status_pending)
     result
   }
 
@@ -47,7 +48,7 @@ class AdminController {
          ( params.act != null ) &&
          ( params.aff != '' ) &&
          ( params.act == 'Y' || params.act == 'N' ) ) {
-      def aff_to_approve = Affiliation.get(params.aff)
+      def aff_to_approve = AuthCommonAffiliation.get(params.aff)
       if ( params.act == 'Y' ) {
         aff_to_approve.status = RefdataCategory.lookupOrCreate("status", "Approved" )
       }
@@ -58,7 +59,7 @@ class AdminController {
     }
 
     def status_pending = RefdataCategory.lookupOrCreate("status", "Pending Approval" )
-    result.pendinfg_affiliations = Affiliation.findAllByStatus(status_pending)
+    result.pendinfg_affiliations = AuthCommonAffiliation.findAllByStatus(status_pending)
     result
   }
 

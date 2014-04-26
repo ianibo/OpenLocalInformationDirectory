@@ -1,5 +1,8 @@
 package tli
 
+import me.ianibbo.common.*
+
+
 import tli.*;
 
 class TliLocation {

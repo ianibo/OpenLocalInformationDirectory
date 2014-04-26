@@ -1,5 +1,8 @@
 package tli
 
+import me.ianibbo.common.*
+
+
 class FTControl {
 
   String domainClassName

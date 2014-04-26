@@ -5,7 +5,7 @@ import tli.*;
 // import org.springframework.security.acls.model.NotFoundException
 import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
-
+import me.ianibbo.common.*
 
 
 class HomeController {
@@ -37,10 +37,10 @@ class HomeController {
       log.debug("Logged in user is ${request.user}");
       view='userindex.gsp'
       model.records = []
-      model.organisations = TliOrg.executeQuery("select a from Affiliation as a where a.user = ?",[request.user]);
+      model.organisations = AuthCommonOrganisation.executeQuery("select a from class AuthCommonAffiliation as a where a.user = ?",[request.user]);
 
       // All collections this user has access to (Currently = collectons of the org)
-      model.colls = TliOrg.executeQuery("select c from TliCollection as c where exists ( select a from Affiliation as a where a.org = c.owner and a.user = ? )", [request.user]);
+      model.colls = AuthCommonOrganisation.executeQuery("select c from TliCollection as c where exists ( select a from AuthCommonAffiliation as a where a.org = c.owner and a.user = ? )", [request.user]);
 
     }
     else {
@@ -54,7 +54,7 @@ class HomeController {
   def requestAffiliation() {
     log.debug("${params}");
     if ( request.method == 'POST' ) {
-      def new_afflilation_request = new Affiliation(
+      def new_afflilation_request = new AuthCommonAffiliation(
         user:request.user,
         org:genericOIDService.resolveOID(params.org),
         status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
@@ -67,12 +67,12 @@ class HomeController {
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def requestNewOrg() {
     if ( request.method == 'POST' ) {
-      def existing_org = TliOrg.findByDisplayNameIlike(params.orgName)
+      def existing_org = AuthCommonOrganisation.findByDisplayNameIlike(params.orgName)
       if ( existing_org == null ) {
-        def proposed_org = new TliOrg(displayName:params.orgName,
+        def proposed_org = new AuthCommonOrganisation(displayName:params.orgName,
                                       status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
-                                      shortcode:shortcodeService.generate('tli.TliOrg','shortcode',params.orgName)).save()
-        def affiliation = new Affiliation(user:request.user,
+                                      shortcode:shortcodeService.generate('tli.AuthCommonOrganisation','shortcode',params.orgName)).save()
+        def affiliation = new AuthCommonAffiliation(user:request.user,
                                           org:proposed_org,
                                           status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
                                           role:RefdataCategory.lookupOrCreate("affiliation", "Administrator" )).save(flush:true)

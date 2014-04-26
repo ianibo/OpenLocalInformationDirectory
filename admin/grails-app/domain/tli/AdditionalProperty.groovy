@@ -1,11 +1,13 @@
 package tli
 
+import me.ianibbo.common.*
+
 class AdditionalProperty {
 
   AdditionalPropertyDefinition propertyDefn
   String apValue
 
-  static belongsTo = [ or:TliOrg ]
+  static belongsTo = [ or:AuthCommonOrganisation ]
 
   static mapping = {
               id column:'ap_id'

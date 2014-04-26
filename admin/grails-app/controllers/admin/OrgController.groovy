@@ -3,6 +3,7 @@ package admin
 import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import tli.*
+import me.ianibbo.common.*;
 
 class OrgController {
 
@@ -19,8 +20,8 @@ class OrgController {
   def show(String id) {
     def result = [:]
     if ( id != null && id != '' ) {
-      result.org = TliOrg.findByShortcode(id)
-      result.affiliation = Affiliation.findByOrgAndUser(result.org, request.user)
+      result.org = AuthCommonOrganisation.findByShortcode(id)
+      result.affiliation = AuthCommonAffiliation.findByOrgAndUser(result.org, request.user)
       result.collections = TliCollection.findAllByOwner(result.org);
     }
     else {
@@ -36,7 +37,7 @@ class OrgController {
     log.debug("requestNewCollection ${params},${id}");
     def result = [:]
     if ( id != null && id != '' ) {
-      result.org = TliOrg.findByShortcode(id)
+      result.org = AuthCommonOrganisation.findByShortcode(id)
     }
     else {
       redirect(controller:'home', action:'index');

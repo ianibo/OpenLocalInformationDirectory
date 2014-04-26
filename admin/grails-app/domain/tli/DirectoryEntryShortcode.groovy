@@ -1,5 +1,8 @@
 package tli
 
+import me.ianibbo.common.*
+
+
 class DirectoryEntryShortcode extends Shortcode {
 
   DirectoryEntry dirent

@@ -1,5 +1,7 @@
 package tli
 
+import me.ianibbo.common.*
+
 class AdditionalPropertyDefinition {
 
   String propertyName

@@ -1,5 +1,6 @@
 package tli
 
+import me.ianibbo.common.*
 import tli.*;
 
 class TliCollection {
@@ -8,7 +9,7 @@ class TliCollection {
   String description
   String shortcode
 
-  static belongsTo = [owner:TliOrg]
+  static belongsTo = [owner:AuthCommonOrganisation]
 
   static constraints = {
     name(nullable:false, blank:false)

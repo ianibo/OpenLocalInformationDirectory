@@ -4,6 +4,8 @@ import grails.converters.JSON
 import admin.ClassUtils
 import tli.*
 import grails.plugin.springsecurity.annotation.Secured
+import me.ianibbo.common.*;
+
 
 class AjaxSupportController {
 
@@ -376,7 +378,7 @@ class AjaxSupportController {
         
         // We should clear the session values for a user if this is a user to force reload of the,
         // parameters.
-        if (target instanceof TliUser) {
+        if (target instanceof AuthCommonUser) {
           session.userPereferences = null
         } 
         else {

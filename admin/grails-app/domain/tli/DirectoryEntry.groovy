@@ -1,5 +1,7 @@
 package tli
 
+import me.ianibbo.common.*
+
 import tli.*;
 import javax.persistence.Transient
 

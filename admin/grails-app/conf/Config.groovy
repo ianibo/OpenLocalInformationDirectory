@@ -136,9 +136,9 @@ log4j = {
 
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'tli.TliUser'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'tli.TliUserTliRole'
-grails.plugin.springsecurity.authority.className = 'tli.TliRole'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'me.ianibbo.common.AuthCommonUser'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'me.ianibbo.common.AuthCommonUserAuthCommonRole'
+grails.plugin.springsecurity.authority.className = 'me.ianibbo.common.AuthCommonRole'
 grails.plugin.springsecurity.securityConfigType = "Annotation"
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
@@ -246,7 +246,7 @@ globalSearchTemplates = [
     ]
   ],
   'orgs':[
-    baseclass:'tli.TliOrg',
+    baseclass:'me.ianibbo.common.Organisation',
     title:'Organisation ',
     group:'Primary',
     qbeConfig:[
@@ -307,7 +307,7 @@ globalSearchTemplates = [
 // Types: staticgsp: under views/templates, dyngsp: in database, dynamic:full dynamic generation, other...
 globalDisplayTemplates = [
   'tli.DirectoryEntry': [ type:'staticgsp', rendername:'resource' ],
-  'tli.TliOrg': [ type:'staticgsp', rendername:'org' ],
+  'me.ianibbo.common.AuthCommonOrganisation': [ type:'staticgsp', rendername:'org' ],
   'tli.TliLocation': [ type:'staticgsp', rendername:'location' ],
 ]
 
