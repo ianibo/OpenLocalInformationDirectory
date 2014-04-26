@@ -68,9 +68,9 @@
 
       var bounds = new google.maps.LatLngBounds();
 
-      var oms = new OverlappingMarkerSpiderfier(map);
+      var oms = new OverlappingMarkerSpiderfier(map, {keepSpiderfied: true, markersWontHide:true, markersWontMove:true, circleSpiralSwitchover :0});
 
-      var iw = new gm.InfoWindow();
+      var iw = new google.maps.InfoWindow();
       oms.addListener('click', function(marker, event) {
         iw.setContent(marker.desc);
         iw.open(map, marker);
