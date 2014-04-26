@@ -11,7 +11,7 @@ class DirectoryEntryShortcode extends Shortcode {
   }
 
   static generateShortcode(entry, base, canonical) {
-    log.debug("generateShortcode(${entry},${base},${canonical})");
+    // log.debug("generateShortcode(${entry},${base},${canonical})");
 
     def result = null
 

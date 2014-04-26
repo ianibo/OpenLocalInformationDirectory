@@ -37,7 +37,7 @@ class HomeController {
       log.debug("Logged in user is ${request.user}");
       view='userindex.gsp'
       model.records = []
-      model.organisations = AuthCommonOrganisation.executeQuery("select a from class AuthCommonAffiliation as a where a.user = ?",[request.user]);
+      model.organisations = AuthCommonOrganisation.executeQuery("select a from AuthCommonAffiliation as a where a.user = ?",[request.user]);
 
       // All collections this user has access to (Currently = collectons of the org)
       model.colls = AuthCommonOrganisation.executeQuery("select c from TliCollection as c where exists ( select a from AuthCommonAffiliation as a where a.org = c.owner and a.user = ? )", [request.user]);
@@ -71,7 +71,7 @@ class HomeController {
       if ( existing_org == null ) {
         def proposed_org = new AuthCommonOrganisation(displayName:params.orgName,
                                       status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
-                                      shortcode:shortcodeService.generate('tli.AuthCommonOrganisation','shortcode',params.orgName)).save()
+                                      shortcode:shortcodeService.generate('me.ianibbo.common.AuthCommonOrganisation','shortcode',params.orgName)).save()
         def affiliation = new AuthCommonAffiliation(user:request.user,
                                           org:proposed_org,
                                           status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),

@@ -18,9 +18,9 @@ environments {
             dbCreate = "update"
             driverClassName = "com.mysql.jdbc.Driver"
             dialect=org.hibernate.dialect.MySQL5Dialect
-            username = "tli"
-            password = "tli"
-            url = "jdbc:mysql://localhost/tli?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8"
+            username = "olid"
+            password = "olid"
+            url = "jdbc:mysql://localhost/olid?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8"
             pooled = true
             // logSql = true
             // formatSql = true

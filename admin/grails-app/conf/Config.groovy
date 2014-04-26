@@ -246,7 +246,7 @@ globalSearchTemplates = [
     ]
   ],
   'orgs':[
-    baseclass:'me.ianibbo.common.Organisation',
+    baseclass:'me.ianibbo.common.AuthCommonOrganisation',
     title:'Organisation ',
     group:'Primary',
     qbeConfig:[

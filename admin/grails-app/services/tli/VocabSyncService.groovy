@@ -1,6 +1,7 @@
 package tli
 
 import tli.*
+import me.ianibbo.common.*;
 
 /**
  * VocabSyncService

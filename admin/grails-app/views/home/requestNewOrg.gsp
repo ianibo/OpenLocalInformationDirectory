@@ -15,7 +15,7 @@
            <div class="panel-heading clearfix">
              Request New Organisation
            </div>
-           <div>
+           <div class="panel-body">
              &nbsp;<br/>
              <g:form controller="home" action="requestNewOrg" role="form" method="post">
                <div class="col-lg-12">
