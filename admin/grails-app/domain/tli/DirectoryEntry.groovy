@@ -5,7 +5,7 @@ import me.ianibbo.common.*
 import tli.*;
 import javax.persistence.Transient
 
-class DirectoryEntry {
+class DirectoryEntry extends Component {
 
   String title
   String sourceReference
