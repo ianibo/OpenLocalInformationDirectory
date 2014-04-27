@@ -92,7 +92,10 @@ class IngestService {
     log.debug("After adddress processing, db_record.defaultLocation = ${db_record.defaultLocation}");
   
 
+    log.debug("Processing keywords");
+
     json.keywords.each { kw ->
+      log.debug("Add keyword ${kw}");
       // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
       def kw_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", kw )
 
@@ -116,7 +119,7 @@ class IngestService {
         cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", cat )
       }
 
-      log.debug("Adding category.. ${cat_object}");
+      log.debug("Adding category.. ${cat_object} ${cat_object.id}");
       // db_record.categories.add(cat_object)
       db_record.addToCategories(cat_object)
     }
@@ -152,6 +155,8 @@ class IngestService {
       }
     }
 
+    db_record.save(flush:true, failOnError:true);
+
     if ( ( db_record.sessions.size() == 0 ) && ( db_record.defaultLocation != null ) ) {
       def new_session = new TliSession(owner:db_record, name:db_record.title, location:db_record.defaultLocation)
       if ( new_session.validate() ) {
@@ -186,6 +191,7 @@ class IngestService {
     def street = null;
     def postcode = null;
     def county = null;
+    def country = null;
     def buildingname = null;
 
     if ( owner.address != null ) {
@@ -196,12 +202,12 @@ class IngestService {
         buildingname = owner.address[0].toString()
       }
       else if ( owner.address instanceof java.util.Map ) {
-        region=owner.address.region?.text()
-        town=owner.address.locality?.text()
-        street=owner.address.street?.text()
-        postcode=owner.address.pcode?.text()
-        country=owner.address.country?.text()
-        buildingname=owner.address.buildingname?.text()
+        region=owner.address.region
+        town=owner.address.locality
+        street=owner.address.street
+        postcode=owner.address.pcode
+        country=owner.address.country
+        buildingname=owner.address.buildingname
       }
       else {
         log.debug("Unhandled type ${owner.address.class.name}");
