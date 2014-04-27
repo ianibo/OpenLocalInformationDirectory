@@ -21,6 +21,13 @@ import groovy.json.*
 
 
 
+if ( args.length < 1 ) {
+  println("Usage: groovy loadOai.groovy");
+  println("Example hosts: [\"http://localhost:8888\"|\"http://data.opendatasheffield.org\"]");
+  System.exit(1);
+}
+
+
 // http://www.culturegrid.org.uk/dpp/oai?verb=listRecords&set=PN:MLAInstitutions:*&metadataPrefix=CultureGrid_Institution
 
 
@@ -76,10 +83,21 @@ def doSync(host, uploadApi) {
         xml.'ListRecords'.'record'.each { r ->
           println("Record id...${r.'header'.'identifier'}");
 
-          def record = r.metadata
-          // notificationTarget.notifyChange(dto)
-          // process(record.description, uploadApi)
-          upload(record.description, uploadApi)
+          if ( r.header.'@status' == 'deleted' ) {
+            // Skip deleted records
+          }
+          else {
+            def record = r.metadata
+            // notificationTarget.notifyChange(dto)
+            // process(record.description, uploadApi)
+            if ( record.description.title.text().length() > 0 ) {
+              println("***OK record***:${r.header.identifier}");
+              upload(record.description, uploadApi)
+            }
+            else {
+              println("***Error record***:${r.header.identifier}\n${r}");
+            }
+          }
         }
 
         if ( xml.'ListRecords'.'resumptionToken'.size() == 1 ) {
@@ -102,24 +120,6 @@ def doSync(host, uploadApi) {
   println("All done");
 }
 
-def process(record, uploadApi) {
-  println("\n\n");
-  println(record.identifier);
-  println(record.title);
-  println(record.type);
-  println(record.jurisdiction);
-  println("Other Identifiers....");
-  println("Administrative status: ${record.administrative_status}");
-  println("Voice: ${record.voice}");
-  println(record.email);
-  println(record.address.street);
-  println(record.address.locality);
-  println(record.address.region);
-  println(record.address.pcode);
-  println(record.address.country);
-  println(record.isPartOf);
-}
-
 def upload(record, uploadApi) {
 
   try{
@@ -127,33 +127,32 @@ def upload(record, uploadApi) {
 
       def identifiers = []
       record.other_identifier.each { oi ->
-        identifiers.add(namespace:oi.'@scheme', value:oi.text());
+        def new_id = [namespace:oi.'@scheme'.text(), value:oi.text()]
+        println("Adding new id: ${new_id}");
+        identifiers.add(new_id);
+
       }
 
-      marker.address?.split(',').each {
-        address_elements.add(it);
-      }
-  
-      api.request(POST) { request ->
+      uploadApi.request(POST) { request ->
         def json_record = [
           // "id": "",
-          "keywords": [
-          ],
+          // "keywords": [
+          // ],
           "categories": [
               "Institutions.${record.sector.text()}"
           ],
-          "iconType":record.sector.text().type?.replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase(),
+          // "iconType":record.sector?.text().replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase(),
           "title": [
-              marker.request.title?.text().replaceAll("\\p{Punct}","").trim()
+              record.title?.text().replaceAll("\\p{Punct}","").trim()
           ],
-          "description": [
-          ],
+          // "description": [
+          // ],
           "url": [
               record.relation.text()
           ],
-          "address": address_elements,
-          "contact": [
-          ],
+          // "address": address_elements,
+          // "contact": [
+          // ],
           "telephone": [
               record.voice.text()
           ],
@@ -167,34 +166,34 @@ def upload(record, uploadApi) {
               record.email.text()
           ],
           "timesAndPlaces": [
-              [
-                  "address":address_elements,
-                  "postcode": [
-                    record.culturegrid_institution.pcode.text()
-                  ],
-                  "maplink": [
-                  ],
-                  "access": [
-                  ],
-                  "daysAndTimes": [
-                  ],
-                  "iconType": record.sector?.text().replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase()
-              ]
+               [
+                   "address":address_elements,
+                   "postcode": [
+                     record.culturegrid_institution.pcode.text()
+                   ],
+                   "maplink": [
+                   ],
+                   "access": [
+                   ],
+                   "daysAndTimes": [
+                   ],
+                   "iconType": record.sector?.text().replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase()
+               ]
           ],
           "Languages": [
           ],
           "Identifiers" : identifiers
         ]
+
+        def record_json = new JsonBuilder( json_record ).toPrettyString()
   
-        def record = new JsonBuilder( json_record ).toPrettyString()
-  
-        println(record);
+        // println(record_json);
   
         requestContentType = 'multipart/form-data'
-        uri.path="/olid/api/${coll_shortcode}/upload"
+        uri.path="/olid/api/mlaInst/upload"
         def multipart_entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
         // multipart_entity.addPart("owner", new StringBody( 'ofsted', 'text/plain', Charset.forName('UTF-8')))
-        def uploaded_file_body_part = new org.apache.http.entity.mime.content.ByteArrayBody(record.getBytes('UTF8'), 'application/json', "sfn.json");
+        def uploaded_file_body_part = new org.apache.http.entity.mime.content.ByteArrayBody(record_json.getBytes('UTF8'), 'application/json', "sfn.json");
         multipart_entity.addPart("tf", uploaded_file_body_part);
   
         request.entity = multipart_entity

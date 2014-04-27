@@ -35,6 +35,7 @@ if (f){
 if ( args.length < 1 ) {
   println("Usage: groovy uploadToTli.groovy");
   println("Example hosts: [\"http://localhost:8888\"|\"http://data.opendatasheffield.org\"]");
+  system.exit(1);
 }
 
 try{
