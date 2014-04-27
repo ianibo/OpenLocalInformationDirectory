@@ -7,7 +7,6 @@ import javax.persistence.Transient
 
 class DirectoryEntry extends Component {
 
-  String title
   String sourceReference
   String description
   String url
@@ -45,7 +44,6 @@ class DirectoryEntry extends Component {
   }
 
   static constraints = {
-    title(nullable:false, blank:false)
     sourceReference(nullable:true, blank:true)
     description(nullable:true, blank:true)
     url(nullable:true, blank:true)

@@ -13,6 +13,10 @@ class Component {
   Date dateCreated
   Date lastUpdated
 
+  static mappedBy = [ids: 'component']
+  static hasMany = [ids: IdentifierOccurrence]
+
+
   static mapping = {
   }
 
