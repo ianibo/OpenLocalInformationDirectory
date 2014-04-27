@@ -71,7 +71,7 @@ class InplaceTagLib {
     def result=''
     if ( value ) {
       switch ( value.class ) {
-        case tli.RefdataValue.class:
+        case me.ianibbo.common.RefdataValue.class:
           if ( value.icon != null ) {
             result="<span class=\"select-icon ${value.icon}\"></span>${value.value}"
           }
