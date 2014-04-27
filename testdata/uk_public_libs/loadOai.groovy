@@ -169,7 +169,7 @@ def upload(record, uploadApi) {
                [
                    "address":address_elements,
                    "postcode": [
-                     record.culturegrid_institution.pcode.text()
+                     record.address.pcode.text()
                    ],
                    "maplink": [
                    ],
@@ -187,7 +187,7 @@ def upload(record, uploadApi) {
 
         def record_json = new JsonBuilder( json_record ).toPrettyString()
   
-        // println(record_json);
+        println(record_json);
   
         requestContentType = 'multipart/form-data'
         uri.path="/olid/api/mlaInst/upload"

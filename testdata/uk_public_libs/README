@@ -1,3 +1,2 @@
 http://www.culturegrid.org.uk/dpp/oai?verb=listRecords&set=PN:MLAInstitutions:*&metadataPrefix=CultureGrid_Institution
-
-
+http://www.culturegrid.org.uk/dpp/oai?verb=getRecord&set=PN:MLAInstitutions:*&metadataPrefix=CultureGrid_Institution&identifier=oai:www.culturegrid.org.uk:MLA:1954927
