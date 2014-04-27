@@ -123,14 +123,21 @@ def doSync(host, uploadApi) {
 def upload(record, uploadApi) {
 
   try{
-      def address_elements = []
+      def address_elements = [
+        region:record.address.region?.text(),
+        locality:record.address.locality?.text(),
+        street:record.address.street?.text(),
+        postcode:record.address.pcode?.text(),
+        country:record.address.country?.text()
+      ]
 
-      def identifiers = []
+      def identifiers = [
+      ]
+
       record.other_identifier.each { oi ->
         def new_id = [namespace:oi.'@scheme'.text(), value:oi.text()]
         println("Adding new id: ${new_id}");
         identifiers.add(new_id);
-
       }
 
       uploadApi.request(POST) { request ->
@@ -190,7 +197,7 @@ def upload(record, uploadApi) {
         println(record_json);
   
         requestContentType = 'multipart/form-data'
-        uri.path="/olid/api/mlaInst/upload"
+        uri.path="/olid/api/mlainst/upload"
         def multipart_entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
         // multipart_entity.addPart("owner", new StringBody( 'ofsted', 'text/plain', Charset.forName('UTF-8')))
         def uploaded_file_body_part = new org.apache.http.entity.mime.content.ByteArrayBody(record_json.getBytes('UTF8'), 'application/json', "sfn.json");

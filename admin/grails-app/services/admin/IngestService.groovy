@@ -41,7 +41,7 @@ class IngestService {
     else {
       log.error("Unknown Collection: ${collection}");
       result.status=false
-      result.message("Unknown Collection: ${collection}");
+      result.message="Unknown Collection: ${collection}";
     }
 
     result
@@ -101,12 +101,13 @@ class IngestService {
         kw_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-kw", kw )
       }
 
-      log.debug("Adding subject..");
+      log.debug("Adding subject.. ${kw_object}");
       db_record.subjects.add(kw_object)
     }
 
     log.debug("Processing categories..");
     json.categories.each { cat ->
+      log.debug("Category: ${cat}");
       // 1. See if we can match the keyword against a IPSV term, if so, use that in preference
       def cat_object = RefdataCategory.lookup("Integrated Public Sector Vocabulary", cat )
 
@@ -115,7 +116,9 @@ class IngestService {
         cat_object = RefdataCategory.lookupOrCreate("${collection.shortcode}-cat", cat )
       }
 
-      db_record.categories.add(cat_object)
+      log.debug("Adding category.. ${cat_object}");
+      // db_record.categories.add(cat_object)
+      db_record.addToCategories(cat_object)
     }
 
     log.debug("Attempt save");
@@ -178,13 +181,33 @@ class IngestService {
     log.debug("Process address elements ${owner}");
 
     def location = null;
-
-    def region = owner.address.size() > 0 ? owner.address[owner.address.size()-1].toString() : null
-    def town = owner.address.size() > 1 ? owner.address[owner.address.size()-2].toString() : null
-    def street = owner.address.size() > 2 ? owner.address[owner.address.size()-3].toString() : null
-
-    def buildingname = owner.address[0].toString()
+    def region = null;
+    def town = null;
+    def street = null;
     def postcode = null;
+    def county = null;
+    def buildingname = null;
+
+    if ( owner.address != null ) {
+      if ( owner.address instanceof java.util.List ) {
+        region = owner.address.size() > 0 ? owner.address[owner.address.size()-1].toString() : null
+        town = owner.address.size() > 1 ? owner.address[owner.address.size()-2].toString() : null
+        street = owner.address.size() > 2 ? owner.address[owner.address.size()-3].toString() : null
+        buildingname = owner.address[0].toString()
+      }
+      else if ( owner.address instanceof java.util.Map ) {
+        region=owner.address.region?.text()
+        town=owner.address.locality?.text()
+        street=owner.address.street?.text()
+        postcode=owner.address.pcode?.text()
+        country=owner.address.country?.text()
+        buildingname=owner.address.buildingname?.text()
+      }
+      else {
+        log.debug("Unhandled type ${owner.address.class.name}");
+      }
+    }
+
     if ((owner.postcode != null )&&(owner.postcode.size() > 0)) {
       postcode = owner.postcode[0]
     }
