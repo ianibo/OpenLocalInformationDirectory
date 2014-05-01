@@ -16,8 +16,8 @@
 
 
       <!-- OGP Properties -->
-      <meta property="og:title" content="${record.source.title}" />
-      <meta property="og:description" content="${record.source.description}" />
+      <meta property="og:title" content="${record.source.title?:''}" />
+      <meta property="og:description" content="${record.source.description?:''}" />
       <meta property="og:type" content="activity" />
 
    </head>
@@ -47,7 +47,10 @@
         <div class="row">
           <div class="span9" itemscope itemtype="directoryEntry">
 
-          <g:if test="${record.source.sessions && record.source.sessions.get(0) && record.source.sessions.get(0).loc.lat && record.source.sessions.get(0).loc.lon }">
+          <g:if test="${record?.source?.sessions && 
+                        record.source.sessions?.get(0) && 
+                        record.source.sessions?.get(0).loc?.lat && 
+                        record.source.sessions?.get(0).loc?.lon }">
               <div id="map" class="pull-right" style="width: 250px; height: 250px;"></div>
           </g:if>
   
@@ -64,13 +67,18 @@
               <g:if test="${record.source.contactTelephone}"><dt>Telephone</td><dd><a href="mailto:${record.source.contactTelephone}" itemprop="telephone">${record.source.contactTelephone}</a></dd></g:if>
               <g:if test="${record.source.url}"><dt>Website</td><dd><a href="${record.source.url}" itemprop="url">${record.source.url}</a></dd></g:if>
               <dt>Subjects</dt>
-              <dd><g:each in="${record.source.subjects}" var="s">
-                <span class="badge">${s.subjname}</span>
+
+
+
+              <dd><g:each in="${record?.source?.subjects}" var="s">
+                <span class="badge">${s?.subjname?.toString()}</span>
               </g:each></dt>
               <dt>Categories</dt>
               <dd><g:each in="${record.source.categories}" var="s">
-                <span class="badge">${s.catid}</span>
+                <span class="badge">${s?.catid}</span>
               </g:each></dt>
+
+
             </dl>
             <br/>
             <dl>

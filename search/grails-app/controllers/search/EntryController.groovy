@@ -24,9 +24,12 @@ class EntryController {
       }
 
       log.debug("Search returned ${search.response.hits.totalHits}")
+
+
       if ( search.response.hits.totalHits == 1 ) {
         log.debug("Setting result.record...");
         result.record = search.response.hits.getAt(0)
+        log.debug("Render: ${result.record.source}");
       }
       else {
         redirect(controller:'home')
@@ -46,7 +49,7 @@ class EntryController {
         types "tli.DirectoryEntry"
         source {
           query {
-            term('_id': params.id.toString())
+            term('canonical_shortcode': params.id.toString())
           }
         }
       }
