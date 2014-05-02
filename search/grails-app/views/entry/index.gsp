@@ -47,13 +47,6 @@
         <div class="row">
           <div class="span9" itemscope itemtype="directoryEntry">
 
-          <g:if test="${record?.source?.sessions && 
-                        record.source.sessions?.get(0) && 
-                        record.source.sessions?.get(0).loc?.lat && 
-                        record.source.sessions?.get(0).loc?.lon }">
-              <div id="map" class="pull-right" style="width: 250px; height: 250px;"></div>
-          </g:if>
-  
           <div>
             <h1 itemprop="name">${record.source.title}</h1>
             <p itemprop="description">${record.source.description}</p>
@@ -84,29 +77,26 @@
             <dl>
               <dt>Sessions</dt>
               <dd>
-                <table class="table table-striped">
-                  <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>When</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Indicative Cost</th>
-                    <th>Location</th>
-                  </tr>
-                  <g:each in="${record.source.sessions}" var="s">
-                    <tr>
-                      <td>${s.name}</td>
-                      <td>${s.description}</td>
-                      <td>${s.trrule}</td>
-                      <td>${s.startTime}</td>
-                      <td>${s.endTime}</td>
-                      <td>${s.indicativeCost}</td>
-                      <td>${s.location?.buildingName} ${s.location?.buildingNumber} ${s.location?.street} ${s.location?.city} ${s.location?.county} ${s.location?.postcode}</td>
-                    </tr>
-                  </g:each>
-                </table>
-             
+                <g:each in="${record.source.sessions}" var="s">
+                  <div>
+                    <g:if test="s.loc?.lat && s.loc?.lon }">
+                      <div id="map_${s.sesid}" class="pull-right" style="width: 250px; height: 250px;"></div>
+                    </g:if>
+                    <div>
+                    <h3>${s.name}</h3>
+                      <div class="container">
+                      <dl class="dl-horizontal" style="border:1px solid black;">
+                        <dt>Description</dt><dd>${s.description?:'No Description'}</dd>
+                        <dt>Location</dt><dd>${s.location?.buildingName} ${s.location?.buildingNumber} ${s.location?.street} ${s.location?.city} ${s.location?.county} ${s.location?.postcode}</dd>
+                        <dt>Reccurrence</dt><dd>${s.trrule?:'Unknown'}</dd>
+                        <dt>Start Time</dt><dd>${s.startTime?:'Unknown'}</dd>
+                        <dt>End Time</dt><dd>${s.endTime?:'Unknown'}</dd>
+                        <dt>Indicative Cost</dt><dd>${s.indicativeCost?:'Unknown'}</dd>
+                      </dl>
+                      </div>
+                    </div>
+                  </div>
+                </g:each>
               </dd>
 
             </dl>
@@ -120,33 +110,33 @@
       </div>
     </div>
 
-    <g:if test="${record.source.sessions[0] && record.source.sessions[0].loc?.lat && record.source.sessions[0].loc?.lon }">
-      <script type="text/javascript">
+    <script type="text/javascript">
       //<![CDATA[
 
-      function map2() {
-        var myLatlng = new google.maps.LatLng(${record.source.sessions[0].loc.lat},${record.source.sessions[0].loc.lon});
+        function map2(lat,lon,title,map_elem) {
+          var myLatlng = new google.maps.LatLng(lat,lon);
 
-        var myOptions = {
-           zoom: 15,
-           center: myLatlng,
-           mapTypeId: google.maps.MapTypeId.ROADMAP
+          var myOptions = {
+             zoom: 15,
+             center: myLatlng,
+             mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+
+          var map = new google.maps.Map(document.getElementById(map_elem), myOptions);
+  
+          var marker = new google.maps.Marker({
+               position: myLatlng,
+               map: map,
+               title:title
+          });
+          marker.setMap(map);
         }
 
-        var map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-        var marker = new google.maps.Marker({
-             position: myLatlng,
-             map: map,
-             title:"${record.source.title}"
-        });
-        marker.setMap(map);
-      }
-
-      map2();
+      <g:each in="${record.source.sessions}" var="s">
+        map2("${s.loc.lat}", "${s.loc.lon}","${s.name}","map_${s.sesid}");
+      </g:each>
       //]]>
-      </script>
-    </g:if>
+    </script>
 
 
   </body>

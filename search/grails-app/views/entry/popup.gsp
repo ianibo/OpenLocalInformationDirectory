@@ -27,13 +27,15 @@
               </g:each></dt>
             </dl>
             <br/>
+
             <dl>
               <dt>Sessions</dt>
               <dd>
                 <table class="table table-striped">
                   <tr>
-                    <th>Name</th>
-                    <th>Description</th>
+                    <th colspan="5">Name &amp; Description</th>
+                  </tr>
+                  <tr>
                     <th>When</th>
                     <th>From</th>
                     <th>To</th>
@@ -42,8 +44,10 @@
                   </tr>
                   <g:each in="${record.source.sessions}" var="s">
                     <tr>
-                      <td>${s.name}</td>
-                      <td>${s.description}</td>
+                      <td colspan="5"><h3>${s.name}</h3><br/>
+                          ${s.description}</td>
+                    </tr>
+                    <tr>
                       <td>${s.trrule}</td>
                       <td>${s.startTime}</td>
                       <td>${s.endTime}</td>
