@@ -84,9 +84,9 @@
                     </g:if>
                     <div>
                     <h3>${s.name}</h3>
+                      ${s.description?:'No Description'}
                       <div class="container">
-                      <dl class="dl-horizontal" style="border:1px solid black;">
-                        <dt>Description</dt><dd>${s.description?:'No Description'}</dd>
+                      <dl>
                         <dt>Location</dt><dd>${s.location?.buildingName} ${s.location?.buildingNumber} ${s.location?.street} ${s.location?.city} ${s.location?.county} ${s.location?.postcode}</dd>
                         <dt>Reccurrence</dt><dd>${s.trrule?:'Unknown'}</dd>
                         <dt>Start Time</dt><dd>${s.startTime?:'Unknown'}</dd>
