@@ -200,6 +200,11 @@ def upload(record, uploadApi) {
               "code" : record.title?.text().trim().toLowerCase().replaceAll("\\p{Punct}","").trim().replaceAll("\\W","_"),
               "name" : record.title?.text(),
               "role" : "Data Subject"
+            ],
+            [
+              "code" : "UKCT",
+              "name" : "Collections Trust",
+              "role" : "Data Controller"
             ]
           ]
         ]
