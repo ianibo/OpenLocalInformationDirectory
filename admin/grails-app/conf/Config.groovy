@@ -262,7 +262,9 @@ globalSearchTemplates = [
         // ['ctxtp':'filter', 'prop':'desc', 'comparator' : 'ilike', 'value':'Combo.%', 'negate' : true]
       ],
       qbeResults:[
-        [heading:'Organisation Name', property:'displayName',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id']]
+        [heading:'Organisation Name', property:'displayName',  link:[controller:'resource',action:'show',id:'x.r.class.name+\':\'+x.r.id']],
+        [heading:'Email', property:'email'],
+        [heading:'Status', property:'status.value']
       ]
     ]
   ],

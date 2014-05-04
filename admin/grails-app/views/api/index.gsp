@@ -22,6 +22,7 @@
            This page explains the TLI API calls.
            <ul>
              <li>The <g:link controller="api" action="collections">Collections</g:link> API will allow you to see all the collections available via API calls to the logged in user</li>
+             <li>The <g:link controller="api" action="loadOrgs">Load Organistions</g:link> API will allow you to bulk load organisations</li>
            </ul>
 
          </p>

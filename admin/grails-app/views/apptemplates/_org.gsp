@@ -8,11 +8,18 @@
   <dl class="dl-horizontal">
       <dt>Organisation Name</dt>
       <dd><g:xEditable class="ipe" owner="${d}" field="displayName"/></dd>
-  </dl>
 
-  <dl class="dl-horizontal">
       <dt>URL</dt>
       <dd><g:xEditable class="ipe" owner="${d}" field="url"/></dd>
+
+      <dt>Email</dt>
+      <dd><g:xEditable class="ipe" owner="${d}" field="email"/></dd>
+
+      <dt>Notes</dt>
+      <dd><g:xEditable class="ipe" owner="${d}" field="notes"/></dd>
+
+      <dt>Status</dt>
+      <dd><g:xEditableRefData owner="${d}" field="status" config='status' /></dd>
   </dl>
 
   <ul id="tabs" class="nav nav-tabs">
@@ -21,6 +28,14 @@
 
   <div id="my-tab-content" class="tab-content">
     <div class="tab-pane active" id="details">
+      <dl class="dl-horizontal">
+          <dt>Twitter</dt>
+          <dd><g:xEditable class="ipe" owner="${d}" field="twitter"/></dd>
+          <dt>Facebook</dt>
+          <dd><g:xEditable class="ipe" owner="${d}" field="facebook"/></dd>
+          <dt>Publication Scheme</dt>
+          <dd><g:xEditable class="ipe" owner="${d}" field="pubScheme"/></dd>
+      </dl>
     </div>
   </div>
 

@@ -134,3 +134,54 @@ log4j = {
 grails.plugins.twitterbootstrap.fixtaglib = true
 grails.plugins.twitterbootstrap.defaultBundle = 'bundle_bootstrap'
 
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'me.ianibbo.common.AuthCommonUser'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'me.ianibbo.common.AuthCommonUserAuthCommonRole'
+grails.plugin.springsecurity.authority.className = 'me.ianibbo.common.AuthCommonRole'
+grails.plugin.springsecurity.securityConfigType = "Annotation"
+grails.plugin.springsecurity.logout.postOnly = false
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+        '/':                              ['permitAll'],
+        '/home':                          ['permitAll'],
+        '/home/**':                       ['permitAll'],
+        '/index':                         ['permitAll'],
+        '/index.gsp':                     ['permitAll'],
+        '/entry/**':                      ['permitAll'],
+        '/home/**':                       ['permitAll'],
+        '/sitemap':                       ['permitAll'],
+        '/sitemap/**':                    ['permitAll'],
+        '/register':                      ['permitAll'],
+        '/register/**':                   ['permitAll'],
+        '/login/**':                      ['permitAll'],
+        '/**/js/**':                      ['permitAll'],
+        '/**/css/**':                     ['permitAll'],
+        '/**/images/**':                  ['permitAll'],
+        '/**/favicon.ico':                ['permitAll']
+]
+
+grails.plugin.springsecurity.ui.password.minLength = 6
+grails.plugin.springsecurity.ui.password.maxLength = 64
+grails.plugin.springsecurity.ui.password.validationRegex = '^.*$'
+
+//configure register
+grails.plugin.springsecurity.ui.register.emailFrom = "Open Local Information Directory <no-reply@data.opendatasheffield.org>"
+grails.plugin.springsecurity.ui.register.emailSubject = 'Welcome to the Open Local Information Directory'
+grails.plugin.springsecurity.ui.register.defaultRoleNames = [
+        "ROLE_USER"
+]
+
+// The following 2 entries make the app use basic auth by default
+grails.plugin.springsecurity.useBasicAuth = true
+grails.plugin.springsecurity.basic.realmName = "olid"
+
+// This stanza then says everything should use form apart from /api
+// More info: http://stackoverflow.com/questions/7065089/how-to-configure-grails-spring-authentication-scheme-per-url
+grails.plugin.springsecurity.filterChain.chainMap = [
+  '/api/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
+  '/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
+  // '/soap/deposit': 'JOINED_FILTERS,-exceptionTranslationFilter',
+  // '/rest/**': 'JOINED_FILTERS,-exceptionTranslationFilter'
+  // '/rest/**': 'JOINED_FILTERS,-basicAuthenticationFilter,-basicExceptionTranslationFilter'
+]
+

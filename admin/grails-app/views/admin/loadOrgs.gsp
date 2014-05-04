@@ -17,7 +17,7 @@
            </div>
            <div class="panel-body">
              &nbsp;<br/>
-             <g:form controller="admin" action="loadOrgs" role="form" method="post">
+             <g:form controller="api" action="loadOrgs" role="form" method="post">
                <div class="col-lg-12">
                <fieldset>
                  <div class="control-group">
