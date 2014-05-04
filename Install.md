@@ -1,9 +1,16 @@
 
+# SET foreign_key_checks = 0;
+# drop database if exists olid;
+# drop database if exists common;
+# SET foreign_key_checks = 1;
 
-mysql> create database olid default charset utf8 default collate utf8_bin;
-mysql> grant all on olid.* to 'olid'@'localhost' identified by 'olid';
-mysql> grant all on olid.* to 'olid'@'localhost.localdomain' identified by 'olid';
-mysql> grant all on olid.* to 'olid'@'%' identified by 'olid';
-mysql> grant all on common.* to 'olid'@'localhost';
-mysql> grant all on common.* to 'olid'@'localhost.localdomain';
-mysql> grant all on common.* to 'olid'@'%';
+create database olid default charset utf8 default collate utf8_bin;
+create database common default charset utf8 default collate utf8_bin;
+grant all on olid.* to 'olid'@'localhost' identified by 'olid';
+grant all on olid.* to 'olid'@'localhost.localdomain' identified by 'olid';
+grant all on olid.* to 'olid'@'%' identified by 'olid';
+grant all on common.* to 'olid'@'localhost';
+grant all on common.* to 'olid'@'localhost.localdomain';
+grant all on common.* to 'olid'@'%';
+
+
