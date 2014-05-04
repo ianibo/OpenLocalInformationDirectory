@@ -173,9 +173,6 @@ unique_reference,org_name,email,url,publication_scheme,twitter,facebook,identifi
 "burton_joyce_library","Burton Joyce Library","burtonjoyce.library@nottscc.gov.uk","http://www.nottinghamshire.gov.uk/home/leisure/libraries/joiningthelibrary/librarieslist/librariesdetails.htm?libraryid=9109",,,,"28543"
 "archway_library","Archway Library","archway.library@islington.gov.uk","http://www.islington.gov.uk/Leisure/Libraries/Local/Archway.asp",,,,"30733"
 "hampton_library","Hampton Library","hampton.library@richmond.gov.uk","http://www.richmond.gov.uk/home/leisure_and_culture/libraries/branch_libraries/hampton_library.htm",,,,"24157"
-"telford_learning_centre","Telford Learning Centre","","http://www.wlv.ac.uk/lib",,,,"34511"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1955043
-oai:www.culturegrid.org.uk:MLA:19550432012-11-02T00:00:00ZMLA34517InstitutionEM00004MLAInstitutions
 "telford_learning_centre","Telford Learning Centre","c.lambert@wlv.ac.uk","http://www.wlv.ac.uk/lib",,,,"34513"
 "chesterfield_museum_and_art_gallery","Chesterfield Museum and Art Gallery","","www.chesterfield.gov.uk",,,,"34522"
 "the_digital_museum_of_cornish_ceramics","The Digital Museum of Cornish Ceramics","","http://www.cornishceramics.com",,,,"43291"
@@ -193,7 +190,6 @@ oai:www.culturegrid.org.uk:MLA:19550432012-11-02T00:00:00ZMLA34517InstitutionEM0
 "deal_library","Deal Library","deallibrary@kent.gov.uk","http://www.kent.gov.uk/KCC.Libraries.Web.Sites.Public/LibraryDetails.aspx?aid=0&lid=28&uprn=100062285653",,,,"26527"
 "allington_library","Allington Library","allingtonlibrary@kent.gov.uk","http://www.kent.gov.uk/KCC.Libraries.Web.Sites.Public/LibraryDetails.aspx?aid=0&lid=134&uprn=200003662425",,,,"30913"
 "egglescliffe_library","Egglescliffe Library","egglescliffe.library@stockton.gov.uk","http://www.stockton.gov.uk/citizenservices/leisureandents/libraries/community_libraries/egglescliffe_library/",,,,"33103"
-HTTP/1.1 200 OK
 "taunton_library","Taunton Library","taulib@somerset.gov.uk","http://www.somerset.gov.uk/irj/public/services/directory/location?rid=/guid/c052a40d-cc51-2c10-5ca7-d1f85e8cb16f",,,,"15575"
 "black_cultural_archives","Black Cultural Archives","info@aambh.org.uk","",,,,"34721"
 "porthcawl_museum","Porthcawl Museum","","",,,,"1335"
@@ -307,39 +303,7 @@ HTTP/1.1 200 OK
 "edge_hill_library","Edge Hill Library","edgehill.library@liverpool.gov.uk","http://liverpool.gov.uk/contact-us/libraries/edge-hill-library/",,,,"25801"
 "chadwell_information_centre","Chadwell Information Centre","chadwell.information.centre@thurrock.gov.uk","http://www.thurrock.gov.uk/libraries/libinfo/content.php?page=library&id=4",,,,"27997"
 "hertfordshire_libraries_arts_and_information","Hertfordshire Libraries, Arts and Information","centralresources.library@hertscc.gov.uk","http://www.hertsdirect.org/infoadvice/libraries/publibrary/libservices/performingarts",,,,"40367"
-"hull_city_archives","Hull City Archives","city.archives@hullcc.gov.uk 
- 
-
-
-We are open: 
-Monday, Tuesday, Thursday:  9am - 12.15pm , 1.30 - 4.45pm
-Wednesday: 9am - 12.15pm
-
-(01482) 300300 
-By fax (01482) 613051 
-By email city.archives@hullcc.gov.uk 
-By post / in person Hull City Archives,
-79 Lowgate,
-Kingston Upon Hull.
-HU1 1HN
- 
-
-
-We are open: 
-Monday, Tuesday, Thursday:  9am - 12.15pm , 1.30 - 4.45pm
-Wednesday: 9am - 12.15pm
-
-(01482) 300300 
-By fax (01482) 613051 
-By email city.archives@hullcc.gov.uk 
-By post / in person Hull City Archives,
-79 Lowgate,
-Kingston Upon Hull.
-HU1 1HN
- 
-
-
-We are open:","http://www.hullcc.gov.uk/libraries/hull_city_archives/index.php",,,,"40370"
+"hull_city_archives","Hull City Archives","city.archives@hullcc.gov.uk","http://www.hullcc.gov.uk/libraries/hull_city_archives/index.php",,,,"40370"
 "imperial_college_of_science_technology_and_medicine","Imperial College of Science, Technology and Medicine","j.m.smith@ic.ac.uk","http://www.lib.ic.ac.uk/hlindex.htm",,,,"40380"
 "irish_traditional_music_archive","Irish Traditional Music Archive","","http://www.itma.ie/",,,,"40383"
 "the_university_of_exeter","The University of Exeter","research@exeter.ac.uk","http://www.ex.ac.uk/",,,,"40386"
@@ -417,7 +381,6 @@ We are open:","http://www.hullcc.gov.uk/libraries/hull_city_archives/index.php",
 "dawlish_library","Dawlish Library","dawlish.library@devon.gov.uk","http://www.devon.gov.uk/index/cultureheritage/libraries/yourlocallibrary/teignbridge_libraries/dawlish_library.htm",,,,"26533"
 "brechin_museum","Brechin Museum","brechin.museum@angus.gov.uk","www.angus.gov.uk/history/museums/brechin/default.htm",,,,"7721"
 "allestree_library","Allestree Library","allestree.library@derby.gov.uk","http://www.derby.gov.uk/leisure-and-culture/libraries/derby-libraries/allestree-library/",,,,"30919"
-HTTP/1.1 200 OK
 "brownhills_library","Brownhills Library","brownhillslibrary@walsall.gov.uk","http://www.walsall.gov.uk/index/leisure_and_culture/libraries/library_locations/brownhills_library.htm",,,,"28729"
 "vintage_carriages_trust","Vintage Carriages Trust","admin@vintagecarriagestrust.org","www.vintagecarriagestrust.org",,,,"3527"
 "national_trust_ty_mawr_wybrnant","National Trust, Ty Mawr Wybrnant","","",,,,"5717"
@@ -611,7 +574,6 @@ HTTP/1.1 200 OK
 "canford_heath_library","Canford Heath Library","canfordheathlibrary@poole.gov.uk","http://www.boroughofpoole.com/libraries/",,,,"28369"
 "aspull_library","Aspull Library","","http://www.wlct.org/library-services/library-services.htm",,,,"30559"
 "northfields_library","Northfields Library","norflib@ealing.gov.uk","http://www.ealing.gov.uk/services/leisure/libraries/find_a_library/",,,,"19607"
-HTTP/1.1 200 OK
 "kingston_maureward_college_learning_centre","Kingston Maureward College, Learning Centre","","http://www.kmc.ac.uk",,,,"42154"
 "university_of_portsmouth_frewen_library","University of Portsmouth, Frewen Library","library@port.ac.uk","",,,,"42136"
 "bath_spa_university_sion_hill_library","Bath Spa University, Sion Hill Library","","http://www.bathspa.ac.uk/services/library/",,,,"42173"
@@ -808,7 +770,6 @@ cityarchives@dublincity.ie","http://www.dublincity.ie/living_in_the_city/librari
 "mitchell_library","Mitchell Library","lil@csglasgow.org","http://www.glasgowlife.org.uk/libraries/your-local-library/Pages/home.aspx",,,,"40482"
 "quarry_hospital","Quarry Hospital","","",,,,"2801"
 "national_trust_wimpole_hall","National Trust, Wimpole Hall","wimploe@ntrust.org.uk","www.nationaltrust.org.uk",,,,"4991"
-HTTP/1.1 200 OK
 "christ_church_picture_gallery_university_of_oxford","Christ Church Picture Gallery, University Of Oxford","","www.chch.ox.ac.uk/gallery",,,,"7187"
 "museum_nan_eilean_sgoil_lionacleit","Museum Nan Eilean, Sgoil Lionacleit","","",,,,"9377"
 "trinity_road_library","Trinity Road Library","trinityrd.library@bristol.gov.uk","http://www.bristol.gov.uk/ccm/content/Leisure-Culture/Libraries/library-finder.en?XSL=library&LibraryId=37",,,,"15047"
@@ -1009,7 +970,6 @@ HTTP/1.1 200 OK
 "kirkaldy_central_library_museum_and_art_gallery","Kirkaldy Central Library, Museum and Art Gallery","","http://www.fife.gov.uk/topics/index.cfm?fuseaction=servicefacility.display&subjectid=F6E580D1-E419-48D7-BCF2BB754F5E949F&facid=CE40A919-E47E-437C-8C0F6F66AD5C5F37&objectid=34DEB378-033D-11D6-8DD600508BBD18A1",,,,"39314"
 "dunfermline_carnegie_library","Dunfermline Carnegie Library","","http://www.fife.gov.uk/topics/index.cfm?fuseaction=service.display&p2sid=304450C6-D4A5-4A81-B547-7F88A2918294&themeid=98A56687-9A34-4494-A43C-68E07CCAE64E",,,,"39323"
 "cupar_library","Cupar Library","","http://www.fife.gov.uk/topics/index.cfm?fuseaction=service.display&p2sid=304450C6-D4A5-4A81-B547-7F88A2918294&themeid=98A56687-9A34-4494-A43C-68E07CCAE64E",,,,"39330"
-HTTP/1.1 200 OK
 "methil_library","Methil Library","","http://www.fife.gov.uk/topics/index.cfm?fuseaction=service.display&p2sid=304450C6-D4A5-4A81-B547-7F88A2918294&themeid=98A56687-9A34-4494-A43C-68E07CCAE64E",,,,"39334"
 "the_mitchell_archives_and_special_collections","The Mitchell, Archives and Special Collections","lil@cls.glasgow.gov.uk","http://www.glasgow.gov.uk/en/Residents/Leisure_Culture/Libraries/Collections/ArchivesandSpecialCollections/",,,,"39337"
 "john_harvard_library","John Harvard Library","JohnHarvard.Library@southwark.gov.uk","http://www.southwark.gov.uk/info/437/libraries_and_locations/996/john_harvard_library/1",,,,"39346"
@@ -1100,8 +1060,6 @@ HTTP/1.1 200 OK
 "daventry_library","Daventry Library","davlib@northamptonshire.gov.uk","http://www.northamptonshire.gov.uk/en/councilservices/Leisure/Libraries/publib/Pages/Davlib.aspx",,,,"26551"
 "brotton_library","Brotton Library","brotton_library@redcar-cleveland.gov.uk","http://www.redcar-cleveland.gov.uk/EdMap.nsf/LearningMap?ReadForm&facility=Brotton%20Library&area=Item",,,,"28747"
 "roseworth_library","Roseworth Library","roseworth.library@stockton.gov.uk","http://www.stockton.gov.uk/contact/locations/rosewlib/",,,,"33127"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1956107
-oai:www.culturegrid.org.uk:MLA:19561072012-11-02T00:00:00ZMLA34725InstitutionMLAInstitutions
 "rye_library","Rye Library","rhona.drever@eastsussex.gov.uk","http://www.eastsussex.gov.uk/libraries/find/list.htm",,,,"17789"
 "national_museums_liverpool","National Museums Liverpool","","http://www.liverpoolmuseums.org.uk/",,,,"47121"
 "norwich_castle_museum_and_art_gallery","Norwich Castle Museum And Art Gallery","museums@norfolk.gov.uk","http://www.museums.norfolk.gov.uk/",,,,"1359"
@@ -1205,7 +1163,6 @@ oai:www.culturegrid.org.uk:MLA:19561072012-11-02T00:00:00ZMLA34725InstitutionMLA
 "bedfont_library","Bedfont Library","hounslow-info@laing.com","http://www.hounslow.info/libraries/find-your-library/bedfont-library",,,,"30025"
 "natural_history_museum_nottingham","Natural History Museum, Nottingham","","http://www.nottinghamcity.gov.uk/museums",,,,"2441"
 "enniskillen_library","Enniskillen Library","","http://www.ni-libraries.net/",,,,"39375"
-HTTP/1.1 200 OK
 "libraries_ni_centre_for_migration_studies","Libraries NI, Centre for Migration Studies","centremigstudies@ni-libraries.net","http://www.ni-libraries.net/",,,,"39382"
 "university_of_the_arts_london_wimbledon_college_of_art","University of the Arts London, Wimbledon College of Art","","http://www.wimbledon.arts.ac.uk",,,,"45994"
 "university_of_bedfordshire_park_square_learning_resources_centre_luton","University of Bedfordshire, Park Square Learning Resources Centre, Luton","libraryideas@luton.ac.uk","http://www.lrweb.beds.ac.uk",,,,"45997"
@@ -1402,7 +1359,6 @@ HTTP/1.1 200 OK
 "national_cycle_museum","National Cycle Museum","","",,,,"4457"
 "worcester_college_of_technology_science_study_centre","Worcester College of Technology, Science Study Centre","","http://www.wortech.ac.uk/StudyCentres/science+study+centre.htm",,,,"38806"
 "worcester_college_of_technology_health_and_community_education_study_centre","Worcester College of Technology, Health and Community Education Study Centre","","http://www.wortech.ac.uk/StudyCentres/health+and+community+education+study+centre.htm",,,,"38811"
-HTTP/1.1 200 OK
 "chipping_barnet_library","Chipping Barnet Library","chipping.barnet.library@barnet.gov.uk","http://www.barnet.gov.uk/index/leisure-culture/libraries/library-facilities-incl-location-opening-hours-/library-chipping-barnet.htm",,,,"27661"
 "national_cataloguing_unit_for_the_archives_of_contemporary_scientists","National Cataloguing Unit for the Archives of Contemporary Scientists","ncuacs@bath.ac.uk","http://www.bath.ac.uk/ncuacs/",,,,"45770"
 "university_of_manchester_mimas","University of Manchester, Mimas","","http://www.mimas.ac.uk/index.html",,,,"45765"
@@ -1600,7 +1556,6 @@ archives@theiet.org (archives)","http://www.theiet.org/",,,,"44044"
 "cobbett_road_library","Cobbett Road Library","library@southampton.gov.uk","http://www.southampton.gov.uk/s-leisure/libraries/local-libraries/cobbettroadlibrary.aspx",,,,"27301"
 "blackburn_museum_and_art_gallery","Blackburn Museum And Art Gallery","museum@blackburn.gov.uk","www.blackburn.gov.uk/museums
 www.cottontown.org",,,,"10673"
-HTTP/1.1 200 OK
 "dumfries_and_galloway_museum_service","Dumfries and Galloway Museum Service","","http://www.dumgal.gov.uk/dumgal/miniweb.aspx?id=180",,,,"47897"
 "south_ayrshire_council_galleries_and_museum_service","South Ayrshire Council Galleries and Museum Service","Rozelle.House@south-Ayrshire.gov.uk","http://www.south-ayrshire.gov.uk/galleries/",,,,"47903"
 "english_heritage_row_111_great_yarmouth","English Heritage, Row 111 Great Yarmouth","","www.english-heritage.org.uk",,,,"4277"
@@ -1679,8 +1634,6 @@ HTTP/1.1 200 OK
 "royal_welsh_college_of_music_and_drama","Royal Welsh College of Music and Drama","","http://library.rwcmd.ac.uk",,,,"40703"
 "royston__district_museum","Royston & District Museum","curator@roystonmuseum.org.uk","http://www.users.waitrose.com/~roystonmuseum/",,,,"40706"
 "rye_treasury_of_mechanical_music","Rye Treasury of Mechanical Music","","",,,,"40712"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1956787
-oai:www.culturegrid.org.uk:MLA:19567872012-11-02T00:00:00ZMLA46316InstitutionMLAInstitutions
 "royal_opera_house","Royal Opera House","francesca.franchi@roh.org.uk","http://www.rohcollections.org.uk",,,,"40691"
 "university_of_oxford_herbaria","University Of Oxford, Herbaria","stephen.Harris@plants.ox.ac.uk","",,,,"5015"
 "royal_dragoon_guards_museum","Royal Dragoon Guards Museum","rdgmuseum@onetel.net.uk","www.army.mod.uk/ceremonialandheritage/museums",,,,"2825"
@@ -1721,8 +1674,6 @@ oai:www.culturegrid.org.uk:MLA:19567872012-11-02T00:00:00ZMLA46316InstitutionMLA
 "didsbury_library","Didsbury Library","didsburylibrary@manchester.gov.uk","http://www.manchester.gov.uk/directory_record/3966/didsbury_library",,,,"26389"
 "burnhamoncrouch_library","Burnham-on-Crouch Library","burnham.library@essex.gov.uk","http://webapps1.essexcc.gov.uk/findalibrary/libdetail.asp?LibID=14",,,,"28585"
 "annesley_woodhouse_library","Annesley Woodhouse Library","annesleywoodhouse.library@nottscc.gov.uk","http://www.nottinghamshire.gov.uk/home/leisure/libraries/joiningthelibrary/librarieslist/librariesdetails.htm?libraryid=8506",,,,"30775"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1956834
-oai:www.culturegrid.org.uk:MLA:19568342012-11-02T00:00:00ZMLA34595InstitutionMLAInstitutions
 "brandon_library","Brandon Library","Brandon.Library@southwark.gov.uk","http://www.southwark.gov.uk/YourServices/LibrariesSection/LibrariesLocationsSection/brandonlibrary.html",,,,"43436"
 "bristol_central_library__learning_centre","Bristol Central Library - Learning Centre","library_lending_centre@bristol.gov.uk","http://www.bristol.gov.uk/page/libraries",,,,"15437"
 "scarborough_art_gallery","Scarborough Art Gallery","","www.e-sbc.co.uk",,,,"3371"
@@ -1798,7 +1749,6 @@ oai:www.culturegrid.org.uk:MLA:19568342012-11-02T00:00:00ZMLA34595InstitutionMLA
 "bordon_library","Bordon Library","","http://www3.hants.gov.uk/library/bordon-library.htm",,,,"29311"
 "royal_academy_of_music_museum","Royal Academy of Music Museum","museum@ram.ac.uk","www.ram.ac.uk/museum",,,,"12680"
 "victoria_and_albert_museum_of_childhood","Victoria and Albert Museum of Childhood","","",,,,"48646"
-HTTP/1.1 200 OK
 "jack_russell_gallery","Jack Russell Gallery","","",,,,"48647"
 "leighton_buzzard_railway_museum","Leighton Buzzard Railway Museum","buzzrail@btinternet.com","www.buzzrail.com",,,,"4103"
 "cranbrook_museum","Cranbrook Museum","","i.am/cranbrookmuseum",,,,"6299"
@@ -1914,8 +1864,6 @@ HTTP/1.1 200 OK
 "st_johns_house","St John's House","","",,,,"40800"
 "st_michael______s_mount","St Michael������s Mount","godolphin@manor- office.co.uk","http://www.nationaltrust.org.uk/",,,,"40803"
 "st_pauls_girls_school","St Paul's Girls' School","","",,,,"40807"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1957051
-oai:www.culturegrid.org.uk:MLA:19570512012-11-02T00:00:00ZMLA40811InstitutionLocal/Regional governmenthttp://www.norfolk.gov.uk/tourism/museums/st_p_hun.htmMuseumsPublicPrinces StreetNorwichNR3 1AEMLAInstitutions
 "strangers_hall_museum","Strangers' Hall Museum","museums@norfolk.gov.uk","http://www.norfolk.gov.uk/tourism/museums/stranger.htm",,,,"40817"
 "university_of_strathclyde_archives","University of Strathclyde, Archives","","http://www.strath.ac.uk/archives/",,,,"40821"
 "suffolk_music_and_drama_library","Suffolk Music and Drama Library","lynda.george@libher.suffolkcc.gov.uk","http://www.suffolk.gov.uk/LeisureAndCulture/Libraries/",,,,"40824"
@@ -1997,7 +1945,6 @@ oai:www.culturegrid.org.uk:MLA:19570512012-11-02T00:00:00ZMLA40811InstitutionLoc
 "national_trust_stourhead","National Trust, Stourhead","","",,,,"5567"
 "woodend_museum_of_natural_history","Woodend Museum Of Natural History","","www.e-sbc.co.uk",,,,"3377"
 "astley_green_colliery_museum","Astley Green Colliery Museum","","",,,,"9953"
-HTTP/1.1 200 OK
 "tadley_library","Tadley Library","","http://www3.hants.gov.uk/library/tadley-library.htm",,,,"15623"
 "ruskington_library","Ruskington Library","ruskington.library@lincolnshire.gov.uk","http://www.lincolnshire.gov.uk/residents/discover-libraries/",,,,"17813"
 "new_ferry_library","New Ferry Library","new.ferry@wirral-libraries.net","http://www.wirral.gov.uk/my-services/leisure-and-culture/libraries",,,,"20009"
@@ -2051,8 +1998,6 @@ HTTP/1.1 200 OK
 "winchester_college","Winchester College","information@wincoll.ac.uk","www.winchestercollege.co.uk",,,,"35946"
 "exeter_cartes_de_visite_collection","Exeter Cartes de Visite Collection","","",,,,"47651"
 "chippenham_museum__heritage_centre","Chippenham Museum & Heritage Centre","","",,,,"47661"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1957210
-oai:www.culturegrid.org.uk:MLA:19572102012-11-02T00:00:00ZMLA47662InstitutionMLAInstitutions
 "somerset_archaeological_and_natural_history_society","Somerset Archaeological and Natural History Society","somstud@somerset.gov.uk","",,,,"47660"
 "kent_police_museum","Kent Police Museum","info@kent-police-museum.co.uk","members.aol.com/kentpolmus/index.htm",,,,"4109"
 "chatteris_museum","Chatteris Museum","chatteris.museum@lineone.net","",,,,"6305"
@@ -2192,7 +2137,6 @@ oai:www.culturegrid.org.uk:MLA:19572102012-11-02T00:00:00ZMLA47662InstitutionMLA
 "national_army_museum","National Army Museum","info@nam.ac.uk","http://www.nam.ac.uk",,,,"5393"
 "down_county_museum","Down County Museum","museum@downdc.gov.uk","http://www.downcountymuseum.com/",,,,"1017"
 "military_vehicle_museum","Military Vehicle Museum","miltmuseum@aol.com","",,,,"9779"
-HTTP/1.1 200 OK
 "budestratton_museum","Bude-Stratton Museum","","",,,,"11966"
 "wool_library","Wool Library","woollibrary@dorsetcc.gov.uk","http://www.dorsetforyou.com/woollibrary",,,,"13259"
 "lichfield_library","Lichfield Library","lichfield.library@staffordshire.gov.uk","http://www.staffordshire.gov.uk/leisure/librariesnew/branchlibraries/LichfieldLibrary/LichfieldLibrary.aspx",,,,"15449"
@@ -2324,10 +2268,6 @@ HTTP/1.1 200 OK
 "chilton_library","Chilton Library","AWH.LLC.Library.Chilton@durham.gov.uk","http://www.durham.gov.uk/Pages/Service.aspx?ServiceId=6067",,,,"27685"
 "bentilee_library","Bentilee Library","bentliee.library@stoke.gov.uk","http://www.stoke.gov.uk/ccm/navigation/leisure/libraries-and-archives/",,,,"29875"
 "national_trust_belton_house","National Trust, Belton House","","http://www.nationaltrust.org.uk/main/w-vh/w-visits/w-findaplace/w-beltonhouse/",,,,"4481"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1957540
-oai:www.culturegrid.org.uk:MLA:19575402012-11-02T00:00:00ZMLA48171InstitutionMLAInstitutions
-***Error record***:oai:www.culturegrid.org.uk:MLA:1957541
-oai:www.culturegrid.org.uk:MLA:19575412012-11-02T00:00:00ZMLA48173InstitutionMLAInstitutions
 "the_guildhall_hull","The Guildhall, Hull","","http://www.hullcc.gov.uk",,,,"48175"
 "the_guildhall_hull","The Guildhall, Hull","","http://www.hullcc.gov.uk",,,,"48177"
 "the_guildhall","The Guildhall","museums@hullcc.gov.uk","http://www.hullcc.gov.uk",,,,"48178"
@@ -2393,7 +2333,6 @@ oai:www.culturegrid.org.uk:MLA:19575412012-11-02T00:00:00ZMLA48173InstitutionMLA
 "sawtry_library","Sawtry Library","","http://www.cambridgeshire.gov.uk/leisure/libraries/directory/sawtry_library.htm",,,,"17645"
 "newsham_library","Newsham Library","","http://www.northumberland.gov.uk/Default.aspx?page=749",,,,"19841"
 "knottingley_library","Knottingley Library","knottingleylibrary@wakefield.gov.uk","http://www.wakefield.gov.uk/CultureAndLeisure/Libraries/FindLibrary/KnottingleyLibrary/default.htm?wbc_purpose=basicdefault.htmdefault.htm+easting%23centrecontent",,,,"22031"
-HTTP/1.1 200 OK
 "halton__library","Halton  Library","halton.library@lancashire.gov.uk","http://www.lancashire.gov.uk/libraries/librarydetails/libsearch1.asp?name=Halton",,,,"24217"
 "dewsbury_library","Dewsbury Library","dewsbury.lic@kirklees.gov.uk","https://www.kirklees.gov.uk/events/venuedetails.asp?vID=52",,,,"26407"
 "burngreave_library","Burngreave Library","burngreave.library@sheffield.gov.uk","http://www.sheffield.gov.uk/burngreavelibrary",,,,"28603"
@@ -2588,7 +2527,6 @@ HTTP/1.1 200 OK
 "english_heritage_furness_abbey_museum","English Heritage, Furness Abbey Museum","","",,,,"5405"
 "british_empire_and_commonwealth_museum","British Empire And Commonwealth Museum","admin@empiremuseum.co.uk","http://www.empiremuseum.co.uk/",,,,"11978"
 "woodville_library","Woodville Library","","http://www.derbyshire.gov.uk/leisure/libraries/find_your_local_library/Woodville/default.asp",,,,"13271"
-HTTP/1.1 200 OK
 "north_east_bus_museum__deregistered","North East Bus Museum - deregistered","","",,,,"9791"
 "sawston_library","Sawston Library","","http://www.cambridgeshire.gov.uk/leisure/libraries/directory/sawston_library.htm",,,,"17651"
 "knott_end__library","Knott End  Library","knottend.library@lancashire.gov.uk","http://www.lancashire.gov.uk/libraries/librarydetails/libsearch1.asp?name=Knott End",,,,"22037"
@@ -2612,8 +2550,6 @@ HTTP/1.1 200 OK
 "rushall_library","Rushall Library","rushalllibrary@walsall.gov.uk","http://www.walsall.gov.uk/index/leisure_and_culture/libraries/library_locations/rushall_library.htm",,,,"17831"
 "bilston_library","Bilston Library","bilston.library@wolverhampton.gov.uk","http://www.wolverhampton.gov.uk/leisure_culture/libraries/branch/bilston.htm",,,,"34774"
 "regents_park_college_oxford","Regent's Park College, Oxford","sue.mills@regents.ox.ac.uk","www.rpc.ox.ac.uk",,,,"34777"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1957872
-oai:www.culturegrid.org.uk:MLA:19578722012-11-02T00:00:00ZMLA47146InstitutionMLAInstitutions
 "institute_of_race_relations","Institute of Race Relations","info@irr.org.uk","http://www.irr.org.uk/index.html",,,,"47148"
 "society_for_caribbean_studies","Society for Caribbean Studies","caribbeanstudies@warwick.ac.uk","http://www.caribbeanstudies.org.uk/",,,,"47153"
 "modern_records_centre_university_library","Modern Records Centre, University Library","archives@warwick.ac.uk","http://www2.warwick.ac.uk/services/library/mrc/",,,,"47157"
@@ -2742,8 +2678,6 @@ oai:www.culturegrid.org.uk:MLA:19578722012-11-02T00:00:00ZMLA47146InstitutionMLA
 "swiss_cottage_library","Swiss Cottage Library","libraries@camden.gov.uk","http://www.camden.gov.uk/ccm/navigation/leisure/libraries-and-online-learning-centres/swiss-cottage-library/",,,,"41019"
 "canterbury_christ_church_university_library","Canterbury Christ Church University, Library","l.dean@cant.ac.uk","http://library.cant.ac.uk/",,,,"41025"
 "cardiff_university_music_library","Cardiff University, Music Library","musicliby@cardiff.ac.uk","http://www.cardiff.ac.uk/schoolsanddivisions/divisions/insrv/locations/libraries/music.html",,,,"41028"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1958024
-oai:www.culturegrid.org.uk:MLA:19580242012-11-02T00:00:00ZMLA48336Institutionhttp://www.english-heritage.org.uk/server/show/nav.12679MLAInstitutions
 "wellington_museum_apsley_house","Wellington Museum, Apsley House","","www.english-heritage.org.uk, go to the 'properties' and enter Apsley House into the 'Property Name' bar.",,,,"48348"
 "cambridge_university_library_music_department","Cambridge University Library, Music Department","music@lib.cam.ac.uk","http://www.lib.cam.ac.uk/Departments/Music/",,,,"41012"
 "national_trust_mottisfont_abbey","National Trust, Mottisfont Abbey","monttisfontabbey@ntrust.org.uk","www.ntrust.org.uk",,,,"5045"
@@ -2770,1287 +2704,6 @@ oai:www.culturegrid.org.uk:MLA:19580242012-11-02T00:00:00ZMLA48336Institutionhtt
 "driffield_library","Driffield Library","driffield.library@eastriding.gov.uk","http://www2.eastriding.gov.uk/leisure/libraries/",,,,"26233"
 "calverley_library","Calverley Library","calverleylibrary@leedslearning.net","http://www.leeds.gov.uk/Leisure_and_culture/Libraries/Calverley_library.aspx",,,,"28429"
 "wombourne_library","Wombourne Library","wombourne.library@staffordshire.gov.uk","http://www.staffordshire.gov.uk/leisure/librariesnew/branchlibraries/WombourneLibrary/WombourneLibrary.aspx",,,,"32809"
-"compton_campus________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________university_of_wolverhampton________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________compton_road_west________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________compton________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________wolverhampton________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________wv3_9dx","Compton campus
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-University of Wolverhampton
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Compton Road West
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Compton
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Wolverhampton
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-WV3 9DX","","",,,,"34298"
 "castle_college_learning_resource_centre","Castle College, Learning Resource Centre","castlelrc@sheffcol.ac.uk","http://my.sheffcol.ac.uk/index.cfm?pid=936EA5C3-5DE4-4F35-BFB7-83BCB2764004",,,,"34301"
 "tees_archaeology","Tees Archaeology","","www.teesarchaeology.com",,,,"42731"
 "alnwick_museum_of_antiquities","Alnwick Museum of Antiquities","","",,,,"42732"
@@ -4065,7 +2718,6 @@ WV3 9DX","","",,,,"34298"
 "seven_stories_the_centre_for_childrens_books","Seven Stories, the Centre for Children's Books","info@sevenstories.org.uk","http://www.sevenstories.org.uk/home/index.php",,,,"42763"
 "sunderland_volunteer_life_brigade_museum","Sunderland Volunteer Life Brigade Museum","","http://www.communigate.co.uk/ne/svlb/page1.phtml",,,,"42766"
 "st__anns_library","St  Anns Library","","http://www.haringey.gov.uk/index/community_and_leisure/libraries/findalibrary/stannslibrary.htm",,,,"42769"
-HTTP/1.1 200 OK
 "northern_region_film_and_television_archive","Northern Region Film and Television Archive","","http://www.nrfta.org.uk/",,,,"42777"
 "blakes_lock_museum","Blakes Lock Museum","","",,,,"1035"
 "royal_hussars_queen_marys_own_13th18th","Royal Hussars (Queen Marys Own 13th/18th)","cannonhall@barnsley.gov.uk","www.barnsley.gov.uk/tourism",,,,"5411"
@@ -4152,8 +2804,6 @@ HTTP/1.1 200 OK
 "the_university_of_sheffield","The University of Sheffield","","http://www.shef.ac.uk/",,,,"47715"
 "university_of_aberdeen","University of Aberdeen","","http://www.abdn.ac.uk/",,,,"47718"
 "bournemouth_university","Bournemouth University","enquiries@bournemouth.ac.uk","http://www.bournemouth.ac.uk/",,,,"47721"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1958179
-oai:www.culturegrid.org.uk:MLA:19581792012-11-02T00:00:00ZMLA47726InstitutionMLAInstitutions
 "the_garrick_club","The Garrick Club","","",,,,"47728"
 "oriental_club","Oriental Club","","",,,,"47729"
 "the_royal_and_ancient_golf_club_of_st_andrews","The Royal and Ancient Golf Club of St Andrews","","",,,,"47730"
@@ -4260,7 +2910,6 @@ r.turbet@abdn.ac.uk","http://www.abdn.ac.uk/library/",,,,"39566"
 "cartwright_hall_art_gallery","Cartwright Hall Art Gallery","","www.bradford.gov.uk",,,,"3041"
 "michelham_priory","Michelham Priory","smomich@sussexpast.co.uk","www.sussexpast.co.uk",,,,"7427"
 "piddington_roman_villa_museum","Piddington Roman Villa Museum","museum@friendship-taylor.freeserve.co.uk","members.aol.com/unarchsoc",,,,"5231"
-HTTP/1.1 200 OK
 "devonshire_collection_of_period_costume","Devonshire Collection Of Period Costume","","",,,,"11804"
 "wylam_library","Wylam Library","wylamlibrary@northumberland.gov.uk","http://www.northumberland.gov.uk/default.aspx?page=10460",,,,"13097"
 "tideswell_library","Tideswell Library","","http://www.derbyshire.gov.uk/leisure/libraries/find_your_local_library/tideswell/default.asp",,,,"15287"
@@ -4456,7 +3105,6 @@ HTTP/1.1 200 OK
 "earl_shilton_library","Earl Shilton Library","earlshiltonlibrary@Leics.gov.uk","http://www.leics.gov.uk/index/leisure_tourism/libraries/county_libraries/a_to_z_libraries/hinckleybosworth_libraries/earlshilton_library.htm",,,,"26065"
 "carterton_library","Carterton Library","carterton.library@oxfordshire.gov.uk","http://www.oxfordshire.gov.uk/cms/content/carterton-library",,,,"28261"
 "bath_record_office","Bath Record Office","archives@bathnes.gov.uk","",,,,"41764"
-HTTP/1.1 200 OK
 "havant_library","Havant Library","","http://www3.hants.gov.uk/library/havant-library.htm",,,,"23879"
 "bayle_museum","Bayle Museum","charity@themail.co.uk","http://www.bayle.bridlington.net",,,,"861"
 "bradford_industrial_museum","Bradford Industrial Museum","paula.walsh@bradford.gov.uk","www.bradford.gov.uk",,,,"3047"
@@ -4525,8 +3173,6 @@ HTTP/1.1 200 OK
 "society_of_antiquaries_of_scotland","Society of Antiquaries of Scotland","info@socantscot.org","http://www.socantscot.org/",,,,"47239"
 "durham_county_council","Durham County Council","","http://www.durham.gov.uk/",,,,"47242"
 "basingstoke_college_of_technology_learning_resources_centre","Basingstoke College of Technology, Learning Resources Centre","learning.resources@bcot.ac.uk","http://www.bcot.ac.uk/everyone/college/facilities/lrc.asp",,,,"48504"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1958620
-oai:www.culturegrid.org.uk:MLA:19586202012-11-02T00:00:00ZMLA1419InstitutionMLAInstitutions
 "clare_ancient_house_museum","Clare Ancient House Museum","clareah@btinternet","www.clare-ancient-house-museum.co.uk",,,,"5795"
 "stewartry_museum","Stewartry Museum","","",,,,"7991"
 "clitheroe_castle_museum","Clitheroe Castle Museum","","www.lancashire.com/lcc/museums",,,,"10181"
@@ -4655,7 +3301,6 @@ oai:www.culturegrid.org.uk:MLA:19586202012-11-02T00:00:00ZMLA1419InstitutionMLAI
 "aylestone_library","Aylestone Library","aylestone.lib@leicester.gov.uk","http://www.leicester.gov.uk/your-council-services/education-lifelong-learning/leicesterlibraries-home-page/locations/aylestone-library/",,,,"30457"
 "carshalton_library","Carshalton Library","carshalton.library@sutton.gov.uk","http://www.sutton.gov.uk/index.aspx?articleid=41",,,,"28267"
 "west_norwood_cemetery","West Norwood Cemetery","","",,,,"48407"
-HTTP/1.1 200 OK
 "weston_park_foundation","Weston Park Foundation","gareth@weston-park.com","www.weston-park.com",,,,"48405"
 "hat_works__the_museum_of_hatting","Hat Works - The Museum Of Hatting","","www.hatworks.org.uk",,,,"867"
 "national_trust_plas_newydd","National Trust, Plas Newydd","","",,,,"5243"
@@ -4834,8 +3479,6 @@ HTTP/1.1 200 OK
 "keep_military_museum","Keep Military Museum","curator@keepmilitarymuseum.org","http://www.keepmilitarymuseum.org",,,,"11642"
 "oakengates_library","Oakengates Library","oakengates.library@telford.gov.uk","http://www.telford.gov.uk/site/scripts/documents_info.aspx?documentID=481&pageNumber=7",,,,"19511"
 "leven_library","Leven Library","leven.library@eastriding.gov.uk","http://www2.eastriding.gov.uk/leisure/libraries/",,,,"21701"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1958984
-oai:www.culturegrid.org.uk:MLA:19589842012-11-02T00:00:00ZMLA23891InstitutionMLAInstitutions
 "crown_street_central_library","Crown Street Central Library","","http://www.darlington.gov.uk/Children/LibraryLearning/Library Service.htm",,,,"26077"
 "carnegie_library","Carnegie Library","CarnegieLibrary@lambeth.gov.uk","http://www.lambeth.gov.uk/Services/LeisureCulture/Libraries/LocalLibraries/CarnegieLibrary.htm",,,,"28273"
 "aylesham_library","Aylesham Library","ayleshamlibrary@kent.gov.uk","http://www.kent.gov.uk/KCC.Libraries.Web.Sites.Public/LibraryDetails.aspx?aid=0&lid=27&uprn=010034873752",,,,"30463"
@@ -4846,7 +3489,6 @@ oai:www.culturegrid.org.uk:MLA:19589842012-11-02T00:00:00ZMLA23891InstitutionMLA
 "durham_heritage_centre_and_museum","Durham Heritage Centre And Museum","","www.durham.gov.uk",,,,"9635"
 "dean_forest_railway_museum","Dean Forest Railway Museum","","",,,,"11822"
 "wye_library","Wye Library","wyelibrary@kent.gov.uk","http://www.kent.gov.uk/KCC.Libraries.Web.Sites.Public/LibraryDetails.aspx?aid=0&lid=7&uprn=100062562051",,,,"13115"
-HTTP/1.1 200 OK
 "thurnscoe_library","Thurnscoe Library","","http://www.barnsley.gov.uk/gis/libraries/thurnscoe",,,,"15305"
 "cliffe_castle_museum","Cliffe Castle Museum","","http://www.bradfordmuseums.org/cc/cc_main.htm",,,,"3059"
 "harlesden_learning_zone__harlesden_library","Harlesden Learning Zone - Harlesden Library","","http://www.brent.gov.uk/officeloc.nsf/Libraries/Harlesden+Library+Plus",,,,"24067"
@@ -4996,8 +3638,6 @@ HTTP/1.1 200 OK
 "chesterlestreet_library","Chester-le-Street Library","","http://www.durham.gov.uk/Pages/Service.aspx?ServiceId=437",,,,"27727"
 "belmont_library","Belmont Library","","http://www.durham.gov.uk/Pages/Service.aspx?ServiceId=437",,,,"29917"
 "wareham_library","Wareham Library","warehamlibrary@dorsetcc.gov.uk","http://www.dorsetforyou.com/index.jsp?articleid=4493",,,,"14579"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1959173
-oai:www.culturegrid.org.uk:MLA:19591732012-11-02T00:00:00ZMLA48897InstitutionMLAInstitutions
 "stamford_museum","Stamford Museum","stamford_museum@lincolnshire.gov.uk","www.lincolnshire.gov.uk",,,,"2513"
 "square_tower","Square Tower","","",,,,"6899"
 "museum_of_iron_and_darby_furnace","Museum Of Iron And Darby Furnace","","www.ironbridge.org.uk",,,,"4703"
@@ -5042,7 +3682,6 @@ oai:www.culturegrid.org.uk:MLA:19591732012-11-02T00:00:00ZMLA48897InstitutionMLA
 "bagshaw_museum","Bagshaw Museum","bagshaw.museum@kirklees.gov.uk","www.bagshawmuseum.co.uk",,,,"2885"
 "local_history_library","Local History Library","sybil.cavanagh@westlothian.gov.uk","http://www.westlothian.gov.uk//tourism/libservices/",,,,"32659"
 "university_of_bath_in_swindon_library_and_learning_centre","University of Bath in Swindon, Library and Learning Centre","library-oakfield@bath.ac.uk","http://www.bath.ac.uk/library",,,,"41780"
-HTTP/1.1 200 OK
 "university_of_bath_library_and_learning_centre","University of Bath, Library and Learning Centre","library@bath.ac.uk","http://www.bath.ac.uk/library",,,,"41776"
 "frimley_park_hospital_nhs_foundation_trust_health_sciences_library","Frimley Park Hospital NHS Foundation Trust, Health Sciences Library","","http://www.frimleyparklibrary.nhs.uk",,,,"48420"
 "english_heritage_brougham_castle","English Heritage, Brougham Castle","","www.english-heritage.org.uk",,,,"879"
@@ -5241,7 +3880,6 @@ HTTP/1.1 200 OK
 "blists_hill_open_air_museum","Blists Hill Open Air Museum","","www.ironbridge.org.uk",,,,"4709"
 "slough_museum","Slough Museum","info@sloughmuseum.co.uk","www.sloughmuseum.co.uk",,,,"6905"
 "broughty_castle_museum","Broughty Castle Museum","broughty@dundeecity.gov.uk","",,,,"9095"
-HTTP/1.1 200 OK
 "swindon_museum_and_art_gallery","Swindon Museum And Art Gallery","","",,,,"11282"
 "sneinton_library","Sneinton Library","sneinton.library@nottinghamcity.gov.uk","http://www.nottinghamcity.gov.uk/sneintonlib",,,,"16955"
 "paignton_library_and_information_centre","Paignton Library and Information Centre","paignton.library@torbay.gov.uk","http://www.torbay.gov.uk/index/yourservices/libraries/librarylocations/paigntonlibrary.htm",,,,"19151"
@@ -5434,7 +4072,6 @@ Learning Gateway:  learninggateway@cumbria.ac.uk","www.cumbria.ac.uk/services/li
 "oxford_bus_museum_trust","Oxford Bus Museum Trust","","www.oxfordbusmuseum.org.uk",,,,"4349"
 "ramsgate_museum","Ramsgate Museum","beth.thomson@kent.gov.uk","",,,,"10922"
 "spencers_wood_library","Spencers Wood Library","","http://www.wokingham.gov.uk/libraries/libraries/our-libraries/spencers-wood-library/",,,,"16595"
-HTTP/1.1 200 OK
 "pitsea_library","Pitsea Library","pitsea.library@essex.gov.uk","http://webapps1.essexcc.gov.uk/findalibrary/libdetail.asp?LibID=54",,,,"18791"
 "maltby_library","Maltby Library","maltby.library@rotherham.gov.uk","http://www.rotherham.gov.uk/libraries/",,,,"20981"
 "royal_highland_fusiliers_regimental_museum","Royal Highland Fusiliers Regimental Museum","","",,,,"8735"
@@ -5629,7 +4266,6 @@ HTTP/1.1 200 OK
 "st_neots_library","St Neots Library","","http://www.cambridgeshire.gov.uk/leisure/libraries/directory/st_neots_library.htm",,,,"16421"
 "poulton__library","Poulton  Library","poulton.library@lancashire.gov.uk","http://www.lancashire.gov.uk/libraries/librarydetails/libsearch1.asp?name=Poulton",,,,"18617"
 "marlborough_library","Marlborough Library","libraryenquiries@wiltshire.gov.uk","http://www.wiltshire.gov.uk/artsheritageandlibraries/librarieshome.htm",,,,"20807"
-HTTP/1.1 200 OK
 "hull_central_library","Hull Central Library","reference.library@hullcc.gov.uk","http://www.hullcc.gov.uk/portal/page?_pageid=221,93208&_dad=portal&_schema=PORTAL&p_display_mode=LIBDTLS&p_id=29",,,,"22997"
 "cleveleys_library","Cleveleys Library","cleveleys.library@lancashire.gov.uk","http://www.lancashire.gov.uk/libraries/librarydetails/libsearch1.asp?name=Cleveleys",,,,"27379"
 "bishopsworth_library","Bishopsworth Library","bishopsworth.library@bristol.gov.uk","http://www.bristol.gov.uk/page/libraries",,,,"29569"
@@ -5830,7 +4466,6 @@ archives@buckscc.gov.uk","http://www.buckscc.gov.uk/archives",,,,"39789"
 "quorn_library","Quorn Library","quornlibrary@leics.gov.uk","http://www.leics.gov.uk/index/leisure_tourism/libraries/county_libraries/a_to_z_libraries/oadbywigston_libraries/oadby_library.htm",,,,"18437"
 "meltham_library_and_information_centre","Meltham Library and Information Centre","meltham.lic@kirklees.gov.uk","https://www.kirklees.gov.uk/events/venuedetails.asp?vID=61",,,,"20627"
 "fulwell_library","Fulwell Library","Fulwell.Library@sunderland.gov.uk","http://www.sunderland.gov.uk/index.aspx?articleid=1069",,,,"25003"
-HTTP/1.1 200 OK
 "colne_library","Colne Library","colne.library@lancashire.gov.uk","http://www.lancashire.gov.uk/libraries/librarydetails/libsearch1.asp?name=Colne",,,,"27199"
 "blythe_bridge_library","Blythe Bridge Library","blythebridge.library@staffordshire.gov.uk","http://www.staffordshire.gov.uk/leisure/librariesnew/branchlibraries/BlytheBridgeLibrary/BlytheBridgeLibrary.aspx",,,,"29389"
 "westminster_reference_library","Westminster Reference Library","referencelibrarywc2@westminster.gov.uk","http://www.westminster.gov.uk/libraries/findalibrary/westref.cfm",,,,"14051"
@@ -6027,7 +4662,6 @@ HTTP/1.1 200 OK
 "quinton_library","Quinton Library","quinton.library@birmingham.gov.uk","http://www.birmingham.gov.uk/quintonlibrary",,,,"18443"
 "mellor_library","Mellor Library","mellor.library@lancashire.gov.uk","http://www.lancashire.gov.uk/libraries/librarydetails/libsearch1.asp?name=Mellor",,,,"20633"
 "ilminster_library","Ilminster Library","ilmlib@somerset.gov.uk","http://www.somerset.gov.uk/irj/public/services/directory/location?rid=/guid/f0219334-4753-2c10-74a0-fa42fc07d149",,,,"22823"
-HTTP/1.1 200 OK
 "fullwell_cross_library","Fullwell Cross Library","fullwellcross.library@redbridge.gov.uk","http://www.redbridge.gov.uk/services/index.cfm/653/Show",,,,"25009"
 "blyth_library","Blyth Library","blythlibrary@northumberland.gov.uk","http://www.northumberland.gov.uk/default.aspx?page=10434",,,,"29395"
 "norfolk_record_office","Norfolk Record Office","norfrec@norfolk.gov.uk","archives.norfolk.gov.uk",,,,"36350"
@@ -6137,8 +4771,6 @@ HTTP/1.1 200 OK
 "bedworth_library_and_information_centre","Bedworth Library and Information Centre","libraryenquiryteam@warwickshire.gov.uk","http://www.warwickshire.gov.uk/libraries",,,,"32869"
 "manor_farm_library","Manor Farm Library","mfbranch@hillingdongrid.org","http://www.hillingdon.gov.uk/index.jsp?articleid=11625",,,,"43071"
 "aragon_library","Aragon Library","aragon.library@merton.gov.uk","http://www.merton.gov.uk/learning/libraries/local-libraries/arlib.htm",,,,"43104"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1960504
-oai:www.culturegrid.org.uk:MLA:19605042012-11-02T00:00:00ZMLA46733InstitutionMLAInstitutions
 "royal_college_of_music_centre_for_performance_history","Royal College Of Music, Centre for Performance History","portraits@rcm.ac.uk","www.cph.rcm.ac.uk",,,,"5285"
 "home_farm_temple_newsam","Home Farm, Temple Newsam","","",,,,"3281"
 "museum_of_east_anglian_life","Museum Of East Anglian Life","meal@meal.fsnet.co.uk","www.museumofeastanglialife.org.uk",,,,"5471"
@@ -6227,7 +4859,6 @@ oai:www.culturegrid.org.uk:MLA:19605042012-11-02T00:00:00ZMLA46733InstitutionMLA
 "ilkley_library","Ilkley Library","ilkley.library@bradford.gov.uk","http://www.bradford.gov.uk/bmdc/leisure_and_culture/library_and_information_services/a-z_of_libraries/libraries_ilkley_library.htm",,,,"22829"
 "british_museum","British Museum","information@thebritishmuseum.ac.uk","http://www.thebritishmuseum.ac.uk",,,,"10583"
 "collingham_library","Collingham Library","collingham.library@nottscc.gov.uk","http://www.nottinghamshire.gov.uk/home/leisure/libraries/joiningthelibrary/librarieslist/librariesdetails.htm?libraryid=9116",,,,"27211"
-HTTP/1.1 200 OK
 "bloxwich_library","Bloxwich Library","bloxwichlibrary@walsall.gov.uk","http://www.walsall.gov.uk/index/leisure_and_culture/libraries/library_locations/bloxwich_library.htm",,,,"29401"
 "marylebone_library_and_information_service","Marylebone Library and Information Service","referencelibrarynw1@westminster.gov.uk","http://www.westminster.gov.uk/services/libraries/",,,,"31591"
 "wakefield_one_library_and_museum","Wakefield One Library and Museum","wakefieldlibrarymuseum@wakefield.gov.uk","http://www.wakefield.gov.uk/CultureAndLeisure/libraries/default.htm",,,,"33781"
@@ -6424,7 +5055,6 @@ HTTP/1.1 200 OK
 "rayners_lane_library","Rayners Lane Library","raynerslane.library@harrow.gov.uk","http://www.harrow.gov.uk/info/200062/harrow_libraries",,,,"18281"
 "girlington_library","Girlington Library","girlington.library@bradford.gov.uk","http://www.bradford.gov.uk/bmdc/leisure_and_culture/library_and_information_services/a-z_of_libraries/libraries_girlington_library.htm",,,,"24853"
 "cosby_library","Cosby Library","cosbylibrary@leics.gov.uk","http://www.leics.gov.uk/index/leisure_tourism/libraries/county_libraries/a_to_z_libraries/blaby_libraries/cosby_library.htm",,,,"27043"
-HTTP/1.1 200 OK
 "boultham_library","Boultham Library","boultham.library@lincolnshire.gov.uk","http://www.lincolnshire.gov.uk/VenueDetails.aspx?venuecode=20533",,,,"29239"
 "sunningdale_container_library","Sunningdale Container Library","container.library@rbwm.gov.uk","http://www.rbwm.gov.uk/web/libraries_container.htm",,,,"33619"
 "isleworth_library","Isleworth Library","hounslow-info@laing.com","http://www.hounslow.info/libraries/find-your-library/isleworth-library",,,,"22667"
@@ -6620,7 +5250,6 @@ srpsmuseum.org.uk",,,,"8051"
 "moorside_library","Moorside Library","","http://www.newcastle.gov.uk/leisure-libraries-and-tourism/libraries/branch-libraries-and-opening-hours",,,,"20297"
 "kensal_library","Kensal Library","information.services@rbkc.gov.uk","http://www.rbkc.gov.uk/libraries/Kensal/",,,,"22487"
 "castleton_village_museum","Castleton Village Museum","","http://www.derbyshire-peakdistrict.co.uk/castletoninformationcentre.htm",,,,"12428"
-HTTP/1.1 200 OK
 "crayford_library","Crayford Library","","http://eps.bexley.gov.uk/rooms/portal/page/21777_Crayford_Library",,,,"26863"
 "braunstone_library_at_the_brite_centre","Braunstone Library at The Brite Centre","braunstone.lib@leicester.gov.uk","http://www.leicester.gov.uk/libraries.aspx",,,,"29059"
 "collier_row_library","Collier Row Library","collierrow.library@havering.gov.uk","http://www.havering.gov.uk/Pages/Librariesinformationandadvice.aspx?PID=1138",,,,"31249"
@@ -6789,8 +5418,6 @@ Archives and Documentation Centres: United Kingdom & Ireland Branch","","http://
 "donington_library","Donington Library","donington.library@lincolnshire.gov.uk","http://www.lincolnshire.gov.uk/residents/discover-libraries/",,,,"26311"
 "thornton_heath_library","Thornton Heath Library","thorntonheath@croydon.gov.uk","http://www.croydon.gov.uk/leisure/libraries/croydonlibs/snorwoodlib",,,,"15359"
 "commanet","Commanet","info@commanet.org","http://www.commanet.org/english/Default.htm",,,,"43214"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1961271
-oai:www.culturegrid.org.uk:MLA:19612712012-11-02T00:00:00ZMLA46778InstitutionMLAInstitutions
 "merchant_adventurers_hall","Merchant Adventurers Hall","the.clerk@mahall-york.demon.co.uk","www.theyorkcompany.sagenet.co.uk",,,,"3299"
 "national_trust_coleridge_cottage","National Trust, Coleridge Cottage","","",,,,"5489"
 "bangor_museum_and_art_gallery","Bangor Museum And Art Gallery","","",,,,"1113"
@@ -6815,7 +5442,6 @@ oai:www.culturegrid.org.uk:MLA:19612712012-11-02T00:00:00ZMLA46778InstitutionMLA
 "great_shelford_library","Great Shelford Library","","http://www.cambridgeshire.gov.uk/leisure/libraries/directory/great_shelford_library.htm",,,,"24487"
 "cuffley_library","Cuffley Library","hertsdirect@hertscc.gov.uk","http://www.hertsdirect.org/services/libraries/findlib/libs/cuf",,,,"26677"
 "the_parachute_regiment__airborne_forces_museum","The Parachute Regiment & Airborne Forces Museum","","",,,,"5669"
-HTTP/1.1 200 OK
 "university_of_greenwich_avery_hill_campus_library","University of Greenwich, Avery Hill Campus Library","","http://www.gre.ac.uk/lib/",,,,"44257"
 "university_of_greenwich_drill_hall_library","University of Greenwich, Drill Hall Library","","http://www.campus.medway.ac.uk/library/",,,,"44264"
 "university_of_greenwich_maritime_greenwich_campus_library","University of Greenwich, Maritime Greenwich Campus Library","","http://www.gre.ac.uk/lib/",,,,"44268"
@@ -6994,10 +5620,6 @@ www.royalpavilion.org.uk",,,,"6047"
 "attleborough_library","Attleborough Library","attleborough.lib@norfolk.gov.uk","http://www.norfolk.gov.uk/Leisure_and_culture/Libraries/Your_local_library/NCC007479",,,,"30523"
 "valence_library","Valence Library","valence.library@lbbd.gov.uk","http://www.barking-dagenham.gov.uk/LEISUREARTSANDLIBRARIES/LIBRARIES/Pages/home.aspx",,,,"41937"
 "east_grinstead_town_museum","East Grinstead Town Museum","","",,,,"41942"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1961505
-oai:www.culturegrid.org.uk:MLA:19615052012-11-02T00:00:00ZMLA41944InstitutionMLAInstitutions
-***Error record***:oai:www.culturegrid.org.uk:MLA:1961506
-oai:www.culturegrid.org.uk:MLA:19615062012-11-02T00:00:00ZMLA41945InstitutionMLAInstitutions
 "tooting_library","Tooting Library","tootinglibrary@wandsworth.gov.uk","http://www.wandsworth.gov.uk/libraries",,,,"15185"
 "queens_royal_surrey_regiment_museum","Queens Royal Surrey Regiment Museum","","www.surrey-online.co.uk/queenssurreys",,,,"933"
 "dales_countryside_museum","Dales Countryside Museum","ydpna12@star.co.uk","www.ydnp.gov.uk",,,,"3119"
@@ -7017,7 +5639,6 @@ oai:www.culturegrid.org.uk:MLA:19615062012-11-02T00:00:00ZMLA41945InstitutionMLA
 "beaumaris_gaol_and_court","Beaumaris Gaol And Court","eamlh@ynysmon.gov.uk","www.ynysmon.gov.uk",,,,"1119"
 "museum_of_north_craven_life","Museum Of North Craven Life","","",,,,"3305"
 "national_trust_dunster_castle","National Trust, Dunster Castle","","",,,,"5495"
-HTTP/1.1 200 OK
 "east_grinstead_town_museum","East Grinstead Town Museum","","",,,,"7691"
 "weardale_museum_of_high_house_chapel","Weardale Museum Of High House Chapel","dtheatherington@ormail.co.uk","www.weardalemuseum.co.uk",,,,"9881"
 "axminster_museum","Axminster Museum","","",,,,"12068"
@@ -7211,11 +5832,8 @@ HTTP/1.1 200 OK
 "deddington_library","Deddington Library","deddington.library@oxfordshire.gov.uk","http://www.oxfordshire.gov.uk/cms/public-site/libraries",,,,"26509"
 "buckfastleigh_library","Buckfastleigh Library","buckfast.library@devon.gov.uk","http://www.devon.gov.uk/index/cultureheritage/libraries/yourlocallibrary/teignbridge_libraries/buckfastleigh_library.htm",,,,"28705"
 "alresford_library","Alresford Library","","http://www3.hants.gov.uk/library/alresford-library.htm",,,,"30895"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1961750
-oai:www.culturegrid.org.uk:MLA:19617502012-11-02T00:00:00ZMLA34702InstitutionMLAInstitutions
 "university_of_wolverhampton_burton_learning_centre","University of Wolverhampton, Burton Learning Centre","learningcentredirect@wlv.ac.uk","http://asp.wlv.ac.uk/Level3.asp?UserType=6&Level3=823",,,,"34706"
 "teddington_library","Teddington Library","teddington.library@richmond.gov.uk","http://www.richmond.gov.uk/home/leisure_and_culture/libraries/branch_libraries/teddington_library.htm",,,,"15557"
-HTTP/1.1 200 OK
 "allesley_park_library","Allesley Park Library","whoberley.library@coventry.gov.uk","http://www.coventry.gov.uk/libraries",,,,"43926"
 "greenfield_valley_heritage_park","Greenfield Valley Heritage Park","","",,,,"1305"
 "swaffham_museum","Swaffham Museum","swaffhammuseum@ic24.net","",,,,"3491"
@@ -7314,8 +5932,6 @@ HTTP/1.1 200 OK
 "chorley_library","Chorley Library","Chorley.Library@lancashire.gov.uk","http://www.lancashire.gov.uk/libraries/librarydetails/libsearch1.asp?name=Chorley",,,,"27607"
 "madeley_library","Madeley Library","madeley.library@telford.gov.uk","http://www.telford.gov.uk/libraries",,,,"21035"
 "bethnal_green_library","Bethnal Green Library","ideastore@towerhamlets.gov.uk","http://www.ideastore.co.uk/en/articles/libraries_your_local_idea_store_library_bethnal_green_library",,,,"29797"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1961866
-oai:www.culturegrid.org.uk:MLA:19618662012-11-02T00:00:00ZMLA48130InstitutionMLAInstitutions
 "h_m_customs_and_excise_national_museum","H M Customs And Excise National Museum","","",,,,"4589"
 "littlehampton_museum","Littlehampton Museum","littlehampton_museum@breathemail.net","",,,,"6785"
 "university_of_aberdeen_picture_collection","University Of Aberdeen, Picture Collection","","",,,,"8975"
@@ -7411,13 +6027,6 @@ oai:www.culturegrid.org.uk:MLA:19618662012-11-02T00:00:00ZMLA48130InstitutionMLA
 "the_haddenham_library","The Haddenham Library","","http://www.cambridgeshire.gov.uk/leisure/libraries/directory/haddenham_lap.htm",,,,"24325"
 "debden_library","Debden Library","debden.library@essex.gov.uk","http://webapps1.essexcc.gov.uk/findalibrary/libdetail.asp?LibID=22",,,,"26515"
 "buckden_library","Buckden Library","","http://www.cambridgeshire.gov.uk/leisure/libraries/directory/buckden_library.htm",,,,"28711"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1961982
-oai:www.culturegrid.org.uk:MLA:19619822012-11-02T00:00:00ZMLA34709InstitutionMLAInstitutions
-***Error record***:oai:www.culturegrid.org.uk:MLA:1961983
-oai:www.culturegrid.org.uk:MLA:19619832012-11-02T00:00:00ZMLA34711InstitutionMLAInstitutions
-***Error record***:oai:www.culturegrid.org.uk:MLA:1961984
-oai:www.culturegrid.org.uk:MLA:19619842012-11-02T00:00:00ZMLA34713InstitutionMLAInstitutions
-HTTP/1.1 200 OK
 "alnwick_library","Alnwick Library","alnwicklibrary@northumberland.gov.uk","http://www.northumberland.gov.uk/Default.aspx?page=10428",,,,"30901"
 "gwent_rural_life_museum","Gwent Rural Life Museum","","",,,,"1311"
 "thirsk_museum","Thirsk Museum","","",,,,"3497"
@@ -7453,9 +6062,7 @@ HTTP/1.1 200 OK
 "glendale_oral_history_group_inactive","Glendale Oral History Group (inactive)","","",,,,"35280"
 "cowpen_bewley_woodland_park","Cowpen Bewley Woodland Park","cowpenbewley.woodlandpark@stockton.gov.uk","http://www.lhi.org.uk/projects_directory/projects_by_region/north_east/stocktonontees/marshmen_and_brickwomen/index.html",,,,"35286"
 "whickham_u3a_web_wanderers","Whickham U3A web wanderers","wwu3a@hotmail.com","http://www.thenortheast.com/archives/u3a",,,,"35289"
-"imperial_war_museum_all_saints_annexe","Imperial War Museum All Saints Annexe","film@iwm.org.uk
-photos@iwm.org.uk
-books@iwm.org.uk","http://collections.iwm.org.uk",,,,"35292"
+"imperial_war_museum_all_saints_annexe","Imperial War Museum All Saints Annexe","film@iwm.org.uk","http://collections.iwm.org.uk",,,,"35292"
 "living_history_north_east","Living History North East","lhneltd@btconnect.com","http://www.bbc.co.uk/nationonfilm/education/ has some relavant clips",,,,"35295"
 "folk_archive_resource_north_east_farne","Folk Archive Resource North East (FARNE)","","http://www.folknortheast.com",,,,"35301"
 "tudhoe_and_spennymoor_local_history_society","Tudhoe and Spennymoor Local History Society","johnbanham@tiscali.co.uk","",,,,"35302"
@@ -7464,9 +6071,6 @@ books@iwm.org.uk","http://collections.iwm.org.uk",,,,"35292"
 "howden_le_wear_local_history_society","Howden le Wear Local History Society","","",,,,"35311"
 "royal_quays_local_history_society","Royal Quays Local History Society","","",,,,"35314"
 "bishop_middleham_local_history_society","Bishop Middleham Local History Society","","",,,,"35317"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1962039
-oai:www.culturegrid.org.uk:MLA:19620392012-11-02T00:00:00ZMLA35320Institutionlocal interest grouphttp://www.tomorrows-history.com/Collections/..\CommunityProjects\PB0100060001\Harbour%20Lights%20Photographers.htmby appointment01670 353 817bricblyth@supanet.comQuay Road
-Eric Tolhurst centreBlythNE24 2ASMLAInstitutions
 "glass_arc_limited","Glass Arc Limited","info@glassarc.com","http://www.glassarc.com",,,,"35323"
 "newcastle_university_english_department","Newcastle University English Department","","http://www.ncl.ac.uk/necte/",,,,"35326"
 "grangetown_in_times_past","Grangetown in times past","johnnie.oneill@ntlworld.com","",,,,"35330"
@@ -7619,7 +6223,6 @@ Eric Tolhurst centreBlythNE24 2ASMLAInstitutions
 "suttonathone_library","Sutton-at-Hone Library","suttonathonelibrary@kent.gov.uk","http://www.kent.gov.uk/KCC.Libraries.Web.Sites.Public/LibraryDetails.aspx?aid=0&lid=20&uprn=200000535230",,,,"15749"
 "rothwell_library","Rothwell Library","rothwelllibrary@leedslearning.net","http://www.leeds.gov.uk/Leisure_and_culture/Libraries/Rothwell_library.aspx",,,,"17939"
 "kimberley_library","Kimberley Library","kimberley.library@nottscc.gov.uk","http://www.nottinghamshire.gov.uk/home/leisure/libraries/joiningthelibrary/librarieslist/librariesdetails.htm?libraryid=9290",,,,"22325"
-HTTP/1.1 200 OK
 "great_missenden_library","Great Missenden Library","lib-mis@buckscc.gov.uk","http://www.buckscc.gov.uk/bcc/libraries/Branches/great_missenden.page",,,,"24511"
 "crumpsall_library","Crumpsall Library","crumpsall.library@manchester.gov.uk","http://www.manchester.gov.uk/directory_record/3965/crumpsall_library",,,,"26701"
 "brixham_library","Brixham Library","brixham.library@torbay.gov.uk","http://www.torbay.gov.uk/index/yourservices/libraries/librarylocations/brixhamlibrary.htm",,,,"28897"
@@ -7681,9 +6284,6 @@ HTTP/1.1 200 OK
 "british_museum_department_of_ethnography","British Museum, Department of Ethnography","ethnography@thebritishmuseum.ac.uk","http://www.thebritishmuseum.ac.uk/ethno/ethcon.html",,,,"40291"
 "george_lloyd_music_library","George Lloyd Music Library","will@albanyrecords.demon.co.uk","http://www.albanyrecords.demon.co.uk",,,,"40294"
 "university_of_glasgow_library","University of Glasgow, Library","m.mackie@lib.gla.ac.uk","http://www.lib.gla.ac.uk/",,,,"40300"
-***Error record***:oai:www.culturegrid.org.uk:MLA:1962302
-oai:www.culturegrid.org.uk:MLA:19623022012-11-02T00:00:00ZMLA40303InstitutionLocal/Regional governmenthttp://www.gloscc.gov.uk/pubserv/gcc/corpserv/archives/South WestArchivesPublicClarence Row
-Alvin StreetGloucesterGL1 3DWMLAInstitutions
 "glyndebourne_festival_opera_archives","Glyndebourne Festival Opera Archives","Switchboard: 01273 812321 
 Fax: 01273 812783 
 email: info@glyndebourne.com 
@@ -7810,7 +6410,6 @@ email: info@glyndebourne.com","http://www.glyndebourne.com",,,,"40306"
 "allenton_library","Allenton Library","allenton.library@derby.gov.uk","http://www.derby.gov.uk/leisure-and-culture/libraries/derby-libraries/allenton-library/",,,,"90055"
 "alvaston_library","Alvaston Library","alvaston.library@derby.gov.uk","http://www.derby.gov.uk/leisure-and-culture/libraries/derby-libraries/alvaston-library/",,,,"90054"
 "chellaston_library","Chellaston Library","chellaston.library@derby.gov.uk","http://www.derby.gov.uk/leisure-and-culture/libraries/derby-libraries/chellaston-library/",,,,"90053"
-HTTP/1.1 200 OK
 "derwent_community_library","Derwent Community Library","derwent.library@derby.gov.uk","http://www.derby.gov.uk/LeisureCulture/Libraries/",,,,"90057"
 "mackworth_library","Mackworth Library","mackworth.library@derby.gov.uk","http://www.derby.gov.uk/leisure-and-culture/libraries/derby-libraries/mackworth-library/",,,,"90056"
 "springwood_library","Springwood library","springwood.library@derby.gov.uk","http://www.derby.gov.uk/leisure-and-culture/libraries/derby-libraries/springwood-library/",,,,"90058"
@@ -7974,7 +6573,6 @@ HTTP/1.1 200 OK
 "grassington_library","Grassington Library","","http://www.york.gov.uk/libraries/",,,,"91230"
 "tang_hall_explore_library","Tang Hall Explore Library","tanghall.library@york.gov.uk","http://www.york.gov.uk/directory_record/105/tang_hall_explore_library",,,,"91253"
 "douglas_public_library","Douglas Public Library","","http://www.iomguide.com/iomlibraries.php",,,,"90086"
-HTTP/1.1 200 OK
 "herdman_library","Herdman Library","","http://www.iomguide.com/iomlibraries.php",,,,"90088"
 "onchan_public_library","Onchan Public Library","","http://www.iomguide.com/iomlibraries.php",,,,"90091"
 "ramsey_town_library","Ramsey Town Library","","http://www.iomguide.com/iomlibraries.php",,,,"90090"
@@ -8175,7 +6773,6 @@ HTTP/1.1 200 OK
 "moffat_library","Moffat Library","","http://www.dumgal.gov.uk/index.aspx?articleid=1392",,,,"90392"
 "newton_stewart_library","Newton Stewart Library","","http://www.dumgal.gov.uk/index.aspx?articleid=1392",,,,"90385"
 "port_william_library","Port William Library","","http://www.dumgal.gov.uk/index.aspx?articleid=1392",,,,"90394"
-HTTP/1.1 200 OK
 "sanquhar_library","Sanquhar Library","","http://www.dumgal.gov.uk/index.aspx?articleid=1392",,,,"90372"
 "stranraer_library","Stranraer Library","","http://www.dumgal.gov.uk/index.aspx?articleid=1392",,,,"90374"
 "thornhill_library","Thornhill Library","library@southampton.gov.uk","http://www.dumgal.gov.uk/index.aspx?articleid=1392",,,,"90395"
@@ -8376,7 +6973,6 @@ HTTP/1.1 200 OK
 "portknockie_library","Portknockie Library","","http://www.moray.gov.uk/moray_standard/page_41162.html",,,,"90592"
 "rothes_library","Rothes Library","","http://www.moray.gov.uk/moray_standard/page_41162.html",,,,"90593"
 "tomintoul_library","Tomintoul Library","","http://www.moray.gov.uk/moray_standard/page_41162.html",,,,"90595"
-HTTP/1.1 200 OK
 "arran_library","Arran Library","","http://www.ers.north-ayrshire.gov.uk/",,,,"90604"
 "beith_library","Beith Library","","http://www.ers.north-ayrshire.gov.uk/",,,,"90602"
 "bourtreehill_library","Bourtreehill Library","","http://www.ers.north-ayrshire.gov.uk/",,,,"90605"
@@ -8576,7 +7172,6 @@ HTTP/1.1 200 OK
 "aberkenfig_library","Aberkenfig Library","a","http://www.bridgend.gov.uk/web/groups/public/documents/services/001666.hcsp",,,,"90802"
 "betws_library","Betws Library","","http://www.bridgend.gov.uk/web/groups/public/documents/services/001666.hcsp",,,,"90798"
 "caerau_cyberlink_library","Caerau Cyberlink Library","a","http://www.bridgend.gov.uk/web/groups/public/documents/services/001666.hcsp",,,,"90804"
-HTTP/1.1 200 OK
 "evanstown_library","Evanstown Library","","http://www.bridgend.gov.uk/web/groups/public/documents/services/001666.hcsp",,,,"90801"
 "maesteg_library","Maesteg Library","","http://www.bridgend.gov.uk/web/groups/public/documents/services/001666.hcsp",,,,"90805"
 "ogmore_vale_library","Ogmore Vale Library","","http://www.bridgend.gov.uk/web/groups/public/documents/services/001666.hcsp",,,,"90806"
@@ -8773,7 +7368,6 @@ HTTP/1.1 200 OK
 "porth_library","Porth Library","","http://www.rhondda-cynon-taf.gov.uk/EN/LeisureLibrariesCulture/Libraries/Libraries.aspx",,,,"91008"
 "rhydyfelin_library","Rhydyfelin Library","","http://www.rhondda-cynon-taf.gov.uk/EN/LeisureLibrariesCulture/Libraries/Libraries.aspx",,,,"91009"
 "taffs_well_library","Taffs Well Library","","http://www.rhondda-cynon-taf.gov.uk/EN/LeisureLibrariesCulture/Libraries/Libraries.aspx",,,,"90992"
-HTTP/1.1 200 OK
 "talbot_green_library","Talbot Green Library","","http://www.rhondda-cynon-taf.gov.uk/EN/LeisureLibrariesCulture/Libraries/Libraries.aspx",,,,"90989"
 "ton_pentre_library","Ton Pentre Library","","http://www.rhondda-cynon-taf.gov.uk/EN/LeisureLibrariesCulture/Libraries/Libraries.aspx",,,,"90993"
 "tonypandy_library","Tonypandy Library","","http://www.rhondda-cynon-taf.gov.uk/EN/LeisureLibrariesCulture/Libraries/Libraries.aspx",,,,"90996"
@@ -8962,25 +7556,13 @@ HTTP/1.1 200 OK
 "bottesford_library","Bottesford Library","","",,,,"93104"
 "bottesford_library","Bottesford Library","library.enquiries@northlincs.gov.uk","http://www.northlincs.gov.uk/leisure/libraries/yourlocallibrary/bottesfordlibrary/",,,,"93105"
 "eden_centre_library","Eden Centre Library","edenbridgelibrary@kent.gov.uk","",,,,"93107"
-***Error record***:oai:www.culturegrid.org.uk:MLA:5063481
-oai:www.culturegrid.org.uk:MLA:50634812013-07-18T00:00:00ZMLA93109InstitutionSouth West EnglandMonday Closed
-Tuesday 10am - 6pm
-Wednesday 10am - 5pm
-Thursday 10am - 1pm
-2pm - 5pm
-Friday 10am - 1pm
-2pm - 5pm
-Saturday 10am - 1pmLibrary access:
-Ramped access, accessible toilet, parking.Parton RoadGloucesterChurchdownGloucestershireGL3 2AFMLAInstitutions
 "eden_centre_library","Eden Centre Library","edenbridgelibrary@kent.gov.uk","www.kent.gov.uk/libs",,,,"93110"
 "new_ash_green_library","New Ash Green Library","newashgreenlibrary@kent.gov.uk","www.kent.gov.uk/libs",,,,"93111"
 "eden_centre_library","Eden Centre Library","edenbridgelibrary@kent.gov.uk","www.kent.gov.uk/libs",,,,"93112"
 "abbeywood_library","Abbeywood Library","greenwich.libraries@gll.org","www.better.org.uk",,,,"93115Abbeywood Library"
-HTTP/1.1 200 OK
 "goring_library","Goring Library","goring.library@westsussex.gov.uk","www.westsussex.gov.uk/goringlibrary",,,,"93116"
 "southwick_library","Southwick Library","southwick.library@westsussex.gov.uk","www.westsussex.gov.uk/southwicklibraru",,,,"93117"
 "southwater_library","Southwater Library","southwater.library@westsussex.gov.uk","www.westsussex.gov.uk/southwaterlibrary",,,,"93118"
 "churchdown","Churchdown","churchdownlibrary@gloucestershire.gov.uk","http://www.gloucestershire.gov.uk/libraries/churchdown",,,,"93119"
 "old_town_library","Old Town Library","oldtown.library@swindon.gov.uk","http://www.swindon.gov.uk/libraries",,,,"93122"
 "keighley_library","Keighley Library","keighley.library@bradford.gov.uk","http://www.bradford.gov.uk/bmdc/leisure_and_culture/library_and_information_services/a-z_of_libraries/libraries_keighley_library",,,,"93125"
-unique_reference,org_name,email,url,publication_scheme,twitter,facebook,identifier.mla

@@ -111,7 +111,7 @@ class ApiController {
                                                displayName:nl[1]).save()
             }
             else {
-              log.debug("Located existing org with shortcode ${org.shorcode} : ${org}");
+              log.debug("Located existing org with shortcode ${org.shortcode} : ${org}");
             }
           }
         }

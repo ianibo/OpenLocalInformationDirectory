@@ -2,6 +2,7 @@ package tli
 
 import tli.*
 import me.ianibbo.common.*;
+import grails.xml.*;
 
 /**
  * VocabSyncService
@@ -20,6 +21,7 @@ class VocabSyncService {
 
     log.debug("Get vocab ${code} ${baseUrl} ${path}");
 
+    def vocab_text = null
     def vocab = null
 
 
@@ -27,17 +29,21 @@ class VocabSyncService {
       log.debug("Loading...${baseUrl}");
 
       withHttp(uri: baseUrl) {
-        vocab = get(path:path)
+        vocab_text = get(path:path)
       }
+
 
       def bt_rel = RefdataCategory.lookupOrCreate('thes_relations','Broader Term')
       def rel_rel = RefdataCategory.lookupOrCreate('thes_relations','Related Term')
       def subj_cat_type = RefdataCategory.lookupOrCreate("CategoryType", "Subject" )
 
-      if ( vocab != null ) {
+      if ( vocab_text != null ) {
+
+        vocab = new XmlParser().parse(vocab_text);
+
         log.debug("Got vocab Title: ${vocab.Metadata.Title.text()}");
 
-        def voc_id = shortcodeService.generate('tli.RefdataCategory','code',vocab.Metadata.Title.text());
+        def voc_id = shortcodeService.generate('me.ianibbo.common.RefdataCategory','code',vocab.Metadata.Title.text());
 
         log.debug("Using ${voc_id} as vocab ID");
 
@@ -49,8 +55,8 @@ class VocabSyncService {
   
         log.debug("Processing items.... voc is ${voc}");
         vocab.Item.each { item ->
-          def term_id = item.'@Id'.text()
-          // log.debug("Test item id:\"${term_id}\" Name:\"${item.Name.text()}\"");
+          def term_id = item.'@Id'
+          log.debug("Test item id:\"${term_id}\" Name:\"${item.Name.text()}\"");
   
           def existing_term = RefdataValue.findByTermIdAndOwner(term_id, voc)
           if ( existing_term == null ) {

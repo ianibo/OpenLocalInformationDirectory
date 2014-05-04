@@ -21,9 +21,9 @@ import groovy.json.*
 
 
 
+println("unique_reference,org_name,email,url,publication_scheme,twitter,facebook,identifier.mla");
 doSync('http://www.culturegrid.org.uk')
 
-println("unique_reference,org_name,email,url,publication_scheme,twitter,facebook,identifier.mla");
 
 
 def doSync(host) {
@@ -62,7 +62,7 @@ def doSync(host) {
               println("\"${shortcode}\",\"${record.description.title}\",\"${record.description.email?.text()}\",\"${record.description.relation?.text()}\",,,,\"${record.description.identifier}\"");
             }
             else {
-              println("***Error record***:${r.header.identifier}\n${r}");
+              // println("***Error record***:${r.header.identifier}\n${r}");
             }
           }
         }

@@ -19,3 +19,6 @@ grant all on common.* to 'olid'@'localhost.localdomain';
 grant all on common.* to 'olid'@'%';
 
 
+After starting the admin app, you might wish to load some test data.
+
+a script is provided to load the IPSV subjects and a number of UK organisations - run scripts/setup.sh
