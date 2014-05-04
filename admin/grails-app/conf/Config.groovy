@@ -187,7 +187,7 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 globalSearchTemplates = [
   'refdataCategories':[
-    baseclass:'tli.RefdataCategory',
+    baseclass:'me.ianibbo.common.RefdataCategory',
     title:'Refdata Categories ',
     group:'Secondary',
     qbeConfig:[

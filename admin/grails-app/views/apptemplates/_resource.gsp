@@ -112,7 +112,7 @@
                   <g:simpleReferenceTypedown class="input-xxlarge" 
                                              style="width:350px;" 
                                              name="__relatedObject" 
-                                             baseClass="tli.RefdataValue" 
+                                             baseClass="me.ianibbo.common.RefdataValue" 
                                              data-filter2="Subject"/>
                 </dd>
                 <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>
@@ -141,7 +141,7 @@
                   <g:simpleReferenceTypedown class="input-xxlarge" 
                                              style="width:350px;" 
                                              name="__relatedObject" 
-                                             baseClass="tli.RefdataValue" 
+                                             baseClass="me.ianibbo.common.RefdataValue" 
                                              data-filter2="Subject"/>
                 </dd>
                 <dt></dt> <dd> <button type="submit" class="btn btn-primary btn-small">Add</button> </dd>

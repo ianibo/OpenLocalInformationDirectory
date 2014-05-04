@@ -79,15 +79,15 @@ class VocabSyncService {
         // Process relations
         vocab.Item.each { item ->
           voc = RefdataCategory.get(voc_pk)
-          def rel_term_id = item.'@Id'.text()
+          def rel_term_id = item.'@Id'
           def existing_term = RefdataValue.findByOwnerAndTermId(voc, rel_term_id)
 
           item.BroaderItem.each { bi ->
-            def related_term = RefdataValue.findByOwnerAndTermId(voc, bi.'@Id'.text())
+            def related_term = RefdataValue.findByOwnerAndTermId(voc, bi.'@Id')
             if ( related_term != null ) {
               def rel = RefdataRelation.findByFromValueAndToValueAndRelationType(existing_term, related_term, bt_rel)
               if ( rel == null ) {
-                log.debug("Create new BT rel from ${rel_term_id} to ${bi.'@Id'.text()}");
+                log.debug("Create new BT rel from ${rel_term_id} to ${bi.'@Id'}");
                 rel = new RefdataRelation(fromValue:existing_term, toValue:related_term, relationType:bt_rel).save(flush:true);
               }
             }
@@ -95,17 +95,16 @@ class VocabSyncService {
 
           item.RelatedItem.each { bi ->
             item.RelatedItem.each { ri ->
-              def related_term = RefdataValue.findByOwnerAndTermId(voc, ri.'@Id'.text())
+              def related_term = RefdataValue.findByOwnerAndTermId(voc, ri.'@Id')
               if ( related_term != null ) {
                 def rel = RefdataRelation.findByFromValueAndToValueAndRelationType(existing_term, related_term, rel_rel)
                 if ( rel == null ) {
-                  log.debug("Create new RT rel from ${rel_term_id} to ${ri.'@Id'.text()}");
+                  log.debug("Create new RT rel from ${rel_term_id} to ${ri.'@Id'}");
                   rel = new RefdataRelation(fromValue:existing_term, toValue:related_term, relationType:rel_rel).save(flush:true);
                 }
               }
             }
           }
-          cleanUpGorm();
         }
 
       }
