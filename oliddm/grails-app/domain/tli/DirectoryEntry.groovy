@@ -15,6 +15,7 @@ class DirectoryEntry extends Component {
   Set sessions
   Set collections
   Set categories
+  Set owners
   String registeredCharityNo
   RefdataValue status
   TliLocation defaultLocation
@@ -25,8 +26,18 @@ class DirectoryEntry extends Component {
   String facebook
   String twitter
 
-  static hasMany = [ subjects:RefdataValue, sessions:TliSession, collections:TliCollection, categories:RefdataValue, shortcodes:DirectoryEntryShortcode ]
-  static mappedBy = [sessions:'owner', shortcodes:'dirent' ]
+  static hasMany = [ 
+                     subjects:RefdataValue, 
+                     sessions:TliSession, 
+                     collections:TliCollection, 
+                     categories:RefdataValue, 
+                     owners:DirectoryEntryOwner, 
+                     shortcodes:DirectoryEntryShortcode ]
+
+  static mappedBy = [
+                     sessions:'owner', 
+                     owners:'dirent', 
+                     shortcodes:'dirent' ]
 
   // Timestamps
   Date dateCreated

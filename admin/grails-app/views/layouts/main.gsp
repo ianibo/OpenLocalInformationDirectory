@@ -39,12 +39,12 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">System Admin</a>
                   <ul class="dropdown-menu">
+                    <li><g:link controller="search" action="index" params="${[qbe:'g:orgs']}">Manage Organisations</g:link></li>
                     <li><g:link controller="admin" action="approveOrgs">Approve Organisations</g:link></li>
                     <li><g:link controller="admin" action="approveAffiliations">Approve Affiliations</g:link></li>
                     <li><g:link controller="admin" action="loadVocabulary">Load Vocabulary</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:refdataCategories']}">Refdata Categories</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:resources']}">Resources</g:link></li>
-                    <li><g:link controller="search" action="index" params="${[qbe:'g:orgs']}">Organisations</g:link></li>
                     <li><g:link controller="search" action="index" params="${[qbe:'g:locations']}">Addresses</g:link></li>
                     <li><g:link controller="create" action="index" params="${[tmpl:'tli.TliLocation']}">Create Address</g:link></li>
                     <li><g:link controller="collection" action="index">Resources</g:link></li>

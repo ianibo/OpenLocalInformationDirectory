@@ -255,7 +255,7 @@ globalSearchTemplates = [
           prompt:'Title',
           qparam:'qp_title',
           placeholder:'Org Name',
-          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'displayName']
+          contextTree:['ctxtp':'qry', 'comparator' : 'ilike', 'prop':'displayName', 'wildcard':'B']
         ],
       ],
       qbeGlobals:[
