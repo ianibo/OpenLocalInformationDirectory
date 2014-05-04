@@ -50,6 +50,7 @@
     <g:if test="${d.id != null}">
       <li><a href="#timesandplaces" data-toggle="tab">Times and Places</a></li>
       <li><a href="#regs" data-toggle="tab">Registrations</a></li>
+      <li><a href="#dp" data-toggle="tab">Data Protection</a></li>
     </g:if>
   </ul>
 
@@ -304,6 +305,24 @@
             <dd><g:xEditable type="text" class="ipe" owner="${d}" field="registeredCharityNo"/></dd>
           </dl>
         </p>
+      </div>
+      <div class="tab-pane" id="dp">
+        <table class="table table-striped table-bordered table-condensed" id="subjects">
+          <thead>
+            <tr>
+              <th>Party</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <g:each in="${d.owners}" var="o">
+              <tr>
+                <td>${o.party.displayName}</td>
+                <td>${o.role.value}</td>
+              </tr>
+            </g:each>
+          </tbody>
+        </table>
       </div>
     </g:if>
   </div>

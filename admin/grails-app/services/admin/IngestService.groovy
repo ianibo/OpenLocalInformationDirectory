@@ -178,7 +178,7 @@ class IngestService {
         }
 
         if ( org != null ) {
-          def owner_role = RefdataCategory.lookupOrCreate("RecordOwnerType", owner.type?:'Information Processor' )
+          def owner_role = RefdataCategory.lookupOrCreate("RecordOwnerType", owner.role?:'Information Processor' )
           def entry_owner = new DirectoryEntryOwner(dirent:db_record,party:org,role:owner_role).save();
         }
 
