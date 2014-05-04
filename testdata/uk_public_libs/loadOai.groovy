@@ -189,7 +189,19 @@ def upload(record, uploadApi) {
           ],
           "Languages": [
           ],
-          "Identifiers" : identifiers
+          "Identifiers" : identifiers,
+          "owners" : [
+            [
+              "code" : record.title?.text().trim().toLowerCase().replaceAll("\\p{Punct}","").trim().replaceAll("\\W","_"),
+              "name" : record.title?.text(),
+              "role" : "Data Controller"
+            ],
+            [
+              "code" : record.title?.text().trim().toLowerCase().replaceAll("\\p{Punct}","").trim().replaceAll("\\W","_"),
+              "name" : record.title?.text(),
+              "role" : "Data Subject"
+            ]
+          ]
         ]
 
         def record_json = new JsonBuilder( json_record ).toPrettyString()

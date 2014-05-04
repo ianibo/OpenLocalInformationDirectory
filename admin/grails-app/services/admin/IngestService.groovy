@@ -155,6 +155,36 @@ class IngestService {
       }
     }
 
+    json.owners.each { owner ->
+      log.debug("Owner: ${owner}");
+      if ( owner.name != null ) {
+        def code_to_lookup = owner.code ?: owner.name.trim().toLowerCase().replaceAll("\\p{Punct}","").trim().replaceAll("\\W","_")
+        def org = AuthCommonOrganisation.findByShortcode(code_to_lookup)
+        if ( org == null ) {
+          log.debug("No existing org with shortcode ${code_to_lookup} create...");
+          def status_approved =  RefdataCategory.lookupOrCreate("status", "Approved" )
+          org = new AuthCommonOrganisation(
+                                           status:status_approved,
+                                           shortcode:code_to_lookup,
+                                           url:owner.url,
+                                           pubScheme:owner.pubScheme,
+                                           email:owner.email,
+                                           twitter:owner.twitter,
+                                           facebook:owner.facebook,
+                                           displayName:owner.name).save()
+        }
+        else {
+          log.debug("Located existing org with shortcode ${org.shortcode} : ${org}");
+        }
+
+        if ( org != null ) {
+          def owner_role = RefdataCategory.lookupOrCreate("RecordOwnerType", owner.type?:'Information Processor' )
+          def entry_owner = new DirectoryEntryOwner(dirent:db_record,party:org,role:owner_role).save();
+        }
+
+      }
+    }
+
     db_record.save(flush:true, failOnError:true);
 
     if ( ( db_record.sessions.size() == 0 ) && ( db_record.defaultLocation != null ) ) {
