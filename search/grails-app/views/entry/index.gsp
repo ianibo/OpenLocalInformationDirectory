@@ -52,17 +52,13 @@
                 <!-- If user not logged in, or user logged in but not an owner -->
                 Is this data about you something
                 you are responsible for? You can now
-                update and improve your listing <a>here</a>
+                update and improve your listing <g:link controller="requestAccess" action="index" id="${record.source.canonical_shortcode}">here</g:link>
               </div>
   
               <h1 itemprop="name">${record.source.title}</h1>
               <p itemprop="description">${record.source.description}</p>
   
               <dl>
-                <dt>Address</dt>
-                <g:if test="${record.source.sessions && ( record.source.sessions.size() > 0 ) }">
-                <dd itemprop="address">${record.source.sessions[0].location?.buildingName} ${record.source.sessions[0].location?.buildingNumber} ${record.source.sessions[0].location?.street} ${record.source.sessions[0].location?.city} ${record.source.sessions[0].location?.county} ${record.source.sessions[0].location?.postcode}</dd>
-                </g:if>
                 <g:if test="${record.source.contactEmail}"><dt>Email</td><dd><a href="mailto:${record.source.contactEmail}" itemprop="email">${record.source.contactEmail}</a></dd></g:if>
                 <g:if test="${record.source.contactTelephone}"><dt>Telephone</td><dd><a href="mailto:${record.source.contactTelephone}" itemprop="telephone">${record.source.contactTelephone}</a></dd></g:if>
                 <g:if test="${record.source.url}"><dt>Website</td><dd><a href="${record.source.url}" itemprop="url">${record.source.url}</a></dd></g:if>
