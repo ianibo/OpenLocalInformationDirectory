@@ -11,7 +11,8 @@ class DirectoryEntryShortcode extends Shortcode {
   }
 
   static generateShortcode(entry, base, canonical) {
-    // log.debug("generateShortcode(${entry},${base},${canonical})");
+
+    log.debug("generateShortcode(${entry},${base},${canonical})");
 
     def result = null
 
@@ -22,25 +23,28 @@ class DirectoryEntryShortcode extends Shortcode {
         def located_record = DirectoryEntryShortcode.executeQuery("select count(o) from tli.DirectoryEntryShortcode as o where o.shortcode = ?",shortcode)[0]
   
         int ctr = 0;
+        log.debug("Attempt ${shortcode}");
 
         // See if initial_guess is already used
         while ( located_record > 0 ) {
-          shortcode = base_shortcode+'_'+ctr
+          shortcode = base_shortcode+'_'+(++ctr)
+          log.debug("No good, Attempt ${shortcode}");
           located_record = DirectoryEntryShortcode.executeQuery("select count(o) from tli.DirectoryEntryShortcode as o where o.shortcode = ?",shortcode)[0]
         }
 
         result = new DirectoryEntryShortcode(dirent:entry,shortcode:shortcode,canonical:canonical)
 
         if ( result.save(flush:true) ) {
-          println("Saved ${result.id}");
+          log.debug("Saved ${result.id}");
         }
         else {
-          System.err.println("*** Problem saving directory entry shortcode : ${result.errors} ***");
+          log.debug("*** Problem saving directory entry shortcode : ${result.errors} ***");
         }
       }
     }
     catch ( Exception e ) {
       System.err.println("Problem:${e}");
+      log.error("Problem",e);
     }
 
     return result

@@ -126,7 +126,7 @@ class IngestService {
 
     log.debug("Attempt save");
     if ( db_record.save(flush:true, failOnError:true) ) {
-      log.debug("saved");
+      log.debug("saved, generate shortcode");
       DirectoryEntryShortcode.generateShortcode(db_record, db_record.title, true);
     }
     else {
