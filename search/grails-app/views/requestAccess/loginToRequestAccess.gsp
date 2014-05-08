@@ -16,11 +16,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div style="text-align:center;" class="well">
+            <div class="well">
               <h1>Request editor permission on.... Step 1 of 3</h1>
               <p>You've requested permission to be able to maintain xxx - Thats great!</p>
               <p>In order to maintain the quality of the directory we need users to identify themselves
-                 using either a username/password or some other form of authentication. If you have already
+                 using a username/password or some other service like facebook. If you have already
                  registered, or you would like to login using your facebook credentials please click Here.
               </p>
               <p>If you're new to this service, and would like to register an account, please click Here</p>
