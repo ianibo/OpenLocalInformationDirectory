@@ -67,6 +67,12 @@ class BootStrap {
 
       RefdataCategory.lookupOrCreate('YN', 'Yes').save()
       RefdataCategory.lookupOrCreate('YN', 'No').save()
+
+      log.debug("Checking resource types");
+      def entry_type = RefdataCategory.findByDesc('EntryType') ?: new RefdataCategory(desc:'EntryType').save();
+      def service_entry_type = RefdataCategory.lookupOrCreate("EntryType", "Service" )
+      def poi_entry_type = RefdataCategory.lookupOrCreate("EntryType", "POI" )
+  
     }
     catch ( Exception e ) {
       log.error("Unhandled exception in bootstrap",e);
