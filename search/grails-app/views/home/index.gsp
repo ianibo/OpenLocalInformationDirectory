@@ -28,6 +28,7 @@
           </div>
         </div>
         <div class="col-lg-2 well">
+          <g:render template="addpanel" contextPath="../templates"/>
         </div>
       </div>
     </div>
