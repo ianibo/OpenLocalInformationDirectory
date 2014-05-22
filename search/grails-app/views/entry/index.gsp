@@ -45,15 +45,17 @@
     <div class="content">
       <div class="container">
         <div class="row">
-          <div class="span9" itemscope itemtype="directoryEntry">
+          <div class="col-lg-10" itemscope itemtype="directoryEntry">
 
             <div>
+              <!-- If user not logged in, or user logged in but not an owner -->
+              <!--
               <div class="pull-right col-sm-3 well">
-                <!-- If user not logged in, or user logged in but not an owner -->
                 Is this data about you something
                 you are responsible for? You can now
                 update and improve your listing <g:link controller="requestAccess" action="index" id="${record.source.canonical_shortcode}">here</g:link>
               </div>
+	      -->
   
               <h1 itemprop="name">${record.source.title}</h1>
               <p itemprop="description">${record.source.description}</p>
@@ -106,7 +108,7 @@
             </div>
           </div>
 
-          <div class="span3">
+          <div class="col-lg-2">
             <g:render template="addpanel" contextPath="../templates"/>
           </div>
         </div>
