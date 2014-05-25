@@ -18,10 +18,11 @@
           <div class="col-lg-12">
             <div class="well">
               <h1>Request editor permission on.... Step 1 of 3</h1>
-              <p>You've requested permission to be able to maintain xxx - Thats great!</p>
+              <p>You've requested permission to be able to maintain <strong>${entry.title}</strong> - Great!</p>
               <p>In order to maintain the quality of the directory we need users to identify themselves
                  using a username/password or some other service like facebook. If you have already
-                 registered, or you would like to login using your facebook credentials please click Here.
+                 registered, or you would like to login using your facebook credentials please click 
+                 <g:link controller="requestAccess" id="${params.id}" action="requestAccess">Here</g:link>.
               </p>
               <p>If you're new to this service, and would like to register an account, please click Here</p>
               <p>Bit of a technical note note if you work for an information provider like a local authority or library: <br/>
