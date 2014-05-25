@@ -345,8 +345,8 @@
     $('#__adBuildingNumber').val('');
     $('#__adStreet').val('');
     $('#__adTown').val('');
-    $('#__region').val('');
-    $('#__country').val('');
+    $('#__adRegion').val('');
+    $('#__adCountry').val('');
   }
 
   $(document).ready(function() {
@@ -386,8 +386,8 @@
                               qp_buildnum: $('#__adBuildingNumber').val(),
                               qp_street: $('#__adStreet').val(),
                               qp_city: $('#__adTown').val(),
-                              qp_region: $('#__region').val(),
-                              qp_country: $('#__country').val(),
+                              qp_region: $('#__adRegion').val(),
+                              qp_country: $('#__adCountry').val(),
                             } })
         .done(function(resp) {
           num_addresses = parseInt(resp.count);
@@ -445,8 +445,8 @@
                               buildingNumber:$('#__adBuildingNumber').val(),
                               street:$('#__adStreet').val(),
                               city:$('#__adTown').val(),
-                              region:$('#__region').val(),
-                              country:$('#__country').val()
+                              region:$('#__adRegion').val(),
+                              country:$('#__adCountry').val()
                             } })
         .done(function(resp) {
           $('#SelectedLocation').html(resp.str);
@@ -456,8 +456,8 @@
           $('#__adBuildingNumber').val('');
           $('#__adStreet').val('');
           $('#__adTown').val('');
-          $('#__region').val('');
-          $('#__country').val('');
+          $('#__adRegion').val('');
+          $('#__adCountry').val('');
         })
         .fail(function() {
         })
