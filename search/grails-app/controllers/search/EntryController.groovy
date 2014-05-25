@@ -29,7 +29,7 @@ class EntryController {
       if ( search.response.hits.totalHits == 1 ) {
         log.debug("Setting result.record...");
         result.record = search.response.hits.getAt(0)
-        log.debug("Render: ${result.record.source}");
+        log.debug("Render: result.record.source:${result.record.source}");
       }
       else {
         redirect(controller:'home')
