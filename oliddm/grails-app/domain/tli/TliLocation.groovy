@@ -17,6 +17,8 @@ class TliLocation {
   String lat
   String lon
 
+  def newGazetteerService
+
   static constraints = {
     buildingName(nullable:true, blank:false)
     buildingNumber(nullable:true, blank:false)
@@ -89,5 +91,31 @@ class TliLocation {
 
     return result
   }
+
+  def beforeInsert() {
+    fillOutLatLon();
+  }
+
+
+  def beforeUpdate() {
+    fillOutLatLon();
+  }
+
+  def fillOutLatLon() {
+    if ( ( lat == null ) && ( lon==null ) && ( newGazetteerService != null ) && ( postcode != null ) ) {
+      try {
+        def gazres = gaz.geocode(postcode)
+        if ( ( gazres != null ) && ( gazres.response != null ) ) {
+          lat = gazres.response.geo.lat;
+          lon = gazres.response.geo.lng;
+        }
+      }
+      catch ( Exception e ) {
+        e.printStackTrace()
+      }
+    }
+  }
+
+
 }
 

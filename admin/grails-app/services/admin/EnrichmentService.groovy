@@ -21,9 +21,18 @@ class EnrichmentService {
   }
 
   def internalRunEnrichment() {
+    geocodeLocations()
     doLocationEnrichment()
     fillInShortCodes()
     fillInMissingUID()
+  }
+
+  def geocodeLocations() {
+    def entries_without_loc = DirectoryEntry.executeQuery('select l.id from tli.TliLocation as l where l.postcode is not null and l.lat is null and l.lon is null')
+    entries_without_shortcodes.each { e ->
+      e.fillOutLatLon()
+      e.save()
+    }
   }
 
   def fillInShortCodes() {
