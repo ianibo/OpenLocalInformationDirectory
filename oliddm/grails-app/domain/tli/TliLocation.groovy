@@ -104,7 +104,7 @@ class TliLocation {
   def fillOutLatLon() {
     if ( ( lat == null ) && ( lon==null ) && ( newGazetteerService != null ) && ( postcode != null ) ) {
       try {
-        def gazres = gaz.geocode(postcode)
+        def gazres = newGazetteerService.geocode(postcode)
         if ( ( gazres != null ) && ( gazres.response != null ) ) {
           lat = gazres.response.geo.lat;
           lon = gazres.response.geo.lng;

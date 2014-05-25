@@ -21,18 +21,32 @@ class EnrichmentService {
   }
 
   def internalRunEnrichment() {
-    geocodeLocations()
-    doLocationEnrichment()
-    fillInShortCodes()
-    fillInMissingUID()
+    log.debug("internalRunEnrichment...");
+    try {
+      geocodeLocations()
+      doLocationEnrichment()
+      fillInShortCodes()
+      fillInMissingUID()
+    }
+    catch ( Exception e ) {
+      log.error("Problem in enrichment",e);
+    }
+    finally {
+      log.debug("internalRunEnrichment completed...");
+    }
   }
 
   def geocodeLocations() {
+    log.debug("geocodeLocations...");
     def entries_without_loc = DirectoryEntry.executeQuery('select l.id from tli.TliLocation as l where l.postcode is not null and l.lat is null and l.lon is null')
-    entries_without_shortcodes.each { e ->
-      e.fillOutLatLon()
-      e.save()
+    entries_without_loc.each { e ->
+      log.debug("geocode ${e}");
+      def loc = TliLocation.get(e);
+      loc.fillOutLatLon()
+      loc.save()
+      log.debug("  --> after geocode, ${loc.lat}, ${loc.lon}");
     }
+    log.debug("done geocodeLocations...");
   }
 
   def fillInShortCodes() {

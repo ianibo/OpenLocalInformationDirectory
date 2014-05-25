@@ -343,8 +343,8 @@
     $('#__adPostcode').val('');
     $('#__adBuildingName').val('');
     $('#__adBuildingNumber').val('');
-    $('#__adstreet').val('');
-    $('#__adtown').val('');
+    $('#__adStreet').val('');
+    $('#__adTown').val('');
     $('#__region').val('');
     $('#__country').val('');
   }
@@ -384,8 +384,8 @@
                               qp_postcode: $('#__adPostcode').val(),
                               qp_buildname: $('#__adBuildingName').val(),
                               qp_buildnum: $('#__adBuildingNumber').val(),
-                              qp_street: $('#__adstreet').val(),
-                              qp_city: $('#__adtown').val(),
+                              qp_street: $('#__adStreet').val(),
+                              qp_city: $('#__adTown').val(),
                               qp_region: $('#__region').val(),
                               qp_country: $('#__country').val(),
                             } })
@@ -443,8 +443,8 @@
                               postcode:$('#__adPostcode').val(),
                               buildingName:$('#__adBuildingName').val(),
                               buildingNumber:$('#__adBuildingNumber').val(),
-                              street:$('#__adstreet').val(),
-                              city:$('#__adtown').val(),
+                              street:$('#__adStreet').val(),
+                              city:$('#__adTown').val(),
                               region:$('#__region').val(),
                               country:$('#__country').val()
                             } })
@@ -454,8 +454,8 @@
           $('#__adPostcode').val('');
           $('#__adBuildingName').val('');
           $('#__adBuildingNumber').val('');
-          $('#__adstreet').val('');
-          $('#__adtown').val('');
+          $('#__adStreet').val('');
+          $('#__adTown').val('');
           $('#__region').val('');
           $('#__country').val('');
         })
