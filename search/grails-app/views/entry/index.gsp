@@ -70,6 +70,10 @@
               <dd><g:each in="${record.source.categories}" var="s">
                 <span class="badge">${s?.catid}</span>
               </g:each></dt>
+              <dt>Collections</dt>
+              <dd><g:each in="${record.source.collections}" var="s">
+                <span class="badge">${s?.collname}</span>
+              </g:each></dt>
 
 
             </dl>
@@ -88,9 +92,7 @@
                       <div class="container">
                       <dl>
                         <dt>Location</dt><dd>${s.location?.buildingName} ${s.location?.buildingNumber} ${s.location?.street} ${s.location?.city} ${s.location?.county} ${s.location?.postcode}</dd>
-                        <dt>Reccurrence</dt><dd>${s.trrule?:'Unknown'}</dd>
-                        <dt>Start Time</dt><dd>${s.startTime?:'Unknown'}</dd>
-                        <dt>End Time</dt><dd>${s.endTime?:'Unknown'}</dd>
+                        <dt>When</dt><dd>${s.trrule?:'Unknown'} ${s.startTime? "From ${s.startTime}":''} ${s.endTime?"Until ${s.endTime}":''}</dd>
                         <dt>Indicative Cost</dt><dd>${s.indicativeCost?:'Unknown'}</dd>
                       </dl>
                       </div>

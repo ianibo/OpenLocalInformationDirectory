@@ -23,7 +23,7 @@ import groovy.json.*
 
 if ( args.length < 1 ) {
   println("Usage: groovy loadOai.groovy");
-  println("Example hosts: [\"http://localhost:8888\"|\"http://data.opendatasheffield.org\"]");
+  println("Example hosts: [\"http://localhost:8888\"|\"http://apps.opendatasheffield.org\"]");
   System.exit(1);
 }
 
