@@ -159,6 +159,7 @@ def upload(record, uploadApi) {
           "url": [
               record.relation.text()
           ],
+          "entryType":"Service",
           // "address": address_elements,
           // "contact": [
           // ],

@@ -58,7 +58,7 @@ class HomeController {
       def new_afflilation_request = new AuthCommonAffiliation(
         user:request.user,
         org:genericOIDService.resolveOID(params.org),
-        status:RefdataCategory.lookupOrCreate("status",  SpringSecurityUtils.ifAnyGranted('ROLE_ADMIN') ? "Pending Approval" : "Approved" ),
+        status:RefdataCategory.lookupOrCreate("status",  SpringSecurityUtils.ifAnyGranted('ROLE_ADMIN') ? "Approved" : "Pending Approval" ),
         role:RefdataCategory.lookupOrCreate("affiliation", params.role )
       ).save()
       redirect(controller:'home', action:'index')

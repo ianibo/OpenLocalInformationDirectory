@@ -43,15 +43,21 @@ class OrgController {
       redirect(controller:'home', action:'index');
     }
 
-    if ( request.method=='POST' ) {
-      log.debug("Create new collection");
-      def new_collection = new TliCollection(owner:result.org, 
-                                             name:params.collName, 
-                                             description:params.description,
-                                             shortcode:shortcodeService.generate('tli.TliCollection','shortcode',params.collName)).save()
-      redirect(controller:'org',id:result.org.shortcode)
-    }
+    if ( result.org ) {
+      if ( request.method=='POST' ) {
+        def new_collection_shortcode = shortcodeService.generate('tli.TliCollection','shortcode',params.collName)
+        log.debug("Create new collection ${result.org} ${params.collName} ${params.description} ${new_collection_shortcode}");
 
+        def new_collection = new TliCollection(owner:result.org, 
+                                               name:params.collName, 
+                                               description:params.description,
+                                               shortcode:new_collection_shortcode).save()
+        redirect(controller:'org',id:result.org.shortcode)
+      }
+    }
+    else {
+      log.error("Unable to locate org with shortcode ${id}");
+    }
 
     result
   }

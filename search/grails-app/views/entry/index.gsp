@@ -129,7 +129,7 @@
   
               </dl>
               <!-- If user not logged in, or user logged in but not an owner -->
-              <div class="well">
+              <div class="well text-center">
                 Is this data about you something
                 you are responsible for? You can 
                 update and improve your listing <g:link controller="requestAccess" action="index" id="${record.source.canonical_shortcode}">here</g:link>

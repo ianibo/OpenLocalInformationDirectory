@@ -86,6 +86,7 @@ class IngestService {
     db_record.contactFax =  gettxt(json."fax")
     db_record.facebook =  gettxt(json."facebook")
     db_record.twitter =  gettxt(json."twitter")
+    db_record.type = RefdataCategory.lookupOrCreate("EntryType", ((gettxt(json."entryType"))?:'Service'))
 
 
     db_record.defaultLocation = processAddressElements(json)

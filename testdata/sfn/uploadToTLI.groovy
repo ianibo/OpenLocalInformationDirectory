@@ -79,6 +79,7 @@ try{
         "categories": [
             "SFN","FOOD",marker.type
         ],
+        "entryType":"POI",
         "iconType":marker.type?.replaceAll("\\p{Punct}","").replaceAll(" ","").toLowerCase(),
         "title": [
             marker.title?.replaceAll("\\p{Punct}","").trim()
