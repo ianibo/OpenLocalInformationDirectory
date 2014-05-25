@@ -18,8 +18,12 @@ class RequestAccessController {
       log.debug("looking up ${params.id}");
       def entry = DirectoryEntry.executeQuery ('select e from DirectoryEntry as e join e.shortcodes as s where s.shortcode = ?',[params.id]);
       log.debug(entry);
-      result.entry = entry.get(0);
-      log.debug(entry);
+      if ( result.entry.size() == 1 ) {
+        result.entry = entry.get(0);
+        log.debug(entry);
+      }
+      else {
+      }
     }
     else {
       log.debug("No id");

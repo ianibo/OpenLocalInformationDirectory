@@ -18,6 +18,7 @@ class ShortcodeService {
     log.debug("Try shortcode ${shortcode}")
     // See if initial_guess is already used
     while ( located_record > 0 ) {
+      ctr++
       shortcode = base_shortcode+ctr
       log.debug("No good, Try shortcode ${shortcode}")
       located_record = domain_class.getClazz().executeQuery("select count(o) from ${baseclass} as o where o.${field} = ?",shortcode)[0]

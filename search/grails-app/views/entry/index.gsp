@@ -51,9 +51,38 @@
           <div class="col-lg-10" itemscope itemtype="directoryEntry">
 
             <div>
+
+              <g:if test="${1==2}">
+                <div id="headercontainer">
+                  <div id="olid-entry-header-carousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#olid-header-1" data-slide-to="0" class="active"></li>
+                    </ol>
+    
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="item active">
+                        <img alt="No Pics" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyI+PC9yZWN0Pjwvc3ZnPgo=" class="active"/>
+                        <div class="carousel-caption">
+                        </div>
+                      </div>
+                    </div>
+    
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                  </div>
+                </div>
+              </g:if>
+
               <h1 itemprop="name">${record.source.title}</h1>
               <p itemprop="description">${record.source.description}</p>
-  
+
               <dl>
                 <g:if test="${record.source.contactEmail}"><dt>Email</td><dd><a href="mailto:${record.source.contactEmail}" itemprop="email">${record.source.contactEmail}</a></dd></g:if>
                 <g:if test="${record.source.contactTelephone}"><dt>Telephone</td><dd><a href="mailto:${record.source.contactTelephone}" itemprop="telephone">${record.source.contactTelephone}</a></dd></g:if>
