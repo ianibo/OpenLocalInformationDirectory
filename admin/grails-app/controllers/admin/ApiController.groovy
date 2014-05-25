@@ -136,5 +136,41 @@ class ApiController {
     result
   }
 
+  @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+  def registerAffiliation() {
+    log.debug("register affiliatiojn ${params}");
+    def result = [:]
+    def user = AuthCommonUser.findByUsername(params.user);
+    def org = AuthCommonOrganisation.findByShortcode(params.org);
+    def role = RefdataCategory.lookupOrCreate("affiliation","params.role")
+    if ( ( user != null ) && ( org != null ) && ( role != null ) ) {
+      def new_afflilation_request = new AuthCommonAffiliation(
+        user:user,
+        org:org,
+        status:RefdataCategory.lookupOrCreate("status",  "Approved" ),
+        role:role
+      ).save()
+    }
+    render result as JSON
+  }
+
+  @Secured(['ROLE_ADMIN', 'IS_AUTHENTICATED_FULLY'])
+  def createCollection() {
+    log.debug("create collection ${params}");
+    def result = [:]
+    
+    def org = AuthCommonOrganisation.findByShortcode(params.org)
+    if ( org != null ) {
+      def new_collection_shortcode = shortcodeService.generate('tli.TliCollection','shortcode',params.name)
+
+      def new_collection = new TliCollection(owner:org,
+                                                 name:params.name,
+                                                 description:params.description,
+                                                 shortcode:new_collection_shortcode).save()
+    }
+
+    render result as JSON
+
+  }
 
 }
