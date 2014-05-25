@@ -6,6 +6,9 @@ import groovyx.net.http.*
 
 class NewGazetteerService {
 
+  static transactional = false;
+
+
   // Alternate geocoding from http://uk-postcodes.com/api.php
   def mongoService
 

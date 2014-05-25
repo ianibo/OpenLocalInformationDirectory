@@ -2,6 +2,8 @@ package admin
 
 class MongoService {
 
+  static transactional = false;
+
   def mongo = null;
 
   @javax.annotation.PostConstruct
