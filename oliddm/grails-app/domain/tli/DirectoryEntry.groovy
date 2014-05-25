@@ -73,6 +73,9 @@ class DirectoryEntry extends Component {
     facebook(nullable:true, blank:false)
     twitter(nullable:true, blank:false)
     uid(nullable:true, blank:false)
+    type(nullable:true, blank:false)
+    poilat(nullable:true, blank:false)
+    poilon(nullable:true, blank:false)
   }
 
   @Transient
