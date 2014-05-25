@@ -6,6 +6,7 @@ import tli.*;
 import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import me.ianibbo.common.*
+import grails.plugin.springsecurity.SpringSecurityUtils
 
 
 class HomeController {
@@ -57,7 +58,7 @@ class HomeController {
       def new_afflilation_request = new AuthCommonAffiliation(
         user:request.user,
         org:genericOIDService.resolveOID(params.org),
-        status:RefdataCategory.lookupOrCreate("status", "Pending Approval" ),
+        status:RefdataCategory.lookupOrCreate("status",  SpringSecurityUtils.ifAnyGranted('ROLE_ADMIN') ? "Pending Approval" : "Approved" ),
         role:RefdataCategory.lookupOrCreate("affiliation", params.role )
       ).save()
       redirect(controller:'home', action:'index')

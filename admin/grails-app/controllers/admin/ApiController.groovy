@@ -39,10 +39,14 @@ class ApiController {
         def file = request.getFile("tf")
         def record = new String(file.getBytes())
         model.ingestResult = ingestService.ingest(record,params.id, request.user, file.contentType);
+        log.debug("ingest complete");
       }
     }
     catch ( Exception e ) {
       log.error("Problem",e);
+    }
+    finally {
+      log.debug("upload completed");
     }
     
     render model as JSON

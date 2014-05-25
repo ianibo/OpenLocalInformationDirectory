@@ -46,8 +46,8 @@
 
 
   <div class="content">
-    <div class="container-fluid">
-      <div class="row-fluid">
+    <div class="container">
+      <div class="row">
         <div class="col-lg-10">
           <div class="row-fluid">
             <div class="facetFilter col-lg-3">
@@ -59,7 +59,7 @@
                     <h3 class="panel-title">${facet.key}</h3>
                   </div>
                   <div class="panel-body">
-                    <ul>
+                    <ul class="list-unstyled">
                       <g:each in="${facet.value}" var="v">
                         <li>
                           <g:set var="fname" value="facet:${facet.key+':'+v.term}"/>

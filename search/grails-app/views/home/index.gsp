@@ -18,7 +18,7 @@
   <div class="content" style="padding-top:50px;">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-10">
           <div style="text-align:center;" class="well">
             <p>
             Search this directory of information by entering your postcode and/or keywords into the navigation bar above. Hit the See map button to see your
@@ -26,6 +26,9 @@
             most alternatives.
             </p>
           </div>
+        </div>
+        <div class="col-lg-2 well">
+          <g:render template="addpanel" contextPath="../templates"/>
         </div>
       </div>
     </div>

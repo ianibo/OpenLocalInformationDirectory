@@ -35,7 +35,7 @@
     var locations = [
       <g:each in="${hits}" var="h">
         <g:each in="${h.source.sessions}" var="s">
-          [ '${h.source.title}', ${s.loc.lat}, ${s.loc.lon}, '${h.source._id}'  ],
+          [ '${h.source.title}', ${s.loc.lat}, ${s.loc.lon}, '${h.source._id}','${h.source.canonical_shortcode}'  ],
         </g:each>
       </g:each>
     ];
@@ -79,7 +79,7 @@
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
               $.ajax({
-                url: '<g:createLink controller="entry" action="popup"/>/' + locations[i][3],
+                url: '<g:createLink controller="entry" action="popup"/>/' + locations[i][4],
                 success: function(data){
                   infowindow.setContent(data);
                 }

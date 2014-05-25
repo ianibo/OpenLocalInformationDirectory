@@ -17,6 +17,7 @@ class DirectoryEntry extends Component {
   Set categories
   Set owners
   String registeredCharityNo
+  RefdataValue type
   RefdataValue status
   TliLocation defaultLocation
   String contactName
@@ -25,6 +26,10 @@ class DirectoryEntry extends Component {
   String contactFax
   String facebook
   String twitter
+  // Id this record type is point of interest
+  String poilat
+  String poilon
+
 
   static hasMany = [ 
                      subjects:RefdataValue, 

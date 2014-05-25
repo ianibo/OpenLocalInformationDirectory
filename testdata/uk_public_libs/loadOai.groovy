@@ -121,7 +121,7 @@ def doSync(host, uploadApi) {
 }
 
 def upload(record, uploadApi) {
-
+  println("Upload...");
   try{
       def address_elements = [
         region:record.address.region?.text(),
@@ -139,6 +139,8 @@ def upload(record, uploadApi) {
         println("Adding new id: ${new_id}");
         identifiers.add(new_id);
       }
+
+      println("Done with ID's - upload...");
 
       uploadApi.request(POST) { request ->
         def json_record = [
@@ -189,12 +191,29 @@ def upload(record, uploadApi) {
           ],
           "Languages": [
           ],
-          "Identifiers" : identifiers
+          "Identifiers" : identifiers,
+          "owners" : [
+            [
+              "code" : record.title?.text().trim().toLowerCase().replaceAll("\\p{Punct}","").trim().replaceAll("\\W","_"),
+              "name" : record.title?.text(),
+              "role" : "Data Controller"
+            ],
+            [
+              "code" : record.title?.text().trim().toLowerCase().replaceAll("\\p{Punct}","").trim().replaceAll("\\W","_"),
+              "name" : record.title?.text(),
+              "role" : "Data Subject"
+            ],
+            [
+              "code" : "UKCT",
+              "name" : "Collections Trust",
+              "role" : "Data Controller"
+            ]
+          ]
         ]
 
         def record_json = new JsonBuilder( json_record ).toPrettyString()
   
-        println(record_json);
+        // println(record_json);
   
         requestContentType = 'multipart/form-data'
         uri.path="/olid/api/mlainst/upload"
@@ -215,8 +234,11 @@ def upload(record, uploadApi) {
           println("Done\n\n");
         }
       }
+
+      println("Done upload...");
   
   }
   finally{
+    println("Upload... complete");
   }
 }

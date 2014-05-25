@@ -126,7 +126,7 @@ class IngestService {
 
     log.debug("Attempt save");
     if ( db_record.save(flush:true, failOnError:true) ) {
-      log.debug("saved");
+      log.debug("saved, generate shortcode");
       DirectoryEntryShortcode.generateShortcode(db_record, db_record.title, true);
     }
     else {
@@ -152,6 +152,36 @@ class IngestService {
         else {
           log.error(new_session.errors);
         }
+      }
+    }
+
+    json.owners.each { owner ->
+      log.debug("Owner: ${owner}");
+      if ( owner.name != null ) {
+        def code_to_lookup = owner.code ?: owner.name.trim().toLowerCase().replaceAll("\\p{Punct}","").trim().replaceAll("\\W","_")
+        def org = AuthCommonOrganisation.findByShortcode(code_to_lookup)
+        if ( org == null ) {
+          log.debug("No existing org with shortcode ${code_to_lookup} create...");
+          def status_approved =  RefdataCategory.lookupOrCreate("status", "Approved" )
+          org = new AuthCommonOrganisation(
+                                           status:status_approved,
+                                           shortcode:code_to_lookup,
+                                           url:owner.url,
+                                           pubScheme:owner.pubScheme,
+                                           email:owner.email,
+                                           twitter:owner.twitter,
+                                           facebook:owner.facebook,
+                                           displayName:owner.name).save()
+        }
+        else {
+          log.debug("Located existing org with shortcode ${org.shortcode} : ${org}");
+        }
+
+        if ( org != null ) {
+          def owner_role = RefdataCategory.lookupOrCreate("RecordOwnerType", owner.role?:'Information Processor' )
+          def entry_owner = new DirectoryEntryOwner(dirent:db_record,party:org,role:owner_role).save();
+        }
+
       }
     }
 

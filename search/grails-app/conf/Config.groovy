@@ -122,7 +122,7 @@ log4j = {
            'grails.app.services',
            'grails.app.domain',
            'grails.app.tagLib',
-           'grails.app.filters',
+           // 'grails.app.filters',
            'grails.app.conf',
            'grails.app.jobs',
            'grails.app.bootstrap',
@@ -142,22 +142,24 @@ grails.plugin.springsecurity.authority.className = 'me.ianibbo.common.AuthCommon
 grails.plugin.springsecurity.securityConfigType = "Annotation"
 grails.plugin.springsecurity.logout.postOnly = false
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-        '/':                              ['permitAll'],
-        '/home':                          ['permitAll'],
-        '/home/**':                       ['permitAll'],
-        '/index':                         ['permitAll'],
-        '/index.gsp':                     ['permitAll'],
-        '/entry/**':                      ['permitAll'],
-        '/home/**':                       ['permitAll'],
-        '/sitemap':                       ['permitAll'],
-        '/sitemap/**':                    ['permitAll'],
-        '/register':                      ['permitAll'],
-        '/register/**':                   ['permitAll'],
-        '/login/**':                      ['permitAll'],
-        '/**/js/**':                      ['permitAll'],
-        '/**/css/**':                     ['permitAll'],
-        '/**/images/**':                  ['permitAll'],
-        '/**/favicon.ico':                ['permitAll']
+        '/':                                      ['permitAll'],
+        '/home':                                  ['permitAll'],
+        '/home/**':                               ['permitAll'],
+        '/index':                                 ['permitAll'],
+        '/index.gsp':                             ['permitAll'],
+        '/entry/**':                              ['permitAll'],
+        '/home/**':                               ['permitAll'],
+        '/sitemap':                               ['permitAll'],
+        '/sitemap/**':                            ['permitAll'],
+        '/register':                              ['permitAll'],
+        '/register/**':                           ['permitAll'],
+        '/requestAccess/index/**':                ['permitAll'],
+        '/requestAccess/loginToRequestAccess/**': ['permitAll'],
+        '/login/**':                              ['permitAll'],
+        '/**/js/**':                              ['permitAll'],
+        '/**/css/**':                             ['permitAll'],
+        '/**/images/**':                          ['permitAll'],
+        '/**/favicon.ico':                        ['permitAll']
 ]
 
 grails.plugin.springsecurity.ui.password.minLength = 6
