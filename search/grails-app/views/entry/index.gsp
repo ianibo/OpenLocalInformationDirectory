@@ -23,12 +23,15 @@
   </head>
   <body>
     <div class="container" style="padding-top:10px;">
+      <ul class="breadcrumb pull-right">
+        <g:if test="${request.getHeader('referer')?.contains('search')}">
+          <li> <a href="${request.getHeader('referer')}">Return to search</a> </li>
+        </g:if>
+        <li><g:link controller="requestAccess" action="index" id="${record.source.canonical_shortcode}">Update this record</g:link></li>
+      </ul>
       <ul class="breadcrumb">
         <li> <g:link controller="home" action="index">Home</g:link> <span class="divider"></span> </li>
         <li> ${record.source.title} </li>
-        <g:if test="${request.getHeader('referer')?.contains('search')}">
-          <a class="pull-right" href="${request.getHeader('referer')}">Return to search</a>
-        </g:if>
       </ul>
     </div>
 
@@ -48,13 +51,6 @@
           <div class="col-lg-10" itemscope itemtype="directoryEntry">
 
             <div>
-              <!-- If user not logged in, or user logged in but not an owner -->
-              <div class="pull-right col-sm-3 well">
-                Is this data about you something
-                you are responsible for? You can now
-                update and improve your listing <g:link controller="requestAccess" action="index" id="${record.source.canonical_shortcode}">here</g:link>
-              </div>
-  
               <h1 itemprop="name">${record.source.title}</h1>
               <p itemprop="description">${record.source.description}</p>
   
@@ -103,6 +99,13 @@
                 </dd>
   
               </dl>
+              <!-- If user not logged in, or user logged in but not an owner -->
+              <div class="well">
+                Is this data about you something
+                you are responsible for? You can 
+                update and improve your listing <g:link controller="requestAccess" action="index" id="${record.source.canonical_shortcode}">here</g:link>
+              </div>
+  
             </div>
           </div>
 
