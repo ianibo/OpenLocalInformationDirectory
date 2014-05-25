@@ -142,7 +142,7 @@ class ApiController {
     def result = [:]
     def user = AuthCommonUser.findByUsername(params.user);
     def org = AuthCommonOrganisation.findByShortcode(params.org);
-    def role = RefdataCategory.lookupOrCreate("affiliation","params.role")
+    def role = RefdataCategory.lookupOrCreate("affiliation",params.role)
     if ( ( user != null ) && ( org != null ) && ( role != null ) ) {
       def new_afflilation_request = new AuthCommonAffiliation(
         user:user,

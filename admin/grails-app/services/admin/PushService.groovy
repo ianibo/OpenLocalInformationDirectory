@@ -13,11 +13,13 @@ class PushService {
   def ESWrapperService
   def mongoService
   def sessionFactory
+  def enrichmentService
   def propertyInstanceMap = org.codehaus.groovy.grails.plugins.DomainClassGrailsPlugin.PROPERTY_INSTANCE_MAP
 
   def updateFTIndexes() {
     log.debug("updateFTIndexes");
     def future = executorService.submit({
+      enrichmentService.fillInShortCodes()
       doFTUpdate()
     } as java.util.concurrent.Callable)
     log.debug("updateFTIndexes returning");
