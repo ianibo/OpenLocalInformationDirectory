@@ -67,19 +67,30 @@ class RequestAccessController {
     }
 
 
+    // Find all DirectoryEntryOwner records that might link this user and this record
+    def existing_grants = DirectoryEntryOwner.executeQuery("select  e from DirectoryEntryOwner as e where e.party = ? and e.dirent = ?",
+                                                           [springSecurityService.currentUser, result.entry]);
+
     // Logic - 1 : Does the user already have access - OR - an outstanding request on this record - OR - more than 5 outstanding requests
-    if ( 1 == 2 ) {
+    if ( existing_grants.size() > 0 ) {
         // Yes - Cool - redirect
+        log.debug("User already has access - redirect");
+        redirect(controller:'entry', action:'edit', id:params.id);
     }
     else {
       // 2 - Does the users email address match any of the email addresses for this record?
-      if ( 2 == 3 ) {
+      if ( equalsIgnoreCase(result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email.toLowerCase()))
         // Yes thats easy then - grant permission
+        log.debug("The contact email section of the email address contains the users email address. Grant access");
+        def deo = new DirectoryEntryOwner(party:springSecurityService.currentUser, dirent:result.entry, role: RefdataCategory.lookupOrCreate("RecordOwnerType", 'Data Subject')).save()
+        redirect(controller:'entry', action:'edit', id:params.id);
       }
       else {
         // 3 - No default permission so - Does the record have an email address?
-        if ( 3 == 4 ) {
+        def email_addresses = result.entry.contactEmail?.split(',')
+        if ( email_addresses.length > 0 ) {
           // Yes - Use the email request template to zip off a message requesting access
+          emailRecordOwnersForPermission()
         }
         else {
           // no way of automatically verifying that this user has permission to maintain this record
@@ -91,5 +102,8 @@ class RequestAccessController {
     result
   }
 
+  def private emailRecordOwnersForPermission() {
+    log.debug("emailRecordOwnersForPermission()");
+  }
 
 }

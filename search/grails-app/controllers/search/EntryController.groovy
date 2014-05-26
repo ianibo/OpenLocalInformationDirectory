@@ -64,4 +64,9 @@ class EntryController {
     result
   }
 
+  def edit() {
+    def result = [:]
+    result
+  }
+
 }
