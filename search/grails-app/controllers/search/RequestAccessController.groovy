@@ -66,6 +66,7 @@ class RequestAccessController {
       log.debug("No id");
     }
 
+
     // Logic - 1 : Does the user already have access - OR - an outstanding request on this record - OR - more than 5 outstanding requests
     if ( 1 == 2 ) {
         // Yes - Cool - redirect

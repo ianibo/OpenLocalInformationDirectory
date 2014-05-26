@@ -1,8 +1,8 @@
 <r:require modules="bootstrap"/>
 
     <div class="content">
-      <div class="container">
-        <div class="row">
+      <div class="container-fluid">
+        <div class="row-fluid">
           <div class="span9" itemscope itemtype="directoryEntry">
 
           <div>
