@@ -5,7 +5,7 @@
       <meta name="description" content="Use localchatter to search for community improved information from trusted local sources. You will information collected from local authorities and other trusted sources, imrpved and refined by the community"/>
 
       <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-      <script src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+      <script src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 
       <!-- Ask search engines not to index the search results pages, it looks horrible in google -->
       <meta name="robots" CONTENT="noindex, follow">
