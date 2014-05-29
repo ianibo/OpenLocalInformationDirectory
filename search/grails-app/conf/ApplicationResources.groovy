@@ -5,4 +5,7 @@ modules = {
   spider {
     resource url: 'js/oms.min.js'
   }
+  markerclusterer {
+    resource url:'js/markerclusterer.js'
+  }
 }
