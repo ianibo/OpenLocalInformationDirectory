@@ -1,6 +1,6 @@
-<r:require modules="bootstrap"/>
+    <r:layoutResources />
 
-    <div class="content">
+
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span9" itemscope itemtype="directoryEntry">
@@ -50,4 +50,6 @@
           </div>
         </div>
       </div>
-    </div>
+
+    <r:layoutResources/>
+
