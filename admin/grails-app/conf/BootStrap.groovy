@@ -6,6 +6,8 @@ import me.ianibbo.common.*
 
 class BootStrap {
 
+  def grailsApplication
+
   def init = { servletContext ->
 
     try {
@@ -20,26 +22,40 @@ class BootStrap {
       def editorRole = AuthCommonRole.findByAuthority('ROLE_EDITOR') ?: new AuthCommonRole(authority: 'ROLE_EDITOR', roleType:'global').save(failOnError: true)
       def adminRole = AuthCommonRole.findByAuthority('ROLE_ADMIN') ?: new AuthCommonRole(authority: 'ROLE_ADMIN', roleType:'global').save(failOnError: true)
   
-      log.debug("Create admin user...");
-      def adminUser = AuthCommonUser.findByUsername('admin')
-      if ( ! adminUser ) {
-        log.error("No admin user found, create");
-        adminUser = new AuthCommonUser(
-                          username: 'admin',
-                          password: 'admin',
-                          display: 'Admin',
-                          email: 'admin@localhost',
-                          enabled: true).save(failOnError: true)
-      }
-  
-      if (!adminUser.authorities.contains(adminRole)) {
-        log.debug("Granting admin user admin role");
-        AuthCommonUserAuthCommonRole.create adminUser, adminRole
-      }
-  
-      if (!adminUser.authorities.contains(userRole)) {
-        log.debug("Granting admin user user role");
-        AuthCommonUserAuthCommonRole.create adminUser, userRole
+      grailsApplication.config.sysusers.each { su ->
+        log.debug("test ${su.name} ${su.pass} ${su.display} ${su.roles}");
+        def user = AuthCommonUser.findByUsername(su.name)
+        if ( user ) {
+          if ( user.password != su.pass ) {
+            log.debug("Hard change of user password from config ${user.password} -> ${su.pass}");
+            user.password = su.pass;
+            user.save(failOnError: true)
+          }
+          else {
+            log.debug("${su.name} present and correct");
+          }
+        }
+        else {
+          log.debug("Create user...");
+          user = new AuthCommonUser(
+                        username: su.name,
+                        password: su.pass,
+                        display: su.display,
+                        email: su.email,
+                        enabled: true).save(failOnError: true)
+        }
+
+        log.debug("Add roles for ${su.name}");
+        su.roles.each { r ->
+          def role = AuthCommonRole.findByAuthority(r)
+          if ( ! ( user.authorities.contains(role) ) ) {
+            log.debug("  -> adding role ${role}");
+            AuthCommonUserAuthCommonRole.create user, role
+          }
+          else {
+            log.debug("  -> ${role} already present");
+          }
+        }
       }
   
       log.debug("Checking cat types");

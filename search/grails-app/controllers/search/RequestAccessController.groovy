@@ -79,9 +79,10 @@ class RequestAccessController {
     }
     else {
       // 2 - Does the users email address match any of the email addresses for this record?
-      if ( equalsIgnoreCase(result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email.toLowerCase()))
+      if ( equalsIgnoreCase(result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email.toLowerCase())) ) {
         // Yes thats easy then - grant permission
         log.debug("The contact email section of the email address contains the users email address. Grant access");
+
         def deo = new DirectoryEntryOwner(party:springSecurityService.currentUser, dirent:result.entry, role: RefdataCategory.lookupOrCreate("RecordOwnerType", 'Data Subject')).save()
         redirect(controller:'entry', action:'edit', id:params.id);
       }
