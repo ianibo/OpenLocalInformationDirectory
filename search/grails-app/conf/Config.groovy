@@ -162,6 +162,13 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/favicon.ico':                        ['permitAll']
 ]
 
+// Added by the Spring Security OAuth plugin:
+grails.plugin.springsecurity.oauth.active = true
+grails.plugin.springsecurity.oauth.registration.roleNames = ['ROLE_USER']
+grails.plugin.springsecurity.oauth.domainClass = 'me.ianibbo.common.AuthCommonOAuthId'
+grails.plugin.springsecurity.oauth.registration.askToLinkOrCreateAccountUri = '/oauth/askToLinkOrCreateAccount'
+grails.plugin.springsecurity.logout.postOnly = false
+
 grails.plugin.springsecurity.ui.password.minLength = 6
 grails.plugin.springsecurity.ui.password.maxLength = 64
 grails.plugin.springsecurity.ui.password.validationRegex = '^.*$'
