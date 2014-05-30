@@ -159,7 +159,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/js/**':                              ['permitAll'],
         '/**/css/**':                             ['permitAll'],
         '/**/images/**':                          ['permitAll'],
-        '/**/favicon.ico':                        ['permitAll']
+        '/**/favicon.ico':                        ['permitAll'],
+        '/oauth/**':                              ['permitAll']
 ]
 
 // Added by the Spring Security OAuth plugin:
