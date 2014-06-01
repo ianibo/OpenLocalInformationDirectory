@@ -40,6 +40,29 @@ Sample configs folloe
 
 search-config.groovy
 ---------------
+sysusers=[
+  [ name:'admin', pass:'admin', display:'Admin', roles:['ROLE_ADMIN', 'ROLE_USER' ] ]
+]
+// https://github.com/enr/grails-spring-security-oauth
+def appName = grails.util.Metadata.current.'app.name'
+def baseURL = grails.serverURL ?: "http://olid.localdomain:${System.getProperty('server.port', '8080')}/${appName}"
+oauth {
+  providers {
+    facebook {
+      callback = "http://olid.localdomain:8080/search/oauth/facebook/callback"
+      api = org.scribe.builder.api.FacebookApi
+      key = 'FBKEY'
+      secret = 'FBSECRET'
+      successUri = '/oauth/facebook/success'
+      failureUri = '/oauth/facebook/failure'
+      callback = "${baseURL}/oauth/facebook/callback"
+    }
+  }
+  debug=true
+}
+
+println(oauth);
+
 ---------------
 
 olid-config.groovy
