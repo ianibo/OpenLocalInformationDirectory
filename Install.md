@@ -1,4 +1,7 @@
 
+
+
+
 # SET foreign_key_checks = 0;
 # drop database if exists olid;
 # drop database if exists olidLive;
@@ -22,3 +25,24 @@ grant all on common.* to 'olid'@'%';
 After starting the admin app, you might wish to load some test data.
 
 a script is provided to load the IPSV subjects and a number of UK organisations - run scripts/setup.sh
+
+
+
+Two configuration files are available for configuring the app - both in the home directory of the user running the host tomcat.
+The files are
+
+~/.grails/search-config.groovy  (Front end search app)
+and
+~/.grails/olid-config.groovy
+
+Sample configs folloe
+
+
+search-config.groovy
+---------------
+---------------
+
+olid-config.groovy
+---------------
+---------------
+
