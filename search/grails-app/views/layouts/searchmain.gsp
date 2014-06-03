@@ -52,12 +52,22 @@
         </div>
 
         <div class="collapse navbar-collapse">
-        </div>
-
-        <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav pull-right">
+            <sec:ifLoggedIn>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">${request.user?.username} <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><g:link controller="profile">Profile</g:link></li>
+                  <li><g:link controller="logout">Logout</g:link></li>
+                </ul>
+              </li>
+            </sec:ifLoggedIn>
+            <sec:ifNotLoggedIn>
+              <li><g:link controller="login">Login</g:link></li>
+              <li><g:link controller="register">Register</g:link></li>
+            </sec:ifNotLoggedIn>
           </ul>
         </div><!--/.nav-collapse -->
       </nav>
