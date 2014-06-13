@@ -79,7 +79,7 @@ class RequestAccessController {
     }
     else {
       // 2 - Does the users email address match any of the email addresses for this record?
-      if ( equalsIgnoreCase(result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email.toLowerCase()))) {
+      if ( result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email.toLowerCase())) {
         // Yes thats easy then - grant permission
         log.debug("The contact email section of the email address contains the users email address. Grant access");
 

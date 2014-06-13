@@ -3,7 +3,7 @@
    <head>
       <meta name="layout" content="main"/>
       <title>OLID:Details</title>
-      <r:require modules="bootstrap"/>
+      <r:require modules="bootstrap,angular"/>
   </head>
   <body>
     <div class="container" style="padding-top:10px;">
