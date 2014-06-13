@@ -4,7 +4,9 @@ import me.ianibbo.common.*
 
 import tli.*;
 import javax.persistence.Transient
+import grails.rest.*
 
+@Resource(uri='/dirent', formats=['json', 'xml'])
 class DirectoryEntry extends Component {
 
   String sourceReference
