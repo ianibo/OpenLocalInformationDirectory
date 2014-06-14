@@ -1,11 +1,15 @@
 <html>
-
+  <content tag="ngapp"><g:encodeAs codec="RAW">ng-app='olidNGApp'</g:encodeAs></content>
    <head>
       <meta name="layout" content="main"/>
       <title>OLID:Details</title>
       <r:require modules="bootstrap,angular"/>
+
+      <g:javascript src="olidng.js"/>
   </head>
-  <body>
+  <g:set var="grailsParams" value="${params.collect{ it.key + '=\'' + it.value + '\''}.join('; ')}" />
+  <body ng-init="${grailsParams}" a="b">
+
     <div class="container" style="padding-top:10px;">
       <ul class="breadcrumb pull-right">
         <g:if test="${request.getHeader('referer')?.contains('search')}">
@@ -28,16 +32,10 @@
     </g:if>
 
 
-    <div class="content">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10">
-                   EDIT...
-          </div>
-        </div>
-
-      </div>
+    <div class="content" ng-view>
     </div>
+
+    <p>TheEnd</p>
 
   </body>
 </html>
