@@ -18,7 +18,7 @@ olidNGApp.config(['$routeProvider',
     $routeProvider
       .when('/', {
         controller: 'EntryDetailCtrl',
-        templateUrl: 'view/entry.html'
+        templateUrl: '/search/statichtml/entry.html'
       }).
       otherwise({
         redirectTo: '/'
