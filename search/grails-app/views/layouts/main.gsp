@@ -17,7 +17,7 @@
     <g:layoutHead/>
   </head>
 
-  <body>
+  <body ng-init="${raw(params.collect{ it.key + '=\'' + it.value + '\''}.join('; '))}">
 
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">

@@ -7,8 +7,7 @@
 
       <g:javascript src="olidng.js"/>
   </head>
-  <g:set var="grailsParams" value="${params.collect{ it.key + '=\'' + it.value + '\''}.join('; ')}" />
-  <body ng-init="${grailsParams}" a="b">
+  <body>
 
     <div class="container" style="padding-top:10px;">
       <ul class="breadcrumb pull-right">
