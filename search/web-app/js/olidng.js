@@ -4,19 +4,20 @@
 
 var olidNGControllers = angular.module('olidNGControllers', []);
 
-olidNGControllers.controller('EntryDetailCtrl', ['$scope', '$http',
+olidNGControllers.controller('EntryDetailCtrl', ['$scope', '$resource', 
 
-  function ($scope, $html) {
+  function ($scope, $resource, $http) {
 
-    console.log("scope:%o html:%o",$scope, $html);
     console.log("scope.parent.id:%o",$scope.$parent.id);
-    
-    //$http.get('/entrydata/scope.parent.id/get.json').success(function(data) {
-    //  $scope.phones = data;
-    //});
+    console.log("scope.parent.base:%o",$scope.$parent.base);
+
+    var DirEntryResource = $resource($scope.$parent.base+'dirent/:resourceId.json');
+    var dirEntry = DirEntryResource.get({resourceId:1});
+
+    console.log("entry: %o",dirEntry);
   }]);
 
-var olidNGApp = angular.module('olidNGApp', ['ngRoute','olidNGControllers'])
+var olidNGApp = angular.module('olidNGApp', ['ngRoute','olidNGControllers','ngResource'])
 
 olidNGApp.config(['$routeProvider','$locationProvider',
   function($routeProvider, $locationProvider) {
@@ -30,6 +31,6 @@ olidNGApp.config(['$routeProvider','$locationProvider',
       })
     ;
     // enable html5Mode for pushstate ('#'-less URLs)
-    $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('!');
+    // $locationProvider.html5Mode(true);
+    // $locationProvider.hashPrefix('!');
   }]);

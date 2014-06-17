@@ -2,7 +2,7 @@ package search
 
 class EntryController {
 
- def newGazetteerService
+  def newGazetteerService
   def elasticSearchService
 
   def index() {
@@ -29,7 +29,9 @@ class EntryController {
       if ( search.response.hits.totalHits == 1 ) {
         log.debug("Setting result.record...");
         result.record = search.response.hits.getAt(0)
-        log.debug("Render: result.record.source:${result.record.source}");
+        params.dbid=result.record.source.id;
+        log.debug("Render..: result.record.source:${result.record.source}");
+        log.debug("Params:${params}");
       }
       else {
         redirect(controller:'home')
@@ -88,7 +90,9 @@ class EntryController {
       if ( search.response.hits.totalHits == 1 ) {
         log.debug("Setting result.record...");
         result.record = search.response.hits.getAt(0)
+        params.dbid=result.record.source.dbid;
         log.debug("Render: result.record.source:${result.record.source}");
+        log.debug("Params:${params}");
       }
       else {
         redirect(controller:'home')
