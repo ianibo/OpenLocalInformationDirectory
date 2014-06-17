@@ -3,8 +3,9 @@
   <form novalidate class="simple-form">
     Title: <input type="text" ng-model="dirEntry.title" /><br />
     Description: <input type="text" ng-model="dirEntry.description" /><br />
+    Url: <input type="text" ng-model="dirEntry.url" /><br />
     <button ng-click="reset()">RESET</button>
-    <button ng-click="update(user)">SAVE</button>
+    <button ng-click="update(dirEntry)">SAVE</button>
   </form>
   <pre>form = {{dirEntry | json}}</pre>
 </div>
