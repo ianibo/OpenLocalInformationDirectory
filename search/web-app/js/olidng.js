@@ -12,9 +12,9 @@ olidNGControllers.controller('EntryDetailCtrl', ['$scope', '$resource',
     console.log("scope.parent.base:%o",$scope.$parent.base);
 
     var DirEntryResource = $resource($scope.$parent.base+'dirent/:resourceId.json');
-    var dirEntry = DirEntryResource.get({resourceId:1});
+    $scope.dirEntry = DirEntryResource.get({resourceId:1});
 
-    console.log("entry: %o",dirEntry);
+    console.log("$scope.dirEntry: %o",$scope.dirEntry);
   }]);
 
 var olidNGApp = angular.module('olidNGApp', ['ngRoute','olidNGControllers','ngResource'])
