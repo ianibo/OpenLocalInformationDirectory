@@ -14,7 +14,6 @@ class EntryController {
   def newGazetteerService
   def elasticSearchService
 
-  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() {
     def result = [:]
     if ( params.id ) {
@@ -76,6 +75,7 @@ class EntryController {
     result
   }
 
+  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def edit() {
     def result = [:]
     if ( params.id ) {
