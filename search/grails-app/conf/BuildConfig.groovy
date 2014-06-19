@@ -78,7 +78,7 @@ grails.project.dependency.resolution = {
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
-        compile ":authmodel:0.3.18"
+        compile ":authmodel:0.3.19"
         compile ":oliddm:0.3.6"
 
         // An alternative to the default resources plugin is the asset-pipeline plugin
