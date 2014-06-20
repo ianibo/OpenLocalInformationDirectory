@@ -57,6 +57,7 @@
         <ul id="tabs" class="nav nav-tabs">
           <li class="active"><a href="#contactdetails" data-toggle="tab">Contact Details</a></li>
           <li><a href="#social" data-toggle="tab">Social Media</a></li>
+          <li><a href="#sessions" data-toggle="tab">Sessions</a></li>
         </ul>
     
         <div id="my-tab-content" class="tab-content">
@@ -109,6 +110,24 @@
                 </div>
               </div>
 
+            </div>
+          </div>
+
+          <div class="tab-pane active" id="sessions">
+            <div class="container" style="margin-top:20px;">
+              
+              <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                  <th></th>
+                <tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="session in dirEntry.sessions">
+                    <td>{{session.class}} {{session.id}}</td>
+                  </tr>
+                </tbody>
+               </table>
             </div>
           </div>
         </div>
