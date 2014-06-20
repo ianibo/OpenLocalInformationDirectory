@@ -113,7 +113,7 @@
             </div>
           </div>
 
-          <div class="tab-pane active" id="sessions">
+          <div class="tab-pane" id="sessions">
             <div class="container" style="margin-top:20px;">
               
               <table class="table table-striped table-bordered">

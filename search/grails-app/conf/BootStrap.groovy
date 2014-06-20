@@ -30,7 +30,16 @@ class BootStrap {
            result['poilat'] = it.poilat
            result['poilon'] = it.poilon
            result['registeredCharityNo'] = it.registeredCharityNo
-           result['sessions'] = it.sessions
+           result['sessions'] = it.sessions.collect { sess -> [
+                                                               id:sess.id,
+                                                               description:sess.description,
+                                                               startTime:sess.startTime,
+                                                               endTime:sess.endTime,
+                                                               iconType:sess.iconType,
+                                                               name:sess.name,
+                                                               rrule:sess.rrule,
+                                                               trrule:sess.trrule,
+                                                               location:sess.location ] }
            result['shortcodes'] = it.shortcodes
            result['sourceReference'] = it.sourceReference
            result['status'] = it.status
