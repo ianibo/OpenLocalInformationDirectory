@@ -7,42 +7,41 @@ class BootStrap {
     def init = { servletContext ->
 
       // log.info "Registering DirectoryEntry Marshaller ..."
-      // JSON.registerObjectMarshaller (DirectoryEntry) { 
-      //   def result = [:]
+      JSON.registerObjectMarshaller (DirectoryEntry) { 
+        def result = [:]
       //   it.domainClass.persistentProperties.each { property ->
       //     log.debug("Adding ${property.key}:${property.value}");
       //     result[property.key]=it[property.key]
-      //     result['class: "tli.DirectoryEntry",
-      //     result['id: 3,
-      //     result['categories: [
-      //     result['collections: [
-      //     result['contactEmail: "info@theschoolrooms.co.uk",
-      //     result['contactFax: null,
-      //     result['contactName: null,
-      //     result['contactTelephone: "0114 285 1920",
-      //     result['dateCreated: "2014-05-27T09:02:09Z",
-      //     result['defaultLocation: {
-      //     result['description']
-      //     result['facebook: null,
-      //     result['ids: [ ],
-      //     result['lastUpdated: "2014-05-27T09:02:09Z",
-      //     result['owners: [ ],
-      //     result['poilat: null,
-      //     result['poilon: null,
-      //     result['registeredCharityNo: null,
-      //     result['sessions: [
-      //     result['shortcodes: [
-      //     result['sourceReference: null,
-      //     result['status: {
-      //     result['subjects: [
-      //     result['title: "The School Rooms",
-      //     result['twitter: null,
-      //     result['type: {
-      //     result['uid: "d4957893-84dc-42dd-9edd-6653f717e2a0",
-      //     result['url: "http://www.theschoolrooms.co.uk"
-      //   }
-      //   return result;
-      // }
+           result['class'] = it.class.name
+           result['id'] = it.id
+           result['categories'] = it.categories
+           result['collections'] = it.collections
+           result['contactEmail'] = it.contactEmail
+           result['contactFax'] = it.contactFax
+           result['contactName'] = it.contactName
+           result['contactTelephone'] = it.contactTelephone
+           result['dateCreated'] = it.dateCreated
+           result['defaultLocation'] = it.defaultLocation
+           result['description'] = it.description
+           result['facebook'] = it.facebook
+           result['ids'] = it.ids
+           result['lastUpdated'] = it.lastUpdated
+           result['owners'] = it.owners
+           result['poilat'] = it.poilat
+           result['poilon'] = it.poilon
+           result['registeredCharityNo'] = it.registeredCharityNo
+           result['sessions'] = it.sessions
+           result['shortcodes'] = it.shortcodes
+           result['sourceReference'] = it.sourceReference
+           result['status'] = it.status
+           result['subjects'] = it.subjects
+           result['title'] = it.title
+           result['twitter'] = it.twitter
+           result['type'] = it.type
+           result['uid'] = it.uid
+           result['url'] = it.url
+         return result;
+      }
       // log.info "Finished registering DirectoryEntry Marshaller"
 
     }

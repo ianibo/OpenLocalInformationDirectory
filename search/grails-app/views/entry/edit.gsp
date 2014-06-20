@@ -119,12 +119,22 @@
               <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
-                  <th></th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Where</th>
+                  <th>When</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
                 <tr>
                 </thead>
                 <tbody>
                   <tr ng-repeat="session in dirEntry.sessions">
-                    <td>{{session.class}} {{session.id}}</td>
+                    <td><input type="text" class="form-control" id="sessionname" placeholder="Session Name" ng-model="session.name"></td>
+                    <td>{{session.description}}</td>
+                    <td>{{session.location.id}}</td>
+                    <td>{{session.rrule}}</td>
+                    <td>{{session.startTime}}</td>
+                    <td>{{session.endTime}}</td>
                   </tr>
                 </tbody>
                </table>
