@@ -61,49 +61,54 @@
     
         <div id="my-tab-content" class="tab-content">
           <div class="tab-pane active" id="contactdetails">
-            <div class="form-group">
-              <label for="contactName" class="control-label col-xs-2">contactName</label>
-              <div class="col-xs-10">
-                <input type="text" class="form-control" id="contactName" placeholder="Contact Name" ng-model="dirEntry.contactName">
+            <div class="container" style="margin-top:20px;">
+              <div class="form-group">
+                <label for="contactName" class="control-label col-xs-2">contactName</label>
+                <div class="col-xs-10">
+                  <input type="text" class="form-control" id="contactName" placeholder="Contact Name" ng-model="dirEntry.contactName">
+                </div>
               </div>
-            </div>
         
-            <div class="form-group">
-              <label for="contactEmail" class="control-label col-xs-2">contactEmail</label>
-              <div class="col-xs-10">
-                <input type="text" class="form-control" id="contactEmail" placeholder="Contact Email" ng-model="dirEntry.contactEmail">
+              <div class="form-group">
+                <label for="contactEmail" class="control-label col-xs-2">contactEmail</label>
+                <div class="col-xs-10">
+                  <input type="text" class="form-control" id="contactEmail" placeholder="Contact Email" ng-model="dirEntry.contactEmail">
+                </div>
               </div>
-            </div>
         
-            <div class="form-group">
-              <label for="contactEmail" class="control-label col-xs-2">contactTelephone</label>
-              <div class="col-xs-10">
-                <input type="text" class="form-control" id="contactTelephone" placeholder="Contact Telephone" ng-model="dirEntry.contactTelephone">
+              <div class="form-group">
+                <label for="contactEmail" class="control-label col-xs-2">contactTelephone</label>
+                <div class="col-xs-10">
+                  <input type="text" class="form-control" id="contactTelephone" placeholder="Contact Telephone" ng-model="dirEntry.contactTelephone">
+                </div>
               </div>
-            </div>
-        
-            <div class="form-group">
-              <label for="contactFax" class="control-label col-xs-2">contactFax</label>
-              <div class="col-xs-10">
-                <input type="text" class="form-control" id="contactFax" placeholder="Contact Fax" ng-model="dirEntry.contactFax">
+          
+              <div class="form-group">
+                <label for="contactFax" class="control-label col-xs-2">contactFax</label>
+                <div class="col-xs-10">
+                  <input type="text" class="form-control" id="contactFax" placeholder="Contact Fax" ng-model="dirEntry.contactFax">
+                </div>
               </div>
             </div>
           </div>
     
           <div class="tab-pane" id="social">
+            <div class="container" style="margin-top:20px;">
     
-            <div class="form-group">
-              <label for="twitter" class="control-label col-xs-2">Twitter ID</label>
-              <div class="col-xs-10">
-                <input type="text" class="form-control" id="twitter" placeholder="Twitter" ng-model="dirEntry.twitter">
+              <div class="form-group">
+                <label for="twitter" class="control-label col-xs-2">Twitter ID</label>
+                <div class="col-xs-10">
+                  <input type="text" class="form-control" id="twitter" placeholder="Twitter" ng-model="dirEntry.twitter">
+                </div>
               </div>
-            </div>
     
-            <div class="form-group">
-              <label for="facebook" class="control-label col-xs-2">Facebook Page</label>
-              <div class="col-xs-10">
-                <input type="text" class="form-control" id="facebook" placeholder="Facebook Page" ng-model="dirEntry.facebook">
+              <div class="form-group">
+                <label for="facebook" class="control-label col-xs-2">Facebook Page</label>
+                <div class="col-xs-10">
+                  <input type="text" class="form-control" id="facebook" placeholder="Facebook Page" ng-model="dirEntry.facebook">
+                </div>
               </div>
+
             </div>
           </div>
         </div>
