@@ -31,7 +31,7 @@
     </g:if>
 
 
-    <div class="content" ng-view>
+    <div class="content container" ng-view>
     </div>
 
     <p>TheEnd</p>

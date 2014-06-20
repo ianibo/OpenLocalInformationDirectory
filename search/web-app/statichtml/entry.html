@@ -1,11 +1,35 @@
 
 <div ng-controller="EntryDetailCtrl">
-  <form novalidate class="simple-form">
-    Title: <input type="text" ng-model="dirEntry.title" /><br />
-    Description: <input type="text" ng-model="dirEntry.description" /><br />
-    Url: <input type="text" ng-model="dirEntry.url" /><br />
-    <button ng-click="reset()">RESET</button>
-    <button ng-click="dirEntry.$update()">SAVE</button>
+  <form novalidate class="form-horizontal">
+
+    <div class="form-group">
+      <label for="title" class="control-label col-xs-2">Title</label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" id="title" placeholder="Email" ng-model="dirEntry.title">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description" class="control-label col-xs-2">Description</label>
+      <div class="col-xs-10">
+        <textarea class="form-control" id="description" rows="4" placeholder="Description" ng-model="dirEntry.description"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="url" class="control-label col-xs-2">URL</label>
+      <div class="col-xs-10">
+        <input type="text" class="form-control" id="url" placeholder="URL" ng-model="dirEntry.url">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-xs-offset-2 col-xs-10">
+        <button ng-click="reset()" class="btn btn-primary">RESET</button>
+        <button ng-click="dirEntry.$update()" class="btn btn-primary">SAVE</button>
+      </div>
+    </div>
+
   </form>
   <pre>form = {{dirEntry | json}}</pre>
 </div>
