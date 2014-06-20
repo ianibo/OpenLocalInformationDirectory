@@ -21,20 +21,21 @@ olidNGControllers.controller('EntryDetailCtrl', ['$scope', '$resource',
     console.log("$scope.dirEntry: %o",$scope.dirEntry);
   }]);
 
-var olidNGApp = angular.module('olidNGApp', ['ngRoute','olidNGControllers','ngResource'])
+// var olidNGApp = angular.module('olidNGApp', ['ngRoute','olidNGControllers','ngResource'])
+var olidNGApp = angular.module('olidNGApp', ['olidNGControllers','ngResource'])
 
-olidNGApp.config(['$routeProvider','$locationProvider',
-  function($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
-        controller: 'EntryDetailCtrl',
-        templateUrl: '/search/statichtml/entry.html'
-      }).
-      otherwise({
-        redirectTo: '/'
-      })
-    ;
+// olidNGApp.config(['$routeProvider','$locationProvider',
+  // function($routeProvider, $locationProvider) {
+  //   $routeProvider
+  //     .when('/', {
+  //       controller: 'EntryDetailCtrl',
+  //       templateUrl: '/search/statichtml/entry.html'
+  //     }).
+  //     otherwise({
+  //       redirectTo: '/'
+  //     })
+  //   ;
     // enable html5Mode for pushstate ('#'-less URLs)
     // $locationProvider.html5Mode(true);
     // $locationProvider.hashPrefix('!');
-  }]);
+  // }]);

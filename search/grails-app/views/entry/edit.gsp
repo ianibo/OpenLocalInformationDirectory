@@ -31,7 +31,91 @@
     </g:if>
 
 
-    <div class="content container" ng-view>
+    <div class="content container" ng-controller="EntryDetailCtrl">
+      <form novalidate class="form-horizontal">
+        <div class="form-group">
+          <label for="title" class="control-label col-xs-2">Title</label>
+          <div class="col-xs-10">
+            <input type="text" class="form-control" id="title" placeholder="Email" ng-model="dirEntry.title">
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="description" class="control-label col-xs-2">Description</label>
+          <div class="col-xs-10">
+            <textarea class="form-control" id="description" rows="4" placeholder="Description" ng-model="dirEntry.description"></textarea>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <label for="url" class="control-label col-xs-2">URL</label>
+          <div class="col-xs-10">
+            <input type="text" class="form-control" id="url" placeholder="URL" ng-model="dirEntry.url">
+          </div>
+        </div>
+    
+        <ul id="tabs" class="nav nav-tabs">
+          <li class="active"><a href="#contactdetails" data-toggle="tab">Contact Details</a></li>
+          <li><a href="#social" data-toggle="tab">Social Media</a></li>
+        </ul>
+    
+        <div id="my-tab-content" class="tab-content">
+          <div class="tab-pane active" id="contactdetails">
+            <div class="form-group">
+              <label for="contactName" class="control-label col-xs-2">contactName</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="contactName" placeholder="Contact Name" ng-model="dirEntry.contactName">
+              </div>
+            </div>
+        
+            <div class="form-group">
+              <label for="contactEmail" class="control-label col-xs-2">contactEmail</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="contactEmail" placeholder="Contact Email" ng-model="dirEntry.contactEmail">
+              </div>
+            </div>
+        
+            <div class="form-group">
+              <label for="contactEmail" class="control-label col-xs-2">contactTelephone</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="contactTelephone" placeholder="Contact Telephone" ng-model="dirEntry.contactTelephone">
+              </div>
+            </div>
+        
+            <div class="form-group">
+              <label for="contactFax" class="control-label col-xs-2">contactFax</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="contactFax" placeholder="Contact Fax" ng-model="dirEntry.contactFax">
+              </div>
+            </div>
+          </div>
+    
+          <div class="tab-pane" id="social">
+    
+            <div class="form-group">
+              <label for="twitter" class="control-label col-xs-2">Twitter ID</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="twitter" placeholder="Twitter" ng-model="dirEntry.twitter">
+              </div>
+            </div>
+    
+            <div class="form-group">
+              <label for="facebook" class="control-label col-xs-2">Facebook Page</label>
+              <div class="col-xs-10">
+                <input type="text" class="form-control" id="facebook" placeholder="Facebook Page" ng-model="dirEntry.facebook">
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="col-xs-offset-2 col-xs-10">
+            <button ng-click="dirEntry.$update()" class="btn btn-primary">SAVE</button>
+          </div>
+        </div>
+    
+      </form>
+      <pre>form = {{dirEntry | json}}</pre>
     </div>
 
     <p>TheEnd</p>
