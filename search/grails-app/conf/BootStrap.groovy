@@ -39,7 +39,7 @@ class BootStrap {
                                                                name:sess.name,
                                                                rrule:sess.rrule,
                                                                trrule:sess.trrule,
-                                                               location:sess.location ] }
+                                                               location:sess.location.collect { loc -> [class:loc.class, id:loc.id, str:loc.toString()]} ] }
            result['shortcodes'] = it.shortcodes
            result['sourceReference'] = it.sourceReference
            result['status'] = it.status

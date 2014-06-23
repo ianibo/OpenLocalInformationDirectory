@@ -33,6 +33,10 @@
 
     <div class="content container" ng-controller="EntryDetailCtrl">
       <form novalidate class="form-horizontal">
+
+        <button ng-click="dirEntry.$update()" class="btn btn-primary pull-right">SAVE</button>
+        <h1>{{dirEntry.title}}</h1>
+
         <div class="form-group">
           <label for="title" class="control-label col-xs-2">Title</label>
           <div class="col-xs-10">
@@ -53,6 +57,11 @@
             <input type="text" class="form-control" id="url" placeholder="URL" ng-model="dirEntry.url">
           </div>
         </div>
+
+ <div class="form-group">
+    <label><i class="fa fa-home"></i> Address <small>(async via maps.googleapis.com)</small></label>
+    <input type="text" class="form-control" ng-model="selectedAddress" data-animation="am-flip-x" ng-options="address.formatted_address as address.formatted_address for address in getAddress($viewValue)" placeholder="Enter address" bs-typeahead>
+  </div>
     
         <ul id="tabs" class="nav nav-tabs">
           <li class="active"><a href="#contactdetails" data-toggle="tab">Contact Details</a></li>
@@ -73,7 +82,7 @@
               <div class="form-group">
                 <label for="contactEmail" class="control-label col-xs-2">contactEmail</label>
                 <div class="col-xs-10">
-                  <input type="text" class="form-control" id="contactEmail" placeholder="Contact Email" ng-model="dirEntry.contactEmail">
+                  <input type="email" class="form-control" id="contactEmail" placeholder="Contact Email" ng-model="dirEntry.contactEmail">
                 </div>
               </div>
         
@@ -114,42 +123,65 @@
           </div>
 
           <div class="tab-pane" id="sessions">
-            <div class="container" style="margin-top:20px;">
+
+            <div style="margin-top:20px;">
+
+              <div ng-repeat="session in dirEntry.sessions" class="well">
+
+                <h3>{{session.name}}, {{session.rrule}}, {{session.location.str}}, {{session.startTime}} - {{session.endTime}}</h3>
+
+                <div class="form-group">
+                  <label for="sessionName" class="control-label col-xs-2">Session Name</label>
+                  <div class="col-xs-10">
+                    <input type="text" class="form-control" id="sessionName" placeholder="Session Name" ng-model="session.name">
+                  </div>
+                </div>
               
-              <table class="table table-striped table-bordered">
-                <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Where</th>
-                  <th>When</th>
-                  <th>Start Time</th>
-                  <th>End Time</th>
-                <tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat="session in dirEntry.sessions">
-                    <td><input type="text" class="form-control" id="sessionname" placeholder="Session Name" ng-model="session.name"></td>
-                    <td>{{session.description}}</td>
-                    <td>{{session.location.id}}</td>
-                    <td>{{session.rrule}}</td>
-                    <td>{{session.startTime}}</td>
-                    <td>{{session.endTime}}</td>
-                  </tr>
-                </tbody>
-               </table>
+                <div class="form-group">
+                  <label for="sessionDescription" class="control-label col-xs-2">Session Description</label>
+                  <div class="col-xs-10">
+                    <input type="text" class="form-control" id="sessionDescription" placeholder="Session Description" ng-model="session.description">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sessionLocation" class="control-label col-xs-2">Location</label>
+                  <div class="col-xs-10">
+                    <input type="text" class="form-control" id="sessionLocation" placeholder="Session Location" ng-model="session.location.str">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sessionLocation" class="control-label col-xs-2">Recurrence</label>
+                  <div class="col-xs-10">
+                    <input type="text" class="form-control" id="sessionLocation" placeholder="Session Recurrence" ng-model="session.rrule">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sessionStartTime" class="control-label col-xs-2">Start Time</label>
+                  <div class="col-xs-10">
+                    <input type="time" class="form-control" id="sessionStartTime" placeholder="Session Start Time" ng-model="session.startTime">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sessionEndTime" class="control-label col-xs-2">End Time</label>
+                  <div class="col-xs-10">
+                    <input type="time" class="form-control" id="sessionEndTime" placeholder="Session End Time" ng-model="session.endTime">
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
     
-        <div class="form-group">
-          <div class="col-xs-offset-2 col-xs-10">
-            <button ng-click="dirEntry.$update()" class="btn btn-primary">SAVE</button>
-          </div>
-        </div>
     
       </form>
+      <g:if test="${params.debug=="true"}">
       <pre>form = {{dirEntry | json}}</pre>
+      </g:if>
     </div>
 
     <p>TheEnd</p>
