@@ -3,7 +3,7 @@
    <head>
       <meta name="layout" content="main"/>
       <title>OLID:Details</title>
-      <r:require modules="bootstrap,angular"/>
+      <r:require modules="bootstrap,angular,angularstrap"/>
 
       <g:javascript src="olidng.js"/>
   </head>

@@ -2,12 +2,9 @@
  *  OlidNG.js
  */
 
-var olidNGControllers = angular.module('olidNGControllers', ['mgcrea.ngStrap',
-                                                             'mgcrea.ngStrap.tooltip',
-                                                             'mgcrea.ngStrap.helpers.parseOptions',
-                                                             'mgcrea.ngStrap.typeahead']);
+var olidNGControllers = angular.module('olidNGControllers', []);
 
-olidNGControllers.controller('EntryDetailCtrl', ['$scope', '$resource', 
+olidNGControllers.controller('EntryDetailCtrl', ['$scope', '$resource', '$http',
 
   function ($scope, $resource, $http) {
 
@@ -25,11 +22,16 @@ olidNGControllers.controller('EntryDetailCtrl', ['$scope', '$resource',
 
     $scope.getAddress = function(e){
       var a={address:e,sensor:!1};
-      return t.get("http://maps.googleapis.com/maps/api/geocode/json",{params:a}).then(function(e){return e.data.results})}
+      return $http.get("http://maps.googleapis.com/maps/api/geocode/json",{params:a}).then(function(e){return e.data.results})}
   }]);
 
 // var olidNGApp = angular.module('olidNGApp', ['ngRoute','olidNGControllers','ngResource'])
-var olidNGApp = angular.module('olidNGApp', ['olidNGControllers','ngResource'])
+var olidNGApp = angular.module('olidNGApp', ['olidNGControllers',
+                                             'ngResource',
+                                             'mgcrea.ngStrap',
+                                             'mgcrea.ngStrap.tooltip',
+                                             'mgcrea.ngStrap.helpers.parseOptions',
+                                             'mgcrea.ngStrap.typeahead'])
 
 
 // olidNGApp.config(['$routeProvider','$locationProvider',
