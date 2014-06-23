@@ -23,6 +23,22 @@ olidNGControllers.controller('EntryDetailCtrl', ['$scope', '$resource', '$http',
     $scope.getAddress = function(e){
       var a={address:e,sensor:!1};
       return $http.get("http://maps.googleapis.com/maps/api/geocode/json",{params:a}).then(function(e){return e.data.results})}
+
+      // var jqxhr = $.ajax( { url: "<g:createLink controller='search' action='index'/>",
+      //                      type:"POST",
+      //                      data:{
+      //                        qbe:'g:locations',
+      //                        format:'json',
+      //                        qp_postcode: $('#__adPostcode').val(),
+      //                        qp_buildname: $('#__adBuildingName').val(),
+      //                        qp_buildnum: $('#__adBuildingNumber').val(),
+      //                        qp_street: $('#__adStreet').val(),
+      //                        qp_city: $('#__adTown').val(),
+      //                        qp_region: $('#__adRegion').val(),
+      //                        qp_country: $('#__adCountry').val(),
+      //                      } })
+      // return $http.get($scope.$parent.base);
+
   }]);
 
 // var olidNGApp = angular.module('olidNGApp', ['ngRoute','olidNGControllers','ngResource'])
