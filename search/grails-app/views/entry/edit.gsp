@@ -60,7 +60,7 @@
 
  <div class="form-group">
     <label><i class="fa fa-home"></i> Address <small>(async via maps.googleapis.com)</small></label>
-    <input type="text" class="form-control" ng-model="selectedAddress" data-animation="am-flip-x" ng-options="address.formatted_address as address.formatted_address for address in getAddress($viewValue)" placeholder="Enter address" bs-typeahead>
+    <input type="text" class="form-control" ng-model="locTypedown" data-animation="am-flip-x" ng-options="address.id as address.text for address in getAddress($viewValue)" placeholder="Enter address" bs-typeahead>
   </div>
     
         <ul id="tabs" class="nav nav-tabs">
