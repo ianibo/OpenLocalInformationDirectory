@@ -116,6 +116,26 @@ class TliLocation {
     }
   }
 
+  static def refdataFind(params) {
+    def result = [];
+    def ql = null;
+    if ( params.sort==null ) {
+      // params.sort="title"
+      // params.order="desc"
+    }
+
+   ql = TliLocation.executeQuery("select l from TliLocation as l where lower(l.buildingName) like :q or lower(l.street) like :q or lower(l.city) like :q or lower(l.region) like :q or lower(l.postcode) like :q", [q:"%${params.q.toLowerCase()}%"],params);
+
+    int i = 1;
+    if ( ql ) {
+      ql.each { t ->
+        result.add([id:"${t.class.name}:${t.id}",text:t.toString()])
+      }
+    }
+
+    result
+  }
+
 
 }
 
