@@ -80,7 +80,7 @@ grails.project.dependency.resolution = {
 
         compile ":spring-security-core:2.0-RC3"
         compile ":spring-security-ui:1.0-RC2"
-        compile ":twitter-bootstrap:3.2.0"
+        runtime ":twitter-bootstrap:3.2.0"
         compile ':mail:1.0.6', {
            excludes 'spring-test'
         }
