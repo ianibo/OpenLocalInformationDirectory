@@ -1,8 +1,3 @@
-<r:require modules="tlistyle"/>
-<r:require modules="editable"/>
-<r:require modules="jquery-ui"/>
-<r:require modules="rrule"/>
-
 <g:if test="${d.id == null}">
   <g:if test="${params.collection!=null}">
     <script language="javascript">

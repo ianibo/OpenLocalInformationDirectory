@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<r:require modules="tlistyle" />
-<r:require modules="editable" />
 <html>
   <head>
     <meta name="layout" content="main"/>

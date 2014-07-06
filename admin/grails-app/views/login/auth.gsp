@@ -1,13 +1,8 @@
 <html>
 <head>
-	<title><g:message code="springSecurity.login.title"/></title>
-
-  <r:require modules="tlistyle,bootstrap-popover"/>
+  <title><g:message code="springSecurity.login.title"/></title>
 
   <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-
-    <g:javascript library="application"/>
-    <r:layoutResources />
 
 	<style type='text/css' media='screen'>
 	#login {
@@ -139,6 +134,7 @@
 		</form>
 	</div>
 </div>
+
 <g:javascript>
 	<!--
 	(function() {
@@ -147,5 +143,4 @@
 	// -->
 </g:javascript>
 </body>
-<r:layoutResources />
 </html>

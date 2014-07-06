@@ -1,6 +1,3 @@
-<r:require modules="tlistyle"/>
-<r:require modules="editable"/>
-
 <h3>${d.id ? d.buildingName : 'Create New Address or Location'}</h3>
 
 <div id="content">

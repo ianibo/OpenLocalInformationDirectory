@@ -1,5 +1,3 @@
-<r:require modules="tlistyle"/>
-<r:require modules="editable"/>
 
 <h3>${d.id ? d.displayName : 'Create New Organisation'}</h3>
 

@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="layout" content="main"/>
-    <r:require modules="tlistyle,bootstrap-popover,editable"/>
     <title>TLI</title>
   </head>
   <body>

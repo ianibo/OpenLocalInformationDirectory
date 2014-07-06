@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="layout" content="main"/>
-    <r:require modules="tlistyle"/>
     <title>Local Information Store - Request New Authority</title>
   </head>
   <body>

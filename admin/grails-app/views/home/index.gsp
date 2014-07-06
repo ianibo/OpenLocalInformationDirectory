@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="layout" content="main"/>
-    <r:require modules="tlistyle"/>
     <title>Open Local Information Directory - Admin</title>
   </head>
   <body>
