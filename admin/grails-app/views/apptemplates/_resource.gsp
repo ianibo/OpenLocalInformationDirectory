@@ -1,3 +1,8 @@
+<asset:javascript src="editable.js"/>
+<asset:javascript src="rrule.js"/>
+<asset:javascript src="tlirule.js"/>
+
+
 <g:if test="${d.id == null}">
   <g:if test="${params.collection!=null}">
     <script language="javascript">
