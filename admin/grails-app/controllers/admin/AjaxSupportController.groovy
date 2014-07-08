@@ -349,8 +349,8 @@ class AjaxSupportController {
         }
         log.debug("saving...");
         target_object.save(flush:true)
-        target_object.errors.each { e ->
-          log.error("Problem",e);
+        target_object?.errors?.each { e ->
+          log.error("Problem: ${e}");
         }
       }
 

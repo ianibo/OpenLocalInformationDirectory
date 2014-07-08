@@ -112,5 +112,28 @@ class DirectoryEntry extends Component {
     // DirectoryEntryShortcode.generateShortcode(this, this.title, true);
   }
 
+  @Transient
+  static def oaiConfig = [
+    id:'directoryEntries',
+    textDescription:'OLID Directory Entry',
+    query:" from DirectoryEntry as o where o.status.value != 'Deleted'"
+  ]
+
+  /**
+   *  Render this entry as OAI_dc
+   */
+  @Transient
+  def toOaiDcXml(builder, attr) {
+    builder.'dc'(attr) {
+      'dc:identifier' ('olid:entry:'+id)
+      'dc:identifier' (uid)
+      'dc:title' (title)
+      'dc:description' (description)
+      shortcodes.each { sc ->
+        'dc:identifier' (sc.shortcode)
+      }
+    }
+  }
+
 }
 
