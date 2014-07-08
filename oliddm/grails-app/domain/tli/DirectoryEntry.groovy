@@ -19,16 +19,15 @@ class DirectoryEntry extends Component {
   String registeredCharityNo
   RefdataValue type
   RefdataValue status
-  TliLocation defaultLocation
   String contactName
   String contactEmail
   String contactTelephone
   String contactFax
   String facebook
   String twitter
-  // Id this record type is point of interest
-  String poilat
-  String poilon
+
+  // Location (UPRN details place)
+  TliLocation defaultLocation
 
 
   static hasMany = [ 

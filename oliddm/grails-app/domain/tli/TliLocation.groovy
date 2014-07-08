@@ -7,6 +7,10 @@ import tli.*;
 
 class TliLocation {
 
+  // Id this record type is point of interest
+  // SPATIAL properties - Point, Extent or Property
+  RefdataValue spatialPropertyType
+
   String buildingName
   String buildingNumber
   String street
@@ -16,6 +20,10 @@ class TliLocation {
   String country
   String lat
   String lon
+  String uprn
+
+  // Extent (Interior/Exterior Bound Polygon)
+  String spatialExtent
 
   def newGazetteerService
 
@@ -29,6 +37,8 @@ class TliLocation {
     country(nullable:true, blank:false)
     lat(nullable:true, blank:false)
     lon(nullable:true, blank:false)
+    spatialPropertyType(nullable:true, blank:false)
+    uprn(nullable:true, blank:false)
   }
 
   public String toString() {
@@ -43,7 +53,14 @@ class TliLocation {
     return sw.toString()
   }
 
-  public static def lookupOrCreate(buildingname,street,town,region,postcode,lat,lon,gaz) {
+  public static def lookupOrCreate(buildingname,  
+                                   street,  
+                                   town,  
+                                   region,  
+                                   postcode,  
+                                   lat,  
+                                   lon,  
+                                   gaz) {
 
     def q = TliLocation.executeQuery("select l from TliLocation as l where lower(l.buildingName)=? and lower(l.street)=? and lower(l.city)=? and lower(l.region) = ? and lower(l.postcode)=?",
                                        [buildingname?buildingname.toLowerCase():'',

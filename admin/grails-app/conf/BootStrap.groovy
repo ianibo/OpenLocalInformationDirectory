@@ -89,6 +89,12 @@ class BootStrap {
       def service_entry_type = RefdataCategory.lookupOrCreate("EntryType", "Service" )
       def poi_entry_type = RefdataCategory.lookupOrCreate("EntryType", "POI" )
   
+      log.debug("Spatial Type");
+      def spatial_type_category = RefdataCategory.findByDesc('spatialType') ?: new RefdataCategory(desc:'spatialType',catType:refdata_type).save();
+      def point_spatial_type = RefdataCategory.lookupOrCreate("spatialType", "Point Location" )
+      def property_spatial_type = RefdataCategory.lookupOrCreate("spatialType", "Property" )
+      def extent_spatial_type = RefdataCategory.lookupOrCreate("spatialType", "Spatial Extent" )
+
     }
     catch ( Exception e ) {
       log.error("Unhandled exception in bootstrap",e);

@@ -10,6 +10,10 @@
     <title><g:layoutTitle default="olid - The Open Local Information Directory - Public information from trusted Sources curated freely using an open platform"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script language="JavaScript">
+      var olidBaseUrl="<g:createLink controller='ajaxSupport' action='lookup'/>";
+    </script>
+
     <asset:javascript src="application.js"/>
     <asset:stylesheet href="main.css"/>
     <asset:link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>

@@ -1,5 +1,7 @@
 /*
 *= require bootstrap
+*= require select2.css
+*= require bootstrap-editable
 */
 
 body {
