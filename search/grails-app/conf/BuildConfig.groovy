@@ -95,7 +95,7 @@ grails.project.dependency.resolution = {
         runtime ":famfamfam:1.0.1"
         runtime ':gsp-resources:0.4.4'
 
-        compile ":twitter-bootstrap:3.0.3"
+        compile ":twitter-bootstrap:3.2.0"
         compile ":rest:0.8"
     }
 }
