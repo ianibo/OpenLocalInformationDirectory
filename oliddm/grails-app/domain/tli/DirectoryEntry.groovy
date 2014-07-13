@@ -112,13 +112,6 @@ class DirectoryEntry extends Component {
     // DirectoryEntryShortcode.generateShortcode(this, this.title, true);
   }
 
-  @Transient
-  static def oaiConfig = [
-    id:'directoryEntries',
-    textDescription:'OLID Directory Entry',
-    query:" from DirectoryEntry as o where o.status.value != 'Deleted'"
-  ]
-
   /**
    *  Render this entry as OAI_dc
    */
