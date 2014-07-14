@@ -9,6 +9,7 @@ class ElasticSearchService {
   static transactional = false
 
   def gNode = null;
+  def grailsApplication
 
   @javax.annotation.PostConstruct
   def init() {
@@ -18,7 +19,7 @@ class ElasticSearchService {
 
     // GNodeBuilder nodeBuilder = new org.elasticsearch.groovy.node.GNodeBuilder()
     def nodeBuilder = new org.elasticsearch.groovy.node.GNodeBuilder()
-    def clus_nm = ApplicationHolder.application.config.es.cluster ?: "elasticsearch"
+    def clus_nm = grailsApplication.config.es.cluster ?: "elasticsearch"
 
     log.debug("Construct node settings - Cluster name will be ${clus_nm}");
 
