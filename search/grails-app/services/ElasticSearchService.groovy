@@ -1,7 +1,7 @@
 import org.elasticsearch.groovy.node.GNode
 import org.elasticsearch.groovy.node.GNodeBuilder
 import static org.elasticsearch.groovy.node.GNodeBuilder.*
-import org.codehaus.groovy.grails.commons.ApplicationHolder
+import grails.util.Holders
 
 
 class ElasticSearchService {

@@ -1,7 +1,7 @@
 package search
 
 import grails.converters.*
-import grails.plugins.springsecurity.Secured
+import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import groovy.xml.MarkupBuilder
 import groovy.xml.StreamingMarkupBuilder
