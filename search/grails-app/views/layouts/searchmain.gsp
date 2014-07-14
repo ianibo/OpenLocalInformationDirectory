@@ -32,6 +32,8 @@
       var olidBaseUrl="<g:createLink controller='ajaxSupport' action='lookup'/>";
     </script>
 
+    <!-- ThisisSEarchMain... include application.js and main.css -->
+
     <asset:javascript src="application.js"/>
     <asset:stylesheet href="main.css"/>
     <asset:link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
