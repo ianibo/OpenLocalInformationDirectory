@@ -19,11 +19,8 @@
 %>
 
    <head>
+
       <meta name="layout" content="searchmain"/>
-      <r:require modules="bootstrap,spider"/>
-
-      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
       <!-- Ask search engines not to index the search results pages, it looks horrible in google -->
       <meta name="robots" CONTENT="noindex, follow">
 
