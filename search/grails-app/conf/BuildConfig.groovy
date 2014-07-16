@@ -85,6 +85,9 @@ grails.project.dependency.resolution = {
         compile ":authmodel:0.4.0"
         compile ":oliddm:0.4.2"
         compile ':asset-pipeline:1.8.3'
+        // not compatible with asset pipeline
+        // compile ":font-awesome-resources:4.0.3.1"
+
 
         // An alternative to the default resources plugin is the asset-pipeline plugin
         //compile ":asset-pipeline:1.5.0"

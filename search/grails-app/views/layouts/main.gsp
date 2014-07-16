@@ -17,6 +17,7 @@
     <asset:javascript src="application.js"/>
     <asset:stylesheet href="main.css"/>
     <asset:link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
 
     <g:layoutHead/>
     <g:javascript library="application"/>
