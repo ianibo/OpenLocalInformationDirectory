@@ -2,7 +2,6 @@
    <head>
       <meta name="layout" content="searchmain"/>
       <title>olid - The Open Local Information Directory - Public information from trusted Sources curated freely using an open platform</title>
-      <r:require modules="bootstrap"/>
    </head>
 <body>
 

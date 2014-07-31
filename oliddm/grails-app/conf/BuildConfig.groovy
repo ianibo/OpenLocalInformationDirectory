@@ -33,6 +33,10 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+
+        // Added for scribe dependency
+        mavenRepo "https://raw.github.com/fernandezpablo85/scribe-java/mvn-repo/"
+
         mavenRepo "http://repo.spring.io/milestone/"
     }
     dependencies {
@@ -41,10 +45,9 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-      compile ":authmodel:0.3.17"
+      compile ":authmodel:0.4.0"
 
-      build(":release:3.0.1",
-            ":rest-client-builder:1.0.3") {
+      build(":release:3.0.1", ":rest-client-builder:1.0.3") {
             export = false
       }
     }

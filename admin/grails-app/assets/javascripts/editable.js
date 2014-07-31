@@ -1,3 +1,11 @@
+//= require jquery
+//= require bootstrap-editable.min
+//= require bootstrap-datetimepicker.min
+//= require editable
+//= require moment.min
+//= require select2.min
+//= require moment.min
+
 $(document).ready(function() {
 
   if (window.location.hash !== '') 
@@ -28,7 +36,7 @@ $(document).ready(function() {
     width:'resolve',
     minimumInputLength: 0,
     ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-      url: "<g:createLink controller='ajaxSupport' action='lookup'/>",
+      url: olidBaseUrl, // Var defined at top of page..
       dataType: 'json',
       data: function (term, page) {
         return {

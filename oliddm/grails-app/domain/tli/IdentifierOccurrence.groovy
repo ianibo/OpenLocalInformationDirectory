@@ -1,7 +1,6 @@
 package tli
 
 import javax.persistence.Transient
-import org.codehaus.groovy.grails.commons.ApplicationHolder
 
 
 class IdentifierOccurrence {

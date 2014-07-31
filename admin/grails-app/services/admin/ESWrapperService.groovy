@@ -3,11 +3,12 @@ package admin
 import org.elasticsearch.groovy.node.GNode
 import org.elasticsearch.groovy.node.GNodeBuilder
 import static org.elasticsearch.groovy.node.GNodeBuilder.*
-import org.codehaus.groovy.grails.commons.ApplicationHolder
+// import org.codehaus.groovy.grails.commons.ApplicationHolder
 
 class ESWrapperService {
 
   static transactional = false
+  def grailsApplication
 
 
   def gNode = null;
@@ -16,7 +17,7 @@ class ESWrapperService {
   def init() {
     log.debug("Init");
 
-    def clus_nm = ApplicationHolder.application.config.olid.es.cluster ?: "olid"
+    def clus_nm = grailsApplication.config.olid.es.cluster ?: "olid"
 
     log.debug("Using ${clus_nm} as ES cluster name...");
 

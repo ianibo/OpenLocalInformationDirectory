@@ -334,24 +334,38 @@ class AjaxSupportController {
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def editableSetValue() {
     log.debug("editableSetValue ${params}");
-    def target_object = genericOIDService.resolveOID(params.pk)
-    if ( target_object ) {
-      if ( params.type=='date' ) {
-        target_object."${params.name}" = params.date('value','yyyy-MM-dd')
+    try {
+      def target_object = genericOIDService.resolveOID(params.pk)
+      if ( target_object ) {
+        if ( params.type=='date' ) {
+          target_object."${params.name}" = params.date('value','yyyy-MM-dd')
+        }
+        else {
+          log.debug("Simple binding. Before change, ${target_object[params.name]}");
+          def binding_properties = [:]
+          binding_properties[ params.name ] = params.value
+          bindData(target_object, binding_properties)
+          log.debug("After bind : ${target_object[params.name]}");
+        }
+        log.debug("saving...");
+        target_object.save(flush:true)
+        target_object?.errors?.each { e ->
+          log.error("Problem: ${e}");
+        }
       }
-      else {
-        def binding_properties = [:]
-        binding_properties[ params.name ] = params.value
-        bindData(target_object, binding_properties)
-      }
-      target_object.save(flush:true);
-    }
 
-    response.setContentType('text/plain')
-    def outs = response.outputStream
-    outs << params.value
-    outs.flush()
-    outs.close()
+      response.setContentType('text/plain')
+      def outs = response.outputStream
+      outs << params.value
+      outs.flush()
+      outs.close()
+    }
+    catch ( Exception e ) {
+      log.error("Problem",e);
+    }
+    finally {
+      log.debug("Completed editableSetValue");
+    }
   }
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])

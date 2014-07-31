@@ -68,6 +68,8 @@ class EnrichmentService {
     catch ( Exception e ) {
       log.error("Problem: ${e}");
     }
+    finally {
+    }
   }
 
   def fillInMissingUID() {
@@ -130,14 +132,16 @@ class EnrichmentService {
     try {
       DirectoryEntryShortcode.withTransaction { status ->
         def base_shortcode = base.trim().toLowerCase().replaceAll("\\p{Punct}","").trim().replaceAll("\\W","_")
+        log.debug("Base shortcode is ${base_shortcode}");
         def shortcode = base_shortcode
         def located_record = DirectoryEntryShortcode.executeQuery("select count(o) from tli.DirectoryEntryShortcode as o where o.shortcode = ?",shortcode)[0]
 
-        int ctr = 0;
+        int ctr = 2;
 
         // See if initial_guess is already used
         while ( located_record > 0 ) {
-          shortcode = base_shortcode+'_'+ctr
+          shortcode = base_shortcode+'_'+(ctr++)
+          log.debug("Testing ${shortcode}");
           located_record = DirectoryEntryShortcode.executeQuery("select count(o) from tli.DirectoryEntryShortcode as o where o.shortcode = ?",shortcode)[0]
         }
 
@@ -153,6 +157,9 @@ class EnrichmentService {
     }
     catch ( Exception e ) {
       log.error("Problem:${e}");
+    }
+    finally {
+      log.debug("Result shortcode is ${result}");
     }
 
     return result

@@ -45,6 +45,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
         mavenRepo "http://repo.spring.io/milestone/"
+        mavenRepo "https://raw.github.com/fernandezpablo85/scribe-java/mvn-repo/"  // For scribe
     }
 
     dependencies {
@@ -55,6 +56,7 @@ grails.project.dependency.resolution = {
         runtime 'org.elasticsearch:elasticsearch-client-groovy:1.0.1'
         runtime 'org.mongodb:mongo-java-driver:2.11.4'
         runtime 'com.gmongo:gmongo:1.3'
+        compile "net.sf.ehcache:ehcache-core:2.4.8"
     }
 
     plugins {
@@ -62,28 +64,31 @@ grails.project.dependency.resolution = {
         build ':tomcat:7.0.52.1'
 
         // plugins for the compile step
-        compile ':scaffolding:2.0.3'
+        // compile ':scaffolding:2.0.3'
         compile ':cache:1.1.1'
 
         // plugins needed at runtime but not for compilation
         runtime ':hibernate:3.6.10.13'
         runtime ':database-migration:1.4.0'
-        runtime ":jquery:1.10.2.2"
+        runtime ":jquery:1.11.0.2"
         runtime ":jquery-ui:1.10.3"
         runtime ":famfamfam:1.0.1"
-        runtime ':resources:1.2.7'
-        runtime ':gsp-resources:0.4.4'
+        // Not easy to migrate:: compile ':asset-pipeline:1.8.3'
+        compile ':asset-pipeline:1.8.3'
+        // Replaced with asset pipeline above... 
+        // runtime ':resources:1.2.8'
+        // runtime ':gsp-resources:0.4.4'
 
-        compile ":spring-security-core:2.0-RC2"
-        compile ":spring-security-ui:1.0-RC1"
-        compile ":twitter-bootstrap:3.0.3"
-        compile ':mail:1.0.1', {
+        compile ":spring-security-core:2.0-RC3"
+        compile ":spring-security-ui:1.0-RC2"
+        runtime ":twitter-bootstrap:3.2.0"
+        compile ':mail:1.0.6', {
            excludes 'spring-test'
         }
         compile ":rest:0.8"
         compile ":executor:0.3"
-        compile ":authmodel:0.3.17"
-        compile ":oliddm:0.3.5"
+        compile ":authmodel:0.4.0"
+        compile ":oliddm:0.4.2"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"

@@ -37,7 +37,7 @@ class PushService {
 
     updateES(esclient, tli.DirectoryEntry.class) { de ->
       def result = [:]
-      println(de.title)
+      log.debug("doFTUpdate::updateES::${de.title}")
       result._id = "tli.DirectoryEntry:"+de.id
       result.dbid = de.id
       result.uid = de.uid
@@ -139,6 +139,7 @@ class PushService {
         Object r = results.get(0);
         def idx_record = recgen_closure(r)
 
+        log.debug("Push record to olid index...");
         def future = esclient.index {
           index "olid"
           type domain.name
@@ -151,15 +152,15 @@ class PushService {
         count++
         total++
         if ( count > 100 ) {
-          count = 0;
-          log.debug("processed ${++total} records (${domain.name})");
-          latest_ft_record.save(flush:true);
-          cleanUpGorm();
-        }
+	  count = 0;
+	  log.debug("processed ${++total} records (${domain.name})");
+	  latest_ft_record.save(flush:true);
+	  cleanUpGorm();
+	}
       }
       results.close();
 
-      println("Processed ${total} records for ${domain.name}");
+      log.debug("Processed ${total} records for ${domain.name}");
 
       // update timestamp
       latest_ft_record.save(flush:true);
@@ -168,7 +169,7 @@ class PushService {
       log.error("Problem with FT index",e);
     }
     finally {
-      log.debug("Completed processing on ${domain.name} - saved ${count} records");
+      log.debug("Completed processing on ${domain.name} - saved ${count} records in this batch");
     }
   }
 

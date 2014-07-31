@@ -2,12 +2,13 @@ package search
 
 import grails.converters.*
 import groovy.xml.MarkupBuilder
-import org.codehaus.groovy.grails.commons.ApplicationHolder
+import grails.util.Holders
 
 
 class SitemapController {
 
   def elasticSearchService
+  def grailsApplication
 
 
   def index() { 
@@ -49,7 +50,7 @@ class SitemapController {
                        'targetNamespace':'http://www.sitemaps.org/schemas/sitemap/0.9') {
         result.providers.each { prov ->
           sitemap() {
-            loc("${ApplicationHolder.application.config.frontend}/sitemap/postalArea/${prov.name}")
+            loc("${grailsApplication.config.frontend}/sitemap/postalArea/${prov.name}")
             lastmod( prov.lastModified != null ? prov.lastModified : default_date );
             mkp.comment("Doc count for this authority: ${prov.count}")
           }

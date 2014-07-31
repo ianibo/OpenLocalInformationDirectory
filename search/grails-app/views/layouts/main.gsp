@@ -9,10 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title><g:layoutTitle default="olid - The Open Local Information Directory - Public information from trusted Sources curated freely using an open platform"/></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 
-    <r:layoutResources />
+     <script language="JavaScript">
+      var olidBaseUrl="<g:createLink controller='ajaxSupport' action='lookup'/>";
+    </script>
+
+    <asset:javascript src="application.js"/>
+    <asset:stylesheet href="main.css"/>
+    <asset:link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
+
     <g:javascript library="application"/>
     <g:layoutHead/>
   </head>
@@ -63,8 +69,6 @@
         ga('send', 'pageview');
       </g:javascript>
     </g:if>
-
-    <r:layoutResources/>
 
   </body>
 </html>

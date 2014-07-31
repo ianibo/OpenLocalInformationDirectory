@@ -6,14 +6,10 @@
 
 <title><g:layoutTitle default="olid - The Open Local Information Directory - Public information from trusted Sources curated freely using an open platform"/></title>
 
-<link rel="shortcut icon" href="${resource(dir:'images',file:'favicon.ico')}" type="image/x-icon"/>
-<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-
-
-   <r:require modules="register,tlistyle,bootstrap-popover"/>
-   <r:layoutResources/>
-
-<g:layoutHead/>
+    <asset:javascript src="application.js"/>
+    <asset:stylesheet href="main.css"/>
+    <asset:link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <g:layoutHead/>
 
 </head>
 

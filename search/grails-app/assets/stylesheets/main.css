@@ -1,0 +1,10 @@
+/*
+*= require bootstrap
+*= require select2
+*= require bootstrap-editable
+*= require social-buttons
+*/
+
+body {
+  padding-top: 50px;
+}

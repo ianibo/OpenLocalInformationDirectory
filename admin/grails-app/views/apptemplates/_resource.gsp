@@ -1,7 +1,7 @@
-<r:require modules="tlistyle"/>
-<r:require modules="editable"/>
-<r:require modules="jquery-ui"/>
-<r:require modules="rrule"/>
+<asset:javascript src="editable.js"/>
+<asset:javascript src="rrule.js"/>
+<asset:javascript src="tlirule.js"/>
+
 
 <g:if test="${d.id == null}">
   <g:if test="${params.collection!=null}">

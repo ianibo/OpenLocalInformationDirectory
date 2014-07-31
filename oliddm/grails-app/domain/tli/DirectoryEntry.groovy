@@ -21,16 +21,15 @@ class DirectoryEntry extends Component {
   String registeredCharityNo
   RefdataValue type
   RefdataValue status
-  TliLocation defaultLocation
   String contactName
   String contactEmail
   String contactTelephone
   String contactFax
   String facebook
   String twitter
-  // Id this record type is point of interest
-  String poilat
-  String poilon
+
+  // Location (UPRN details place)
+  TliLocation defaultLocation
 
 
   static hasMany = [ 
@@ -76,8 +75,6 @@ class DirectoryEntry extends Component {
     twitter(nullable:true, blank:false)
     uid(nullable:true, blank:false)
     type(nullable:true, blank:false)
-    poilat(nullable:true, blank:false)
-    poilon(nullable:true, blank:false)
   }
 
   @Transient
@@ -115,6 +112,22 @@ class DirectoryEntry extends Component {
   @Transient
   def afterInsert() {
     // DirectoryEntryShortcode.generateShortcode(this, this.title, true);
+  }
+
+  /**
+   *  Render this entry as OAI_dc
+   */
+  @Transient
+  def toOaiDcXml(builder, attr) {
+    builder.'dc'(attr) {
+      'dc:identifier' ('olid:entry:'+id)
+      'dc:identifier' (uid)
+      'dc:title' (title)
+      'dc:description' (description)
+      shortcodes.each { sc ->
+        'dc:identifier' (sc.shortcode)
+      }
+    }
   }
 
 }

@@ -2,7 +2,6 @@ package search
 
 import grails.converters.*
 import groovy.xml.MarkupBuilder
-import org.codehaus.groovy.grails.commons.ApplicationHolder
 import tli.*;
 
 import grails.plugin.springsecurity.annotation.Secured
@@ -15,6 +14,7 @@ import me.ianibbo.common.*
 class RequestAccessController {
 
   def springSecurityService
+  def grailsApplication
 
   def index() { 
     log.debug("RequestAccess::index() ${params} ${springSecurityService.currentUser}");

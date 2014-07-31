@@ -1,0 +1,33 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
+         xmlns:dc="http://purl.org/dc/elements/1.1/" 
+         xmlns:dcterms="http://purl.org/dc/terms/">
+
+  <skos:ConceptScheme rdf:nodeID="uri:olid.OLIDSpatialTypes">
+    <dc:description>
+      Kinds of spatial data found in OLID
+    </dc:description>
+    <dc:language>en-GB</dc:language>
+    <skos:prefLabel>OLID Spatial Types</skos:prefLabel>
+    <skos:hasTopConcept rdf:nodeID="uri:olid.AddressableProperty"/>
+    <skos:hasTopConcept rdf:nodeID="uri:olid.SpatialExtent"/>
+    <skos:hasTopConcept rdf:nodeID="uri:olid.SpatialPoint"/>
+  </skos:ConceptScheme>
+
+  <skos:Concept rdf:nodeID="uri:olid.AddressableProperty">
+    <skos:inScheme rdf:nodeID="uri:olid.OLIDSpatialTypes"/>
+    <skos:prefLabel>Addressable Property</skos:prefLabel>
+  </skos:Concept>
+
+  <skos:Concept rdf:nodeID="uri:olid.SpatialExtent">
+    <skos:inScheme rdf:nodeID="uri:olid.OLIDSpatialTypes"/>
+    <skos:prefLabel>Spatial Extent</skos:prefLabel>
+  </skos:Concept>
+
+  <skos:Concept rdf:nodeID="uri:olid.SpatialPoint">
+    <skos:inScheme rdf:nodeID="uri:olid.OLIDSpatialTypes"/>
+    <skos:prefLabel>Spatial Point</skos:prefLabel>
+  </skos:Concept>
+
+</rdf:RDF>

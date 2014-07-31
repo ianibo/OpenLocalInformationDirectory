@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta name="layout" content="main"/>
-    <r:require modules="tlistyle"/>
     <title>TLI::Admin::Load Vocabulary</title>
   </head>
   <body>
