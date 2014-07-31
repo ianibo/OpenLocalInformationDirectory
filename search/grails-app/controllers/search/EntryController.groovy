@@ -1,5 +1,7 @@
 package search
 
+import grails.plugin.springsecurity.annotation.Secured
+
 class EntryController {
 
   def newGazetteerService

@@ -1,10 +1,7 @@
 package search
 
-import org.springframework.dao.DataIntegrityViolationException
 import grails.converters.*
-import org.codehaus.groovy.grails.orm.hibernate.cfg.GrailsHibernateUtil
 import groovy.xml.MarkupBuilder
-import org.codehaus.groovy.grails.commons.ApplicationHolder
 import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import tli.*
