@@ -79,7 +79,9 @@ class RequestAccessController {
     }
     else {
       // 2 - Does the users email address match any of the email addresses for this record?
-      if ( result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email.toLowerCase())) {
+      if ( ( result.entry.contactEmail != null ) && 
+           ( springSecurityService.currentUser.email != null ) &&
+           ( result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email?.toLowerCase()))) {
         // Yes thats easy then - grant permission
         log.debug("The contact email section of the email address contains the users email address. Grant access");
 
@@ -91,11 +93,13 @@ class RequestAccessController {
         def email_addresses = result.entry.contactEmail?.split(',')
         if ( email_addresses.length > 0 ) {
           // Yes - Use the email request template to zip off a message requesting access
+          log.debug("Email record owners (${email_addresses}) for permission...");
           emailRecordOwnersForPermission()
         }
         else {
           // no way of automatically verifying that this user has permission to maintain this record
           // Flag up  request to admin interface.
+          log.debug("Admin request permission...");
         }
       }
     }
