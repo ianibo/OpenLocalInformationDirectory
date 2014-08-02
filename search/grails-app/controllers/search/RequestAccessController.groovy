@@ -103,7 +103,7 @@ class RequestAccessController {
             def request_tracker = new PendingPermissionRequest(
                                                                dirent:result.entry,
                                                                whoRequested:springSecurityService.currentUser,
-                                                               dateRequested:new date(),
+                                                               dateRequested:new Date(),
                                                                status:pending_perm_status_emailed_owner,
                                                                actionedBy:null,
                                                                dateActioned:null)
@@ -117,7 +117,7 @@ class RequestAccessController {
             def request_tracker = new PendingPermissionRequest(
                                                                dirent:result.entry,
                                                                whoRequested:springSecurityService.currentUser,
-                                                               dateRequested:new date(),
+                                                               dateRequested:new Date(),
                                                                status:pending_perm_status_with_admin,
                                                                actionedBy:null,
                                                                dateActioned:null)
