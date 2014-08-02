@@ -89,7 +89,6 @@ class RequestAccessController {
              ( result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email?.toLowerCase()))) {
           // Yes thats easy then - grant permission
           log.debug("The contact email section of the email address contains the users email address. Grant access");
-  
           def deo = new DirectoryEntryOwner(party:springSecurityService.currentUser, dirent:result.entry, role: RefdataCategory.lookupOrCreate("RecordOwnerType", 'Data Subject')).save()
           redirect(controller:'entry', action:'edit', id:params.id);
         }
@@ -100,11 +99,29 @@ class RequestAccessController {
             // Yes - Use the email request template to zip off a message requesting access
             log.debug("Email record owners (${email_addresses}) for permission...");
             emailRecordOwnersForPermission(result.entry, springSecurityService.currentUser, params.id)
+            def pending_perm_status_emailed_owner = RefdataCategory.lookupOrCreate("PendingPermStatus", "EmailedOwner" )
+            def request_tracker = new PendingPermissionRequest(
+                                                               dirent:result.entry,
+                                                               whoRequested:springSecurityService.currentUser,
+                                                               dateRequested:new date(),
+                                                               status:pending_perm_status_emailed_owner,
+                                                               actionedBy:null,
+                                                               dateActioned:null)
+            request_tracker.save();
           }
           else {
             // no way of automatically verifying that this user has permission to maintain this record
             // Flag up  request to admin interface.
             log.debug("Admin request permission...");
+            def pending_perm_status_with_admin = RefdataCategory.lookupOrCreate("PendingPermStatus", "WithAdmin" )
+            def request_tracker = new PendingPermissionRequest(
+                                                               dirent:result.entry,
+                                                               whoRequested:springSecurityService.currentUser,
+                                                               dateRequested:new date(),
+                                                               status:pending_perm_status_with_admin,
+                                                               actionedBy:null,
+                                                               dateActioned:null)
+            request_tracker.save();
           }
         }
       }

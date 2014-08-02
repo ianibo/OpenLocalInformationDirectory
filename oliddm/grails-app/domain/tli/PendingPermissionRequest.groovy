@@ -6,7 +6,7 @@ import me.ianibbo.common.*
 public class PendingPermissionRequest {
 
   DirectoryEntry dirent
-  AuthCommonParty who
+  AuthCommonParty whoRequested
   Date dateRequested
   RefdataValue status
 
