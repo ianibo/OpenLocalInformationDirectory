@@ -139,7 +139,7 @@ class RequestAccessController {
     sendMail {     
       to "ianibbo@gmail.com"
       subject "Request permission to edit \"${dirent.title}\" from \"${who.email}\""
-      html view: "/emails/requestPermission", model: [user: who, entry: dirent, shortcode:shortcode]
+      html view: "/emails/requestPermission", model: [who: who, entry: dirent, shortcode:shortcode]
     }
 
    

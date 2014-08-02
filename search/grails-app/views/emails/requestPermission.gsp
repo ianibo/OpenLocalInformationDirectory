@@ -1,6 +1,6 @@
 dear ${owner.email},
 
-This is the data controller at The open local information directory. Recently, a user with Name ${who.displayName} and email address ${who.email} has requested access
+This is the data controller at The open local information directory. Recently, a user with Name ${who?.displayName} and email address ${who?.email} has requested access
 to edit <a href="http://olid.localdomain:8080/search/requestAccess/requestAccess/${shortcode}">${entry.title}</a> in our system. This email address is receiving this email because it is listed as the owner of the information, and we would like you to confirm if this user should be allowed to edit this information.
 
 There are two ways ways to manage this process

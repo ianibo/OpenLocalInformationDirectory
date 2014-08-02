@@ -60,12 +60,19 @@
           </div>
           <div class="col-lg-5">
             <p>Using Facebook or Google</p><br/>
+            <g:set var="savedReq" value="${new org.springframework.security.web.savedrequest.HttpSessionRequestCache().getRequest(request, response)}"/>
             <div class="login-facebook">
-              <oauth:connect provider="facebook" class="btn btn-default btn-facebook btn-x-large" id="facebook-connect-link"><i class="fa fa-facebook"></i> | Sign in with Facebook</oauth:connect>
+              <oauth:connect provider="facebook" 
+                             class="btn btn-default btn-facebook btn-x-large" 
+                             redirectUrl="${savedReq?.getRedirectUrl()}"
+                             id="facebook-connect-link"><i class="fa fa-facebook"></i> | Sign in with Facebook</oauth:connect>
             </div>
             &nbsp;<br/>
             <div class="login-google">
-              <oauth:connect class="btn btn-default btn-google-plus btn-x-large" provider="google" id="google-connect-link"><i class="fa fa-google"></i> | Sign in with Google</oauth:connect>
+              <oauth:connect class="btn btn-default btn-google-plus btn-x-large" 
+                             provider="google" 
+                             redirectUrl="${savedReq?.getRedirectUrl()}"
+                             id="google-connect-link"><i class="fa fa-google"></i> | Sign in with Google</oauth:connect>
             </div>
           </div>
         </div>
