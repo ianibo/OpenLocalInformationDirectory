@@ -52,82 +52,78 @@ class RequestAccessController {
     log.debug("RequestAccess::requestAccess()");
     def result = [:]
 
-    if ( params.id ) {
-      log.debug("looking up ${params.id}");
-      def entry = DirectoryEntry.executeQuery ('select e from DirectoryEntry as e join e.shortcodes as s where s.shortcode = ?',[params.id]);
-      log.debug(entry);
-      if ( entry.size() == 1 ) {
-        result.entry = entry.get(0);
-      }
-      else {
-      }
-    }
-    else {
-      log.debug("No id");
-    }
+    try {
 
-
-    // Find all DirectoryEntryOwner records that might link this user and this record
-    def existing_grants = DirectoryEntryOwner.executeQuery("select  e from DirectoryEntryOwner as e where e.party = ? and e.dirent = ?",
-                                                           [springSecurityService.currentUser, result.entry]);
-
-    // Logic - 1 : Does the user already have access - OR - an outstanding request on this record - OR - more than 5 outstanding requests
-    if ( existing_grants.size() > 0 ) {
-        // Yes - Cool - redirect
-        log.debug("User already has access - redirect");
-        redirect(controller:'entry', action:'edit', id:params.id);
-    }
-    else {
-      // 2 - Does the users email address match any of the email addresses for this record?
-      if ( ( result.entry.contactEmail != null ) && 
-           ( springSecurityService.currentUser.email != null ) &&
-           ( result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email?.toLowerCase()))) {
-        // Yes thats easy then - grant permission
-        log.debug("The contact email section of the email address contains the users email address. Grant access");
-
-        def deo = new DirectoryEntryOwner(party:springSecurityService.currentUser, dirent:result.entry, role: RefdataCategory.lookupOrCreate("RecordOwnerType", 'Data Subject')).save()
-        redirect(controller:'entry', action:'edit', id:params.id);
-      }
-      else {
-        // 3 - No default permission so - Does the record have an email address?
-        def email_addresses = result.entry.contactEmail?.split(',')
-        if ( email_addresses.length > 0 ) {
-          // Yes - Use the email request template to zip off a message requesting access
-          log.debug("Email record owners (${email_addresses}) for permission...");
-          emailRecordOwnersForPermission()
+      if ( params.id ) {
+        log.debug("looking up ${params.id}");
+        def entry = DirectoryEntry.executeQuery ('select e from DirectoryEntry as e join e.shortcodes as s where s.shortcode = ?',[params.id]);
+        log.debug(entry);
+        if ( entry.size() == 1 ) {
+          result.entry = entry.get(0);
         }
         else {
-          // no way of automatically verifying that this user has permission to maintain this record
-          // Flag up  request to admin interface.
-          log.debug("Admin request permission...");
+          log.error("Unable to locate ${params.id}");
         }
       }
+      else {
+        log.debug("No id");
+      }
+  
+  
+      log.debug("Looking up any existing grants...");
+      // Find all DirectoryEntryOwner records that might link this user and this record
+      def existing_grants = DirectoryEntryOwner.executeQuery("select  e from DirectoryEntryOwner as e where e.party = ? and e.dirent = ?",
+                                                             [springSecurityService.currentUser, result.entry]);
+  
+      // Logic - 1 : Does the user already have access - OR - an outstanding request on this record - OR - more than 5 outstanding requests
+      if ( existing_grants.size() > 0 ) {
+          // Yes - Cool - redirect
+          log.debug("User already has access - redirect");
+          redirect(controller:'entry', action:'edit', id:params.id);
+      }
+      else {
+        log.debug("No existing grants found - work out who to ask");
+  
+        if ( ( result.entry.contactEmail != null ) && 
+             ( springSecurityService.currentUser.email != null ) &&
+             ( result.entry.contactEmail?.toLowerCase().contains(springSecurityService.currentUser.email?.toLowerCase()))) {
+          // Yes thats easy then - grant permission
+          log.debug("The contact email section of the email address contains the users email address. Grant access");
+  
+          def deo = new DirectoryEntryOwner(party:springSecurityService.currentUser, dirent:result.entry, role: RefdataCategory.lookupOrCreate("RecordOwnerType", 'Data Subject')).save()
+          redirect(controller:'entry', action:'edit', id:params.id);
+        }
+        else {
+          // 3 - No default permission so - Does the record have an email address?
+          def email_addresses = result.entry.contactEmail?.split(',')
+          if ( email_addresses?.length > 0 ) {
+            // Yes - Use the email request template to zip off a message requesting access
+            log.debug("Email record owners (${email_addresses}) for permission...");
+            emailRecordOwnersForPermission(result.entry, springSecurityService.currentUser, params.id)
+          }
+          else {
+            // no way of automatically verifying that this user has permission to maintain this record
+            // Flag up  request to admin interface.
+            log.debug("Admin request permission...");
+          }
+        }
+      }
+    }
+    finally {
+      log.debug("Leaving requestPerm");
     }
 
     result
   }
 
-  def private emailRecordOwnersForPermission() {
+  def private emailRecordOwnersForPermission(dirent, who, shortcode) {
     log.debug("emailRecordOwnersForPermission()");
 
-    // dear <<emailaddress>>,
-    //
-    // This is the data controller at <<app.name>>. Recently, a user with Name <<name>> and email address <<email>> has requested access
-    // to edit <resource.url> <<resource.title>> in our system. This email address is receiving this email because it is listed as the owner of the
-    // information, and we would like you to confirm if this user should be allowed to edit this information.
-
-    // THere are two ways ways to manage this process 
-
-    // 1) click THIS link, which will ask you to log in to the system and manage this request
-
-    // 2) Select one of the following options: 
-
-    // I don't want to approve this request, and please don't bother me again - (An administrator may subseqently authorize a user to edit this data 
-    // if they can demonstrate that they have a legitimate reason to do so).
-
-    // I want to approve this request, and I'm happy to approve future requests
-
-    // I want to approve this request, please make this user responsible for all future requests
+    sendMail {     
+      to "ianibbo@gmail.com"
+      subject "Request permission to edit \"${dirent.title}\" from \"${who.email}\""
+      html view: "/emails/requestPermission", model: [user: who, entry: dirent, shortcode:shortcode]
+    }
 
    
   }
