@@ -83,7 +83,7 @@ grails.project.dependency.resolution = {
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
         compile ":authmodel:0.4.0"
-        compile ":oliddm:0.4.3"
+        compile ":oliddm:0.4.4"
         compile ':asset-pipeline:1.8.3'
         // not compatible with asset pipeline
         // compile ":font-awesome-resources:4.0.3.1"
