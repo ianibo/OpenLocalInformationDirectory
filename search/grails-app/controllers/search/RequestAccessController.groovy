@@ -17,7 +17,7 @@ class RequestAccessController {
   def grailsApplication
 
   def index() { 
-    log.debug("RequestAccess::index() ${params} ${springSecurityService.currentUser}");
+    log.debug("RequestAccess::index() ${params} currentUser:${springSecurityService.currentUser}");
     // 1. Is the user logged in? If not, go to login request access
     if ( springSecurityService.currentUser == null ) {
       redirect(action:'loginToRequestAccess', id:params.id);
@@ -49,7 +49,7 @@ class RequestAccessController {
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def requestAccess() {
-    log.debug("RequestAccess::requestAccess()");
+    log.debug("RequestAccess::requestAccess(${params})");
     def result = [:]
 
     try {
@@ -133,13 +133,13 @@ class RequestAccessController {
     result
   }
 
-  def private emailRecordOwnersForPermission(dirent, who, shortcode) {
+  def private emailRecordOwnersForPermission(dirent, requester, shortcode) {
     log.debug("emailRecordOwnersForPermission()");
-
+    def config = grailsApplication.config
     sendMail {     
       to "ianibbo@gmail.com"
       subject "Request permission to edit \"${dirent.title}\" from \"${who.email}\""
-      html view: "/emails/requestPermission", model: [who: who, entry: dirent, shortcode:shortcode]
+      html view: "/emails/requestPermission", model: [requester: requester, entry: dirent, shortcode:shortcode, config:config]
     }
 
    
