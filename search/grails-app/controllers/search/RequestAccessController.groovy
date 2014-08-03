@@ -15,6 +15,7 @@ class RequestAccessController {
 
   def springSecurityService
   def grailsApplication
+  def mailService
 
   def index() { 
     log.debug("RequestAccess::index() ${params} currentUser:${springSecurityService.currentUser}");
@@ -50,6 +51,14 @@ class RequestAccessController {
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def requestAccess() {
     log.debug("RequestAccess::requestAccess(${params})");
+    // log.debug("Session: ${session}");
+    // log.debug("Session.SPRING_SECURITY_CONTEXT: ${session.SPRING_SECURITY_CONTEXT}");
+    // log.debug("Session.SPRING_SECURITY_CONTEXT.Authentication: ${session.SPRING_SECURITY_CONTEXT?.authentication}");
+    // log.debug("Session.SPRING_SECURITY_CONTEXT.Authentication.details: ${session.SPRING_SECURITY_CONTEXT?.authentication.details}");
+    // log.debug("Request: ${request}");
+    // request.attributeNames.each {
+    //   log.debug(it);
+    // }
     def result = [:]
 
     try {
@@ -136,9 +145,11 @@ class RequestAccessController {
   def private emailRecordOwnersForPermission(dirent, requester, shortcode) {
     log.debug("emailRecordOwnersForPermission()");
     def config = grailsApplication.config
-    sendMail {     
+    // println("email config: ${config}");
+    // println("email config.baseURL: ${config.baseURL}");
+    mailService.sendMail {     
       to "ianibbo@gmail.com"
-      subject "Request permission to edit \"${dirent.title}\" from \"${who.email}\""
+      subject "Request permission to edit \"${dirent?.title}\" from \"${requester?.email}\""
       html view: "/emails/requestPermission", model: [requester: requester, entry: dirent, shortcode:shortcode, config:config]
     }
 
