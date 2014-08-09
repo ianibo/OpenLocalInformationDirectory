@@ -115,7 +115,10 @@ class RequestAccessController {
                                                                dateRequested:new Date(),
                                                                status:pending_perm_status_emailed_owner,
                                                                actionedBy:null,
-                                                               dateActioned:null)
+                                                               dateActioned:null,
+                                                               givenName:null,
+                                                               givenEmail:null,
+                                                               message:null )
             request_tracker.save();
           }
           else {
@@ -144,13 +147,21 @@ class RequestAccessController {
 
   def private emailRecordOwnersForPermission(dirent, requester, shortcode) {
     log.debug("emailRecordOwnersForPermission()");
-    def config = grailsApplication.config
-    // println("email config: ${config}");
-    // println("email config.baseURL: ${config.baseURL}");
-    mailService.sendMail {     
-      to "ianibbo@gmail.com"
-      subject "Request permission to edit \"${dirent?.title}\" from \"${requester?.email}\""
-      html view: "/emails/requestPermission", model: [requester: requester, entry: dirent, shortcode:shortcode, config:config]
+    try {
+      def config = grailsApplication.config
+      // println("email config: ${config}");
+      // println("email config.baseURL: ${config.baseURL}");
+      mailService.sendMail {     
+        to "ianibbo@gmail.com"
+        subject "Request permission to edit \"${dirent?.title}\" from \"${requester?.email}\""
+        html view: "/emails/requestPermission", model: [requester: requester, entry: dirent, shortcode:shortcode, config:config]
+      }
+    }
+    catch ( Exception e ) {
+      log.error("Pronlem sending email",e);
+    }
+    finally {
+      log.debug("done emailRecordOwnersForPermission()");
     }
 
    
