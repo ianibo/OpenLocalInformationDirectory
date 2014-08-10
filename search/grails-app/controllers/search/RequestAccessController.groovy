@@ -190,7 +190,7 @@ class RequestAccessController {
           mailService.sendMail {     
             to "ianibbo@gmail.com"
             subject "Request permission to edit \"${dirent?.title}\" from \"${requester?.email}\""
-            html view: "/emails/requestPermission", model: [requester: requester, entry: dirent, shortcode:shortcode, config:config, toaddr:emailaddr.trim(), tracker]
+            html view: "/emails/requestPermission", model: [requester: requester, entry: dirent, shortcode:shortcode, config:config, toaddr:emailaddr.trim(), tracker:tracker]
           }
         }
         else {
