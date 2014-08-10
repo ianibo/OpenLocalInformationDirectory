@@ -12,6 +12,7 @@ public class PendingPermissionRequest {
   String givenName
   String givenEmail
   String message
+  String guid
 
   AuthCommonParty actionedBy
   Date dateActioned
@@ -26,6 +27,7 @@ public class PendingPermissionRequest {
     message(nullable:true, blank:true)
     actionedBy(nullable:true, blank:true)
     dateActioned(nullable:true, blank:true)
+    guid(nullable:false, blank:false)
   }
  
 

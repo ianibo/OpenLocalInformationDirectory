@@ -131,12 +131,11 @@ class RequestAccessController {
       else {
         log.debug("No id");
       }
-  
+
       def email_addresses = result.entry.contactEmail?.split(',')
       if ( email_addresses?.length > 0 ) {
         // Yes - Use the email request template to zip off a message requesting access
         log.debug("Email record owners (${email_addresses}) for permission...");
-        emailRecordOwnersForPermission(result.entry, springSecurityService.currentUser, params.id)
         def pending_perm_status_emailed_owner = RefdataCategory.lookupOrCreate("PendingPermStatus", "EmailedOwner" )
         def request_tracker = new PendingPermissionRequest(
                                                            dirent:result.entry,
@@ -147,8 +146,10 @@ class RequestAccessController {
                                                            dateActioned:null,
                                                            givenName:params.name,
                                                            givenEmail:params.email,
-                                                           message:params.reason )
+                                                           message:params.reason,
+                                                           guid:java.util.UUID.randomUUID().toString() )
         request_tracker.save(failOnError:true, flush:true);
+        emailRecordOwnersForPermission(result.entry, springSecurityService.currentUser, params.id, email_addresses, tracker)
         log.debug("Tracker saved");
       }
       else {
@@ -165,7 +166,8 @@ class RequestAccessController {
                                                            dateActioned:null,
                                                            givenName:params.name,
                                                            givenEmail:params.email,
-                                                           message:params.reason )
+                                                           message:params.reason,
+                                                           guid:java.util.UUID.randomUUID().toString() )
         request_tracker.save(failOnError:true, flush:true);
         log.debug("Tracker saved");
       }
@@ -177,16 +179,22 @@ class RequestAccessController {
     result
   }
 
-  def private emailRecordOwnersForPermission(dirent, requester, shortcode) {
+  def private emailRecordOwnersForPermission(dirent, requester, shortcode, email_addresses, tracker) {
     log.debug("emailRecordOwnersForPermission()");
     try {
       def config = grailsApplication.config
-      // println("email config: ${config}");
-      // println("email config.baseURL: ${config.baseURL}");
-      mailService.sendMail {     
-        to "ianibbo@gmail.com"
-        subject "Request permission to edit \"${dirent?.title}\" from \"${requester?.email}\""
-        html view: "/emails/requestPermission", model: [requester: requester, entry: dirent, shortcode:shortcode, config:config]
+      email_addresses.each { emailaddr ->
+        if ( emailaddr?.trim().length() > 0 ) {
+          println("email config: ${config}");
+          // println("email config.baseURL: ${config.baseURL}");
+          mailService.sendMail {     
+            to "ianibbo@gmail.com"
+            subject "Request permission to edit \"${dirent?.title}\" from \"${requester?.email}\""
+            html view: "/emails/requestPermission", model: [requester: requester, entry: dirent, shortcode:shortcode, config:config, toaddr:emailaddr.trim(), tracker]
+          }
+        }
+        else {
+        }
       }
     }
     catch ( Exception e ) {
