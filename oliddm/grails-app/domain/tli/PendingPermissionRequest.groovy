@@ -17,7 +17,17 @@ public class PendingPermissionRequest {
   Date dateActioned
 
   static constraints = {
+    dirent(nullable:false, blank:false)
+    whoRequested(nullable:false, blank:false)
+    dateRequested(nullable:false, blank:false)
+    status(nullable:false, blank:false)
+    givenName(nullable:true, blank:true)
+    givenEmail(nullable:true, blank:true)
+    message(nullable:true, blank:true)
+    actionedBy(nullable:true, blank:true)
+    dateActioned(nullable:true, blank:true)
   }
+ 
 
   static mapping = {
     message type:'text'

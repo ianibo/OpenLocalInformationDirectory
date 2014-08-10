@@ -28,7 +28,7 @@
                      <li>
                        <h2>Step 2 : Fill out the request access form</h2>
 
-              <g:form controller="requestAccess" id="${params.id}" action="requestAccess" method="get">
+              <g:form controller="requestAccess" id="${params.id}" action="processRequestAccessForm" method="get">
                   <div class="form-group">
                       <label for="name">Your Name</label>
                       <input name="name" type="text" class="form-control" id="name" placeholder="Enter name"/>

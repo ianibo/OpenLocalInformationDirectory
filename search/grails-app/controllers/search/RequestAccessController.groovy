@@ -102,44 +102,76 @@ class RequestAccessController {
           redirect(controller:'entry', action:'edit', id:params.id);
         }
         else {
-          // 3 - No default permission so - Does the record have an email address?
-          def email_addresses = result.entry.contactEmail?.split(',')
-          if ( email_addresses?.length > 0 ) {
-            // Yes - Use the email request template to zip off a message requesting access
-            log.debug("Email record owners (${email_addresses}) for permission...");
-            emailRecordOwnersForPermission(result.entry, springSecurityService.currentUser, params.id)
-            def pending_perm_status_emailed_owner = RefdataCategory.lookupOrCreate("PendingPermStatus", "EmailedOwner" )
-            def request_tracker = new PendingPermissionRequest(
-                                                               dirent:result.entry,
-                                                               whoRequested:springSecurityService.currentUser,
-                                                               dateRequested:new Date(),
-                                                               status:pending_perm_status_emailed_owner,
-                                                               actionedBy:null,
-                                                               dateActioned:null,
-                                                               givenName:null,
-                                                               givenEmail:null,
-                                                               message:null )
-            request_tracker.save();
-          }
-          else {
-            // no way of automatically verifying that this user has permission to maintain this record
-            // Flag up  request to admin interface.
-            log.debug("Admin request permission...");
-            def pending_perm_status_with_admin = RefdataCategory.lookupOrCreate("PendingPermStatus", "WithAdmin" )
-            def request_tracker = new PendingPermissionRequest(
-                                                               dirent:result.entry,
-                                                               whoRequested:springSecurityService.currentUser,
-                                                               dateRequested:new Date(),
-                                                               status:pending_perm_status_with_admin,
-                                                               actionedBy:null,
-                                                               dateActioned:null)
-            request_tracker.save();
-          }
+          // We need to gather some information about the requester - show the request access form
         }
       }
     }
     finally {
       log.debug("Leaving requestPerm");
+    }
+
+    result
+  }
+
+  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
+  def processRequestAccessForm() {
+    def result = [:]
+    try {
+      if ( params.id ) {
+        log.debug("looking up ${params.id}");
+        def entry = DirectoryEntry.executeQuery ('select e from DirectoryEntry as e join e.shortcodes as s where s.shortcode = ?',[params.id]);
+        log.debug(entry);
+        if ( entry.size() == 1 ) {
+          result.entry = entry.get(0);
+        }
+        else {
+          log.error("Unable to locate ${params.id}");
+        }
+      }
+      else {
+        log.debug("No id");
+      }
+  
+      def email_addresses = result.entry.contactEmail?.split(',')
+      if ( email_addresses?.length > 0 ) {
+        // Yes - Use the email request template to zip off a message requesting access
+        log.debug("Email record owners (${email_addresses}) for permission...");
+        emailRecordOwnersForPermission(result.entry, springSecurityService.currentUser, params.id)
+        def pending_perm_status_emailed_owner = RefdataCategory.lookupOrCreate("PendingPermStatus", "EmailedOwner" )
+        def request_tracker = new PendingPermissionRequest(
+                                                           dirent:result.entry,
+                                                           whoRequested:springSecurityService.currentUser,
+                                                           dateRequested:new Date(),
+                                                           status:pending_perm_status_emailed_owner,
+                                                           actionedBy:null,
+                                                           dateActioned:null,
+                                                           givenName:params.name,
+                                                           givenEmail:params.email,
+                                                           message:params.reason )
+        request_tracker.save(failOnError:true, flush:true);
+        log.debug("Tracker saved");
+      }
+      else {
+        // no way of automatically verifying that this user has permission to maintain this record
+        // Flag up  request to admin interface.
+        log.debug("Request permission - ask admin when no user available...");
+        def pending_perm_status_with_admin = RefdataCategory.lookupOrCreate("PendingPermStatus", "WithAdmin" )
+        def request_tracker = new PendingPermissionRequest(
+                                                           dirent:result.entry,
+                                                           whoRequested:springSecurityService.currentUser,
+                                                           dateRequested:new Date(),
+                                                           status:pending_perm_status_with_admin,
+                                                           actionedBy:null,
+                                                           dateActioned:null,
+                                                           givenName:params.name,
+                                                           givenEmail:params.email,
+                                                           message:params.reason )
+        request_tracker.save(failOnError:true, flush:true);
+        log.debug("Tracker saved");
+      }
+    }
+    finally {
+      log.debug("Completed process request access form");
     }
 
     result
