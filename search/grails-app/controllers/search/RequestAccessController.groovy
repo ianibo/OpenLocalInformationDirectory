@@ -149,7 +149,7 @@ class RequestAccessController {
                                                            message:params.reason,
                                                            guid:java.util.UUID.randomUUID().toString() )
         request_tracker.save(failOnError:true, flush:true);
-        emailRecordOwnersForPermission(result.entry, springSecurityService.currentUser, params.id, email_addresses, tracker)
+        emailRecordOwnersForPermission(result.entry, springSecurityService.currentUser, params.id, email_addresses, request_tracker)
         log.debug("Tracker saved");
       }
       else {
@@ -185,7 +185,6 @@ class RequestAccessController {
       def config = grailsApplication.config
       email_addresses.each { emailaddr ->
         if ( emailaddr?.trim().length() > 0 ) {
-          println("email config: ${config}");
           // println("email config.baseURL: ${config.baseURL}");
           mailService.sendMail {     
             to "ianibbo@gmail.com"
