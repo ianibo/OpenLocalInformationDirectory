@@ -45,7 +45,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-      compile ":authmodel:0.4.0"
+      compile ":authmodel:0.4.1"
 
       build(":release:3.0.1", ":rest-client-builder:1.0.3") {
             export = false

@@ -5,9 +5,9 @@ dear ${toaddr},
 <p>
 <h3>Information supplied by the requester:</h3>
 <ul>
-   <li>Name:${tracker.givenName}</li>
-   <li>Email Address:${tracker.givenEmail}</li>
-   <li>Reason:${tracker.message}</li>
+   <li>Name: ${tracker.givenName}</li>
+   <li>Email Address: <a href="mailto:${tracker.givenEmail}">${tracker.givenEmail}</a></li>
+   <li>Reason: ${tracker.message}</li>
 </ul>
 </p>
 

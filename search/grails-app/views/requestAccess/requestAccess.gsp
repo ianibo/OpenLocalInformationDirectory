@@ -22,7 +22,7 @@
               <h1>Request Permission to Edit ${entry.title}.... </h1>
                 <p><ul class="list-unstyled">
                      <li>
-                       <small>Step 1 : Sign in</small><br/>
+                       <small>Step 1 : Sign in and confirmed your email address</small><br/>
                        You've signed in.
                      </li>
                      <li>
@@ -35,7 +35,7 @@
                   </div>
                   <div class="form-group">
                       <label for="email">Your Email Address</label>
-                      <input name="email" type="email" class="form-control" id="email" placeholder="Enter email"/>
+                      ${request.user?.email}
                   </div>
                   <div class="form-group">
                       <label for="reason">Reason for requesting edit access</label>
