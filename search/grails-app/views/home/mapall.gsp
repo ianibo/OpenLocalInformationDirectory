@@ -1,11 +1,13 @@
 <html>
    <head>
       <meta name="layout" content="searchmain"/>
-      <r:require modules="bootstrap,spider"/>
+
+      <!-- r:require modules="bootstrap,spider"-->
+
       <meta name="description" content="Use localchatter to search for community improved information from trusted local sources. You will information collected from local authorities and other trusted sources, imrpved and refined by the community"/>
 
-      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-      <g:javascript library="markerclusterer"/>
+      <!-- script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"-->
+      <!--g:javascript library="markerclusterer"-->
 
       <!-- Ask search engines not to index the search results pages, it looks horrible in google -->
       <meta name="robots" CONTENT="noindex, follow">
@@ -35,7 +37,9 @@
     var locations = [
       <g:each in="${hits}" var="h">
         <g:each in="${h.source.sessions}" var="s">
-          [ '${h.source.title}', ${s.loc.lat}, ${s.loc.lon}, '${h.source._id}','${h.source.canonical_shortcode}'  ],
+          <g:if test="${((s.loc != null) && (s.loc.lat != null) && (s.loc.lon != null))}">
+            [ '${h.source.title}', ${s.loc.lat}, ${s.loc.lon}, '${h.source._id}','${h.source.canonical_shortcode}'  ],
+          </g:if>
         </g:each>
       </g:each>
     ];

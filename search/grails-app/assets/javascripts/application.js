@@ -6,6 +6,8 @@
 //= require moment.min
 //= require select2.min
 //= require oms.min
+//= require underscore-min
+//= require rrule
 //= require nlp
 //= require markerclusterer
 
