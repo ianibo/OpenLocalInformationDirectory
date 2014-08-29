@@ -23,6 +23,12 @@ class RequestAccessController {
     if ( springSecurityService.currentUser == null ) {
       redirect(action:'loginToRequestAccess', id:params.id);
     }
+    else if ( request.user?.email == null ) {
+      log.debug("Please set and confirm user email..");
+    }
+    else if ( request.user?.emailConfirmed?:False == True ) {
+      log.debug("Please confirm email address");
+    }
     else {
       redirect(action:'requestAccess', id:params.id);
     }
