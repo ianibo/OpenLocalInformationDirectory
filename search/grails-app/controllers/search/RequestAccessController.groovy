@@ -96,7 +96,7 @@ class RequestAccessController {
         if ( request.user?.email == null ) {
           log.debug("Please set and confirm user email..");
           result.step = 2
-          render(view:'setEmailAddress', model:result);
+          render(view:'requestAccess', model:result);
           return
         }
 
@@ -105,7 +105,7 @@ class RequestAccessController {
         if ( ( request.user.emailConfirmed == null ) || ( request.user.emailConfirmed == false ) ) {
           log.debug("Please confirm email address ${result}");
           result.step = 3
-          render(view:'confirmEmailAddress', model:result)
+          render(view:'requestAccess', model:result)
           return
         }
 
@@ -226,4 +226,9 @@ class RequestAccessController {
    
   }
 
+  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
+  def resendConfirmation() {
+    log.debug("resendConfirmation");
+    redirect(action:'requestAccess', id:params.id);
+  }
 }
