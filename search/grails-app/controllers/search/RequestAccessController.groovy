@@ -23,12 +23,6 @@ class RequestAccessController {
     if ( springSecurityService.currentUser == null ) {
       redirect(action:'loginToRequestAccess', id:params.id);
     }
-    else if ( request.user?.email == null ) {
-      log.debug("Please set and confirm user email..");
-    }
-    else if ( request.user?.emailConfirmed?:False == True ) {
-      log.debug("Please confirm email address");
-    }
     else {
       redirect(action:'requestAccess', id:params.id);
     }
@@ -98,6 +92,22 @@ class RequestAccessController {
       }
       else {
         log.debug("No existing grants found - work out who to ask");
+
+        if ( request.user?.email == null ) {
+          log.debug("Please set and confirm user email..");
+          render(view:'setEmailAddress', model:result);
+          return
+        }
+
+        log.debug("email is present..");
+
+        if ( ( request.user.emailConfirmed == null ) || ( request.user.emailConfirmed == false ) ) {
+          log.debug("Please confirm email address ${result}");
+          render(view:'confirmEmailAddress', model:result)
+          return
+        }
+
+        log.debug("email is confirmed.. ${request.user?.emailConfirmed} ${request.user?.email} ");
   
         if ( ( result.entry.contactEmail != null ) && 
              ( springSecurityService.currentUser.email != null ) &&

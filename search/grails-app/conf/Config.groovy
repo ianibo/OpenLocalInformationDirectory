@@ -155,6 +155,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/register/**':                           ['permitAll'],
         '/requestAccess/index/**':                ['permitAll'],
         '/requestAccess/loginToRequestAccess/**': ['permitAll'],
+        '/requestAccess/confirmEmailAddress/**':  ['permitAll'],
+        '/requestAccess/setEmailAddress/**':      ['permitAll'],
         '/login/**':                              ['permitAll'],
         '/logout/**':                             ['permitAll'],
         '/oauth/**':                              ['permitAll'],

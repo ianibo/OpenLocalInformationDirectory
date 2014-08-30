@@ -20,7 +20,7 @@
               <h1>Request Permission to Edit ${entry.title}.... </h1>
                 <p><ul class="list-unstyled">
                      <li>
-                       <small>Step 1 : Sign in i Completed</small>
+                       <small>Step 1 : Sign in Completed and Email Address Confirmed</small>
                      </li>
                      <li>
                        <small>Step 2 : Fill out the request access form</small></li>
