@@ -33,10 +33,26 @@
                     <h4>Sign In</h4>
                     <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Beetroot water spinach okra water chestnut ricebean pea catsear courgette.</p>
                   </div>
+
                   <div class="step-pane active sample-pane alert ${(step==2)?'active':''}" data-step="2">
                     <h4>Set Email</h4>
-                    <p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Beetroot water spinach okra water chestnut ricebean pea catsear courgette.</p>
+                    <p>
+                      Your email address will ONLY be shared when you request permission to edit a resource. This is so the owner of a record
+                      can confirm you are allowed to edit the record. We will remind you any time you might be sharing any personal data.
+                    </p>
+                    <p>
+                      <g:form controller="requestAccess" id="${params.id}" action="setEmailAddress" method="get">
+                        <div class="form-group">
+                          <label for="email">Your Email Address</label>
+                          <input name="email" type="text" class="form-control" id="email" placeholder="Email Address"/>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-default">Set email address</button>
+                        </div>
+                      </g:form>
+                    </p>
                   </div>
+
                   <div class="step-pane active sample-pane alert ${(step==3)?'active':''}" data-step="3">
                     <h4>Confirm Email</h4>
                     <p>An confirmation message has been sent to your email address. Please click the link in that message to confirm your address. You will only need to complete this step once. To resend the confirmation email, please click <g:link controller="requestAccess" action="resendConfirmation" params="${params}">Here</g:link></p>
@@ -56,7 +72,9 @@
                           <textarea name="reason" class="form-control" id="reason" placeholder="Any information to support your request for access. Please add any organisational affiliation"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-default">Request Editor Access</button>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-default">Request Editor Access</button>
+                        </div>
                       </g:form>
 
                     </p>

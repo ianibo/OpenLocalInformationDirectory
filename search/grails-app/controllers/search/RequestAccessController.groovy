@@ -222,13 +222,75 @@ class RequestAccessController {
     finally {
       log.debug("done emailRecordOwnersForPermission()");
     }
+  }
 
-   
+  def private sendConfirmationEmail(dirent, requester) {
+
+    log.debug("sendConfirmationEmail()");
+
+    try {
+      def config = grailsApplication.config
+      if ( requester.email?.trim().length() > 0 ) {
+        // if ( ( requester.confirmationToken == null ) && ( requester.confirmationSent == null ) ) {
+          requester.confirmationToken = java.util.UUID.randomUUID().toString()
+          requester.confirmationSent = new Date()
+          requester.save()
+          log.debug("updated requester info...");
+          mailService.sendMail {     
+            to "ianibbo@gmail.com"
+            subject "Please confirm your email address : \"${requester?.email}\""
+            html view: "/emails/confirmEmail", model: [requester: requester, entry:dirent, config:config]
+          }
+
+          log.debug("Sending completed...");
+        // }
+        // else {
+        //   log.debug("No email address");
+        // }
+      }
+      else {
+        log.debug("No email address");
+      }
+    }
+    catch ( Exception e ) {
+      log.error("Problem sending email",e);
+    }
+    finally {
+      log.debug("done sendConfirmationEmail()");
+    }
   }
 
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def resendConfirmation() {
     log.debug("resendConfirmation");
+    if ( params.id ) {
+      log.debug("looking up ${params.id}");
+      def entry = DirectoryEntry.executeQuery ('select e from DirectoryEntry as e join e.shortcodes as s where s.shortcode = ?',[params.id]);
+      sendConfirmationEmail(entry,springSecurityService.currentUser)
+    }
+    redirect(action:'requestAccess', id:params.id);
+  }
+
+  @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
+  def setEmailAddress() {
+    log.debug("setEmailAddress ${params}");
+    try {
+      if ( params.id ) {
+        log.debug("looking up ${params.id}");
+        def entryList = DirectoryEntry.executeQuery ('select e from DirectoryEntry as e join e.shortcodes as s where s.shortcode = ?',[params.id]);
+        if ( entryList.size() == 1 ) {
+          def entry = entryList.get(0);
+          def user = springSecurityService.currentUser
+          user.email = params.email
+          user.save()
+          sendConfirmationEmail(entry, user);
+        }
+      }
+    }
+    catch ( Exception e ) {
+      log.error("Problem",e);
+    }
+    
     redirect(action:'requestAccess', id:params.id);
   }
 }
