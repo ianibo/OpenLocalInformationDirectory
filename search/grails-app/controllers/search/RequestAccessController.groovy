@@ -95,6 +95,7 @@ class RequestAccessController {
 
         if ( request.user?.email == null ) {
           log.debug("Please set and confirm user email..");
+          result.step = 2
           render(view:'setEmailAddress', model:result);
           return
         }
@@ -103,6 +104,7 @@ class RequestAccessController {
 
         if ( ( request.user.emailConfirmed == null ) || ( request.user.emailConfirmed == false ) ) {
           log.debug("Please confirm email address ${result}");
+          result.step = 3
           render(view:'confirmEmailAddress', model:result)
           return
         }
@@ -119,6 +121,7 @@ class RequestAccessController {
         }
         else {
           // We need to gather some information about the requester - show the request access form
+          result.step = 4
         }
       }
     }

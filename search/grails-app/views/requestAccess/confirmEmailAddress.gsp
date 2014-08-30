@@ -19,7 +19,7 @@
           <div class="col-lg-12">
             <div class="well fuelux">
               <h1>Request Permission to Edit ${entry.title}.... </h1>
-              <div class="wizard" data-initialize="wizard" id="myWizard">
+              <div class="wizard" data-initialize="wizard" data-restrict="previous" id="myWizard">
                 <ul class="steps">
                   <li data-step="1" class='${(step==null||step==1)?'active':''}'><span class="badge">1</span>Sign In<span class="chevron"></span></li>
                   <li data-step="2" class='${(step==2)?'active':''}'><span class="badge">2</span>Set Email<span class="chevron"></span></li>
@@ -28,10 +28,12 @@
                   <li data-step="5" class='${(step==5)?'active':''}'><span class="badge">5</span>Confirmation<span class="chevron"></span></li>
                 </ul>
 
+                <!--
                 <div class="actions">
                   <button class="btn btn-default btn-prev"><span class="glyphicon glyphicon-arrow-left"></span>Prev</button>
                   <button class="btn btn-default btn-next" data-last="Complete">Next<span class="glyphicon glyphicon-arrow-right"></span></button>
                 </div>
+                -->
 
                 <div class="step-content">
                   <div class="step-pane active sample-pane alert  ${(step==null||step==1)?'active':''}'" data-step="1">
