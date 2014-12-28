@@ -6,6 +6,7 @@ import tli.*;
 import javax.persistence.Transient
 import grails.rest.*
 
+/* Directory entries are usually organisations or legal entities that other records hang off */
 @Resource(uri='/dirent', formats=['json', 'xml'])
 class DirectoryEntry extends Component {
 
@@ -38,12 +39,14 @@ class DirectoryEntry extends Component {
                      collections:TliCollection, 
                      categories:RefdataValue, 
                      owners:DirectoryEntryOwner, 
-                     shortcodes:DirectoryEntryShortcode ]
+                     shortcodes:DirectoryEntryShortcode,
+                     permregs:PermRegInstance ]
 
   static mappedBy = [
                      sessions:'owner', 
                      owners:'dirent', 
-                     shortcodes:'dirent' ]
+                     shortcodes:'dirent',
+                     permreg:'dirent' ]
 
   // Timestamps
   Date dateCreated
