@@ -87,7 +87,7 @@ grails.project.dependency.resolution = {
         }
         compile ":rest:0.8"
         compile ":executor:0.3"
-        compile ":authmodel:0.4.0"
+        compile ":authmodel:0.4.2"
         compile ":oliddm:0.4.11"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
