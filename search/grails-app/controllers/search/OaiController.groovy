@@ -5,6 +5,7 @@ import grails.plugin.springsecurity.annotation.Secured
 import org.codehaus.groovy.grails.commons.GrailsClassUtils
 import groovy.xml.MarkupBuilder
 import groovy.xml.StreamingMarkupBuilder
+import tli.*
 
 class OaiController {
 
@@ -201,7 +202,6 @@ class OaiController {
 
     // This bit of the query needs to come from the oai config in the domain class
     def query_params = []
-    // def query = " from Package as p where p.status.value != 'Deleted'"
     def query = result.oaiConfig.query
 
     if ((params.from != null)&&(params.from.length()>0)) {
@@ -214,8 +214,8 @@ class OaiController {
     }
     query += ' order by o.lastUpdated'
 
-    def rec_count = Package.executeQuery("select count(o) ${query}",query_params)[0];
-    def records = Package.executeQuery("select o ${query}",query_params,[offset:offset,max:3])
+    def rec_count = DirectoryEntry.executeQuery("select count(o) ${query}",query_params)[0];
+    def records = DirectoryEntry.executeQuery("select o ${query}",query_params,[offset:offset,max:3])
 
     log.debug("rec_count is ${rec_count}, records_size=${records.size()}");
 
@@ -321,7 +321,6 @@ class OaiController {
 
       // This bit of the query needs to come from the oai config in the domain class
       def query_params = []
-      // def query = " from Package as p where p.status.value != 'Deleted'"
       def query = result.oaiConfig.query
 
       if ((params.from != null)&&(params.from.length()>0)) {
@@ -335,8 +334,8 @@ class OaiController {
       query += ' order by o.lastUpdated'
 
       log.debug("prefix handler for ${metadataPrefix} is ${prefixHandler}");
-      def rec_count = Package.executeQuery("select count(o) ${query}",query_params)[0];
-      def records = Package.executeQuery("select o ${query}",query_params,[offset:offset,max:3])
+      def rec_count = DirectoryEntry.executeQuery("select count(o) ${query}",query_params)[0];
+      def records = DirectoryEntry.executeQuery("select o ${query}",query_params,[offset:offset,max:3])
 
       log.debug("rec_count is ${rec_count}, records_size=${records.size()}");
 

@@ -56,7 +56,7 @@ grails.project.dependency.resolution = {
         runtime 'com.gmongo:gmongo:1.3'
         runtime 'org.elasticsearch:elasticsearch:1.0.1'
         runtime 'org.elasticsearch:elasticsearch-client-groovy:1.0.1'
-        runtime 'mysql:mysql-connector-java:5.1.26'
+        runtime 'mysql:mysql-connector-java:5.1.32'
         runtime ( 'org.codehaus.groovy.modules.http-builder:http-builder:0.6' ) {
           excludes "org.codehaus.groovy", "groovy"
         }
@@ -83,7 +83,7 @@ grails.project.dependency.resolution = {
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
         compile ":authmodel:0.4.2"
-        compile ":oliddm:0.4.10"
+        compile ":oliddm:0.4.11"
         compile ':asset-pipeline:1.8.3'
         // not compatible with asset pipeline
         // compile ":font-awesome-resources:4.0.3.1"

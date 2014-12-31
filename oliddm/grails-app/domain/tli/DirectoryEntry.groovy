@@ -94,12 +94,18 @@ class DirectoryEntry extends Component {
    *  Render this package as OAI_dc
    */
   @Transient
-  def toOaiDcXml(builder) {
+  def toOaiDcXml(builder,attr) {
     builder.'oai_dc:dc'('xmlns:oai_dc':'http://www.openarchives.org/OAI/2.0/oai_dc/',
                     'xmlns:dc':'http://purl.org/dc/elements/1.1/',
                     'xsi:schemaLocation':'http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd')
     {
-      'dc:title'(title)
+      'dc:identifier' ('olid:entry:'+id)
+      'dc:identifier' (uid)
+      'dc:title' (title)
+      'dc:description' (description)
+      shortcodes.each { sc ->
+        'dc:identifier' (sc.shortcode)
+      }
     }
   }
 
@@ -118,7 +124,7 @@ class DirectoryEntry extends Component {
    *  Render this entry as OAI_dc
    */
   @Transient
-  def toOaiDcXml(builder, attr) {
+  def toDcXml(builder, attr) {
     builder.'dc'(attr) {
       'dc:identifier' ('olid:entry:'+id)
       'dc:identifier' (uid)
