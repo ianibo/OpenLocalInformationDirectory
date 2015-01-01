@@ -13,6 +13,8 @@ class SearchController {
   @Secured(['ROLE_USER', 'IS_AUTHENTICATED_FULLY'])
   def index() {
 
+    log.debug("SearchController::index");
+
     def result = [:]
 
     result.max = params.max ? Integer.parseInt(params.max) : ( request.user.defaultPageSize ?: 10 );
