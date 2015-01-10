@@ -38,6 +38,7 @@ class TliLocation {
     lat(nullable:true, blank:false)
     lon(nullable:true, blank:false)
     spatialPropertyType(nullable:true, blank:false)
+    spatialExtent(nullable:true, blank:false)
     uprn(nullable:true, blank:false)
   }
 

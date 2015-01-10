@@ -446,6 +446,7 @@ asset:javascript src="require.js"
     });
 
     $('#createAddrBtn').click(function(){
+      console.log("create...");
       // Call the create controller process action with domain=tli.TliLocation, and then name:value pairs for the properties
       // Get result.id from json return - thats the OID to use.
       var jqxhr = $.ajax( { url: "<g:createLink controller='create' action='process'/>",
@@ -461,6 +462,7 @@ asset:javascript src="require.js"
                               country:$('#__adCountry').val()
                             } })
         .done(function(resp) {
+          console.log("done...");
           $('#SelectedLocation').html(resp.str);
           $('#location').val(resp.id);
           $('#__adPostcode').val('');
@@ -472,10 +474,13 @@ asset:javascript src="require.js"
           $('#__adCountry').val('');
         })
         .fail(function() {
+          console.log("fail...");
         })
         .always(function() {
+          console.log("always...");
         });
 
+      console.log("done...");
       return false;
     });
 
