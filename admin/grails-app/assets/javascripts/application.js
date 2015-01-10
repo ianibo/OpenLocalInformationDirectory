@@ -1,10 +1,12 @@
 //= require jquery
+//= require select2.min
 //= require bootstrap
-//= require bootstrap-editable.min
+//= require bootstrap-tooltip
+//= require bootstrap-popover
 //= require bootstrap-datetimepicker.min
 //= require editable
 //= require moment.min
-//= require select2.min
+//= require bootstrap-editable
 
 if (typeof jQuery !== 'undefined') {
 	(function($) {

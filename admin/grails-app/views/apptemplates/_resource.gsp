@@ -1,7 +1,18 @@
-<asset:javascript src="editable.js"/>
-<asset:javascript src="rrule.js"/>
-<asset:javascript src="tlirule.js"/>
+<script language="JavaScript">
 
+  console.log("pagestart");
+  console.log($.fn.popover.Constructor.DEFAULTS); // Log default values to the console
+
+</script>
+
+<!--
+asset:javascript src="editable"
+asset:javascript src="underscore-min.js"
+asset:javascript src="rrule.js"
+asset:javascript src="nlp.js"
+asset:javascript src="tlirrule.js"
+asset:javascript src="require.js"
+-->
 
 <g:if test="${d.id == null}">
   <g:if test="${params.collection!=null}">
@@ -331,6 +342,13 @@
 
 <script type="text/javascript">
 
+  console.log("starting...");
+  console.log($.fn.popover.Constructor.DEFAULTS); // Log default values to the console
+  // Make sure jQuery is loaded before trying to override the defaults!
+  $.fn.popover.Constructor.DEFAULTS.trigger = 'hover';   // Set the default trigger to hover
+  $.fn.popover.Constructor.DEFAULTS.placement = 'right'; // Set the default placement to right
+  $.fn.popover.Constructor.DEFAULTS.html = true;         // Set the default html (parse html) to true
+
   function addNN(arr,val) {
     if ( val != null ) {
       arr.push(val);
@@ -349,7 +367,11 @@
     $('#__adCountry').val('');
   }
 
+  console.log("define doc.ready...");
+
   $(document).ready(function() {
+
+    console.log("Configure...");
 
     $.fn.editable.defaults.mode = 'inline';
 
@@ -358,20 +380,10 @@
       $( '#freq'+$(this).val() ).show();
     });
 
-    $("input.hdp").datepicker({
-      buttonImage: '../../images/calendar.gif',
-      buttonImageOnly: true,
-      changeMonth: true,
-      changeYear: true,
-      showOn: 'both',
-      onSelect: function(dateText, inst) {
-        inst.input.parent().find('span').html(dateText)
-      }
-    });
-
     $('form').attr('autocomplete', 'off');
 
     $('.addrtd').bind('input', function(e) { 
+        console.log("update");
         // $(this).val() // get the current value of the input field.
         var orig = $(this);
         var num_addresses = 0;
@@ -466,7 +478,21 @@
 
       return false;
     });
+
+    $("input.hdp").datepicker({
+      buttonImage: '../../images/calendar.gif',
+      buttonImageOnly: true,
+      changeMonth: true,
+      changeYear: true,
+      showOn: 'both',
+      onSelect: function(dateText, inst) {
+        inst.input.parent().find('span').html(dateText)
+      }
+    });
+
   });
+
+  console.log("end of log");
 
 
 </script>

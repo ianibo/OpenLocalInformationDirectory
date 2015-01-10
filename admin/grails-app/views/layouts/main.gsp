@@ -15,6 +15,13 @@
     </script>
 
     <asset:javascript src="application.js"/>
+
+    <asset:javascript src="underscore-min.js"/>
+    <asset:javascript src="rrule.js"/>
+    <asset:javascript src="nlp.js"/>
+    <asset:javascript src="tlirrule.js"/>
+    <asset:javascript src="require.js"/>
+
     <asset:stylesheet href="main.css"/>
     <asset:link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 

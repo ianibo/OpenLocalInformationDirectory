@@ -1,5 +1,5 @@
 //= require jquery
-//= require bootstrap-editable.min
+//= require bootstrap-editable
 //= require bootstrap-datetimepicker.min
 //= require editable
 //= require moment.min

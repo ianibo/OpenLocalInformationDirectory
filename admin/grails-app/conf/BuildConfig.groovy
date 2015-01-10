@@ -70,7 +70,8 @@ grails.project.dependency.resolution = {
         // plugins needed at runtime but not for compilation
         runtime ':hibernate:3.6.10.13'
         runtime ':database-migration:1.4.0'
-        runtime ":jquery:1.11.0.2"
+        // runtime ":jquery:1.11.0.2"
+        runtime ":jquery:1.11.1"
         runtime ":jquery-ui:1.10.3"
         runtime ":famfamfam:1.0.1"
         // Not easy to migrate:: compile ':asset-pipeline:1.8.3'
@@ -81,7 +82,7 @@ grails.project.dependency.resolution = {
 
         compile ":spring-security-core:2.0-RC3"
         compile ":spring-security-ui:1.0-RC2"
-        runtime ":twitter-bootstrap:3.2.0"
+        compile ":twitter-bootstrap:3.3.1"
         compile ':mail:1.0.6', {
            excludes 'spring-test'
         }
