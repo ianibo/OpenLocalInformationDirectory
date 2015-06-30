@@ -1,7 +1,7 @@
 Open Local Information Directory
 ================================
 
-This is the readme for the _The Open Local Information Directory_ (OLID) project. Release notes can be found [here](ReleaseNotes.md). The development test system (Hosting a number of Open Data collections from in and around sheffield) is [here](http://data.opendatasheffield.org/search). Please note this is very much a _development_ system.
+This is the readme for the _The Open Local Information Directory_ (OLID) project. Release notes can be found [here](ReleaseNotes.md). The development test system (Hosting a number of Open Data collections from in and around sheffield) is [here](http://apps.opensheffield.org/search). Please note this is very much a _development_ system.
 
 OLID is a platform for any organisation [But initially targetted at public libraries and local authorities in the UK] wishing to collate, manage and share directories of civic information and then publish/share/search that information in a spatially enabled and semantically meaningful way. Examples of such collections might include Citizens Information Datatabases managed by local library authorities, Childcare provision registers maintained by Family Service Units, Social Care Registers and Databases of Clubs and Events maintained by civic marketing departments.
 
